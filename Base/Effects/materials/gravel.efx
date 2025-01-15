@@ -1,0 +1,141 @@
+repeatDelay				300
+
+Particle
+{
+	name				small_bits
+
+	flags				usePhysics
+
+	spawnFlags			rgbComponentInterpolation
+
+	count				12 15
+
+	life				600 700
+
+	cullrange			300
+
+	origin				10 0 0
+
+	rotation			0 360
+
+	rotationDelta		-10 6
+
+	velocity			74 -60 -60 80 60 60
+
+	gravity				-500
+
+	rgb
+	{
+		start			0.5294 0.5059 0.3373 0.7333 0.6941 0.5843
+		end				0.7176 0.5804 0.4431 0.702 0.5529 0.4078
+	}
+
+	alpha
+	{
+		end				0
+		parm			65 75
+	}
+
+	size
+	{
+		start			2 4
+		end				5
+		flags			linear
+	}
+
+	shaders
+	[
+		gravel_small
+	]
+}
+
+Particle
+{
+	name				Dust
+
+	flags				usePhysics
+
+	spawnFlags			rgbComponentInterpolation
+
+	life				600 800
+	
+	rotation			0 360
+
+	rotationDelta		-6 6
+
+	gravity				30 50
+	
+	origin				5 0 0 0 0 0 
+	
+	rgb
+	{
+		start			0.3 0.3 0.3
+	}
+
+	alpha
+	{
+		start			1 0.8
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			18
+		end				14
+		flags			linear
+	}
+
+	shaders
+	[
+		snow
+	]
+}
+
+
+Particle
+{
+	name				Pebbles
+
+	flags				usePhysics useAlpha
+
+	spawnFlags			rgbComponentInterpolation
+
+	count				15 18
+
+	life				800 850
+
+	bounce				0.1 0.2
+
+	origin				0 0 0 10 0 0
+
+	rotation			0 360
+
+	rotationDelta		-6 6
+
+	velocity			100 -50 -50 100 50 50
+
+	gravity				-500 -600
+
+	rgb
+	{
+		start			0 0 0 0.7333 0.6941 0.5843
+		end				0.7176 0.5804 0.4431 0.702 0.5529 0.4078
+	}
+
+	alpha
+	{
+		end				0
+		parm			65 75
+	}
+
+	size
+	{
+		start			1 0.5
+	}
+
+	shaders
+	[
+		gravel
+	]
+}

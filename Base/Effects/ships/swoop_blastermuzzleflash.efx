@@ -1,0 +1,78 @@
+repeatDelay				92
+
+Line
+{
+		life				30
+
+		origin2				0 24 0 0 30 0
+	alpha
+		{
+			start			0.5 0.6
+			end				0.35
+			flags			linear
+		}
+	size
+		{
+			start			60
+			end				6
+			flags			linear
+		}
+	shaders
+		[
+			blasterSideFlash
+		]
+}
+
+Particle
+{
+		life				30
+
+		origin				0 0 0
+
+		rotation			0 360
+	alpha
+		{
+			start			0.8 1
+			end				0.5
+			flags			linear
+		}
+	size
+		{
+			start			60
+			end				7
+			flags			linear
+		}
+	shaders
+		[
+			blasterFrontFlash
+		]
+}
+
+Light
+{
+	rgb
+	{
+		start			1 0.1 0.1
+	}
+
+	size
+	{
+		start			175
+		end				50
+	}
+}
+
+Sound
+{
+	sounds
+	[
+		sound/vehicles/weapons/swoop_laser/fire1.mp3
+	]
+}
+
+CameraShake
+{
+	intensity			0.3 0.4
+
+	radius				60
+}

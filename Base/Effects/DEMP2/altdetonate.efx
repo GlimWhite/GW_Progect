@@ -1,0 +1,78 @@
+FxRunner
+{
+	playfx
+	[
+		demp2/spark
+	]
+}
+
+
+Flash
+{
+	spawnFlags			rgbComponentInterpolation
+
+	life				120
+
+	delay				50
+
+	rgb
+	{
+		start			0.7843 1 1 1 1 1
+		end				0 0 0
+		parm			50
+		flags			random linear nonlinear
+	}
+
+	alpha
+	{
+		parm			80
+	}
+
+	size
+	{
+		start			2048
+	}
+
+	shaders
+	[
+		sparkglow
+	]
+}
+
+
+Light
+{
+	rgb
+	{
+		start			0.2 0.7 1
+		end				0	0	0
+	}
+
+	size
+	{
+		start			100 150
+	}
+}
+
+Decal
+{
+	count				2
+	life				1000
+	rotation			0 360
+
+	size
+	{
+		start			60 80
+	}
+	alpha
+		{
+			end				0
+			parm			80
+		}
+
+	shaders
+	[
+		gfx/damage/burnmark1
+		gfx/damage/burnmark4
+	]
+}

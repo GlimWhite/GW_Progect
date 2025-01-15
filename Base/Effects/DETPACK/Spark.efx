@@ -1,0 +1,66 @@
+// ИСКРЫ ПРИ ВЗРЫВЕ
+Tail
+{
+	spawnFlags			rgbComponentInterpolation
+
+	flags				usePhysics alpha
+	
+	count				100 200
+
+	life				1700 2000
+
+	cullrange			500
+
+	origin				10 0 0
+
+	radius				20
+
+	height				6
+
+	velocity			45 -180 -80 245 180 120 //150 0 0 250 0 0
+	
+	gravity				-350 -450
+
+	bounce				0.12
+	
+	rgb
+	{
+		start			1 1 0.549 0.9882 0.7255 0.1804
+	}
+
+	alpha
+	{
+		start			1
+		end				0
+		parm			50 60
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			1
+		end				0.5
+		flags			linear
+	}
+
+	length
+	{
+		start			6
+		end				1
+		parm			70 80
+		flags			linear nonlinear
+	}
+
+	shaders
+	[
+		sparkglow
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		detpack/smoke
+	]
+}

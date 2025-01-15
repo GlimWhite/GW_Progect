@@ -1,0 +1,142 @@
+Particle
+{
+	name				rocketchunk
+	
+	spawnFlags			rgbComponentInterpolation orgOnSphere axisFromSphere
+	
+	flags				useAlpha usePhysics
+
+	count				10 20
+
+	life				2000 2500
+
+	rotation			0 360
+
+	velocity			20 -200 -200 10 200 200
+
+	gravity				-100 -200
+	
+	bounce				0.25
+
+	alpha
+	{
+		start			1
+		end				0.1
+	}
+
+	size
+	{
+		start			6  8
+		flags			linear
+	}
+
+	shaders
+	[
+		rocketchunk
+	]
+}
+
+Particle
+{
+	name				rocketchunk2
+
+	flags				useAlpha usePhysics
+
+	spawnFlags			rgbComponentInterpolation orgOnSphere axisFromSphere
+	
+	count				10 20
+
+	life				2200 2500
+
+	rotation			0 360
+
+	velocity			20 -300 -300 10 300 300
+
+	gravity				-100 -200
+	
+	bounce				0.35
+
+	alpha
+	{
+		end				0.1
+		flags			linear
+	}
+
+	size
+	{
+		start			4  6
+	}
+
+	shaders
+	[
+		rocketchunk2
+	]
+}
+
+Particle
+{
+	name				rocketchunk3
+
+	spawnFlags			rgbComponentInterpolation orgOnSphere axisFromSphere
+	
+	flags				usePhysics
+
+	count				10 20
+
+	life				2200 2500
+
+	rotation			0 360
+
+	velocity			20 -300 -300 10 300 300
+
+	gravity				-100 -200
+	
+	bounce				0.15
+
+	alpha
+	{
+		end				0.1
+		flags			linear
+	}
+
+	size
+	{
+		start			3  5
+	}
+
+	shaders
+	[
+		rocketchunk3
+	]
+}
+
+Particle
+{
+	name				spark
+
+	count				500
+
+	life				1500
+
+	rotation			0 360
+
+	velocity			10 -100 -100 50 200 200
+
+	gravity				-100 -200
+	
+	alpha
+	{
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			1
+	}
+
+	shaders
+	[
+		spark4
+	]
+}

@@ -1,0 +1,137 @@
+//repeatDelay				300
+
+Particle
+{
+	life				200 250
+
+	rgb
+	{
+		start			0 1 0.251
+	}
+
+	alpha
+	{
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		end				10
+		flags			linear
+	}
+
+	shaders
+	[
+		nogricircle
+	]
+}
+
+Particle
+{
+	life				150
+
+	delay				100
+
+	rgb
+	{
+		start			1 1 0 1 0.7255 0
+	}
+
+	alpha
+	{
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			15
+		flags			linear
+	}
+
+	shaders
+	[
+		spark4
+	]
+}
+
+Particle
+{
+	name				Copy of Unnamed Particle 1
+
+	count				10 15
+
+	life				300
+
+	delay				0 50
+
+	velocity			100 100 100 -100 -100 -100
+
+	rgb
+	{
+		start			0 0.6078 0.1529 1 0.7255 0
+	}
+
+	alpha
+	{
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			5
+		end				0
+		flags			linear
+	}
+
+	shaders
+	[
+		spark4
+	]
+}
+
+Sound
+{
+	sounds
+	[
+		sound/weapons/noghri/impact.mp3
+	]
+}
+// Smoke bolton effect when you hit a ghoul2 model--note this is not an efficient way to do this.
+
+Particle
+{
+	count	3 4
+	life	800	1200
+
+	// this is really NOT a good thing to be doing because it has the potential to choke up the scheduler
+
+	rotation	0	360
+
+	origin		-5 0 -1
+	vel			25 0 0	30 0 0
+	accel		-5 -30 -30	50 0 0
+	gravity		50	200
+	flags		usealpha
+
+	size
+	{
+		start 	18.0	24.0
+		end		0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	1	0.8
+		end 	0.0
+		flags	linear
+	}
+
+	shader
+	[
+		gfx/misc/steam
+	]
+}

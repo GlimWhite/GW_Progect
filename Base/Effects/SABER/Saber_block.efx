@@ -1,0 +1,206 @@
+//Эффект от отражение атаки
+Tail
+{
+	count	15
+	life	400
+	spawnflags 	orgOnSphere 	axisFromSphere
+
+	radius		25
+	vel			150 50 100			-150 -50 100
+	size
+		{
+			start	0.1 0.8
+			end		1	0
+			flags	random
+		}
+	length
+		{
+			start	1
+			end		1 5
+			flags 	random
+		}
+	alpha
+		{
+			start	1.0
+			end		0.0
+			parms	160
+			flags 	nonlinear
+		}
+
+	shader
+		[
+			gfx/effects/sabers/orange_glow
+			gfx/effects/sabers/yellow_glow
+		]
+}
+// Bits that fly up and bounce off of architecture
+Tail
+{
+	count		12
+	life		700	1100
+
+	bounce		0.25	0.8
+
+	vel			-120 -80 -80	250 80 80
+	gravity		-350	-450
+
+	size
+		{
+			start	0.3		0.4
+		}
+	length
+		{
+			start	4	10
+			end		0.1	1.0
+			flags 	linear
+		}
+	shader
+		[
+			sabersparkorange
+		]
+}
+
+Particle
+{
+	count	1
+	life	500
+	vel		8 -12 -12		16 12 12
+	size
+		{
+			start		25
+		}
+	alpha
+		{
+			start		1
+			end 		0.0
+			flags		linear
+		}
+	shader
+		[
+			gfx/misc/steam
+		]
+}
+
+Particle
+{
+	flags				usePhysics
+	spawnFlags			axisFromSphere
+
+	count				12
+
+	life				800
+
+	bounce				0.3
+
+	velocity			45 -180 -80 245 180 120
+
+	gravity				-100 -300
+
+	rgb
+	{
+		start			1 0.4 0 1 1 0.2
+		end				1 0.4 0
+		flags			linear
+	}
+
+	alpha
+	{
+		end				0
+		parm			70 90
+		flags			linear
+	}
+
+	size
+	{
+		start			2 1
+		end				0.2
+		parm			80 90
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/exp01_1
+		gfx/misc/exp01_2
+	]
+}
+
+Particle
+{
+
+	count				3
+
+	life				800 1200
+
+	origin				0 0 0
+
+	velocity			-40 0 0 120 0 0
+
+	gravity				18 32
+
+	alpha
+	{
+		start			0.2
+		end				0
+		parm			10
+		flags			linear
+	}
+
+	size
+	{
+		start			12
+		end				8
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+CameraShake
+{
+	life				125
+
+	intensity			.65 1.25
+
+	radius				200
+}
+
+flash
+{
+	life	100
+	
+	rgb
+	{
+		start		0.0 0.0 0.0
+		end			0.0 0.3 0.2
+		parms		1
+		flags  		wave
+	}
+	alpha
+	{
+		start			0.2
+		end				0
+		flags			linear
+	}
+	shader
+	[
+		gfx/effects/whiteFlash
+	]
+}
+
+Light
+{
+		life		100
+	size
+		{
+			start 	200
+			end		150
+		}
+	rgb
+		{
+			start  	1 1 1
+		}
+}

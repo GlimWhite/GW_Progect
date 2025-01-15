@@ -1,0 +1,123 @@
+// Bowcaster Explosion effect
+Decal
+{
+		life		500
+		
+		rotation	-180 180
+	size
+		{
+			start 		5
+		}
+	shader
+		[
+			bowcastermark
+		]
+}
+
+Decal
+{
+		life		2000
+		
+		rotation	-180 	180
+	size
+		{
+			start 	3
+		}
+	shader
+		[
+			bowcastermarkglow
+		]
+}
+
+OrientedParticle
+{
+	life		350
+
+	origin	3 0 0
+
+	flags	setShaderTime
+
+	rotationDelta -45
+
+	size
+	{
+		start		4.0	14.0
+		end		16.0	30.0
+		flags 		linear
+	}
+
+	shader
+	[
+		GFX/Explosion/Wookie
+	]
+}
+
+//potentially draw one upside down for variation
+OrientedParticle
+{
+	count	0	1
+	life		350
+
+	origin	2 0 0
+
+	flags	setShaderTime
+
+	rotationDelta -45	
+
+	size
+	{
+		start		4.0	14.0
+		end		16.0	30.0
+		flags 		linear
+	}
+
+	shader
+	[
+		GFX/Explosion/Wookie
+	]
+}
+
+CameraShake
+{
+	name				Shake
+
+	flags				usePhysics
+
+	life				500 800
+
+	bounce				0.2 0.5
+
+	radius				50
+}
+
+Sound
+{
+	name				Boom
+
+	sounds
+	[
+		sound/weapons/bowcaster/hit_wall.wav
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		bowcaster/spark
+	]
+}
+
+
+Light
+{
+	size
+	{
+		start 	150
+	}
+
+	rgb
+	{
+		start  0.2 1.0 0.2
+	}
+}

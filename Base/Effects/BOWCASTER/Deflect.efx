@@ -1,0 +1,39 @@
+Sound
+{
+	cullrange			800
+
+	sounds
+	[
+		sound/weapons/bowcaster/bc_ricco.mp3
+	]
+}
+
+ForceFeedback
+{
+	forces
+	[
+		fffx/weapons/saber/saberhitwall2
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		bowcaster/spark
+	]
+}
+
+
+Light
+{
+	size
+	{
+		start 	150
+	}
+
+	rgb
+	{
+		start  0.2 1.0 0.2
+	}
+}

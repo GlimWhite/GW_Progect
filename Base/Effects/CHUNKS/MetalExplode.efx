@@ -1,0 +1,67 @@
+Particle
+{
+	flags				setShaderTime
+
+	life				1200
+
+	origin				-5 -5 -5 5 5 5
+
+	rotation			0 360
+
+	rotationDelta		-1 1
+
+	velocity			-4 -4 -4 4 4 4
+
+	gravity				0 50
+
+	alpha
+	{
+		parm			50 60
+	}
+
+	size
+	{
+		start			6 8
+		end				28 45
+		parm			20 30
+		flags			linear clamp
+	}
+
+	shaders
+	[
+		gfx/explosion/explosion1
+		gfx/explosion/explosion3
+	]
+}
+
+Particle
+{
+	life				1600
+
+	rotation			0 360
+
+	rotationDelta		-4 4
+
+	velocity			-5 -5 -5 5 5 5
+
+	gravity				60 100
+
+	alpha
+	{
+		end				0
+		parm			50 60
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			4 6
+		end				28 40
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}

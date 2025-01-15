@@ -1,0 +1,42 @@
+//#######################################
+//#	ДЫМ ПОСЛЕ ВЫСТРЕЛА: ПЕРЕНАПРАВЛЕННО #
+//#			"Smoke_bolton.efx"			#
+//#######################################
+Particle
+{
+		count			15 25
+		
+		life			1500
+
+		delay			10 150
+		
+		origin			5 0 0
+		
+		rotation		-360 360
+		
+		rotationdelta 	-80 80
+		
+		vel				5 10 0 5 -10 10
+		
+		accel			-5 -5 -5 5 10 10
+		
+		gravity			80 220
+		
+		flags			usealpha
+	size
+		{
+			start 		5
+			end			1
+			flags		linear
+		}
+	alpha
+		{
+			start		0.8 0.6
+			end 		0.0
+			flags		linear
+		}
+	shader
+		[
+			blastersmoke
+		]
+}

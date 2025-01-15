@@ -1,0 +1,89 @@
+//Эффект при атаке
+// Simple muzzle flash effect
+Line
+{
+	life		80
+	origin		0	0	0
+	rotation	0	360
+	width
+		{
+			start 	5 	25
+			end		6.0
+			flags	linear
+		}
+	alpha
+		{
+			start	0.5	0.6
+			end		0.35
+			flags	linear
+		}
+	shader
+		[
+			blasterSideFlash
+		]
+}
+
+Particle
+{
+	life		50
+	origin		0 0 0
+	rotation	0	360
+
+	size
+	{
+		start 	20 	10.5
+		end	7.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.8	1.0
+		end	0.5
+		flags	linear
+	}
+
+	shader
+	[
+		blasterFrontFlash
+	]
+}
+
+Light
+{
+	size
+	{
+		start 	70
+	}
+
+	rgb
+	{
+		start  1.0 0.1 0.1
+	}
+}
+
+
+sound
+{
+	sounds
+	[
+		sound/weapons/blaster/fire.wav
+	]
+}
+
+forcefeedback
+{
+	forces
+	[
+		fffx/weapons/blaster/fire
+	]
+}
+
+CameraShake
+{
+	life				50
+
+	intensity			0.3 0.4
+
+	radius				60
+}

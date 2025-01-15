@@ -1,0 +1,29 @@
+// Large white smoke trail effect, perfect for attaching to an Emitter object
+
+Particle
+{
+	count	10
+	life	600	800
+
+	vel	15 -12 -12		20 12 12
+	gravity	12	32
+
+	size
+	{
+		start 	6.0	14.0
+		end	12.0	24.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.2	0.3
+		end 	0.0
+		flags	linear
+	}
+
+	shader
+	[
+		gfx/misc/steam
+	]
+}

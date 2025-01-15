@@ -1,0 +1,192 @@
+// Simple muzzle flash effect
+
+Line
+{
+	life		10
+	origin2	24 0 0 	30 0 0
+
+	width
+	{
+		start 	5.75 	7.25
+		end		5.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.5	0.6
+		end		0.35
+		flags	linear
+	}
+
+	shader
+	[
+		DisruptorSideFlash
+	]
+}
+
+Particle
+{
+	life	20
+	origin	5 0 0
+	rotation	0	360
+
+	size
+	{
+		start 	9.0 	12.5
+		end		7.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.65	0.8
+		end	0.5
+		flags	linear
+	}
+
+	shader
+	[
+		DisruptorFrontFlash
+	]
+}
+
+Particle
+{
+	count	6
+	life	75 	150
+	origin	5 -1 -1		5 1 1
+
+	rotation	0	360
+	rotationdelta	-6	6
+
+	size
+	{
+		start 	2.0	5.0
+		end	10 20
+		flags	linear
+	}
+
+	rgb
+	{
+		start	0.7 0.3 0.0 	0.6 0.1 0.0
+	}
+
+	alpha
+	{
+		start	0.8
+		end	0.2
+		flags	linear
+	}
+
+	shader
+	[
+		Disruptorflare
+	]
+}
+
+Particle
+{
+	count	3
+	delay 	0	350
+
+	life	550	1100
+
+	origin	5 0 0
+
+	rotation	0	360
+
+	velocity	0 -3	-3 	10 3 3
+
+	gravity		1	60
+
+	size
+	{
+		start 	0.5 	1.0
+		end	2.0	3.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.2	0.3
+		end	0.0
+		flags	linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+Particle
+{
+	count				20
+
+	life				800 1600
+
+	origin				1 -2 -2 2 2 2
+
+	velocity			10 -12 -12 20 12 12
+
+	gravity				8 24
+
+	alpha
+	{
+		start			0.3 0.4
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			6 8
+		end				8 14
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+Light
+{
+	size
+	{
+		start 	300	350
+	}
+
+	rgb
+	{
+		start  1.0 0.7 0.2
+	}
+}
+
+
+sound
+{
+	sounds
+	[
+		sound/weapons/disruptor/fire.wav
+	]
+}
+
+forcefeedback
+{
+	forces
+	[
+		fffx/weapons/disruptor/fire
+	]
+}
+
+CameraShake
+{
+	life				50
+
+	intensity			0.3 0.4
+
+	radius				60
+}

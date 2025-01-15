@@ -1,0 +1,110 @@
+
+Particle
+{
+	count				5 10
+
+	life				15
+
+	velocity			40 0 0 140 0 0
+
+	rgb
+	{
+		start			0.9 0.3 0.1 1 0.8 0.3
+		end				0.4 0.1 0
+		flags			linear
+	}
+
+	size
+	{
+		start			5
+	}
+
+	shaders
+	[
+		flechetteside
+	]
+}
+
+Particle
+{
+	count				5 10
+
+	life				15
+
+	velocity			40 0 0 140 0 0
+
+	rgb
+	{
+		start			0.9 0.3 0.1 1 0.8 0.3
+		flags			linear
+	}
+
+	size
+	{
+		start			5
+	}
+
+	shaders
+	[
+		sparkglow
+	]
+}
+
+Particle
+{
+	count				30
+	
+	life				50 100
+
+	velocity			40 0 0 140 0 0
+
+	alpha
+		{
+			start			0.5
+		}
+	rgb
+		{
+			start			0.9 0.3 0.1 1 0.8 0.3
+			end				0.4 0.1 0
+			flags			linear
+		}
+	size
+		{
+			start			2 6
+		}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		flechette/smoke
+	]
+}
+
+Light
+{
+	size
+		{
+			start 	50
+			end		10
+		}
+	rgb
+	{
+		start			0.9 0.3 0.1 1 0.8 0.3
+		end				0.4 0.1 0
+		flags			linear
+	}
+}
+
+CameraShake
+{
+		life				50
+		intensity			0.2
+		radius				150
+}

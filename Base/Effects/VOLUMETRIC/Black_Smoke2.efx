@@ -1,0 +1,52 @@
+//Эффект дыма на картах 
+Particle
+{
+	flags				useAlpha
+
+	spawnFlags			absoluteVel rgbComponentInterpolation
+
+	count				0	10
+
+	life				5000
+
+	delay				0 300
+
+	origin				0 -32 -32 8 32 32
+
+	rotation			0 360
+
+	rotationDelta		-4 4
+
+	velocity			-40 -10 40 40 10 64
+
+	acceleration		-2 10 10 2 0 0
+
+	gravity				5 20
+
+	rgb
+		{
+			start			0.1529 0.1529 0.1529 0.4667 0.4706 0.3804
+			end				1 1 1 0 0 0
+			flags			linear
+		}
+	alpha
+		{
+			end				0
+			parm			70 85
+			flags			linear nonlinear
+		}
+	size
+		{
+			start			20 40
+			end				170 200
+			parm			80 100
+			flags			linear clamp
+		}
+
+	shaders
+		[
+			big_smoke
+			medium_smoke
+			black_smoke
+		]
+}

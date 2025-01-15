@@ -1,0 +1,88 @@
+repeatDelay				300
+
+Line
+{
+			count			2 4
+
+			life			30
+
+			origin2			34 0 0 50 0 0
+			
+			rotation		-180 180
+
+	alpha
+		{
+			start			0.6 0.8
+			end				0.35
+			flags			linear
+		}
+	size
+		{
+			start			25 30
+			end				10
+			flags			linear
+		}
+	shaders
+		[
+			turretspark
+		]
+}
+
+Particle
+{
+	count				2 3
+
+	life				30
+
+	rotation			0 360
+
+	alpha
+	{
+		start			0.4 0.5
+		end				0.2
+		flags			linear
+	}
+
+	size
+	{
+		start			15 35
+		end				8 12
+		flags			linear
+	}
+
+	shaders
+	[
+		turretflash
+	]
+}
+
+Light
+{
+	rgb
+	{
+		start			1 0.7 0.2
+	}
+
+	size
+	{
+		start			125
+		end				50
+	}
+}
+
+Sound
+{
+	sounds
+	[
+		sound/weapons/eweb/eweb_fire.mp3
+	]
+}
+
+CameraShake
+{
+	life				80
+
+	intensity			0.4 0.6
+
+	radius				160
+}

@@ -1,0 +1,58 @@
+// glowing flesh chunks
+Particle
+	{
+		count		2
+		life		800	1200
+
+		origin		2 -3 -3		2 3 3
+		vel			40 -48 -48		100 48 48
+		gravity		-100	-500
+		bounce		0.3 	1
+	size
+		{
+			start 	0.1	1.3
+			end		0.0
+			parm	80	290
+			flags	nonlinear
+		}
+	rgb
+		{
+			start	1.0 0.4 0.0	1.0 1.0 0.2
+			end		1.0 0.4 0.0
+			flags	linear
+		}
+	shader
+		[
+			saberdamage
+		]
+	}
+	
+// Dark smoke
+Particle
+	{
+		count	10
+		life	800	1200
+
+		origin	2 -3 -3		2 3 3
+		vel	15 -12 -12		20 12 12
+		gravity	32	280
+
+		flags		useAlpha
+	size
+		{
+			start 	2.0	6.0
+			end		6.0	20.0
+			flags	linear
+		}
+	alpha
+		{
+			start	1.0
+			end 	0.0
+			parm	100 100
+			flags	nonlinear
+		}
+	shader
+		[
+			gfx/misc/black_smoke
+		]
+	}

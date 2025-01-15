@@ -1,0 +1,90 @@
+repeatDelay				250
+
+Particle
+{
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	count				10 20
+
+	life				1600 2000
+
+	delay				0 250
+
+	origin				-50 -10 -10 10 10 10
+
+	rotation			0 360
+
+	//rotationDelta		20 -20
+
+	velocity			-20 -80 -80 120 40 40
+
+	gravitation			10	100
+	rgb
+	{
+		start			0 0.6078 0.1529 0 0.349 0.08627
+		end				0 0.349 0.08627 0 0.6078 0.1529
+		flags			linear
+	}
+
+	alpha
+	{
+		start			0.8 0.5
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			20 	30
+		end				0
+		parm			1 0
+		flags			wave
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+Particle
+{
+	name				Copy of Unnamed Particle 0
+
+	//spawnFlags			cheapOrgCalc absoluteVel absoluteAccel evenDistribution rgbComponentInterpolation
+
+	count				60 90
+
+	life				900 1200
+
+	delay				0 300
+
+	rotation			0 360
+
+	//rotationDelta		360 -360
+	
+	origin				-50 0 0
+
+	velocity			-20 -40 -40 40 80 120
+
+	alpha
+	{
+		start			1 0.8
+		end				0
+		parm			1
+		flags			linear
+	}
+
+	size
+	{
+		start			0.5 .55
+		end				1 2
+		parm			0 1
+		flags			wave
+	}
+
+	shaders
+	[
+		spark4
+	]
+}

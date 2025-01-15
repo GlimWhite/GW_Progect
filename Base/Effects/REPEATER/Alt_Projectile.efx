@@ -1,0 +1,101 @@
+Particle
+{
+	rotation			-90 90
+
+	rgb
+		{
+			start			0.3 0.3 1
+		}
+	size
+		{
+			start			26 30
+		}
+	shaders
+		[
+			sparkglow
+		]
+}
+
+Particle
+{
+	rotation			-90 90
+
+	rgb
+		{
+			start			0.15 0.15 0.5
+		}
+	size
+		{
+			start			40 50
+		}
+	shaders
+		[
+			repeaterflare
+		]
+}
+
+Particle
+{
+	name				Copy of Unnamed Particle 1
+
+	count				5
+
+	rotation			-20 20
+
+	size
+		{
+			start			10 20
+		}
+	shaders
+		[
+			lightningflash
+		]
+}
+
+line
+{
+
+	count				5
+
+	life				200
+
+	delay				0	100
+	rotation			0 360
+	
+	origin				-10 -10 0
+	rgb
+		{
+			start			0.15 0.15 0.5
+		}
+	size
+		{
+			start			3
+			end				0
+			flags			liner
+		}
+	shaders
+		[
+			lightningflash
+			sparkglow
+		]
+}
+
+Light
+{
+	size
+		{
+			start 	150
+			end		100
+		}
+	rgb
+		{
+			start  0.15 0.15 0.5
+		}
+}
+
+CameraShake
+{
+		life				100
+		intensity			0.4
+		radius				300
+}

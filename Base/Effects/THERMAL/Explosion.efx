@@ -1,0 +1,114 @@
+Particle
+{
+	name				explosion_cloud
+
+	count				6 8
+
+	life				800 1000
+	spawnflags			rgbComponentInterpolation
+
+	origin				0 0 0 	10 0 0
+
+	rotation			0 360
+
+	rotationDelta		-8 8
+
+	velocity			35 -25 -25 	70 25 25
+
+	rgb
+	{
+		start	1 1 1		1 0.5 0.5
+	}
+
+	alpha
+	{
+		start			0.8	1.0
+		end				0
+		parms			50
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			20 25
+		end				45 60
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/exp02_2
+		gfx/misc/exp02_3
+		effects/fire
+	]
+}
+
+CameraShake
+{
+	name				Shake
+
+	flags				usePhysics
+
+	life				500 800
+
+	bounce				2 4
+
+	radius				300 400
+}
+
+Sound
+{
+	name				Boom
+
+	sounds
+	[
+		sound/weapons/thermal/explode.wav
+	]
+}
+
+Decal
+{
+	rotation	360 -360
+	
+	life		2000
+	
+	size
+		{
+			start 	50 60
+		}
+	shader
+		[
+			tripminemark
+		]
+}
+
+Light
+{
+	name				Flash
+
+	life				250
+
+	size
+	{
+		start			512
+		end				100
+		flags			linear
+	}
+
+	alpha
+	{
+		start			1.0
+		end				0.0
+		flags			linear random
+	}	
+}
+
+FxRunner
+{
+	playfx
+	[
+		thermal/smoke
+	]
+}
+
+

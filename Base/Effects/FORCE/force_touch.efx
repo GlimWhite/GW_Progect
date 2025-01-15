@@ -1,0 +1,62 @@
+// Effect played when trying to distract an enemy
+
+Particle
+{
+	life	350	500
+	count	10	16
+	delay	0	400
+
+	origin	0 -5 -5	15 5 5
+
+	// do some weird motion thing
+	vel	30 -25 -25	50 25 25
+	accel	10 -15 -15		20 15 15
+	gravity	-30	-150
+
+	shaders
+	[
+		gfx/effects/whiteGlow
+	]
+
+	alpha
+	{
+		start	1.0
+		end	0.0
+
+		// being fade when 50/70 percent of life is complete
+		parm	50	70
+		flags	nonlinear
+	}
+
+	rgb
+	{
+		// make blue bits
+		start	0.0 0.4 1.0		0.3 1.0 1.0
+	}
+
+	size
+	{
+		start	0.2	0.3
+		end	0.75	1.5
+		parm	0.01	0.05
+		flags	linear wave
+	}
+}
+
+// Pick a random spark sound
+Sound
+{
+	sounds
+	[
+		sound/weapons/force/distract.wav
+	]
+}
+
+CameraShake
+{
+	life				125
+
+	intensity			0.1 .75
+
+	radius				200
+}

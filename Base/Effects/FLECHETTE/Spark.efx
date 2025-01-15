@@ -1,0 +1,80 @@
+//Попадание по стенам.
+Line
+{
+	count					10
+	flags					usePhysics rgbComponentInterpolation
+	spawnFlags				axisFromSphere
+
+	life					200 300
+	
+	rotation				0	360
+	
+	origin2					12 -10 -10 18 10 10
+	rgb
+	{
+		start				0.9 0.3 0.1 1 0.8 0.3
+		end					0.4 0.1 0
+		flags				linear
+	}
+	length
+		{
+			start			1 2
+			end				0.1
+			flags			linear
+		}
+	size
+		{
+			start			0.15 0.02
+			end				0
+			flags			linear
+		}
+		
+	alpha
+		{
+			start	1.0
+			end 	0.0
+			parm	60 	75
+			flags	nonlinear
+		}
+	shaders
+		[
+			sparkglow
+		]
+}
+
+Particle
+{
+	flags				usePhysics rgbComponentInterpolation
+	count				10
+
+	life				1000
+	
+	velocity			45 -180 -80 245 180 180
+
+	gravity				-350 -450
+	
+	rgb
+	{
+		start			0.9 0.3 0.1 1 0.8 0.3
+		end				0.4 0.1 0
+		flags			linear
+	}
+	alpha
+		{
+			start	1.0
+			end 	0.0
+			parm	60 	75
+			flags	nonlinear
+		}
+	size
+		{
+			start			1
+			end 			0.1
+			flags			linear
+		}
+
+	shaders
+		[
+			sparkglow
+		]
+}

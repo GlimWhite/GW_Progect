@@ -1,0 +1,125 @@
+// Simple emplaced gun effect
+
+Line
+{
+	//origin		 50 0 0
+
+	origin2		-180 0 0
+	size
+		{
+			start	1.2 1.4
+			end		0
+		}
+	width
+		{
+			start	2
+		}
+	alpha
+		{
+			start	0.5 0.3
+			end		0
+		}
+	rgb
+		{
+			start	0.8 0.7 0.0 	1.0 0.7 0.2
+			end		0 	0	0
+		}
+	shader
+		[
+			turretshot
+		]
+}
+// glow
+Line
+{
+	//origin		 0 0 0
+	
+	origin2		-120 0 0
+
+	width
+	{
+		start 	3.0
+	}
+
+	rgb
+	{
+		start	0.8 0.7 0.0 	1.0 0.7 0.2
+		end		0 	0	0
+	}
+
+	shader
+	[
+		sparkglow
+	]
+}
+
+
+// dunno, this looks dumb, but I'm trying to get a bit more beef around the effect and maybe make it not look so much like a dumb line
+particle
+{
+	origin	-0 0 0
+
+	size
+	{
+		start 	2 2.5
+	}
+
+	rgb
+	{
+		start	0.8 0.7 0.0 	1.0 0.7 0.2
+	}
+
+	shader
+	[
+		sparkglow
+	]
+}
+
+line
+{	
+	count		10
+	
+	size
+		{
+			start	10
+			end		0
+		}
+	width
+		{
+			start	2
+		}
+	alpha
+		{
+			start	0.5 0.3
+			end		0
+		}
+	rgb
+		{
+			start	0.8 0.7 0.0 	1.0 0.7 0.2
+			end		0 	0	0
+		}
+	shader
+		[
+			turretshot
+		]
+}
+
+Light
+{
+	size
+		{
+			start 	50
+			end		10
+		}
+	rgb
+		{
+			start	0.8 0.7 0.0 	1.0 0.7 0.2
+		}
+}
+
+CameraShake
+{
+		life				100
+		intensity			0.4
+		radius				120
+}

@@ -1,0 +1,27 @@
+Particle
+{
+	count	1
+	life	120 
+
+	origin		4 -6 -6		4 6 6
+	vel			15 -12 -12		20 12 12
+	gravity		12	32
+
+	size
+	{
+		start 	40.0	20
+		end		55.0	3
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.3	0.4
+		end 	0.0
+		flags	linear
+	}
+	shader
+	[
+		gfx/misc/steam3
+	]
+}

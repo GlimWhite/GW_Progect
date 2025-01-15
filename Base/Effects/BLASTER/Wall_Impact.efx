@@ -1,0 +1,111 @@
+//###########################################
+//#  ИСКРЫ ПОСЛЕ ВЫСТРЕЛА: ПЕРЕНАПРАВЛЕНИЕ	#
+//###########################################
+FxRunner
+{
+	cullrange			1000
+
+	playfx
+	[
+		blaster/spark
+	]
+}
+//###########################################
+//# 		ЭФФЕКТ ОТ ВЫСТРЕЛА: DECALS		#
+//###########################################
+Decal
+{
+	life					2000
+	
+	cullrange				1200
+	
+	rotation				-360 360
+	
+	alpha
+		{
+			end				0
+		}
+	size
+		{
+			start			3.5
+			end				0
+		}
+	shaders
+		[
+			blastermarkdecals
+		]
+}
+
+Decal
+{
+		life 				2000
+		
+		cullrange			1200
+		
+		rotation			-360 360
+	
+	alpha
+		{
+			end				0
+		}	
+	size
+		{
+			start			2
+			end				0
+		}
+	shaders
+		[
+			blastermark
+		]
+}
+
+Decal
+{
+	rotation			-360 360
+	
+	life 				2000
+	
+	cullrange			1200
+	
+	delay				0 50
+	
+	alpha
+		{
+			end				0
+		}
+	size
+		{
+			start			2.5
+			end				0
+		}
+	shaders
+		[
+			burnmark_glow
+		]
+}
+
+//###########################################
+//# 		ЭФФЕКТ ОТ ВЫСТРЕЛА: DECALS		#
+//###########################################
+Sound
+{
+	cullrange			750
+
+	sounds
+	[
+		sound/weapons/blaster/hit_wall.wav
+	]
+}
+
+Light
+{
+	size
+		{
+			start 	50
+			end		10
+		}
+	rgb
+		{
+			start  1.0 0.1 0.1
+		}
+}

@@ -1,0 +1,103 @@
+repeatDelay				200
+
+Particle
+{
+		name				head
+
+		spawnFlags			orgOnSphere rgbComponentInterpolation
+
+		count			 	0 10
+
+		life				2000 3000
+
+		delay				0 300
+
+		origin				0 0 -40
+
+		radius				20 25
+
+		height				40 50
+
+		rotation			88 92
+
+		rotationDelta		-4 4
+
+		gravity				10 80
+	rgb
+		{
+			start			1 0.502 0.502 1 1 1
+			end				0 0 0
+			flags			linear nonlinear
+		}
+	alpha
+		{
+			end				0
+			parm			50
+			flags			linear nonlinear
+		}
+	size
+		{
+			start			5 7
+			end				1 2
+			flags			nonlinear
+		}
+	shaders
+		[
+			gfx/effects/whiteFlare
+		]
+}
+
+Particle
+{
+		name				head
+
+		spawnFlags			orgOnSphere rgbComponentInterpolation
+
+		count			 	0 10
+
+		life				2000 3000
+
+		delay				0 300
+
+		origin				0 0 -40
+
+		radius				15 20
+
+		height				40 50
+
+		rotation			88 92
+
+		rotationDelta		-4 4
+
+		gravity				10 80
+	rgb
+		{
+			start			1 1 1 1 0.0 0.0
+			end				0 0 0
+			flags			linear nonlinear
+		}
+	alpha
+		{
+			end				0
+			parm			50
+			flags			linear nonlinear
+		}
+	size
+		{
+			start			3 5
+			end				2 1
+			flags			nonlinear
+		}
+	shaders
+		[
+			gfx/effects/whiteFlare
+		]
+}
+
+FxRunner
+{
+	playfx
+	[
+		force/heal
+	]
+}

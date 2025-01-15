@@ -1,0 +1,144 @@
+// disruptor flesh impact effect
+
+Particle
+{
+	origin 2 0 0
+
+	life	300	550
+
+	size
+	{
+		start	20	28
+		end	10
+		flags linear
+	}
+
+	rgb
+	{
+		start 1.0 0.3 0.1
+	}
+
+	alpha
+	{
+		start 1.0
+		end 0.0
+		flags linear
+	}
+
+	rotation	-90 90
+
+	shaders
+	[
+		gfx/effects/whiteFlare
+	]
+}
+
+Particle
+{
+	origin 2 0 0
+
+	life 300 500
+
+	size
+	{
+		start	4	6
+	}
+
+	alpha
+	{
+		start 1.0
+		end 0.0
+		flags linear
+	}
+
+	rotation	-90 90
+
+	shaders
+	[
+		gfx/effects/whiteFlare
+	]
+}
+
+// Dark smoke
+Particle
+{
+	count		20	30
+	life		800	1200
+
+	origin		0 -3 -3		0 3 3
+	vel			0 0 0	100 -5 -5
+	gravity		20	40
+
+	flags		alpha
+
+	size
+	{
+		start 		10	1
+		end			5	1
+		flags		linear
+	}
+
+	alpha
+	{
+		start	1.0
+		end 	0.0
+		flags	linear
+	}
+
+	shader
+	[
+		gfx/misc/steam
+	]
+}
+
+Decal
+{
+	life				3000
+	
+	cullrange			1200
+	
+	rotation			0 360
+	
+	size
+		{
+			start			1.5 2
+		}
+	shaders
+		[
+			blastermarkdecals
+		]
+}
+
+Decal
+{
+	rotation			0 360
+	
+	life 				3000
+	
+	cullrange			1200
+	
+	size
+		{
+			start			1
+		}
+	shaders
+		[
+			burnmark_glow
+		]
+}
+
+Sound
+{
+	sounds
+	[
+		sound/weapons/disruptor/hit_wall.wav
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		disruptor/spark
+	]
+}

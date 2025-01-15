@@ -1,0 +1,35 @@
+Particle
+{
+	flags				useAlpha
+
+	count				6 10
+
+	life				800 2500
+
+	delay				0 120
+
+	origin				-4 -6 -6 4 6 6
+
+	velocity			60 -12 -12 90 12 12
+
+	gravity				12 32
+
+	alpha
+	{
+		start			0.75
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			4 10
+		end				12 24
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/black_smoke
+	]
+}

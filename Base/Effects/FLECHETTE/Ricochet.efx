@@ -1,0 +1,57 @@
+Decal
+{
+	cullrange			1000
+
+	size
+	{
+		start			3.5 5
+	}
+
+	shaders
+	[
+		flechettemark
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		flechette/spark
+	]
+}
+
+Sound
+{
+	cullrange			800
+
+	sounds
+	[
+		sound/weapons/flechette/ricochet1.wav
+		sound/weapons/flechette/ricochet2.wav
+	]
+}
+
+ForceFeedback
+{
+	forces
+	[
+		fffx/weapons/flechette/ricochet1
+		fffx/weapons/flechette/ricochet2
+	]
+}
+
+Light
+{
+	size
+		{
+			start 	50
+			end		10
+		}
+	rgb
+	{
+		start			0.9 0.3 0.1 1 0.8 0.3
+		end				0.4 0.1 0
+		flags			linear
+	}
+}

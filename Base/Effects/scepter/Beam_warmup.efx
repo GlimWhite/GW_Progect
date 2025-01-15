@@ -1,0 +1,173 @@
+repeatDelay				300
+
+Line
+{
+	spawnFlags			rgbComponentInterpolation
+
+	life				3000
+
+	origin2				0 -70 0
+
+	rgb
+	{
+		start			1 0.502 0
+	}
+
+	alpha
+	{
+		start			0
+		parm			30
+		flags			random linear clamp
+	}
+
+	size
+	{
+		start			-4
+		end				-8
+		parm			10 15
+		flags			random wave
+	}
+
+	shaders
+	[
+		bryarSideFlash
+	]
+}
+
+Light
+{
+	life				3000
+
+	rgb
+	{
+		start			1 0.302 0 1 0.6118 0.4235
+		flags			random linear
+	}
+
+	size
+	{
+		start			100 150
+		flags			random linear
+	}
+}
+
+Particle
+{
+	name				Copy of Unnamed Particle 1
+
+	spawnFlags			rgbComponentInterpolation
+
+	life				3000
+
+	origin				0 -40 0
+
+	rotation			0 360
+
+	rotationDelta		50
+
+	rgb
+	{
+		start			0.502 0 0.2235
+		end				0
+	}
+
+	alpha
+	{
+		start			0
+		end				0.7 0.75
+		parm			30
+		flags			random linear clamp
+	}
+
+	size
+	{
+		start			30
+	}
+
+	shaders
+	[
+		scepter_flare
+	]
+}
+
+Line
+{
+	name				Copy of Unnamed Line 0
+
+	spawnFlags			rgbComponentInterpolation
+
+	life				3000
+
+	origin2				0 -100 0
+
+	rgb
+	{
+		start			1 0 0
+	}
+
+	alpha
+	{
+		start			0
+		end				0.6
+		parm			30
+		flags			random linear clamp
+	}
+
+	size
+	{
+		start			8
+		end				12
+		parm			100 150
+		flags			random wave
+	}
+
+	shaders
+	[
+		bryarSideFlash
+	]
+}
+
+Particle
+{
+	name					Copy of Unnamed Particle 1
+
+	spawnFlags				rgbComponentInterpolation
+
+	life					3000
+
+	origin					0 -30 0
+
+	rotation				0 360
+
+	rotationDelta			40
+
+	rgb
+		{
+			start			1 0.7765 0
+			end				1 0.9373 0.502
+			flags			linear
+		}
+	alpha
+		{
+			start			0
+			parm			30
+			flags			linear clamp
+		}
+	size
+		{
+			start			30
+			end				0
+			flags			random
+		}
+	shaders
+		[
+			lightningFlash
+		]
+}
+
+CameraShake
+{
+		life				120
+		intensity			0.4
+		radius				1200
+}

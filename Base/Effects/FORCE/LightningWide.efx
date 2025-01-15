@@ -1,0 +1,86 @@
+//Способность молнии длиные и широкие
+repeatDelay				300
+
+Electricity
+{
+	flags				useModel useBBox usePhysics deathFx
+
+	count				15 30
+
+	bounce				0.8 5
+	life				50 60
+	origin2				400 -700 -20 500 700 20
+
+	alpha
+		{
+			start			0.5 1
+		}
+	size
+		{
+			start			1 10
+			flags			linear
+		}
+	shaders
+		[
+			lightning
+		]
+}
+
+Particle
+{
+	count			2 8
+	
+	size
+		{
+			start			4 10
+			flags			random
+		}
+	shaders
+		[
+			lightningFlash
+		]
+}
+
+CameraShake
+{
+	life				125
+
+	intensity			0.1 .3
+
+	radius				200
+}
+
+Light
+{
+	life				100
+
+	rgb
+	{
+		start			0.2 0.2 1 0.6 0.6 1
+		end				0 0 0
+	}
+
+	size
+	{
+		start			150
+		end				0
+		flags			linear
+	}
+}
+
+flash
+{
+	life	100
+	rgb
+	{
+		start		0.0    0.0  0.0
+		end			0.6 	0.6  1
+		parms		0.5
+		flags  		wave
+	}
+
+	shader
+	[
+		gfx/effects/whiteFlash
+	]
+}

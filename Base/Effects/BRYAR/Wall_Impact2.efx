@@ -1,0 +1,142 @@
+// Simple blaster impact effect
+
+// Directed spark explosion effect
+
+// Mini-explosion made out of a couple of lines
+Tail
+{
+		count	30 45
+		
+		life	700	1100
+
+		bounce	0.25	0.4
+
+		vel		180 -150 -150	300 150 150
+		
+		gravity	-550	-650
+	size
+		{
+			start	0.3	0.45
+		}
+	length
+		{
+			start	4.0	10.0
+			end	0.1	1.0
+			flags 	linear
+		}
+	shader
+		[
+			spark
+		]
+}
+
+OrientedParticle
+{
+	life	450
+
+	rgb
+	{
+		start 1.0 0.9 0.0
+		end   1.0 0.0 0.0
+		flags linear
+	}
+
+	size
+	{
+		start	4.0
+	}
+
+	alpha
+	{
+		end 0.0
+		flags linear
+	}
+
+	shader
+	[
+		sparkglow
+	]
+}
+//#######################################
+//#	  СЛЕДЫ НА СТЕНАХ ПОСЛЕ ВЫСТРЕЛА	#
+//#######################################
+Decal
+{
+		rotation		360	-360
+		
+		life			2000
+		
+		count			1
+	size
+	{
+		start 			3.2
+	}
+
+	shader
+	[
+		bryarmark
+	]
+}
+
+Decal
+{
+		rotation		360	-360
+		
+		life			2000
+		
+		count			1
+	size
+		{
+			start 		2
+		}
+
+	shader
+	[
+		bryarmarkglow
+	]
+}
+
+
+Decal
+{
+	rotation			-360 360
+	
+	life 				2000
+	
+	cullrange			1200
+	
+	delay				0 50
+	
+	alpha
+		{
+			end				0
+		}
+	size
+		{
+			start			3
+			end				0
+		}
+	shaders
+		[
+			burnmark_glow
+		]
+}
+
+Sound
+{
+	sounds
+	[
+		sound/weapons/bryar/hit_wall.wav
+	]
+}
+
+FxRunner
+{
+	cullrange			1000
+
+	playfx
+	[
+		bryar/spark
+		bryar/smoke
+	]
+}

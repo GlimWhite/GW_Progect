@@ -1,0 +1,162 @@
+repeatDelay				300
+
+Particle
+{
+		name				spark1
+		
+		flags				usePhysics
+
+		count				15 20
+
+		life				1100 1000
+
+		origin				2 -3 -3 2 3 3
+
+		velocity			40 -48 -48 100 48 48
+
+		gravity				-100 -300
+	rgb
+		{
+			start			1 0.4 0 1 1 0.2
+			end				1 0.4 0
+			flags			linear
+		}
+	size
+		{
+			start			0.5 1
+			flags			nonlinear
+		}
+
+	shaders
+	[
+		spark4
+		sparkglow
+	]
+}
+
+Tail
+{
+		name				spark2
+		
+		count				30
+			
+		life				400
+
+		velocity			-150 -180 -80 50 80 80
+
+		gravity				-300 -400
+
+	rgb
+		{
+			start			1 0.4 0 1 1 0.2
+		}
+	size
+		{
+			start			0.7
+			end				0
+			flags			linear
+		}
+	length
+		{
+			start			8
+			flags			linear nonlinear
+		}
+	shaders
+		[
+			sparkglow
+		]
+}
+
+Particle
+{
+		name				smoke
+		
+		flags				useAlpha
+
+		count				1 15
+
+		life				1200 1500
+
+		origin				2 -3 -3 2 3 3
+
+		velocity			15 -12 -12 40 12 12
+
+		gravity				1 50
+	alpha
+		{
+			start			0.5
+			end				0
+			parm			50 75
+			flags			nonlinear
+		}
+	size
+		{
+			start			20 15
+			end				0
+			flags			linear
+		}
+
+	shaders
+		[
+			sceptersmoke
+		]
+}
+
+Decal
+{
+		life				2000
+
+		count				1
+		
+		rotation			-360 360
+	alpha
+		{
+			start			0.5
+		}
+	size
+		{
+			start			7
+		}
+	shaders
+		[
+			Sceptermarkdecals
+		]
+}
+
+Decal
+{
+		life				2000
+		
+		rotation			-360 360
+		
+		count				1
+	rgb
+		{
+			start			1 1 1 1 0.5 0.5
+		}
+	alpha
+		{
+			start			0.5
+		}
+	size
+		{
+			start			6.5
+		}
+	shaders
+		[
+			Sceptermarkglow
+		]
+
+}
+
+
+
+Sound
+{
+	sounds
+	[
+		sound/effects/green_lightning1.mp3
+		sound/effects/green_lightning2.mp3
+		sound/effects/green_lightning3.mp3
+	]
+}

@@ -1,0 +1,11 @@
+// Simple blaster effect
+
+FxRunner
+{
+	cullrange			1000
+
+	playfx
+	[
+		blaster/shot
+	]
+}

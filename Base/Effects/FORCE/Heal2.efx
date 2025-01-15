@@ -1,0 +1,101 @@
+//Способность исцеления
+repeatDelay					100
+
+Particle
+{
+	name					lightpuff
+	
+	delay					0 700
+	
+	count					5
+	
+	life					300 300
+	
+	rotation				0 360
+	
+	rotationDelta			-10 10
+	rgb
+		{
+			start			0 1 1 0 0 1
+			end				0 0 1
+			parm			1
+			flags			linear
+		}
+	alpha
+		{
+			start			0
+			end				0.3
+			parm			3
+			flags			linear
+		}
+	size
+		{
+			start			0
+			end				50
+			parm			1
+			flags			linear
+		}
+	shaders
+		[
+			caustic2
+		]
+}
+
+Particle
+{	
+	name					caustic
+	spawnFlags				evenDistribution
+	
+	count					1
+	
+	life					500 400
+	
+	delay					0 300
+	
+	rotation				0 360
+
+	rotationDelta			1 -1
+	
+	rgb
+		{
+			start			0 0 1 0 1 1
+			end				0.4745 0.6588 1 1 1 1
+			parm			1
+			flags			linear
+		}
+	alpha
+		{
+			start			0
+			end				0.3
+			parm			1
+			flags			linear
+		}
+	size
+		{
+			start			55
+			end				0
+			parm			1
+			flags			linear
+		}
+	shaders
+		[
+			caustic1
+		]
+}
+
+Light
+{
+	life		1000
+	
+	origin
+	
+	size
+		{
+			start 	500
+			end		10
+		}
+	rgb
+		{
+			start  0.4745 0.6588 1
+		}
+}

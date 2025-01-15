@@ -1,0 +1,74 @@
+//Оружие Боба-Фета огненый
+repeatDelay				120
+
+Particle
+{
+	flags					usePhysics
+
+	spawnFlags				evenDistribution rgbComponentInterpolation
+
+	count					20
+
+	life					1000
+
+	delay					0 300
+
+	origin					-1 -1 -1 1 1 1
+
+	rotation				0 360
+
+	rotationDelta			-120 120
+
+	velocity				-100 -5 -5 -150 5 5
+
+	acceleration			10 -10 -10 40 10 10
+
+	rgb
+		{
+			start			0 0 0.7333 0.1255 0.1255 1
+			end				1 1 1 0.9569 0.702 0.4667
+			parm			35 45
+			flags			nonlinear
+		}
+	alpha
+		{
+			end				0
+			parm			60 75
+			flags			linear nonlinear
+		}
+	size
+		{
+			start			1	
+			end				40 50
+			parm			0 1
+			flags			wave
+		}
+	shaders
+		[
+			boba_fire_radial
+			boba_fire
+		]
+}
+
+
+CameraShake
+{
+		life				50
+		intensity			0.2
+		radius				3000
+}
+
+Light
+{
+
+	repeatDelay				1
+	size
+		{
+			start 	150
+			end		500
+		}
+	rgb
+		{
+			start  1.0 0.5 0
+		}
+}

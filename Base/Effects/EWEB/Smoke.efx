@@ -1,0 +1,36 @@
+// Smoke bolton effect when you hit a ghoul2 model--note this is not an efficient way to do this.
+
+Particle
+{
+	life				1200
+	
+	count				5
+	
+	flags				useAlpha
+
+	cullrange			550
+
+	velocity			15 60 15 -6 -60 -6
+
+	gravity				6 12
+
+	alpha
+	{
+		start			0.3
+		end				0.2
+		flags			nonlinear
+	}
+
+	size
+	{
+		start			25 20
+		end				10 12
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+

@@ -1,0 +1,30 @@
+// Large black smoke effect, should be called about once every 100ms
+Particle
+{
+	count	2
+	life	1500
+	delay	0	120
+
+	origin		4  -6 -6	 4  6  6
+	vel			150 -12 -12		-120 12 12
+	gravity	    50  150
+
+	flags	useAlpha
+
+	size
+		{
+			start 	10 30
+			end		15 0
+			flags	linear
+	}
+	alpha
+		{
+			start	0.6
+			end 	0.0
+			flags	linear
+		}
+	shader
+		[
+			gfx/misc/black_smoke
+		]
+}

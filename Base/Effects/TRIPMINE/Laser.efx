@@ -1,0 +1,121 @@
+// 
+// glow
+Line
+{
+			life		100
+			
+			name			line1
+
+			spawnflags		cheapOrg2Calc
+	
+			origin			-5 0 0
+	
+	size
+		{
+			start	4.5
+		}
+	rgb
+		{
+			start 0.0 0.0 0.12
+		}
+	shaders
+		[
+			whiteline
+		]
+}
+// hotter core
+Line
+{
+		life		100
+	
+		name	line2
+
+		spawnflags	cheapOrg2Calc
+
+	size
+	{
+		start	0.25
+	}
+
+	rgb
+	{
+		start 0.7 0.7 0.7
+	}
+
+	shaders
+	[
+		whiteline
+	]
+}
+
+// blue glow
+Particle
+{
+		life		100
+		origin		1 0 0
+	size
+	{
+		start		2.5
+	}
+	
+	rgb
+	{
+		start 			0.0	0.1	0.5	
+	}
+
+	rotation			0 360
+
+
+	shaders
+	[
+		sparkglow
+	]
+}
+
+// whiter core
+Particle
+{
+	life		100
+	origin		1 0 0
+	size
+	{
+		start	2
+	}
+	
+	alpha
+	{
+		start 0.1	0.4
+	}
+
+	rotation	0 360
+
+
+	shaders
+	[
+		sparkglow
+	]
+}
+
+
+Light
+{
+	flags				alpha
+	size
+		{
+			start 		40
+			flags  		wave 
+		}
+	rgb
+		{
+			start  		0.2 0.2 1
+			parms		5.5
+			flags  		wave 
+		}
+}
+
+CameraShake
+{
+		life				100
+		intensity			0.05
+		radius				100
+}

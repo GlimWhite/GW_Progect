@@ -1,0 +1,107 @@
+// Smoke bolton effect when you hit a ghoul2 model--note this is not an efficient way to do this.
+
+Particle
+{
+	life				1200
+	
+	flags				useAlpha
+
+	cullrange			250
+
+	velocity			8 -6 -6 8 6 6
+
+	gravity				6 12
+
+	alpha
+	{
+		start			1
+		end				0.2
+			parm	60 	75
+			flags	nonlinear
+	}
+
+	size
+	{
+		start			200	100
+		end				60 120
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+//Попадание по стенам.
+Line
+{
+	count					50
+	flags					usePhysics
+	spawnFlags				axisFromSphere
+
+	life					100 200
+	rotation				0	360
+	origin2					12 -10 -10 18 10 10
+
+	length
+		{
+			start			4 10
+			end				0.1 1
+			flags			linear
+		}
+	size
+		{
+			start			0.15 0.02
+			end				0
+			flags			linear
+		}
+		
+	alpha
+		{
+			start	1.0
+			end 	0.0
+			parm	60 	75
+			flags	nonlinear
+		}
+	shaders
+		[
+			spark
+		]
+}
+
+Particle
+{
+	flags				usePhysics
+	spawnFlags			axisFromSphere
+	count				400
+
+	life				1000
+
+	bounce				0.35
+	
+	velocity			45 -180 -80 245 180 120
+
+	gravity				-350 -450
+
+	alpha
+		{
+			start	1.0
+			end 	0.0
+			parm	60 	75
+			flags	nonlinear
+		}
+	size
+		{
+			start			1
+			end 			0.1
+			flags			linear
+		}
+
+	shaders
+		[
+			spark4
+			spark
+		]
+}
+

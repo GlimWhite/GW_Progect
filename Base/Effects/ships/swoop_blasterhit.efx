@@ -1,0 +1,21 @@
+repeatDelay				300
+
+FxRunner
+{
+	cullrange			1000
+
+	playfx
+	[
+		blaster/spark
+	]
+}
+
+Sound
+{
+	cullrange			750
+
+	sounds
+	[
+		sound/vehicles/weapons/swoop_laser/impact.mp3
+	]
+}

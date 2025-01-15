@@ -1,0 +1,164 @@
+repeatDelay				300
+//#######################################
+//#		   Эффекты меча ситхов			#
+//#######################################
+Electricity
+{
+		name				LineFFx//[Линия меча]
+		
+		flags				useModel
+
+		count				10 20
+
+		life				250 350
+
+		delay				0 300
+
+		intensity			0.5 2
+				
+		origin2				0 0 0 0 -60 -60
+	rgb
+		{
+			start			1 0 0
+			end				1 0 0
+		}
+	size
+		{
+			start			1
+			flags			linear
+		}
+
+	shaders
+	[
+		Lightning
+	]
+}
+
+Electricity
+{
+		name				LineFFx//[Линия меча]
+		
+		flags				useModel
+
+		count				10 20
+
+		life				250 350
+
+		delay				0 300
+
+		intensity			0.5 2
+				
+		origin2				0 0 0 -60 -60 0
+	rgb
+		{
+			start			1 0 0
+			end				1 0 0
+		}
+	size
+		{
+			start			1
+			flags			linear
+		}
+
+	shaders
+	[
+		Lightning
+	]
+}
+
+Electricity
+{
+		name				LineFFx//[Линия меча]
+		
+		flags				useModel
+
+		count				10 20
+
+		life				250 350
+
+		delay				0 300
+
+		intensity			0.5 2
+				
+		origin2				0 0 0 60 -60 0
+	rgb
+		{
+			start			1 0.1 0.1
+			end				1 0.0 0.0
+		}
+	length
+		{
+			start	4.0	10.0
+			end	0.1	1.0
+			flags 	linear
+		}
+	size
+		{
+			start			1
+			flags			linear
+		}
+
+	shaders
+	[
+		Lightning
+	]
+}
+
+Electricity
+{
+		name				LineFFx//[Линия меча]
+		
+		flags				useModel
+
+		count				10 20
+
+		life				250 350
+
+		delay				0 300
+
+		intensity			0.5 2
+				
+		origin2				0 0 0 0 -60 60
+	rgb
+		{
+			start			1 0 0
+			end				1 0 0
+		}
+	size
+		{
+			start			1
+			flags			linear
+		}
+
+	shaders
+	[
+		Lightning
+	]
+}
+
+Particle
+{
+		life				250 350
+
+		rotation			0 360
+		
+		rotationdelta		-8 -8
+		
+		origin				1 3 -2
+	rgb
+		{
+			start			1 0 0
+			end				0.502 0 0
+		}
+	size
+		{
+			start			20
+			end				8 10
+			flags			random linear
+		}
+	shaders
+		[
+			lightningFlash
+		]
+}
+

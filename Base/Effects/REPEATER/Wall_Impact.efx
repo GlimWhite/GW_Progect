@@ -1,0 +1,115 @@
+Decal
+{
+	life				2000
+	
+	cullrange			1200
+	
+	rotation			0 360
+	
+	size
+		{
+			start			5 7.5
+		}
+	shaders
+		[
+			repeatermark
+		]
+}
+
+OrientedParticle
+{
+	life				300 400
+
+	cullrange			1200
+
+	alpha
+		{
+			start			1
+			end				0
+			flags			linear
+		}
+
+	size
+		{
+			start			1.2 2
+			end				8
+			flags			linear
+		}
+
+	shaders
+		[
+			repeaterspark
+		]
+}
+
+OrientedParticle
+{
+	life				300 400
+
+	cullrange			1000
+
+	alpha
+	{
+		start			0.2 0.3
+		end				0
+		flags			random linear
+	}
+
+	size
+	{
+		start			5 7
+		end				21
+		flags			linear
+	}
+
+	shaders
+	[
+		spark4
+	]
+}
+
+OrientedParticle
+{
+	count				1 2
+
+	life				300 400
+
+	cullrange			1200
+
+	rotation			0 360
+
+	alpha
+	{
+		start			0.1 0.2
+		end				0.1
+		flags			linear
+	}
+
+	size
+	{
+		start			7 12
+	}
+
+	shaders
+	[
+		repeaterflare
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		repeater/smoke
+	]
+}
+
+Sound
+{
+	cullrange			1200
+
+	sounds
+	[
+		sound/weapons/repeater/hit_wall.wav
+	]
+}

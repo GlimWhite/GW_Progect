@@ -1,0 +1,152 @@
+Particle
+{
+	name				explosion_cloud
+
+	spawnFlags			rgbComponentInterpolation
+
+	count				15
+
+	life				600 1300
+
+	origin				-10 -10 -10 10 10 10
+
+	rotation			0 360
+
+	rotationDelta		-8 8
+
+	velocity			30 -25 -25 65 25 25
+
+	alpha
+	{
+		start			0.8 1
+		end				0
+		parm			50
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			30
+		end				55 80
+		parm			30 40
+		flags			linear clamp
+	}
+
+	shaders
+	[
+		gfx/misc/exp01_1
+		gfx/misc/exp02_2
+		gfx/misc/exp02_3
+	]
+}
+
+Particle
+{
+	name				Copy of explosion_cloud
+
+	flags				setShaderTime
+
+	spawnFlags			rgbComponentInterpolation
+
+	count				20
+
+	life				1300
+
+	origin				0 -6 -6 10 6 6
+
+	rotation			0 360
+
+	rotationDelta		-3 3
+
+	velocity			40 -10 -10 50 10 10
+
+	alpha
+	{
+		start			0.8 1
+		end				0
+		parm			50
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			2 3
+		end				65
+		parm			30 40
+		flags			linear clamp
+	}
+
+	shaders
+	[
+		gfx/explosion/rocket_explosion
+	]
+}
+
+Decal
+{
+	rotation			-180 180
+	
+	life				2000
+
+	size
+	{
+		start			32 40
+	}
+
+	shaders
+	[
+		tripminemark
+	]
+}
+
+
+Light
+{
+	name				Flash
+
+	life				100
+
+	alpha
+	{
+		end				0
+		flags			random linear
+	}
+
+	size
+	{
+		start			412
+		end				100
+		flags			linear
+	}
+}
+
+CameraShake
+{
+	name				Shake
+
+	flags				usePhysics
+
+	life				500 800
+
+	bounce				2 3
+
+	radius				300
+}
+
+Sound
+{
+	name				Boom
+
+	sounds
+	[
+		sound/weapons/thermal/explode.wav
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		tripmine/spark
+	]
+}

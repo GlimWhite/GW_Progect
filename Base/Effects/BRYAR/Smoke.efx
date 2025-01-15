@@ -1,0 +1,91 @@
+//#######################################
+//#	ДЫМ ПОСЛЕ ВЫСТРЕЛА: ПЕРЕНАПРАВЛЕННО #
+//#			"Smoke_bolton.efx"			#
+//#######################################
+Particle
+{
+		count			10 15
+		
+		life			1500
+
+		delay			10 150
+		
+		origin			5 0 0
+		
+		rotation		-360 360
+		
+		rotationdelta 	-8 8
+				
+		accel			0 0 0 0 12 -12
+		
+		gravity			20 60
+		
+		spawnFlags			rgbComponentInterpolation
+		
+		flags			alpha
+	rgb
+		{
+			start		1 1 1
+			end			0 0 0
+		}		
+	size
+		{
+			start 		10 15
+			end			1
+			flags		linear
+		}
+	alpha
+		{
+			start		0.1 0.05
+			end 		0.0
+			flags		linear
+		}
+	shader
+		[
+			bryarsmoke
+		]
+}
+
+Particle
+{
+		count			10 15
+		
+		life			1500
+
+		delay			10 150
+		
+		origin			10 0 0
+		
+		rotation		-360 360
+		
+		rotationdelta 	-8 8
+				
+		accel			10 0 0 10 50 50
+		
+		gravity			40 120
+		
+		spawnFlags			rgbComponentInterpolation
+		
+		flags			alpha
+	rgb
+		{
+			start		0.5 0.5 0.5
+			end			0 0 0
+		}
+	size
+		{
+			start 		15 18
+			end			1
+			flags		linear
+		}
+	alpha
+		{
+			start		0.1 0.05
+			end 		0.0
+			flags		linear
+		}
+	shader
+		[
+			bryarsmoke
+		]
+}

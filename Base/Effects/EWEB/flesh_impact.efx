@@ -1,0 +1,78 @@
+repeatDelay				300
+
+Line
+{
+	count				40 80
+
+	life				100 200
+
+	origin2				16 -20 -20 24 10 10
+
+	alpha
+	{
+		start			0.25
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			0.4 0.8
+	}
+
+	shaders
+	[
+		spark
+		spark3
+	]
+}
+
+Tail
+{
+	flags				usePhysics
+
+	count				60 100
+
+	life				700 1100
+
+	cullrange			900
+
+	bounce				0.25 0.5
+
+	velocity			120 -110 -110 280 110 110
+
+	gravity				-450 -650
+
+	size
+	{
+		start			0.4 0.8
+	}
+
+	length
+	{
+		start			8 14
+		end				0.1 1
+		flags			linear
+	}
+
+	shaders
+	[
+		spark
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+					eweb/smoke
+	]
+}
+
+Sound
+{
+	sounds
+	[
+		sound/weapons/eweb/eweb_hitplayer.mp3
+	]
+}

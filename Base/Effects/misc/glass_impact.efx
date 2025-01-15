@@ -1,0 +1,40 @@
+// Used by the glass effect
+sound
+{
+	sounds
+	[
+		sound/effects/glass_tumble.wav
+		sound/effects/glass_tumble2.wav
+		sound/effects/glass_tumble3.wav
+	]
+}
+
+Particle
+{
+	count	4
+	life	3000
+
+	vel	100 -110 -110	200 110 110
+	gravity	-500	-550
+
+	bounce	0.1	0.3
+
+	size
+	{
+		start 	1.0	3.0
+	}
+
+	alpha
+	{
+		start	0.2
+		end 	0.0
+		parms	90
+		flags	nonlinear
+	}
+
+	shader
+	[
+		gfx/misc/smallGlassChunk1
+		gfx/misc/smallGlassChunk2
+	]
+}

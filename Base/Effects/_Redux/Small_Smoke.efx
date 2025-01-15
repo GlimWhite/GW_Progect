@@ -1,0 +1,50 @@
+Particle
+{
+	name					Smoke
+
+	flags					useAlpha
+	
+	spawnFlags				evenDistribution rgbComponentInterpolation
+
+	life					1800 2200
+
+	delay					0 200
+
+	cullrange				2000
+
+	origin					0 -3 -3 0 3 3
+
+	velocity				5 0 0 10 0 0
+
+	acceleration			0 -10 -10 0 10 10
+
+	gravity					20 30
+	
+	count					10
+
+	rgb
+		{
+			start			0.9961 0.9882 0.6471 
+			end				0 0 0
+			flags			linear
+		}
+	alpha
+		{
+			end				0
+			parm			80
+			flags			linear nonlinear
+		}
+	size
+		{
+			start			10 12
+			end				3 4
+			flags			linear clamp
+		}
+	shaders
+		[
+			gfx/effects/alpha_smoke
+			gfx/effects/alpha_smoke2
+			black_smoke
+		]
+}
+

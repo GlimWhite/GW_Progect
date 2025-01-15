@@ -1,0 +1,146 @@
+repeatDelay				300
+
+Line
+{
+		count				4 8
+
+		life				100 200
+
+		origin2				0 -10 -10 0 10 10
+
+	alpha
+		{
+			start			0.25 1
+			end				0
+			flags			linear
+		}
+	size
+		{
+			start			0.4 0.8
+		}
+	shaders
+		[
+			spark
+			spark2
+		]
+}
+
+Tail
+{
+		flags				usePhysics
+
+		count				60 100
+
+		life				500 700
+
+		cullrange			900
+
+		velocity			60 -55 -55 120 155 155
+
+		gravity				-450 -650
+
+	size
+		{
+			start			0.5 0.9
+		}
+
+	length
+		{
+			start			4
+			end				0.1 1
+			flags			linear
+		}
+	shaders
+		[
+			gfx/misc/spark
+		]
+}
+
+Particle
+{
+		count				15 25
+		
+		flags				alpha
+		
+		life				900 1000
+
+		velocity			-102 -102 -102 26 120 26
+
+		gravity				12 24
+
+	alpha
+	{
+		start			0.6
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			16 32
+		end				32 44
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+	]
+}
+
+Decal
+{
+		spawnFlags			rgbComponentInterpolation
+		
+		rotation			-180 180
+		
+		life				2000
+	size
+		{
+			start			8 10
+			end				0
+			parm	1
+		}
+	rgb
+		{
+			start	0.7 0.7 0.7
+			end		0	0	0
+		}
+	shaders
+		[
+			turretmark
+			
+		]
+}
+
+Decal
+{
+		spawnFlags			rgbComponentInterpolation
+		
+		rotation			-360 360
+				
+		life				1800
+	size
+		{
+			start			4 6
+		}
+	rgb
+		{
+			start	0.7 0.7 0.7
+			end		0	0	0
+			parm	1
+		}
+	shaders
+		[
+			turretburnmark
+			
+		]
+}
+
+Sound
+{
+	sounds
+	[
+		sound/weapons/eweb/eweb_hitsurface.mp3
+	]
+}

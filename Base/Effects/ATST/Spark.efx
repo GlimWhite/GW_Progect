@@ -1,0 +1,92 @@
+
+Line
+{
+	count					300
+	flags					usePhysics
+	spawnFlags				axisFromSphere
+
+	life					100 200
+	rotation				0	360
+	origin2					12 -10 -10 18 10 10
+
+	length
+		{
+			start			8 16
+			end				0.1 1
+			flags			linear
+		}
+	size
+		{
+			start			0.17 0.04
+			end				0
+			flags			linear
+		}
+	shaders
+		[
+			spark
+		]
+}
+
+Decal
+{
+	size
+		{
+			start			10
+		}
+	shaders
+		[
+			burnmark_glow
+		]
+}
+Decal
+{
+	size
+		{
+			start			9
+		}
+	shaders
+		[
+			burnmark
+		]
+}
+
+
+Tail
+{
+	flags				usePhysics
+	spawnFlags			axisFromSphere
+	count				200
+
+	life				800
+
+	bounce				0.5
+
+	velocity			45 -180 -80 120 180 80
+
+	gravity				-350 -450
+
+	size
+		{
+			start			1 1
+		}
+	length
+		{
+			start			4 10
+			end				0.1 1
+			flags			linear
+		}
+	shaders
+		[
+			spark4
+			spark
+		]
+}
+
+FxRunner
+{
+	playfx
+	[
+		blaster/smoke_bolton
+		_redux/small_smoke
+	]
+}

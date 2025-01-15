@@ -1,0 +1,209 @@
+Particle
+{
+	name				OrangeGlow
+
+	count				20
+
+	life				1200 1500
+
+	origin				-5 0 0 15 0 0
+
+	rotation			0 360
+
+	rotationDelta		-4 4
+
+	velocity			5 -10 0 50 10 0
+
+	alpha
+	{
+		end				0
+		parm			60 75
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			45 50
+		end				60 70
+		parm			5 25
+		flags			linear clamp
+	}
+
+	shaders
+	[
+		gfx/misc/exp02_1
+		gfx/misc/exp02_2
+		gfx/misc/exp02_3
+	]
+}
+// ИСКРЫ ПРИ ВЗРЫВЕ
+Tail
+{
+	spawnFlags			cheapOrgCalc orgOnSphere axisFromSphere rgbComponentInterpolation
+
+	count				150
+
+	life				300 500
+
+	cullrange			500
+
+	origin				0 0 10
+
+	radius				15
+
+	height				20
+
+	velocity			150 0 0 250 0 0
+
+	rgb
+	{
+		start			1 0.7 0.5 1 1 1
+	}
+
+	alpha
+	{
+		start			0.8
+		end				0
+		parm			50 60
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			1
+		end				0.5
+		flags			linear
+	}
+
+	length
+	{
+		start			20 35
+		end				0
+		parm			70 80
+		flags			linear nonlinear
+	}
+
+	shaders
+	[
+		gfx/effects/whiteFlare
+	]
+}
+
+//ОБЪЕМНЫЙ ВЗРЫВ ОГНЯ
+Particle
+{
+	count				5
+	
+	name				Copy of explosion_cloud
+
+	spawnFlags			rgbComponentInterpolation
+
+	life				450
+
+	origin				0 -5 -5 5 5 5
+
+	rotation			0 360
+
+	rotationDelta		-8 8
+
+	velocity			5 -15 -15 40 15 15
+
+	rgb
+	{
+		start			1 0.7 0.5 1 1 1
+	}
+
+	alpha
+	{
+		start			0.5
+		end				0
+		parm			10
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		end				120
+		parm			30
+		flags			linear clamp
+	}
+
+	shaders
+	[
+		gfx/effects/whiteFlare
+	]
+}
+
+Decal
+{
+	count				1
+
+	life				1800
+	
+	rotation			0 360
+
+	size
+	{
+		start			50 60
+	}
+	alpha
+	{
+
+		end				0
+	}
+	shaders
+	[
+		detpackmark
+	]
+}
+
+Light
+{
+	name				Flash
+
+	life				250
+
+	alpha
+	{
+		end				0
+		flags			random linear
+	}
+
+	size
+	{
+		start			120
+		end				10
+		flags			linear
+	}
+}
+
+CameraShake
+{
+	name				Shake
+
+	flags				usePhysics
+
+	life				500 800
+
+	bounce				2 4
+
+	radius				300 400
+}
+
+Sound
+{
+	cullrange			1200
+
+	sounds
+	[
+		sound/weapons/detpack/explode.wav
+	]
+}
+
+FxRunner
+{
+	playfx
+	[
+		detpack/spark
+	]
+}

@@ -1,0 +1,41 @@
+repeatDelay				50
+
+Particle
+{
+	spawnFlags			evenDistribution
+
+	count				5
+
+	life				300
+
+	rgb
+	{
+		start			0.09412 0.1255 0.1569
+	}
+
+	alpha
+	{
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			10
+	}
+
+	shaders
+	[
+		forcePush
+	]
+}
+
+
+CameraShake
+{
+	life				125
+
+	intensity			0.1 .75
+
+	radius				200
+}

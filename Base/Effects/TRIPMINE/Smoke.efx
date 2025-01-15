@@ -1,0 +1,41 @@
+Particle
+{
+	name				LingeringSmoke
+
+	count				20
+
+	life				2000
+
+	delay				50 100
+
+	origin				40 -20 -20 60 20 20
+
+	rotation			0 360
+
+	rotationDelta		-10 10
+
+	velocity			10 -10 -10 30 10 10
+
+	acceleration		-4 -8 -8 12 8 8
+
+	gravity				16 32
+
+	alpha
+	{
+		end				0
+		flags			linear
+	}
+
+	size
+	{
+		start			15 20
+		end				35 50
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/misc/steam
+		gfx/misc/steam2
+	]
+}

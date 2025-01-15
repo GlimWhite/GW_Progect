@@ -1,0 +1,85 @@
+//#######################################
+//#	  	@ОТСЫЛКА: ИСКРЫ ОТ АТАКИ		#
+//#######################################
+FxRunner
+{
+	cullrange			1000
+
+	playfx
+	[
+		bryar/spark
+	]
+}
+//#######################################
+//#	  СЛЕДЫ НА СТЕНАХ ПОСЛЕ ВЫСТРЕЛА	#
+//#######################################
+Decal
+{
+		rotation		360	-360
+		
+		life			2000
+		
+		count			1
+	size
+		{
+			start 			2.2 2.4
+		}
+	shader
+		[
+			bryarmark
+		]
+}
+
+Decal
+{
+		rotation		360	-360
+		
+		life			2000
+		
+		count			1
+	size
+		{
+			start 		1 1.2
+		}
+
+	shader
+	[
+		bryarmarkglow
+	]
+}
+
+
+Decal
+{
+	rotation			-360 360
+	
+	life 				2000
+	
+	cullrange			1200
+	
+	delay				0 50
+	
+	alpha
+		{
+			end				0
+		}
+	size
+		{
+			start			2 2.2
+			end				0
+		}
+	shaders
+		[
+			burnmark_glow
+		]
+}
+
+Sound
+{
+	cullrange			1200
+
+	sounds
+	[
+		sound/weapons/bryar/hit_wall.wav
+	]
+}

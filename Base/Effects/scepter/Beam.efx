@@ -1,0 +1,151 @@
+repeatDelay				50
+
+Particle
+{
+	spawnFlags			rgbComponentInterpolation
+
+	origin				0 -35 0 0 -25 0
+
+	rgb
+		{
+			start			1 0.6118 0.4235 1 0.302 0
+		}
+	size
+		{
+			start			30
+			end				20
+			flags			random linear
+		}
+	shaders
+		[
+			scepter_flare
+		]
+}
+
+Line
+{
+	name				Copy of Copy of Unnamed Line 0
+
+	spawnFlags			rgbComponentInterpolation
+
+	origin2				0 -512 0 0 -490 0
+
+	rgb
+	{
+		start			1 0.9373 0.502
+	}
+
+	alpha
+	{
+		start			0.9
+		end				0.5
+		flags			random
+	}
+
+	size
+	{
+		start			8 16
+	}
+
+	shaders
+	[
+		scepter_line
+	]
+}
+
+
+Particle
+{
+	name				Copy of Unnamed Particle 0
+
+	spawnFlags			evenDistribution
+
+	count				3
+
+	delay				0 50
+
+	origin				0 -10 0 0 -40 0
+
+	velocity			0 -80 0 0 -380 0
+
+	rgb
+	{
+		start			1 0.6118 0.4235 1 0.302 0
+		end				0
+	}
+
+	alpha
+	{
+		flags			random
+	}
+
+	size
+	{
+		start			50
+		end				20
+		flags			linear
+	}
+
+	shaders
+	[
+		gfx/effects/whiteFlare
+	]
+}
+
+Particle
+{
+	name				Copy of Copy of Copy of Unnamed
+
+	origin2				0 -516 0 0 -496 0
+
+	size
+	{
+		start			5
+		end				4
+		flags			wive
+	}
+
+	shaders
+	[
+		scepter_flare
+	]
+}
+
+line
+{
+	name				Copy of Unnamed Particle 0
+
+	spawnFlags			orgOnSphere axisFromSphere rgbComponentInterpolation
+
+	origin				0 -45 0 0 -25 0
+
+	rgb
+	{
+		start			0.502 0 0.01176 0.502 0 0.2235
+		end				0
+	}
+
+	alpha
+	{
+		start			0.25
+	}
+
+	size
+	{
+		start			100
+		end				150
+		flags			wive
+	}
+
+	shaders
+	[
+		gfx/effects/whiteFlare
+	]
+}
+
+CameraShake
+{
+		life				120
+		intensity			0.4
+		radius				1200
+}

@@ -1,0 +1,90 @@
+/
+/ Эффект попадания бластера по НПС
+Line
+{
+	count					50
+	flags					usePhysics
+	spawnFlags				axisFromSphere
+
+	life					100 200
+	rotation				0	360
+	origin2					12 -10 -10 18 10 10
+
+	size
+		{
+			start			0.15 0.02
+			end				0
+			flags			linear
+		}
+	shaders
+		[
+			spark
+		]
+}
+
+Particle
+{
+	flags				usePhysics
+	spawnFlags			axisFromSphere
+	count				100
+
+	life				2000
+	
+	delay				1
+	
+	velocity			45 -80 -80 145 80 20
+
+	gravity				-150 -250
+
+	size
+		{
+			start			0.5
+		}
+	shaders
+		[
+			spark4
+			spark
+		]
+}
+
+FxRunner
+{
+	delay				0 100
+
+	playfx
+	[
+		blaster/smoke_bolton
+	]
+}
+// Dark smoke
+Particle
+{
+	count		2	6
+	life		800	1200
+
+	origin		2 -3 -3		2 3 3
+	vel			15 -12 -12		20 12 12
+	gravity		32	80
+
+	flags	useAlpha
+
+	size
+	{
+		start 	2.0		12.0
+		end		12.0	20.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	1.0
+		end 	0.0
+		parm	60 	75
+		flags	nonlinear
+	}
+
+	shader
+	[
+		gfx/misc/black_smoke
+	]
+}

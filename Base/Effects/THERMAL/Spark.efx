@@ -1,0 +1,79 @@
+Tail
+{
+	count				40 60
+
+	life				1000
+
+	origin				5 -10 -10 15 10 10
+
+	velocity			300 -280 -280 450 280 280
+
+	gravity				-300 -400
+
+	rgb
+	{
+		start			1 0.7 0.5 1 1 0.5
+	}
+
+	size
+	{
+		start			1 2
+		end				0.6 0.7
+		flags			linear
+	}
+
+	length
+	{
+		start			30 40
+		parm			70
+		flags			linear nonlinear
+	}
+
+	shaders
+	[
+		sparkglow
+	]
+}
+
+Particle
+{
+	flags				usePhysics
+
+	spawnFlags			rgbComponentInterpolation
+
+	count				20 40
+
+	life				1000
+
+	bounce				0.3 0.5
+
+	origin				0 -10 -10 10 10 10
+
+	velocity			200 -250 -250 550 250 250
+
+	gravity				-300 -400
+
+	rgb
+	{
+		start			1 0.7 0.5 1 1 1
+	}
+
+	alpha
+	{
+		end				0
+		parm			80
+		flags			linear nonlinear
+	}
+
+	size
+	{
+		start			0.7 3.5
+		end				0.2 0.5
+		flags			linear
+	}
+
+	shaders
+	[
+		sparkglow
+	]
+}

@@ -1,0 +1,431 @@
+Cylinder
+{
+	spawnFlags			evenDistribution rgbComponentInterpolation
+
+	count				5
+
+	life				800
+
+	delay				0 700
+
+	size
+	{
+		start			120
+		end				40
+		parm			50
+		flags			linear nonlinear
+	}
+
+	size2
+	{
+		start			140
+		end				2
+		parm			90
+		flags			linear nonlinear
+	}
+
+	length
+		{
+			start			20
+			end				0.1
+			parm			90
+			flags			linear nonlinear
+		}
+	shaders
+	[
+		gfx/effects/shock_ripple
+	]
+}
+
+Cylinder
+{
+	spawnFlags			rgbComponentInterpolation
+
+	life				800
+
+	cullrange			550
+
+	size
+	{
+		start			120
+		end				3
+		parm			50
+		flags			linear nonlinear
+	}
+
+	size2
+	{
+		start			120
+		end				24
+		parm			50
+		flags			linear nonlinear
+	}
+
+	shaders
+	[
+		gfx/effects/shock_ripple
+	]
+}
+
+Cylinder
+{
+	life				450
+
+	cullrange			550
+
+	size
+	{
+		end				140
+		parm			90
+		flags			linear nonlinear
+	}
+
+	size2
+	{
+		start			50
+		end				140
+		flags			linear
+	}
+
+	length
+	{
+		start			12
+		end				0.1
+		parm			90
+		flags			linear nonlinear
+	}
+
+	shaders
+	[
+		gfx/effects/shock_ripple
+	]
+}
+
+Particle
+{
+	spawnFlags			orgOnSphere rgbComponentInterpolation
+
+	count				10
+
+	life				700 1200
+
+	delay				0 100
+
+	origin				0 -4 -4 25 4 4
+
+	radius				10
+
+	rotation			0 360
+
+	rotationDelta		-20 20
+
+	velocity			10 0 0 60 0 0
+
+	acceleration		5 -20 -20 10 20 20
+
+	alpha
+	{
+		end				0
+		parm			30
+	}
+
+	size
+	{
+		start			120 140
+		end				0.1
+		parm			70
+		flags			linear nonlinear
+	}
+
+	shaders
+	[
+		gfx/effects/shock_ball
+	]
+}
+
+Particle
+{
+	spawnFlags			orgOnSphere rgbComponentInterpolation
+
+	count				100
+
+	bounce				1
+	radius				10
+	life				400 900
+
+	cullrange			800
+
+	rotation			0 360
+
+	velocity			0 -200 -200 300 200 200
+
+	gravity				-100 -200
+
+	rgb
+		{
+			start			0.5 0.5 1 0.8 0.8 1
+		}
+
+	size
+		{
+			start			3	6
+			end				0.1
+			parm			50
+			flags			linear nonlinear
+		}
+
+	shaders
+	[
+		gfx/misc/steam2
+		gfx/misc/steam3
+	]
+}
+
+
+Particle
+{
+	spawnFlags			orgOnSphere rgbComponentInterpolation
+
+	count				200
+
+	bounce				1
+	radius				10
+	life				800 900
+
+	cullrange			500
+
+	origin				0 0 0
+	
+	rotation			0 360
+
+	velocity			0 -400 -400 150 50 50
+
+	gravity				-100 -200
+
+	rgb
+		{
+			start			0.5 0.5 1 0.8 0.8 1
+		}
+
+	size
+		{
+			start			2	4
+			end				0.1
+			parm			50
+			flags			linear nonlinear
+		}
+
+	shaders
+	[
+		spark4
+	]
+}
+
+Particle
+{
+	spawnFlags			orgOnSphere rgbComponentInterpolation
+
+	count				200
+
+	life				400 900
+
+	bounce				1
+	radius				10
+	cullrange			800
+
+	origin				0 0 0
+	
+	rotation			0 360
+
+	velocity			0 -400 -400 150 400 400
+
+	gravity				-100 -200
+
+	rgb
+		{
+			start			0.5 0.5 1 0.8 0.8 1
+		}
+
+	size
+		{
+			start			2	4
+			end				0.1
+			parm			50
+			flags			linear nonlinear
+		}
+
+	shaders
+	[
+		spark4
+	]
+}
+
+
+Particle
+{
+	spawnFlags			orgOnSphere rgbComponentInterpolation
+
+	count				200
+
+	life				400 900
+
+	radius				10
+	cullrange			800
+	
+	bounce				1
+
+	origin				0 0 0
+	
+	rotation			0 360
+
+	velocity			0 -400 -400 150 200 200
+
+	gravity				-100 -200
+
+	rgb
+		{
+			start			0.5 0.5 1 0.8 0.8 1
+		}
+
+	size
+		{
+			start			1	2
+			end				0.1
+			parm			50
+			flags			linear nonlinear
+		}
+
+	shaders
+	[
+		spark4
+	]
+}
+
+OrientedParticle
+{
+	spawnFlags			rgbComponentInterpolation
+
+	life				500
+
+	cullrange			1000
+
+	origin				1 0 0
+
+	rotation			0 360
+
+	rotationDelta		-5 5
+
+	rgb
+	{
+		start			0.3 0.3 1 0.5 0.5 1
+		end				0
+	}
+
+	alpha
+	{
+		end				0
+		parm			40 60
+		flags			nonlinear
+	}
+
+	size
+	{
+		start			2
+		end				120 175
+		flags			linear
+	}
+
+	shaders
+	[
+		black_smoke
+	]
+}
+
+
+Electricity
+{
+	flags				useModel useBBox usePhysics
+
+	count				50
+
+	life				500
+
+	delay				0 250
+
+	bounce				-1
+
+	origin				0 100 100 0 -50 -50 
+	
+
+	size
+	{
+		start			0
+		end				5
+		parm			70
+		flags			random
+	}
+
+	shaders
+	[
+		gfx/misc/blueLine
+	]
+}
+
+Decal
+{
+	count				2
+
+	rotation			0 360
+
+	size
+		{
+			start			40 60
+		}
+	shaders
+		[
+			repeatermarkalt
+		]
+}
+
+Light
+{
+	name				Flash
+
+	life				250
+
+	alpha
+	{
+		end				0
+		flags			random linear
+	}
+
+	size
+	{
+		start			128
+		end				32
+		flags			linear
+	}
+}
+
+CameraShake
+{
+	name				Shake
+
+	flags				usePhysics
+
+	life				500 800
+
+	bounce				1 2
+
+	radius				300 400
+}
+
+Sound
+{
+	cullrange			550
+
+	sounds
+	[
+		sound/weapons/repeater/alt_explode.wav
+	]
+}

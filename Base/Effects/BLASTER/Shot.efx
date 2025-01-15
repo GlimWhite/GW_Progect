@@ -1,0 +1,139 @@
+//#######################################
+//#		   Эффекты пули бластера 		#
+//#######################################
+Cylinder
+{
+	flags					useAlpha
+
+	life					10
+	
+	//origin					-50 0 0
+		
+	acceleration			-2 10 10 2 0 0
+	
+	rgb
+		{
+			start			0.5 0.3 0
+		}
+	size
+		{
+			start			0
+		}
+	size2
+		{
+			start			3
+		}
+	length
+		{
+			start			60
+		}
+	shaders
+		[
+			blastershot
+		]
+}
+
+Line
+{
+//name				"Патрон"	
+
+		origin				 25 0 0
+		
+		origin2				-25 0 0
+		
+		flags				useAlpha
+	width
+		{
+			start			2
+		}		
+	alpha
+		{
+			start			0.6	0.7
+		}
+	shader
+		[
+			blaster_blob
+		]
+}
+
+Line
+{
+//name				"Патрон: динамическое овещение"
+
+		origin		 		35 0 0	
+		
+		origin2				-35 0 0
+	width
+		{
+			start			3
+		}
+	alpha
+		{
+			start			0.8	1.0
+		}
+	rgb
+		{
+			start			0.7 0.0 0.0 	0.8 0.2 0.2
+		}
+	shader
+		[
+			sparkglow
+		]
+}
+
+Line
+{
+//name				"Патрон: динамическое овещение2"
+		
+		life				10
+
+		origin				75 0 0	
+		
+		origin2				-155 0 0
+	size
+		{
+			start			10
+		}
+	rgb
+		{
+			start			0.7 0.0 0.0 	0.9 0.15 0.15
+		}
+	alpha
+		{
+			start			0.25 0.35
+		}
+	shaders
+		[
+			sparkglow
+		]
+}
+//#######################################
+//#		  Эффекты для пули бластера 	#
+//#######################################
+Light
+{
+//Name		"Освещение пули"
+
+			life			50
+	
+	size
+		{
+			start 			50
+			end				10
+		}	
+	rgb
+		{
+			start  			1.0 0.1 0.1
+		}
+}
+
+CameraShake
+{
+//Name		"Дрожание экрана"
+
+	life					50
+
+	intensity				0.4
+
+	radius					120
+}

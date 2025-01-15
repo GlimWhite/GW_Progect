@@ -1,0 +1,34 @@
+Particle
+{
+	count	3
+	life	1200
+
+
+	origin				0 -32 -32 8 32 32
+
+	rotation			0 360
+
+	rotationDelta		-4 4
+
+	velocity			-40 -10 40 40 10 64
+
+	gravity				5 20		
+
+	size
+	{
+		start 	30.0	40.0
+		end		55.0	30.0
+		flags	linear
+	}
+
+	alpha
+	{
+		start	0.3	0.4
+		end 	0.0
+		flags	linear
+	}
+	shader
+	[
+		medium_smoke
+	]
+}
