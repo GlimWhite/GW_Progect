@@ -1,0 +1,152 @@
+staff_1
+{
+	name					@MENUS_STAFF_HILT1
+	saberType				SABER_STAFF
+	saberModel				"models/weapons2/saber_dual_1/saber_dual_1.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberColor				random
+	numBlades				2
+	saberLength				32
+	saberStyle				staff
+	throwable				0
+	singleBladeStyle		medium
+	singleBladeThrowable	1
+	twoHanded				1
+	disarmable	       		0
+	parryBonus        		1
+	saberRadius				4
+	onInWater				1
+	brokenSaber1			brokenstaff
+	brokenSaber2			brokenstaff
+	onInWater				1
+}
+
+staff_2
+{
+	name					@MENUS_STAFF_HILT2
+	saberType				SABER_STAFF
+	saberModel				"models/weapons2/saber_dual_2/saber_dual_2.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberColor				random
+	numBlades				2
+	saberLength				32
+	saberStyle				staff
+	throwable				0
+	singleBladeStyle		medium
+	singleBladeThrowable	1
+	twoHanded				1
+	disarmable	       		0
+	parryBonus       		1
+	saberRadius				4
+	onInWater				1
+	brokenSaber1			brokenstaff
+	brokenSaber2			brokenstaff
+	onInWater				1
+}
+
+staff_3
+{		
+	name					@MENUS_STAFF_HILT3
+	saberType				SABER_STAFF
+	saberModel				"models/weapons2/saber_dual_3/saber_dual_3.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberColor				random
+	numBlades				2
+	saberLength				32
+	saberStyle				staff
+	throwable				0
+	singleBladeStyle		medium
+	singleBladeThrowable	1
+	twoHanded				1
+    disarmable	    	    0
+	parryBonus   		    1
+	saberRadius				4
+	onInWater				1
+	brokenSaber1			brokenstaff
+	brokenSaber2			brokenstaff
+	onInWater				1
+}
+
+staff_4
+{
+	name					@MENUS_STAFF_HILT4
+	saberType				SABER_STAFF
+	saberModel				"models/weapons2/saber_dual_4/saber_dual_4.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberColor				random
+	numBlades				2
+	saberLength				32
+	saberStyle				staff
+	throwable				0
+	singleBladeStyle		medium
+	singleBladeThrowable	1
+	twoHanded				1
+	disarmable	     	 	0
+	parryBonus       		1
+	saberRadius				4
+	onInWater				1
+	brokenSaber1			brokenstaff
+	brokenSaber2			brokenstaff
+	onInWater				1
+}
+
+staff_5
+{
+	name					@MENUS_STAFF_HILT5
+	saberType				SABER_STAFF
+	saberModel				"models/weapons2/saber_dual_5/saber_dual_5.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberColor				random
+	numBlades				2
+	saberLength				32
+	saberStyle				staff
+	throwable				0
+	singleBladeStyle		medium
+	singleBladeThrowable	1
+	twoHanded				1
+	disarmable	       		0
+	parryBonus      		1
+	saberRadius				4
+	onInWater				1
+	brokenSaber1			brokenstaff
+	brokenSaber2			brokenstaff
+	onInWater				1
+}
+
+staff_6
+{
+	name					"Inquisitor Helisaber"
+	saberType	       		SABER_Staff
+	saberModel				"models/weapons2/Assasin/assasin.glm"
+	soundOn					"sound/weapons/reborn_assasin/reborn_on.wav"
+	soundLoop 				"sound/weapons/reborn_assasin/reborn_hum.mp3"
+	soundOff	       		"sound/weapons/reborn_assasin/reborn_off.mp3"
+	swingSound1				"sound/weapons/reborn_assasin/saberswing1.wav"
+	swingSound2				"sound/weapons/reborn_assasin/saberswing2.wav"
+	swingSound3				"sound/weapons/reborn_assasin/saberswing3.wav"
+	saberStyle    		 	staff
+	saberColor	   		    random
+	singleBladeStyle		fast
+	saberLength				32
+	numBlades 				2  
+	throwable				1
+	twoHanded 				1
+	lockBonus				1
+	saberRadius				4
+	disarmable	       		0
+	parryBonus        		1
+	onInWater				1
+	brokenSaber1			assasin
+	brokenSaber2			assasin
+	onInWater				1
+}

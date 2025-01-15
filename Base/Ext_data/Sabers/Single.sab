@@ -1,0 +1,158 @@
+single_1
+{
+	name					@MENUS_SINGLE_HILT1
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_1/saber_1.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus      		1
+	onInWater				1
+	saberRadius				4
+}
+
+single_2
+{
+	name					@MENUS_SINGLE_HILT2
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_2/saber_2.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus      		1
+	onInWater				1
+	saberRadius				4
+}
+
+single_3
+{
+	name					@MENUS_SINGLE_HILT3
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_3/saber_3.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus      		1
+	onInWater				1
+	saberRadius				4
+}
+
+single_4
+{
+	name					@MENUS_SINGLE_HILT4
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_4/saber_4.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus 				1
+	onInWater				1
+	saberRadius				4
+}
+
+single_5
+{
+	name					@MENUS_SINGLE_HILT5
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_5/saber_5.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus      		1
+	onInWater				1
+	saberRadius				4
+}
+
+single_6
+{
+	name					@MENUS_SINGLE_HILT6
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_6/saber_6.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus     			1
+	onInWater				1
+}
+
+single_7
+{
+	name					@MENUS_SINGLE_HILT7
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_7/saber_7.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus 				1
+	onInWater				1
+	saberRadius				4
+}
+
+single_8
+{	
+	name					@MENUS_SINGLE_HILT8
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_8/saber_8.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus  			1
+	onInWater				1
+	saberRadius				4
+}
+
+single_9
+{
+	name					@MENUS_SINGLE_HILT9
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/saber_9/saber_9.glm"
+	soundOn					"sound/weapons/saber/saberon.wav"
+	soundLoop				"sound/weapons/saber/saberhum4.wav"
+	soundOff				"sound/weapons/saber/saberoff.wav"
+	saberLength				40
+	saberColor				random
+	parryBonus     			1
+	onInWater				1
+	saberRadius				4
+}
+
+single_10
+{
+	name					"Inquisitor SingleSaber"
+	saberType				SABER_SINGLE
+	saberModel				"models/weapons2/assasin/assasin.glm"
+	soundOn					"sound/weapons/reborn_assasin/reborn_on.wav"
+	soundLoop				"sound/weapons/reborn_assasin/reborn_hum.mp3"
+	soundOff				"sound/weapons/reborn_assasin/reborn_off.mp3"
+	swingSound1				"sound/weapons/reborn_assasin/saberswing1.wav"
+	swingSound2				"sound/weapons/reborn_assasin/saberswing2.wav"
+	swingSound3				"sound/weapons/reborn_assasin/saberswing3.wav"
+	saberStyle				Tavion
+	saberLength				40
+	saberColor				random
+	throwable       		1
+	maxChain        		-1
+	parryBonus      		1
+	onInWater				1
+	saberRadius				4
+}
+
+
+
+

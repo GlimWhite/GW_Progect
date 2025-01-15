@@ -1,0 +1,47 @@
+Player
+{
+	playerModel	player
+	class		CLASS_PLAYER
+	forcePowerMax	150
+	forceRegenRate	1
+}
+
+Player_1
+{
+	playerModel	player
+	class		CLASS_PLAYER
+	forcePowerMax	200
+	forceRegenRate	1
+}
+
+Player_2
+{
+	playerModel	player
+	class		CLASS_PLAYER
+	forcePowerMax	300
+	forceRegenRate	0.5
+}
+
+Player_3
+{
+	playerModel				player
+	class					CLASS_PLAYER
+	forcePowerMax			900
+	forceRegenRate			-1
+    FP_HEAL					3
+	FP_LEVITATION	        3
+	FP_SPEED				3
+	FP_PUSH					3
+	FP_PULL					3
+	FP_TELEPATHY	        4
+	FP_GRIP					3
+	FP_LIGHTNING	        3
+	FP_SABERTHROW	        3
+	FP_RAGE					3
+	FP_PROTECT				3
+	FP_ABSORB				3
+	FP_DRAIN				3
+	FP_SEE					3
+	FP_SABER_DEFENSE        3
+	FP_SABER_OFFENSE        3
+}
