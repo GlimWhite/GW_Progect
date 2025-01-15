@@ -1,8 +1,8 @@
 ==================================================================
- QeffectsGL initialized at Sat Dec 28 14:18:59 2024
+ QeffectsGL initialized at Wed Jan 15 19:28:24 2025
 ==================================================================
 
-Settings: E:\Всякое\Акимов\Проект\QeffectsGL.ini
+Settings: D:\Проекты\Jedi Academy Redux\QeffectsGL.ini
 Module: JASP.exe
 Loading "C:\Windows\system32\opengl32.dll": success
 Loading functions: success
@@ -25,7 +25,45 @@ Color correction: YES
 Emboss: DISABLED
 DOF effect: DISABLED
 ShutdownGL
+Using 2x FSAA
+Using extension: GL_ARB_multitexture (8 TMU)
+Using extension: GL_ARB_texture_rectangle
+Using extension: GL_ARB_depth_texture
+Using extension: GL_EXT_texture_edge_clamp
+Using extension: GL_EXT_texture_filter_anisotropic (max 16)
+Using extension: GL_ARB_framebuffer_object
+Using extension: GL_ARB_shader_objects
+Using extension: GL_ARB_shading_language_100
+Using extension: GL_ARB_vertex_shader
+Using extension: GL_ARB_fragment_shader
+InitializeGL
+Checking hardware caps:
+Bloom effect: DISABLED
+SSAO effect: DISABLED
+Color correction: YES
+Emboss: DISABLED
+DOF effect: DISABLED
+ShutdownGL
+Using 2x FSAA
+Using extension: GL_ARB_multitexture (8 TMU)
+Using extension: GL_ARB_texture_rectangle
+Using extension: GL_ARB_depth_texture
+Using extension: GL_EXT_texture_edge_clamp
+Using extension: GL_EXT_texture_filter_anisotropic (max 16)
+Using extension: GL_ARB_framebuffer_object
+Using extension: GL_ARB_shader_objects
+Using extension: GL_ARB_shading_language_100
+Using extension: GL_ARB_vertex_shader
+Using extension: GL_ARB_fragment_shader
+InitializeGL
+Checking hardware caps:
+Bloom effect: DISABLED
+SSAO effect: DISABLED
+Color correction: YES
+Emboss: DISABLED
+DOF effect: DISABLED
+ShutdownGL
 
 ==================================================================
- QeffectsGL shutdown at Sat Dec 28 14:22:23 2024
+ QeffectsGL shutdown at Wed Jan 15 19:30:34 2025
 ==================================================================
