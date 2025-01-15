@@ -1,0 +1,311 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "the objectives... duh..."
+
+REFERENCE           LIGHTSIDE_OBJ
+LANG_ENGLISH        "This is set to 2 (failed) if the player has turned Dark Side."
+
+REFERENCE           HOTH2_OBJ1
+LANG_ENGLISH        "Investigate the site where Luke had his force vision."
+
+REFERENCE           HOTH2_OBJ2
+LANG_ENGLISH        "Find a way into Echo Base."
+
+REFERENCE           HOTH2_OBJ3
+LANG_ENGLISH        "Find an alternate entrance to Echo Base."
+
+REFERENCE           HOTH3_OBJ1
+LANG_ENGLISH        "Discover what the Imperials are doing in Echo Base"
+
+REFERENCE           HOTH3_OBJ2
+LANG_ENGLISH        "Make your way to the Hanger Bay to confront Alora."
+
+REFERENCE           HOTH3_OBJ3
+LANG_ENGLISH        "Defeat Alora."
+
+REFERENCE           T2_DPREDICAMENT_OBJ1
+LANG_ENGLISH        "Escape the Prison!"
+
+REFERENCE           T2_DPREDICAMENT_OBJ2
+LANG_ENGLISH        "Disable security locks from Commander's Office."
+
+REFERENCE           T2_DPREDICAMENT_OBJ3
+LANG_ENGLISH        "Gain access to the Docking Bay."
+
+REFERENCE           T2_DPREDICAMENT_OBJ4
+LANG_ENGLISH        "Defeat Rax Joris to get your lightsaber back."
+
+REFERENCE           T2_RANCOR_OBJ1
+LANG_ENGLISH        "Infiltrate the Hutt's stronghold and locate the prisoners."
+
+REFERENCE           T2_RANCOR_OBJ2
+LANG_ENGLISH        "Release the prisoners from their cells and guide them to the ventilation pipe for pickup by Kyle."
+
+REFERENCE           T2_RANCOR_OBJ3
+LANG_ENGLISH        "Clear the way to the exit."
+
+REFERENCE           T2_RANCOR_OBJ4
+LANG_ENGLISH        "Get back to the access tunnel for extraction."
+
+REFERENCE           T2_RANCOR_OBJ6
+LANG_ENGLISH        "Avoid the rancor."
+
+REFERENCE           T2_RANCOR_OBJ5
+LANG_ENGLISH        "You have saved %d of %d prisoners."
+
+REFERENCE           T2_RANCOR_OBJ5_2
+NOTES               "This is called in code if the current number saved is greater than the amount that had to be saved to complete the objective."
+LANG_ENGLISH        "You have saved %d of %d prisoners and %d additional."
+
+REFERENCE           T2_WEDGE_OBJ1
+LANG_ENGLISH        "Place a targeting beacon on the roof of the Shield Generator building."
+
+REFERENCE           T2_WEDGE_OBJ2
+LANG_ENGLISH        "Place a targeting beacon on the roof of the Hangar."
+
+REFERENCE           T2_WEDGE_OBJ3
+LANG_ENGLISH        "Place a targeting beacon on the roof of the Barracks."
+
+REFERENCE           T2_WEDGE_OBJ4
+LANG_ENGLISH        "Place a targeting beacon on the roof of the Communications Array."
+
+REFERENCE           T2_WEDGE_OBJ5
+LANG_ENGLISH        "Place a targeting beacon on the Power Generator."
+
+REFERENCE           T2_WEDGE_OBJ6
+LANG_ENGLISH        "Place a targeting beacon inside the Command Tower."
+
+REFERENCE           T2_WEDGE_OBJ7
+LANG_ENGLISH        "Stop the Imperials from detonating the Tibanna Gas Tanks."
+
+REFERENCE           T2_WEDGE_OBJ8
+LANG_ENGLISH        "Return to your Ship."
+
+REFERENCE           T2_WEDGE_OBJ9
+LANG_ENGLISH        "Disarm the four remaining Bombs on the Tibanna Gas Tanks."
+
+REFERENCE           T2_WEDGE_OBJ10
+LANG_ENGLISH        "Disarm the three remaining Bombs on the Tibanna Gas Tanks."
+
+REFERENCE           T2_WEDGE_OBJ11
+LANG_ENGLISH        "Disarm the two remaining Bombs on the Tibanna Gas Tanks."
+
+REFERENCE           T2_WEDGE_OBJ12
+LANG_ENGLISH        "Disarm the one remaining Bomb on the Tibanna Gas Tanks."
+
+REFERENCE           T3_RIFT_OBJ1
+LANG_ENGLISH        "Tavion's minions are preparing for her arrival. Stop them from desecrating the Jedi Tomb."
+
+REFERENCE           T3_RIFT_OBJ2
+LANG_ENGLISH        "Defeat the Jedi and find a way to protect the Jedi Master's coffin."
+
+REFERENCE           T3_RIFT_OBJ3
+LANG_ENGLISH        "Escape from the tomb."
+
+REFERENCE           T1_DANGER_OBJ1
+LANG_ENGLISH        "Find and bring back to your ship an Energy Cell."
+
+REFERENCE           T1_DANGER_OBJ2
+LANG_ENGLISH        "Find and bring back to your ship a Power Coupling."
+
+REFERENCE           T1_DANGER_OBJ3
+LANG_ENGLISH        "Find and bring back to your ship a Damper."
+
+REFERENCE           T1_DANGER_OBJ4
+LANG_ENGLISH        "Find and bring back to your ship a Power Converter."
+
+REFERENCE           T1_DANGER_OBJ5
+LANG_ENGLISH        "Only one ship part may be carried at a time.  Return a part to the ship in order to retrieve another."
+
+REFERENCE           T3_BOUNTY_OBJ1
+LANG_ENGLISH        "Destroy all Weapon Caches."
+
+REFERENCE           T3_BOUNTY_OBJ2
+LANG_ENGLISH        "Return to your Ship."
+
+REFERENCE           T3_BOUNTY_OBJ3
+LANG_ENGLISH        "Six Weapon Caches left."
+
+REFERENCE           T3_BOUNTY_OBJ4
+LANG_ENGLISH        "Five Weapon Caches left."
+
+REFERENCE           T3_BOUNTY_OBJ5
+LANG_ENGLISH        "Four Weapon Caches left."
+
+REFERENCE           T3_BOUNTY_OBJ6
+LANG_ENGLISH        "Three Weapon Caches left."
+
+REFERENCE           T3_BOUNTY_OBJ7
+LANG_ENGLISH        "Two Weapon Caches left."
+
+REFERENCE           T3_BOUNTY_OBJ8
+LANG_ENGLISH        "One Weapon Cache left."
+
+REFERENCE           T3_BOUNTY_OBJ9
+LANG_ENGLISH        "Defeat Boba Fett to get out of this\none alive."
+
+REFERENCE           T2_ROGUE_OBJ1
+LANG_ENGLISH        "Capture Lannik Racto."
+
+REFERENCE           T2_ROGUE_OBJ2
+LANG_ENGLISH        "Gain access to Racto's office building."
+
+REFERENCE           T2_TRIP_OBJ1
+LANG_ENGLISH        "Meet the contact at his outpost."
+
+REFERENCE           T2_TRIP_OBJ2
+LANG_ENGLISH        "Escape from the mercenaries and make your way to the far city gate."
+
+REFERENCE           T3_BYSS_OBJ1
+LANG_ENGLISH        "Disable the tractor beam holding the Raven's Claw in place."
+
+REFERENCE           T3_BYSS_OBJ2
+LANG_ENGLISH        "Use the laser turrets at the top of the ship to hold off the attacking TIE fighters"
+
+REFERENCE           T3_BYSS_OBJ3
+LANG_ENGLISH        "Get back to your Ship."
+
+REFERENCE           T3_HEVIL_OBJ1
+LANG_ENGLISH        "Reach the top of the tower where the cloaking emitter is located."
+
+REFERENCE           T3_HEVIL_OBJ2
+LANG_ENGLISH        "Set the detonator charges to destroy the Cloak Generator."
+
+REFERENCE           T3_HEVIL_OBJ3
+LANG_ENGLISH        "Defeat the Noghri guardians."
+
+REFERENCE           T3_STAMP_OBJ1
+LANG_ENGLISH        "Defeat the cultists."
+
+REFERENCE           T3_STAMP_OBJ2
+LANG_ENGLISH        "Find a way to stop the mutated rancor.  Weapons are useless against it."
+
+REFERENCE           T3_STAMP_OBJ3
+LANG_ENGLISH        "Place a new crate over the conveyor belt to trap the mutant rancor."
+
+REFERENCE           T3_STAMP_OBJ4
+LANG_ENGLISH        "Trap the mutant rancor on the conveyor belt by using the hanging crate."
+
+REFERENCE           TASPIR1_OBJ1
+LANG_ENGLISH        "Gain access to the Imperial Power facility."
+
+REFERENCE           TASPIR1_OBJ2
+LANG_ENGLISH        "Extend the bridge and heat shields leading to the Security Override controls."
+
+REFERENCE           TASPIR1_OBJ3
+LANG_ENGLISH        "Enable power to the main walkway by using the Security Override controls."
+
+REFERENCE           TASPIR1_OBJ4
+LANG_ENGLISH        "Extend the main walkway to the Imperial Power facility."
+
+REFERENCE           TASPIR2_OBJ1
+LANG_ENGLISH        "Find Rosh Penin."
+
+REFERENCE           TASPIR2_OBJ2
+LANG_ENGLISH        "Defeat Alora."
+
+REFERENCE           VJUN1_OBJ1
+LANG_ENGLISH        "Make your way to Bast Castle through the acidic rain."
+
+REFERENCE           VJUN1_OBJ2
+LANG_ENGLISH        "Find a way to the emplaced gun and use it to destroy the Tie-Bombers."
+
+REFERENCE           VJUN2_OBJ1
+LANG_ENGLISH        "Find a way into the upper parts of the Castle."
+
+REFERENCE           VJUN3_OBJ1
+LANG_ENGLISH        "Investigate Cult activities."
+
+REFERENCE           YAVIN1_OBJ1
+LANG_ENGLISH        "Make your way to the Massassi Temple with Rosh."
+
+REFERENCE           YAVIN1_OBJ2
+LANG_ENGLISH        "Find a way to rescue Rosh from the ledge he is on."
+
+REFERENCE           YAVIN2_OBJ1
+LANG_ENGLISH        "Complete the Training Course."
+
+REFERENCE           T1_FATAL_OBJ1
+LANG_ENGLISH        "Disarm the 5 bombs the Imperials have placed."
+
+REFERENCE           T1_FATAL_OBJ2
+LANG_ENGLISH        "Disarm the last 4 bombs."
+
+REFERENCE           T1_FATAL_OBJ3
+LANG_ENGLISH        "Disarm the last 3 bombs."
+
+REFERENCE           T1_FATAL_OBJ4
+LANG_ENGLISH        "Disarm the last 2 bombs."
+
+REFERENCE           T1_FATAL_OBJ5
+LANG_ENGLISH        "Disarm the last bomb."
+
+REFERENCE           T1_FATAL_OBJ6
+LANG_ENGLISH        "Get back to your ship."
+
+REFERENCE           KOR1_OBJ1
+LANG_ENGLISH        "Find a way through the Sith Catacombs to the Valley floor."
+
+REFERENCE           KOR1_OBJ2
+LANG_ENGLISH        "Find a way to open the door to the valley."
+
+REFERENCE           KOR2_OBJ1
+LANG_ENGLISH        "Navigate the ancient ruins and enter the Tomb of Ragnos."
+
+REFERENCE           KOR2_OBJ2
+LANG_ENGLISH        "Stop Tavion from resurrecting Marka Ragnos."
+
+REFERENCE           KOR2_OBJ3
+LANG_ENGLISH        "Defeat Tavion/Ragnos."
+
+REFERENCE           KOR2_OBJ4
+LANG_ENGLISH        "Defeat Kyle Katarn."
+
+REFERENCE           T1_RAIL_OBJ1
+LANG_ENGLISH        "Make your way to the front of the tram."
+
+REFERENCE           T1_RAIL_OBJ2
+LANG_ENGLISH        "Disarm the bomb."
+
+REFERENCE           T1_RAIL_OBJ3
+LANG_ENGLISH        "Stop the tram from reaching the station."
+
+REFERENCE           T1_SOUR_OBJ1
+LANG_ENGLISH        "Eliminate the mercenary threat."
+
+REFERENCE           T1_SOUR_OBJ2
+LANG_ENGLISH        "Disable the tractor beams holding the Raven's Claw."
+
+REFERENCE           T1_SOUR_OBJ3
+LANG_ENGLISH        "Disable the tractor beams holding the Millennium Falcon."
+
+REFERENCE           T1_SOUR_OBJ4
+LANG_ENGLISH        "Get back to the Millenium Falcon."
+
+REFERENCE           T1_SURPRISE_OBJ1
+LANG_ENGLISH        "Locate the missing Sandcrawler."
+
+REFERENCE           T1_SURPRISE_OBJ2
+LANG_ENGLISH        "Eliminate the Tusken Raiders."
+
+REFERENCE           T1_SURPRISE_OBJ3
+LANG_ENGLISH        "Retrieve the droid from the Sandcrawler."
+
+REFERENCE           T1_SURPRISE_OBJ4
+LANG_ENGLISH        "Prevent the droid from being destroyed."
+
+
+ENDMARKER
+
+

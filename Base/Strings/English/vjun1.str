@@ -1,0 +1,79 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           17KYK005
+LANG_ENGLISH        "Great, looks like somebody's home.  Luke sure knows how to pick 'em.  We'll set down in that canyon and try to sneak into the castle."
+
+REFERENCE           17KYK006
+LANG_ENGLISH        "Great, looks like somebody's home.  Luke sure knows how to pick 'em.  We'll set down there at the base of the castle.  "
+
+REFERENCE           17KYK007
+NOTES               "(in pain)"
+LANG_ENGLISH        "Argh!  This rain's like acid!  Find some cover, fast!"
+
+REFERENCE           17KYK008
+LANG_ENGLISH        "We're gonna have to run from cover to cover.  You've learned how to Protect yourself using the Force.  Use it so the rain doesn't hit you."
+
+REFERENCE           17KYK009
+LANG_ENGLISH        "We're gonna have to run from cover to cover.  Keep out of the rain as much as possible."
+
+REFERENCE           17KYK010
+LANG_ENGLISH        "Looks like the welcome wagon's arrived."
+
+REFERENCE           17KYK011
+LANG_ENGLISH        "What are these things?"
+
+REFERENCE           17KYK012
+NOTES               "(examining the body)"
+LANG_ENGLISH        "Must be some kind of trooper designed for nasty environments like this."
+
+REFERENCE           17KYK013
+LANG_ENGLISH        "I say we try to avoid this garrison.  Our objective is the castle."
+
+REFERENCE           17KYK014
+LANG_ENGLISH        "Take cover!"
+
+REFERENCE           17KYK015
+LANG_ENGLISH        "Guess they're expecting us now..."
+
+REFERENCE           17KYK016
+NOTES               "(looks around, planning)"
+LANG_ENGLISH        "Okay. We'll have to get to that turbolaser and take out the bomber first."
+
+REFERENCE           17KYK017
+LANG_ENGLISH        "Okay, the turbolaser should be on the other side of this door."
+
+REFERENCE           17KYK018
+NOTES               "(tries it)"
+LANG_ENGLISH        "It's locked!"
+
+REFERENCE           17KYK019
+NOTES               "(looks around)"
+LANG_ENGLISH        "There was a control room back there.  Wait here and let me know if I get it open."
+
+REFERENCE           17JAK001
+LANG_ENGLISH        "That's it Kyle, I'm going in."
+
+REFERENCE           17KYK020
+NOTES               "(via comm)"
+LANG_ENGLISH        "Be right there."
+
+REFERENCE           17KYK021
+LANG_ENGLISH        "Great shot!  Now let's get to the castle."
+
+
+ENDMARKER
+
+

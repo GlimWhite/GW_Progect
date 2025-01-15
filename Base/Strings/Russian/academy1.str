@@ -1,0 +1,86 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           01LUK011
+LANG_ENGLISH        "I'd like to welcome all our new students to the Jedi Academy."
+LANG_RUSSIAN         "Я рад приветствовать наших новых учеников в Академии Джедаев."
+
+REFERENCE           01LUK012
+NOTES               "looks them over"
+LANG_ENGLISH        "Here, we will train you in the ways of the Force. You will learn to defend yourself with a lightsaber. You will also study diplomacy, history and more."
+LANG_RUSSIAN         "Здесь вы познаете пути Силы. Научитесь защищать себя светомечом.\nТакже будете изучать дипломатию, историю и многое другое."
+
+REFERENCE           01LUK013
+LANG_ENGLISH        "It has been the practice of the Jedi to assign each student to a Master.  However, since there are still so few of us, we'll be assigning multiple students to one Master.  "
+LANG_RUSSIAN         "По джедайскому обычаю, у каждого ученика был свой мастер.\nОднако пока еще нас мало, и у каждого мастера будет несколько учеников."
+
+REFERENCE           01LUK014
+LANG_ENGLISH        "So, Raltharan, you will be assigned to Master Horn..."
+LANG_RUSSIAN         "Итак, Ралфаран, твоим учителем будет мастер Хорн..."
+
+REFERENCE           01ROP026
+NOTES               "(whispering to Jaden)"
+LANG_ENGLISH        "I can't wait to begin my training!"
+LANG_RUSSIAN         "Не могу дождаться начала учебы!"
+
+REFERENCE           01LUK015
+LANG_ENGLISH        "...Rosh Penin.  You will be assigned to Master Kyle Katarn.  Jaden Korr, you'll also work with Master Katarn."
+LANG_RUSSIAN         "...Рош Пенин. Твоим учителем будет мастер Кайл Катарн.\nДжейден Корр, ты тоже будешь учиться у мастера Катарна."
+
+REFERENCE           01LUK016
+NOTES               "pauses"
+LANG_ENGLISH        "Now, let's begin with your first lessons. And may the Force be with you."
+LANG_RUSSIAN         "Итак, начинайте свои первые занятия. И да пребудет с вами Сила."
+
+REFERENCE           01KYK006
+LANG_ENGLISH        "...and there was nothing.  But the area around the temple felt strange, like its dark side aura was gone."
+LANG_RUSSIAN         "...и там ничего не было. Но возле храма появляется странное чувство,\nкак будто его аура темной стороны пропала."
+
+REFERENCE           01LUK017
+LANG_ENGLISH        "Troubling."
+LANG_RUSSIAN         "У нас проблемы."
+
+REFERENCE           01LUK018
+NOTES               "(noticing Rosh and Jaden, brightening his tone)"
+LANG_ENGLISH        "But let's look into this later. Your students are ready to get started."
+LANG_RUSSIAN         "Но давай займемся этим позже. Твои ученики уже готовы."
+
+REFERENCE           01ROP027
+LANG_ENGLISH        "Master Katarn.  It's an honor to be serving under you"
+LANG_RUSSIAN         "Мастер Катарн. Для меня большая честь служить у вас."
+
+REFERENCE           01KYK007
+LANG_ENGLISH        "First off, just call me Kyle. Titles make my skin crawl. Secondly, you're not serving under me. I am going to teach and you are going to learn. That's it."
+LANG_RUSSIAN         "Во-первых, зови меня просто Кайл. От этих титулов у меня мурашки.\nВо-вторых, ты не будешь служить у меня. Я буду учить, а ты учиться. Вот и все."
+
+REFERENCE           01ROP028
+NOTES               "(flustered by the rebuke)"
+LANG_ENGLISH        "I - I'm sorry. I didn't mean to offend you."
+LANG_RUSSIAN         "Я - я прошу прощения. Я не хотел вас оскорбить."
+
+REFERENCE           01KYK008
+NOTES               "laughing"
+LANG_ENGLISH        "Don't worry, Rosh, you didn't. I've been offended by professionals."
+LANG_RUSSIAN         "Не беспокойся, Рош, ты и не смог бы. Меня, бывало, оскорбляли профессионалы."
+
+REFERENCE           01KYK009
+NOTES               "a little more serious"
+LANG_ENGLISH        "Now, let's see what you two kids can do. Follow me to the training grounds."
+LANG_RUSSIAN         "Так, ребята, посмотрим что вы можете. За мной на полигон."
+
+
+ENDMARKER
+
+

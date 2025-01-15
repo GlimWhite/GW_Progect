@@ -1,0 +1,903 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "Siege specific strings"
+
+REFERENCE           HEALTH
+LANG_ENGLISH        "HEALTH:"
+
+REFERENCE           SHIELDS
+LANG_ENGLISH        "SHIELDS:"
+
+REFERENCE           SPEED
+LANG_ENGLISH        "SPEED:"
+
+REFERENCE           DEMO_IMP_DEMO
+LANG_ENGLISH        "Imperial Demolitionist: The demolitionist is average in combat, but is an expert at laying traps and taking out large objectives."
+
+REFERENCE           DEMO_MERC_DEMO
+LANG_ENGLISH        "Mercenary Demolitionist:  The demolitionist is average in combat, but is an expert at laying traps and taking out large objectives."
+
+REFERENCE           DEMO_REBEL_DEMO
+LANG_ENGLISH        "Rebel Demolitionist: The demolitionist is average in combat, but is an expert at laying traps and taking out large objectives."
+
+REFERENCE           HVY_DJEDI_DESTROYER
+LANG_ENGLISH        "Dark Jedi Destroyer: This heavy weapons is well trained in dark Force powers, utilizing many different powers, but mastering none.  Although he carries a saber, he prefers the destructive nature of his powers over his blade."
+
+REFERENCE           HVY_MERC_SPECIALIST
+LANG_ENGLISH        "Mercenary Heavy Weapons Specialist: This heavy weapons member is slow, but makes up for it with sheer firepower."
+
+REFERENCE           HVY_REBEL_SPECIALIST
+LANG_ENGLISH        "Rebel Heavy Weapons Specialist:  This heavy weapons member is slow, but is heavily armed, dealing out great amounts of damage."
+
+REFERENCE           INF_CULTIST
+LANG_ENGLISH        "Cultist:  This infantry member has a number of low level Force abilities but is untrained in the ways of the dark Jedi."
+
+REFERENCE           INF_JEDI_HUNTER
+LANG_ENGLISH        "Jedi Hunter:  This infantry member is a specialist is neutralizing Jedi.  The Ysalimiri protects him against the Force while the flechette gun is an excellent anti-lightsaber weapon at close range."
+
+REFERENCE           INF_LIGHT_FORCE_ADVENTURER
+LANG_ENGLISH        "Light Force Adventurer:  This infantry member has a number of low level Force abilities but is untrained in the ways of the Jedi."
+
+REFERENCE           INF_MERCENARY
+LANG_ENGLISH        "Mercenary:  This member of the Mercenary infantry is good at both offensive and defensive combat and can hold his own against most forces."
+
+REFERENCE           INF_PROTECTOR
+LANG_ENGLISH        "Protector: Enlisted by the Jedi to protect Force-sensitive areas, this well-armed infantry member can make a difference in any battle."
+
+REFERENCE           INF_REBEL_ASSAULT
+LANG_ENGLISH        "Rebel Assault Specialist: This assault member is moderately equipped, but can take take a large amount of damage."
+
+REFERENCE           INF_REBEL_INFANTRY
+LANG_ENGLISH        "Rebel Infantry: This member of the infantry is trained and equipped for defensive combat; laying down tripmines to slow the enemy down."
+
+REFERENCE           INF_SNOWTROOPER
+LANG_ENGLISH        "Snowtrooper:  This member of the infantry is specially trained and equipped for lightning attacks against heavy defenses."
+
+REFERENCE           JEDI_DJEDI_DUELIST
+LANG_ENGLISH        "Dark Jedi Duelist:  This Dark Jedi has scant offensive or defensive Force powers but is unequaled in the art of combat with two lightsabers.\n"
+
+REFERENCE           JEDI_DJEDI_KNIGHT
+LANG_ENGLISH        "Dark Jedi Knight: The Dark Jedi Knight is trained in both the lightsaber and dark side of the Force, creating a well-balanced combatant with equal parts strength and weakness.\n"
+
+REFERENCE           JEDI_DJEDI_MARAUDER
+LANG_ENGLISH        "Dark Side Maurauder: This Dark Jedi has a moderate range of offensive and defensive Force powers but is unequaled in the art of combat with the arcane double-bladed lightsaber."
+
+REFERENCE           JEDI_JEDI_DUELIST
+LANG_ENGLISH        "Jedi Duelist:  This Jedi has moderate offensive and defensive Force powers but is unequaled in the art of combat with two lightsabers.\n"
+
+REFERENCE           JEDI_JEDI_GUARDIAN
+LANG_ENGLISH        "Jedi Guardian: This Jedi has scant offensive or defensive Force powers but is unequaled in the art of combat with the arcane double-bladed lightsaber."
+
+REFERENCE           JEDI_JEDI_KNIGHT
+LANG_ENGLISH        "Jedi Knight: The Jedi Knight is trained in both the lightsaber and light side of the Force, creating a well-balanced combatant with equal parts strength and weakness."
+
+REFERENCE           SUPP_IMP_SUPPLIER
+LANG_ENGLISH        "Imperial Supply:  This support member keeps the other troops healthy and able to fight by providing them with necessary supplies in the field."
+
+REFERENCE           SUPP_IMP_TECH
+NOTES               "Keep within the character limit of this string.  It uses up all the available area in English."
+LANG_ENGLISH        "Imperial Tech:  The tech can break the defenses of the enemy by hacking their doors and computer systems, or by a more direct approach with the DEMP2 gun.  The tech can also dispense ammo if no one is near, resupply allies when they are near, and repair certain objects and objectives (all via the 'use' key)."
+
+REFERENCE           SUPP_JEDI_HEALER
+LANG_ENGLISH        "Jedi Healer: This support member has great interest in saving lives.  The Healer can move quickly and stealthily in order to heal her teammates."
+
+REFERENCE           SUPP_REBEL_SUPPLY
+LANG_ENGLISH        "Rebel Supplier:  This support member keeps the other troops healthy and able to fight by providing them with necessary supplies in the field."
+
+REFERENCE           SUPP_REBEL_TECH
+NOTES               "Keep within the character limit of this string.  It uses up all the available area in English."
+LANG_ENGLISH        "Rebel Tech:  The tech can break the defenses of the enemy by hacking their doors and computer systems, or by a more direct approach with the DEMP2 gun.  The tech can also dispense ammo if no one is near, resupply allies when they are near, and repair certain objects and objectives (all via the 'use' key)."
+
+REFERENCE           SUPP_SMUGGLER
+LANG_ENGLISH        "Mercenary Tech:  This Chiss support member can help defend choke points.  The tech can also dispense ammo canisters if no one is near, resupply allies when they are near, and repair certain objects and objectives (all via the 'use' key)."
+
+REFERENCE           VAN_BOUNTY_HUNTER
+LANG_ENGLISH        "Bounty Hunter:  This Rodian assault member is moderately equipped, but can take take a large amount of damage."
+
+REFERENCE           VAN_DFORCE_ASSASSIN
+LANG_ENGLISH        "Dark Force Assassin: This vanguard member is physically weaker than other team members and has limited Force ability, yet is an expert marksman who is deadly in his own right."
+
+REFERENCE           VAN_DJEDI_INVADER
+LANG_ENGLISH        "Dark Jedi Invader:  This dark Jedi is physically weaker than other team members, but uses his speed and stealth abilities to achieve his objectives."
+
+REFERENCE           VAN_IMP_SNIPER
+LANG_ENGLISH        "Imperial Sniper:  This scout member is light on equipment, but is an expert marksman who can get to a vantage point quickly and fortify his position with a portable sentry gun."
+
+REFERENCE           VAN_JEDI_SCOUT
+LANG_ENGLISH        "Jedi Scout: This vanguard member is physically weaker than other team members, but uses his speed and stealth abilities to achieve his objectives.\n"
+
+REFERENCE           VAN_MERC_SNIPER
+LANG_ENGLISH        "Mercenary Sniper: This scout member is light on equipment, but is an expert marksman who can get to a higher vantage point quickly via a jetpack."
+
+REFERENCE           VAN_REBEL_SNIPER
+LANG_ENGLISH        "Rebel Sniper: This scout member is an expert marksman who can quickly get in place unseen."
+
+REFERENCE           VAN_ROCKETTROOPER
+LANG_ENGLISH        "Imperial Heavy Weapons Specialist: This heavy weapons member is slow, but makes up for it with sheer firepower."
+
+REFERENCE           3_KOR_LS_BRIEF
+LANG_ENGLISH        "Stop the Dark Jedi from resurrecting Marka Ragnos!"
+
+REFERENCE           3_KOR_LS_WON
+LANG_ENGLISH        "Your team has stopped the Dark Jedi from resurrecting Marka Ragnos!"
+
+REFERENCE           3_KOR_LS_LOST
+LANG_ENGLISH        "Your team has failed to stop the Dark Jedi from resurrecting Marka Ragnos."
+
+REFERENCE           3_KOR_LS_OBJ1
+LANG_ENGLISH        "Destroy the entrance to the Temple of Ragnos."
+
+REFERENCE           3_KOR_LS_OBJ1_COMP_TEAM1
+LANG_ENGLISH        "The temple entrance has been destroyed!"
+
+REFERENCE           3_KOR_LS_OBJ1_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have destroyed the temple entrance."
+
+REFERENCE           3_KOR_LS_OBJ2
+LANG_ENGLISH        "Capture the red crystal and place it on the red pedestal."
+
+REFERENCE           3_KOR_LS_OBJ2_COMP_TEAM1
+LANG_ENGLISH        "The red crystal has been placed on the pedestal!"
+
+REFERENCE           3_KOR_LS_OBJ2_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have placed the red crystal."
+
+REFERENCE           3_KOR_LS_OBJ3
+LANG_ENGLISH        "Capture the green crystal and place it on the green pedestal."
+
+REFERENCE           3_KOR_LS_OBJ3_COMP_TEAM1
+LANG_ENGLISH        "The green crystal has been placed on the pedestal!"
+
+REFERENCE           3_KOR_LS_OBJ3_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have placed the green crystal."
+
+REFERENCE           3_KOR_LS_OBJ4
+LANG_ENGLISH        "Capture the blue crystal and place it on the blue pedestal."
+
+REFERENCE           3_KOR_LS_OBJ4_COMP_TEAM1
+LANG_ENGLISH        "The blue crystal has been placed on the pedestal!"
+
+REFERENCE           3_KOR_LS_OBJ4_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have placed the blue crystal."
+
+REFERENCE           3_KOR_LS_OBJ5
+LANG_ENGLISH        "Bring the scepter of Ragnos to the altar in his statue!"
+
+REFERENCE           3_KOR_LS_OBJ5_COMP_TEAM1
+LANG_ENGLISH        "Scepter has been brought to the altar!"
+
+REFERENCE           3_KOR_LS_OBJ5_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have opened the gateway to the burial valley."
+
+REFERENCE           3_KOR_LS_OBJ6
+LANG_ENGLISH        "Destroy the sarcophagus of Ragnos so the Dark Jedi cannot resurrect him."
+
+REFERENCE           3_KOR_LS_OBJ6_COMP_TEAM1
+LANG_ENGLISH        "The sarcophagus of Ragnos has been destroyed!"
+
+REFERENCE           3_KOR_LS_OBJ6_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have destroyed the sarcophagus of Ragnos."
+
+REFERENCE           3_KOR_DS_BRIEF
+LANG_ENGLISH        "Prevent the Jedi from destroying the sarcophagus of Marka Ragnos."
+
+REFERENCE           3_KOR_DS_WON
+LANG_ENGLISH        "Your team has stopped the Jedi from destroying the sarcophagus of Marka Ragnos!"
+
+REFERENCE           3_KOR_DS_LOST
+LANG_ENGLISH        "Your team has failed to stop the Jedi from destroying the sarcophagus of Marka Ragnos!"
+
+REFERENCE           3_KOR_DS_OBJ1
+LANG_ENGLISH        "Defend the temple gate!"
+
+REFERENCE           3_KOR_DS_OBJ1_DESC
+LANG_ENGLISH        "The only way into the temple is through the main gate, do not let the Light Jedi through!"
+
+REFERENCE           3_KOR_DS_OBJ_2
+LANG_ENGLISH        "Defend the red crystal!"
+
+REFERENCE           3_KOR_DS_OBJ_2_DESC
+LANG_ENGLISH        "Stop the Light Jedi from placing the red crystal on its pedestal!  Once all 3 crystals have been placed, the valley gate will open!"
+
+REFERENCE           3_KOR_DS_OBJ_3
+LANG_ENGLISH        "Defend the green crystal!"
+
+REFERENCE           3_KOR_DS_OBJ_3_DESC
+LANG_ENGLISH        "Stop the Light Jedi from placing the green crystal on its pedestal!  Once all 3 crystals have been placed, the valley gate will open!"
+
+REFERENCE           3_KOR_DS_OBJ_4
+LANG_ENGLISH        "Defend the blue crystal!"
+
+REFERENCE           3_KOR_DS_OBJ_4_DESC
+LANG_ENGLISH        "Stop the Light Jedi from placing the blue crystal on its pedestal!  Once all 3 crystals have been placed, the valley gate will open!"
+
+REFERENCE           3_KOR_DS_OBJ_5
+LANG_ENGLISH        "Defend the scepter of Ragnos!"
+
+REFERENCE           3_KOR_DS_OBJ_5_DESC
+LANG_ENGLISH        "The Light Jedi are trying to bring the scepter to the altar in the statue of Ragnos to deactivate the shield, defend the scepter and  the altar!"
+
+REFERENCE           3_KOR_DS_OBJ_6
+LANG_ENGLISH        "Defend the coffin!"
+
+REFERENCE           3_KOR_DS_OBJ_6_DESC
+LANG_ENGLISH        "Defend the coffin so Ragnos will not be destroyed!"
+
+REFERENCE           3_KOR_DS_OBJ1_COMP_TEAM1
+LANG_ENGLISH        "The Dark Jedi have prevented your team from destroying the sarcophagus of Marka Ragnos."
+
+REFERENCE           3_KOR_DS_OBJ1_COMP_TEAM2
+LANG_ENGLISH        "The Jedi have failed in their task to destroy the sarcophagus of Marka Ragnos!"
+
+REFERENCE           INF_REB_PILOT
+LANG_ENGLISH        "Rebel Pilot: These pilots are experts at piloting all kinds of Rebel ships, including X-Wings, Z-95s and Lambda Shuttles, but are not useful for ground combat."
+
+REFERENCE           INF_IMP_PILOT
+LANG_ENGLISH        "Imperial TIE Pilot: These pilots are experts at piloting TIE Fighters and Bombers, but are not useful for ground combat."
+
+REFERENCE           SUPP_IMP_LT_TECH
+LANG_ENGLISH        "Imperial Light Tech:  This support member can break the defenses of the enemy by hacking their doors and computer systems, or by a more direct approach with the DEMP2 gun."
+
+REFERENCE           SUPP_REBEL_LT_TECH
+LANG_ENGLISH        "Rebel Light Tech:  This support member can break the defenses of the enemy by hacking their doors and computer systems, or by a more direct approach with the DEMP2 gun."
+
+REFERENCE           DEMO_IMP_LT_DEMO
+LANG_ENGLISH        "Imperial Light Demolitionist: The demolitionist is average in combat, but is an expert at laying traps and taking out large objectives."
+
+REFERENCE           VAN_IMP_LT_SNIPER
+LANG_ENGLISH        "Imperial Light Sniper:  This vanguard member is light on equipment, but is an expert marksman who can get to a vantage point quickly and fortify his position with a portable shield."
+
+REFERENCE           VAN_REBEL_LT_SNIPER
+LANG_ENGLISH        "Rebel Light Sniper: This vanguard member is light on equipment, but is an expert marksman who can get to a vantage point quickly and fortify his position with a portable shield."
+
+REFERENCE           DEMO_REBEL_LT_DEMO
+LANG_ENGLISH        "Rebel Light Demolitionist: The demolitionist is average in combat, but is an expert at laying traps and taking out large objectives."
+
+REFERENCE           HVY_REBEL_HVY_INFANTRY
+LANG_ENGLISH        "Rebel Heavy Infantry: This member of the infantry is trained and equipped for defensive combat."
+
+REFERENCE           HVY_STORMTROOPER
+LANG_ENGLISH        "Imperial Stormtrooper: A bit more heavily armed than your standard Stormtrooper, the Stormtroopers on the Star Destroyer come equipped with a Flechette in case they run into any Jedi."
+
+REFERENCE           JEDI_DJEDI_APPRENTICE
+LANG_ENGLISH        "Dark Jedi Apprentice: This Dark Jedi is trained in both the lightsaber and dark side of the Force, creating a well-balanced combatant."
+
+REFERENCE           JEDI_JEDI_APPRENTICE
+LANG_ENGLISH        "Jedi Apprentice: This Jedi is trained in both the lightsaber and light side of the Force, creating a well-balanced combatant.\n"
+
+REFERENCE           KORR_PRINT_1
+LANG_ENGLISH        "Temple gate under attack!"
+
+REFERENCE           KORR_PRINT_2
+LANG_ENGLISH        "Green crystal room gate under attack!"
+
+REFERENCE           KORR_PRINT_3
+LANG_ENGLISH        "Red crystal room gate under attack!"
+
+REFERENCE           KORR_PRINT_4
+LANG_ENGLISH        "Blue crystal room gate under attack!"
+
+REFERENCE           KORR_PRINT_5
+LANG_ENGLISH        "Scepter temple gate under attack!"
+
+REFERENCE           KORR_PRINT_6
+LANG_ENGLISH        "Altar room gate under attack!"
+
+REFERENCE           KORR_PRINT_7
+LANG_ENGLISH        "Scepter has been dropped!"
+
+REFERENCE           KORR_PRINT_8
+LANG_ENGLISH        "Scepter has returned to its temple!"
+
+REFERENCE           KORR_PRINT_9
+LANG_ENGLISH        "Red crystal has been dropped!"
+
+REFERENCE           KORR_PRINT_10
+LANG_ENGLISH        "Blue crystal has been dropped!"
+
+REFERENCE           KORR_PRINT_11
+LANG_ENGLISH        "Green crystal has been dropped!"
+
+REFERENCE           KORR_PRINT_12
+LANG_ENGLISH        "Red crystal returned to place of origin!"
+
+REFERENCE           KORR_PRINT_13
+LANG_ENGLISH        "Blue crystal returned to place of origin!"
+
+REFERENCE           KORR_PRINT_14
+LANG_ENGLISH        "Green crystal returned to place of origin!"
+
+REFERENCE           KORR_PRINT_15
+LANG_ENGLISH        "Green crystal has been taken from its room!"
+
+REFERENCE           KORR_PRINT_16
+LANG_ENGLISH        "Blue crystal has been taken from its room!"
+
+REFERENCE           KORR_PRINT_17
+LANG_ENGLISH        "Red crystal has been taken from its room!"
+
+REFERENCE           KORR_PRINT_18
+LANG_ENGLISH        "Green crystal room breached!"
+
+REFERENCE           KORR_PRINT_19
+LANG_ENGLISH        "Blue crystal room breached!"
+
+REFERENCE           KORR_PRINT_20
+LANG_ENGLISH        "Red crystal room breached!"
+
+REFERENCE           KORR_PRINT_21
+LANG_ENGLISH        "The shield over the coffin has been disabled!"
+
+REFERENCE           KORR_PUSHBACK
+LANG_ENGLISH        "Your team has been pushed back!"
+
+REFERENCE           KORR_ADVANCE
+LANG_ENGLISH        "Your team has advanced!"
+
+REFERENCE           KORR_PRINT_22
+LANG_ENGLISH        "Altar room door destroyed!"
+
+REFERENCE           KORR_PRINT_23
+LANG_ENGLISH        "Rebels have taken the scepter from its temple!"
+
+REFERENCE           KORR_PRINT_24
+LANG_ENGLISH        "Rebels have breached the scepter chamber!"
+
+REFERENCE           KORR_PRINT_25
+LANG_ENGLISH        "Valley gate has been destroyed!"
+
+REFERENCE           DESE_PRINT_1
+LANG_ENGLISH        "Rancor arena gate under attack!"
+
+REFERENCE           DESE_PRINT_2
+LANG_ENGLISH        "Protocol droid part has been dropped!"
+
+REFERENCE           DESE_PRINT_3
+LANG_ENGLISH        "Station 3 under attack!"
+
+REFERENCE           DESE_PRINT_4
+LANG_ENGLISH        "Station 1 under attack!"
+
+REFERENCE           DESE_PRINT_5
+LANG_ENGLISH        "Station 2 under attack!"
+
+REFERENCE           DESE_PRINT_6
+LANG_ENGLISH        "Wall under attack!"
+
+REFERENCE           DESE_PRINT_7
+LANG_ENGLISH        "Station 3 has been disabled!"
+
+REFERENCE           DESE_PRINT_8
+LANG_ENGLISH        "Station 1 has been disabled!"
+
+REFERENCE           DESE_PRINT_9
+LANG_ENGLISH        "Station 2 has been disabled!"
+
+REFERENCE           DESE_PRINT_10
+LANG_ENGLISH        "Protocol droid part has been taken!"
+
+REFERENCE           DESE_PRINT_11
+LANG_ENGLISH        "Protocol droid part has been rescued!"
+
+REFERENCE           DEST_PRINT_1
+LANG_ENGLISH        "Turbo laser defenses under attack!"
+
+REFERENCE           DEST_PRINT_2
+LANG_ENGLISH        "Solar ionization reactor under attack!"
+
+REFERENCE           DEST_PRINT_3
+LANG_ENGLISH        "Shield generator domes under attack!"
+
+REFERENCE           DEST_PRINT_4
+LANG_ENGLISH        "Communications array under attack!"
+
+REFERENCE           DEST_PRINT_5
+LANG_ENGLISH        "Secret data returned to data room!"
+
+REFERENCE           DEST_PRINT_6
+LANG_ENGLISH        "Secret data has been dropped!"
+
+REFERENCE           DEST_PRINT_7
+LANG_ENGLISH        "Exterior objectives destroyed, shields disabled!"
+
+REFERENCE           DEST_PRINT_8
+LANG_ENGLISH        "Secret data taken from data room!"
+
+REFERENCE           DEST_PRINT_9
+LANG_ENGLISH        "Data room under attack!"
+
+REFERENCE           HOTH_PRINT_1
+LANG_ENGLISH        "Access codes have been dropped!"
+
+REFERENCE           HOTH_PRINT_2
+LANG_ENGLISH        "Access codes have been returned!"
+
+REFERENCE           HOTH_PRINT_3
+LANG_ENGLISH        "Access codes have been stolen!"
+
+REFERENCE           HOTH_PRINT_4
+LANG_ENGLISH        "Imperials have breached the command center!"
+
+REFERENCE           HOTH_PRINT_5
+LANG_ENGLISH        "Command center under attack!"
+
+REFERENCE           HOTH_PRINT_6
+LANG_ENGLISH        "Hangar door to infirmary breached!"
+
+REFERENCE           HOTH_PRINT_7
+LANG_ENGLISH        "Ion cannon control station breached!"
+
+REFERENCE           HOTH_PRINT_8
+LANG_ENGLISH        "Shield generator under attack!"
+
+REFERENCE           DEST_OBJ_1
+LANG_ENGLISH        "Destroy deflector shield generator domes!"
+
+REFERENCE           DEST_OBJ_1_FINAL
+LANG_ENGLISH        "Deflector shield generator domes destroyed!"
+
+REFERENCE           DEST_OBJ_1_DESC
+LANG_ENGLISH        "Destroy the two shield generator domes!"
+
+REFERENCE           DEST_OBJ_2
+LANG_ENGLISH        "Destroy the solar ionization reactor!"
+
+REFERENCE           DEST_OBJ_2_FINAL
+LANG_ENGLISH        "Solar ionization reactor destroyed!"
+
+REFERENCE           DEST_OBJ_3
+LANG_ENGLISH        "Destroy the communcations array!"
+
+REFERENCE           DEST_OBJ_3_FINAL
+LANG_ENGLISH        "Communcations tower destroyed!"
+
+REFERENCE           DEST_OBJ_4
+LANG_ENGLISH        "Destroy turbolaser defenses!"
+
+REFERENCE           DEST_OBJ_4_FINAL
+LANG_ENGLISH        "Turbolaser defenses destroyed!"
+
+REFERENCE           DEST_OBJ_4_DESC
+LANG_ENGLISH        "Destroy all of the turbolaser defenses located around the Star Destroyer!"
+
+REFERENCE           DEST_OBJ_5
+LANG_ENGLISH        "Land shuttle in main docking bay to advance position!"
+
+REFERENCE           DEST_OBJ_5_FINAL
+LANG_ENGLISH        "Shuttle has landed, troops advancing!"
+
+REFERENCE           DEST_OBJ_5_DESC
+LANG_ENGLISH        "Land the Lambda shuttle in the main docking bay so your troops can advance!"
+
+REFERENCE           DEST_OBJ_6
+LANG_ENGLISH        "Disable the tractor beam!"
+
+REFERENCE           DEST_OBJ_6_FINAL
+LANG_ENGLISH        "Tractor beam disabled, the Falcon has escaped!"
+
+REFERENCE           DEST_OBJ_6_DESC
+LANG_ENGLISH        "Disable the tractor beam so the Millenium Falcon can escape!"
+
+REFERENCE           DEST_OBJ_7
+LANG_ENGLISH        "Return the secret data to your shuttle!"
+
+REFERENCE           DEST_OBJ_7_FINAL
+LANG_ENGLISH        "Secret data has been recovered!"
+
+REFERENCE           DEST_OBJ_7_DESC
+LANG_ENGLISH        "Make your way into the data room, capture the secret data, and return to your shuttle!"
+
+REFERENCE           DEST_OBJ_8
+LANG_ENGLISH        "Complete interior objectives to escape with the secret data"
+
+REFERENCE           DEST_OBJ_8_FINAL
+LANG_ENGLISH        "Rebels have escaped with the data!"
+
+REFERENCE           DEST_OBJ_8_DESC
+LANG_ENGLISH        "After completing the interior objectives, you have to escape!"
+
+REFERENCE           DEST_OBJ_WIN_REB
+LANG_ENGLISH        "The Rebels have escaped with the secret data!"
+
+REFERENCE           DEST_OBJ_LOSE_REB
+LANG_ENGLISH        "The Rebels have failed to escape with the secret data!"
+
+REFERENCE           DEST_REB_BRIEF
+LANG_ENGLISH        "Destroy the exterior objectives, disable the tractor beam and escape with \nthe secret data!"
+
+REFERENCE           DEST_IMP_OBJ_1
+LANG_ENGLISH        "Defend the Star Destroyer!"
+
+REFERENCE           DEST_IMP_WIN
+LANG_ENGLISH        "The Star Destroyer is safe!"
+
+REFERENCE           DEST_IMP_BRIEF
+LANG_ENGLISH        "Defend the Star Destroyer against the Rebel attackers.  Don't let the Falcon escape and don't let them steal the data!"
+
+REFERENCE           DEST_IMP_OBJ_1_WIN
+LANG_ENGLISH        "The Imperials have captured the Falcon!"
+
+REFERENCE           DEST_IMP_OBJ_1_LOSE
+LANG_ENGLISH        "The Rebels have saved the Falcon and escaped with the data!"
+
+REFERENCE           DEST_OBJ_1_BRIEFING
+LANG_ENGLISH        "Defend the Star Destroyer from the Rebel attackers!"
+
+REFERENCE           DESE_OBJ_1
+LANG_ENGLISH        "Breach the security wall!"
+
+REFERENCE           DESE_OBJ_1_FINAL
+LANG_ENGLISH        "Security wall has been breached!"
+
+REFERENCE           DESE_OBJ_1_DESC
+LANG_ENGLISH        "There are two weakened areas in the wall; destroy either area to advance your troops!"
+
+REFERENCE           DESE_OBJ_2
+LANG_ENGLISH        "Destroy all communications and security systems to gain access to the arena!"
+
+REFERENCE           DESE_OBJ_2_FINAL
+LANG_ENGLISH        "Systems destroyed, the arena doors are open!"
+
+REFERENCE           DESE_OBJ_2_DESC
+LANG_ENGLISH        "The arena doors are protected by the city's security systems.  Destroy three control panels in each of the three stations to gain entrance."
+
+REFERENCE           DESE_OBJ_3
+LANG_ENGLISH        "Destroy the arena gate to advance your troops!"
+
+REFERENCE           DESE_OBJ_3_FINAL_REB
+LANG_ENGLISH        "Arena gate destroyed!"
+
+REFERENCE           DESE_OBJ_3_FINAL_MERC
+LANG_ENGLISH        "Arena gate destroyed!"
+
+REFERENCE           DESE_OBJ_3_DESC
+LANG_ENGLISH        "Destroy the arena gate to get into the city!"
+
+REFERENCE           DESE_OBJ_4
+LANG_ENGLISH        "Disable the shields in the control tower!"
+
+REFERENCE           DESE_OBJ_4_FINAL
+LANG_ENGLISH        "Shields have been disabled!"
+
+REFERENCE           DESE_OBJ_4_DESC
+LANG_ENGLISH        "The airbase doors are protected by a shield, gain access to the control tower and activate the panel to disable it."
+
+REFERENCE           DESE_OBJ_5
+LANG_ENGLISH        "Find and bring all the protocol droid parts back to the Falcon!"
+
+REFERENCE           DESE_OBJ_5_FINAL
+LANG_ENGLISH        "Protocol droid has been rescued!"
+
+REFERENCE           DESE_OBJ_5_DESC
+LANG_ENGLISH        "A protocol droid was dismantled for spare parts after its capture.  Find all four missing pieces and bring them back to the Falcon!"
+
+REFERENCE           DESE_OBJ_REB_WIN
+LANG_ENGLISH        "The Rebels have rescued the protocol droid!"
+
+REFERENCE           DESE_FINAL_REB_LOSE
+LANG_ENGLISH        "The Rebels have failed to rescue the protocol droid!"
+
+REFERENCE           DESE_MERC_OBJ_2
+LANG_ENGLISH        "Defend the 3 stations!"
+
+REFERENCE           DESE_MERC_OBJ_2_DESC
+LANG_ENGLISH        "There are 3 communications and security panels in 3 different stations, don't let the Rebels destroy them!"
+
+REFERENCE           DESE_MERC_OBJ_3
+LANG_ENGLISH        "Defend the arena gate!"
+
+REFERENCE           DESE_MERC_OBJ_3_DESC
+LANG_ENGLISH        "The only way for the Rebels to reach the starpad is through the arena gate; don't let them destroy it!"
+
+REFERENCE           DESE_MERC_OBJ_4
+LANG_ENGLISH        "Defend the control tower!"
+
+REFERENCE           DESE_MERC_OBJ_4_DESC
+LANG_ENGLISH        "There are two doors protected by a shield, defend the shield control panel in the control tower so the Rebels cannot enter!"
+
+REFERENCE           DESE_MERC_OBJ_5
+LANG_ENGLISH        "Defend the protocol droid parts!"
+
+REFERENCE           DESE_MERC_OBJ_5_DESC
+LANG_ENGLISH        "The Rebels are trying to retrieve a stolen protocol droid.  Defend the missing pieces and don't let them return the parts to the Falcon!"
+
+REFERENCE           DESE_REBEL_BRIEFING
+LANG_ENGLISH        "Make your way through the city to find and recover the protocol droid parts!"
+
+REFERENCE           DESE_MERC_OBJ_1
+LANG_ENGLISH        "Defend the weakened wall!"
+
+REFERENCE           DESE_MERC_WINROUND
+LANG_ENGLISH        "You have succesfully completed your mission!"
+
+REFERENCE           DESE_MERCWIN_REBLOSE
+LANG_ENGLISH        "You have failed to complete your mission!"
+
+REFERENCE           DESE_MERC_OBJ_1_DESC
+LANG_ENGLISH        "Defend the weakened wall sections so the Rebels cannot get through!"
+
+REFERENCE           HOTH_IMP_OBJ_1_NEW
+LANG_ENGLISH        "Advance the AT-ST through the wall to advance!"
+
+REFERENCE           HOTH_IMP_OBJ_1_NEW_DESC
+LANG_ENGLISH        "An attacking AT-AT has taken out the blast door on the wall, move the AT-ST through to advance!"
+
+REFERENCE           HOTH_OBJ_1
+LANG_ENGLISH        "Extend the bridge to advance the AT-ST!"
+
+REFERENCE           HOTH_OBJ_1_FINAL
+LANG_ENGLISH        "Bridge extended!"
+
+REFERENCE           HOTH_OBJ_1_DESC
+LANG_ENGLISH        "The AT-ST cannot cross the crevice until the bridge is extended.  Make your way to the ground bunker below the command center to extend it!"
+
+REFERENCE           HOTH_OBJ_2
+LANG_ENGLISH        "Destroy the shield generator to disable the shield!"
+
+REFERENCE           HOTH_OBJ_2_IMP_FINAL
+LANG_ENGLISH        "Shield generator destroyed, your team has advanced!"
+
+REFERENCE           HOTH_OBJ_2_REB_FINAL
+LANG_ENGLISH        "Shield generator destroyed!"
+
+REFERENCE           HOTH_OBJ_2_DESC
+LANG_ENGLISH        "The door  that leads to the data room is protected by an energy shield,\nonce it is disabled the door can be accessed."
+
+REFERENCE           HOTH_OBJ_3
+LANG_ENGLISH        "Steal the hangar access codes from the droid to enter the hangar!"
+
+REFERENCE           HOTH_OBJ_3_IMP_FINAL
+LANG_ENGLISH        "Hangar doors unlocked, your team has advanced!"
+
+REFERENCE           HOTH_OBJ_3_REB_FINAL
+LANG_ENGLISH        "Hangar doors unlocked!"
+
+REFERENCE           HOTH_OBJ_3_DESC
+LANG_ENGLISH        "The droid in the data room contains access codes for  the main base.  Destroy the droid, and bring its head to the command post near the hangar!"
+
+REFERENCE           HOTH_OBJ_4
+LANG_ENGLISH        "Breach the infirmary to advance your troops!"
+
+REFERENCE           HOTH_OBJ_4_IMP_FINAL
+LANG_ENGLISH        "Infirmary breached, your team has advanced!"
+
+REFERENCE           HOTH_OBJ_4_REB_FINAL
+LANG_ENGLISH        "Infirmary breached, your team has been pushed back!"
+
+REFERENCE           HOTH_OBJ_4_DESC
+LANG_ENGLISH        "Breach the infirmary to push the enemy back!"
+
+REFERENCE           HOTH_OBJ_5
+LANG_ENGLISH        "Destroy the command center!"
+
+REFERENCE           HOTH_OBJ_5_FINAL
+LANG_ENGLISH        "Communications center destroyed!"
+
+REFERENCE           HOTH_OBJ_5_DESC
+LANG_ENGLISH        "Destroy the command center  to win the battle!"
+
+REFERENCE           HOTH_IMP_WIN_FINAL
+LANG_ENGLISH        "The Imperials have completed their mission!"
+
+REFERENCE           HOTH_IMP_LOSE_FINAL
+LANG_ENGLISH        "The Imperials have not completed their mission!"
+
+REFERENCE           HOTH_IMPERIAL_BRIEF
+LANG_ENGLISH        "The Imperials must invade the Rebel base and destroy the command center."
+
+REFERENCE           HOTH_REBE_OBJ_1
+LANG_ENGLISH        "Defend the outer wall!"
+
+REFERENCE           HOTH_REBE_OBJ_1_DESC
+LANG_ENGLISH        "An Imperial AT-AT has taken out the outer blast door, defend it against the AT-ST!	"
+
+REFERENCE           HOTH_REBE_OBJ_2
+LANG_ENGLISH        "Defend the bridge control room!"
+
+REFERENCE           HOTH_REBE_OBJ_2_DESC
+LANG_ENGLISH        "The bridge is controlled in a bunker under the command center, stop the Imperials from accessing it!"
+
+REFERENCE           HOTH_REBE_OBJ_3
+LANG_ENGLISH        "Defend the shield generator!"
+
+REFERENCE           HOTH_REBE_OBJ_3_DESC
+LANG_ENGLISH        "The shield generator protects the entry to the data room; stop the Imperials from destroying the generator!"
+
+REFERENCE           HOTH_REBE_OBJ_4
+LANG_ENGLISH        "Defend the access codes!"
+
+REFERENCE           HOTH_REBE_OBJ_4_DESC
+LANG_ENGLISH        "The droid in the data room contains access codes to the main base.  Stop the Imperials from getting the droid's head!	"
+
+REFERENCE           HOTH_REBE_OBJ_5
+LANG_ENGLISH        "Defend the infirmary!"
+
+REFERENCE           HOTH_REBE_OBJ_5_DESC
+LANG_ENGLISH        "The only route to the command center is through the infirmary.  Prevent the Imperials from advancing by defending the infirmary!	"
+
+REFERENCE           HOTH_REBE_OBJ_6
+LANG_ENGLISH        "Defend the command center!"
+
+REFERENCE           HOTH_REBE_OBJ_6_DESC
+LANG_ENGLISH        "Keep the Imperials from destroying the command center!"
+
+REFERENCE           HOTH_REBEL_OBJ_1_WIN
+LANG_ENGLISH        "The command center is safe!"
+
+REFERENCE           HOTH_REBEL_OBJ_1_BRIEF
+LANG_ENGLISH        "The Imperials have started an assault to knock out the Rebel\ncommand center; you must not let them destroy it!"
+
+REFERENCE           HOTH_REBELS_WIN_MISSION
+LANG_ENGLISH        "The Rebels have successfully completed their mission!"
+
+REFERENCE           HOTH_REBELS_FAILED_MISSION
+LANG_ENGLISH        "The Rebels have failed to complete their mission!"
+
+REFERENCE           HOTH_REBEL_MAIN_BRIEFING
+LANG_ENGLISH        "Defend the base at all costs and do not let the Imperials destroy the\ncommand center!"
+
+REFERENCE           HOTH_OBJ_1_NEW_IMP_FINAL
+LANG_ENGLISH        "The wall has been breached.\nYou've advanced!"
+
+REFERENCE           HOTH_OBJ_1_NEW_REB_FINAL
+LANG_ENGLISH        "The wall has been breached.\nYou've been pushed back!"
+
+REFERENCE           HVY_MERC_ASSAULT
+LANG_ENGLISH        "Merc Heavy Weapons: This Trandoshan heavy weapons member is slow, but comes heavily armed with a Concussion Rifle."
+
+REFERENCE           INF_JEDI_WARRIOR
+LANG_ENGLISH        "Jedi Warrior: Trained in the art of double-bladed lightsaber combat, his kicks can surprise enemy lightsaber duelists.  This Jedi is also trained to use Force Absorb and Force Protect.  "
+
+REFERENCE           HVY_JEDI_KNIGHT
+LANG_ENGLISH        "Jedi Knight: The Jedi Knight has trained in all three styles of single-lightsaber combat and has a wide range of useful powers, including Force Jump 3."
+
+REFERENCE           DEMO_JEDI_DEMO
+LANG_ENGLISH        "Jedi Demolitionist:  A very specialized Jedi, trained to use explosives in addition to a single lightsaber, medium combat style, the demolitionist has only a few low-level powers."
+
+REFERENCE           INF_DJEDI_MAULER
+LANG_ENGLISH        "Dark Jedi Mauler: Forged into a killing machine, the Dark Jedi Mauler combines mastery of the double-bladed lightsaber with Force Rage and Force Grip to obliterate all opposition."
+
+REFERENCE           DEMO_DJEDI_DEMO
+LANG_ENGLISH        "Dark Jedi Demolitionist: This Dark Jedi has been instructed in the ways of the single lightsaber strong combat style and the use of explosives."
+
+REFERENCE           SUPP_DJEDI_TECH
+LANG_ENGLISH        "Dark Jedi Cultist: Trained to use the single saber medium and strong combat styles, this cultist has multiple purposes.  He has Force Jump 3 and Team Energize 3, which can restore Force power to his teammates."
+
+REFERENCE           HOTH_LOC_1
+LANG_ENGLISH        "Wrecked AT-AT"
+
+REFERENCE           HOTH_LOC_2
+LANG_ENGLISH        "Trenches"
+
+REFERENCE           HOTH_LOC_3
+LANG_ENGLISH        "Barricade"
+
+REFERENCE           HOTH_LOC_4
+LANG_ENGLISH        "Ion Control Room"
+
+REFERENCE           HOTH_LOC_5
+LANG_ENGLISH        "Bridge"
+
+REFERENCE           HOTH_LOC_6
+LANG_ENGLISH        "Wampa Cave"
+
+REFERENCE           HOTH_LOC_7
+LANG_ENGLISH        "Data Room"
+
+REFERENCE           HOTH_LOC_8
+LANG_ENGLISH        "Hangar Door Control Room"
+
+REFERENCE           HOTH_LOC_9
+LANG_ENGLISH        "Main Hangar Bay"
+
+REFERENCE           HOTH_LOC_10
+LANG_ENGLISH        "Bridge Control Room"
+
+REFERENCE           HOTH_LOC_11
+LANG_ENGLISH        "Infirmary"
+
+REFERENCE           HOTH_LOC_12
+LANG_ENGLISH        "Command Center"
+
+REFERENCE           DESE_LOC_1
+LANG_ENGLISH        "City Entrance"
+
+REFERENCE           DESE_LOC_2
+LANG_ENGLISH        "Security Wall"
+
+REFERENCE           DESE_LOC_3
+LANG_ENGLISH        "Station 1"
+
+REFERENCE           DESE_LOC_4
+LANG_ENGLISH        "Station 2"
+
+REFERENCE           DESE_LOC_5
+LANG_ENGLISH        "Station 3"
+
+REFERENCE           DESE_LOC_6
+LANG_ENGLISH        "Arena Entrance"
+
+REFERENCE           DESE_LOC_7
+LANG_ENGLISH        "Arena"
+
+REFERENCE           DESE_LOC_8
+LANG_ENGLISH        "Protocol Droid Leg Room"
+
+REFERENCE           DESE_LOC_9
+LANG_ENGLISH        "Protocol Droid Torso Room"
+
+REFERENCE           DESE_LOC_10
+LANG_ENGLISH        "Protocol Droid Head Room"
+
+REFERENCE           DESE_LOC_11
+LANG_ENGLISH        "Protocol Droid Arm Room"
+
+REFERENCE           DESE_LOC_12
+LANG_ENGLISH        "Command Tower"
+
+REFERENCE           DESE_LOC_13
+LANG_ENGLISH        "Falcon"
+
+REFERENCE           KORR_LOC_1
+LANG_ENGLISH        "Lava Pit"
+
+REFERENCE           KORR_LOC_2
+LANG_ENGLISH        "Temple Entrance"
+
+REFERENCE           KORR_LOC_3
+LANG_ENGLISH        "Pedestal Platform"
+
+REFERENCE           KORR_LOC_4
+LANG_ENGLISH        "Red Crystal Room"
+
+REFERENCE           KORR_LOC_5
+LANG_ENGLISH        "Green Crystal Room"
+
+REFERENCE           KORR_LOC_6
+LANG_ENGLISH        "Blue Crystal Room"
+
+REFERENCE           KORR_LOC_7
+LANG_ENGLISH        "Valley Entrance Gate"
+
+REFERENCE           KORR_LOC_8
+LANG_ENGLISH        "Scepter Room"
+
+REFERENCE           KORR_LOC_9
+LANG_ENGLISH        "Altar Room"
+
+REFERENCE           KORR_LOC_10
+LANG_ENGLISH        "Coffin Platform"
+
+REFERENCE           DESE_TEAM1_REBELS
+LANG_ENGLISH        "Rebels"
+
+REFERENCE           DESE_TEAM2_MERCS
+LANG_ENGLISH        "Mercs"
+
+REFERENCE           HOTH_TEAM1_IMPERIAL
+LANG_ENGLISH        "Imperial"
+
+REFERENCE           HOTH_TEAM2_REBEL
+LANG_ENGLISH        "Rebel"
+
+REFERENCE           KORR_TEAM1_LIGHTJEDI
+LANG_ENGLISH        "Light Jedi"
+
+REFERENCE           KORR_TEAM2_DARKJEDI
+LANG_ENGLISH        "Dark Jedi"
+
+
+ENDMARKER
+
+

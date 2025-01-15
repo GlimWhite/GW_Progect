@@ -1,0 +1,94 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           16PRO001
+LANG_ENGLISH        "Master Katarn asked me to inform you that you are not to engage the members of the cult.  He would like you only to determine if the Disciples of Ragnos are on the planet and using it as a base."
+LANG_FRENCH         "Мастер Катарн попросил меня сообщить вам, чтобы вы не связывались с членами секты. Он лишь хочет, чтобы вы узнали, есть ли на планете приверженцы Рагноса и имеется ли у них своя база."
+
+REFERENCE           16RAJ001
+NOTES               "(laughs)"
+LANG_ENGLISH        "Drop your laser sword, Jedi, and maybe we'll spare your life. Or perhaps you'd like to take your chances!"
+LANG_FRENCH         "Брось светомеч, джедай, и быть может сохранишь себе жизнь. Или попробуй попытать удачу!"
+
+REFERENCE           16RAJ002
+LANG_ENGLISH        "So, my Jedi friend.  What do you think of our accommodations?"
+LANG_FRENCH         "Итак, мой джедайский дружочек. Что ты думаешь о наших удобствах?"
+
+REFERENCE           16JAK001
+LANG_ENGLISH        "Why don't you come down here and find out?"
+LANG_FRENCH         "Почему бы тебе не спуститься и проверить?"
+
+REFERENCE           16RAJ003
+LANG_ENGLISH        "Ahhh... feisty.  Good, good.  I have a proposition for you.  You see, it can get dreadfully dull around here, so I'm up for a bit of sport.  I'm going to let you out.  If you can make it back to your ship, you're free to leave.  But if I catch you, I'll have to shoot you... after all, you are an escaped prisoner.  Hopefully, you'll prove more of a challenge than the bounty hunter I had to kill a few days ago.  Of course, I've never hunted a Jedi before. "
+LANG_FRENCH         "А... смело. Хорошо, хорошо. У меня есть для тебя предложение. Видишь ли, тут можно сдохнуть от скуки, так что я ищу немного азарта. Я хочу выпустить тебя. Если сможешь вернуться на свой корабль, то освободишься.\nНо если я тебя поймаю, то пристрелю... это же побег из тюрьмы, в конце концов.\nНадеюсь, ты окажешься дичью потруднее, чем тот призолов, которого я убил пару дней назад.\nКонечно, я никогда еще не охотился на джедая."
+
+REFERENCE           16JAK002
+LANG_ENGLISH        "And if I refuse to play along?"
+LANG_FRENCH         "А если я откажусь играть?"
+
+REFERENCE           16RAJ004
+NOTES               "(laughs at end)"
+LANG_ENGLISH        "Well then, you can rot in your cell.  I'm sure someone might come looking for you, eventually."
+LANG_FRENCH         "Тогда можешь гнить в своей камере. Уверен, кое-кто обязательно захочет на тебя взглянуть."
+
+REFERENCE           16RAJ005
+NOTES               "(O.S.)"
+LANG_ENGLISH        "Let the games begin!"
+LANG_FRENCH         "Начинаем игру!"
+
+REFERENCE           16RAJ006
+LANG_ENGLISH        "Hah!  You Jedi certainly are quick!"
+LANG_FRENCH         "Ха! А вы, джедаи, народ шустрый!"
+
+REFERENCE           16RAJ007
+NOTES               "(over loudspeakers) (calmly, playing with Jaden)"
+LANG_ENGLISH        "Attention, we have an escaped prisoner inside the main garrison.  Initiate Security Lockdown."
+LANG_FRENCH         "Внимание, на территории гарнизона беглый заключенный.\nВключить строгую изоляцию."
+
+REFERENCE           16JAK003
+LANG_ENGLISH        "That should take care of the lockdown.  Now where's the hangar?"
+LANG_FRENCH         "С замками улажено. Где же ангар?"
+
+REFERENCE           16RAJ008
+NOTES               "(over loudspeakers)"
+LANG_ENGLISH        "Not that way!"
+LANG_FRENCH         "Не сюда!"
+
+REFERENCE           16JAK004
+LANG_ENGLISH        "Bet he wasn't expecting that!"
+LANG_FRENCH         "Держу пари, он этого не ждет!"
+
+REFERENCE           16JAK005
+LANG_ENGLISH        "Hmmm, need to reactivate the lift."
+LANG_FRENCH         "Гм, нужно включить лифт."
+
+REFERENCE           16RAJ009
+NOTES               "(getting angry for the first time)"
+LANG_ENGLISH        "You're doing well, Jedi... too well!  It's time to end this game."
+LANG_FRENCH         "Ты неплохо справляешься, джедай... даже слишком! Пора закончить эу игру."
+
+REFERENCE           16RAJ010
+LANG_ENGLISH        "Well played.  Tragically, I can't allow you to tell anyone about my little operation.  Farewell, Jedi."
+LANG_FRENCH         "Хорошо сыграно. Печально, но я не могу позволить тебе рассказать кому-либо о моей маленькой операции.\nПрощай, джедай."
+
+REFERENCE           16RAJ011
+NOTES               "(dying)"
+LANG_ENGLISH        "It... seems I... under... estimated... you... Jed..."
+LANG_FRENCH         "Похоже... я... недо... оценил... тебя... джедай."
+
+
+ENDMARKER
+
+

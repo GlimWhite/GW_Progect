@@ -1,0 +1,97 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           10SO1001
+NOTES               "(use for snowtrooper)"
+LANG_ENGLISH        "Anything to report?"
+
+REFERENCE           10ST1001
+NOTES               "(use for snowtrooper)"
+LANG_ENGLISH        "No, sir."
+
+REFERENCE           10SO1002
+NOTES               "(nods)  (use for snowtrooper)"
+LANG_ENGLISH        "Keep sharp.  We've lost contact with the perimeter patrols.  Could be the storm... or Wampas.  You don't want one of those things surprising you."
+
+REFERENCE           10ST2001
+NOTES               "(use for snowtrooper)"
+LANG_ENGLISH        "I'm glad we're guarding this hole and not the command center."
+
+REFERENCE           10ST1002
+NOTES               "(use for snowtrooper)"
+LANG_ENGLISH        "Why?  It's probably nice and warm in there."
+
+REFERENCE           10ST2002
+NOTES               "(use for snowtrooper)"
+LANG_ENGLISH        "I don't want to be anywhere near those Sith fanatics. They give me the creeps."
+
+REFERENCE           10ST1003
+NOTES               "(use for snowtrooper)"
+LANG_ENGLISH        "Yeah, I know what you mean."
+
+REFERENCE           10JAK001
+LANG_ENGLISH        "I wonder if there's anything useful in here..."
+
+REFERENCE           10JAK002
+LANG_ENGLISH        "Hmmph, won't be getting in this way.  There's got to be another way."
+
+REFERENCE           10CU1001
+NOTES               "(talking into comlink)"
+LANG_ENGLISH        "Command Center to Alora."
+
+REFERENCE           10ALO001
+NOTES               "(via comm)"
+LANG_ENGLISH        "Alora here."
+
+REFERENCE           10CU1002
+NOTES               "(talking into comlink"
+LANG_ENGLISH        "We've just finished downloading the data.  The Rebels must have erased everything during the evacuation.  Luckily for us, the computer kept logging their flight information."
+
+REFERENCE           10ALO002
+NOTES               "(via comm)"
+LANG_ENGLISH        "And...?"
+
+REFERENCE           10CU1003
+NOTES               "(talking into comlink"
+LANG_ENGLISH        "And we found Rogue Leader's flight trajectory when he left Hoth.  From it, we've been able to determine that Skywalker went to Dagobah."
+
+REFERENCE           10ALO003
+NOTES               "(via comm)"
+LANG_ENGLISH        "Dagobah?  That sneaky little Jedi."
+
+REFERENCE           10JAK003
+LANG_ENGLISH        "This isn't good.  I'd better find this Alora."
+
+REFERENCE           10ALO004
+LANG_ENGLISH        "Yes, Master.  Dagobah.  Skywalker didn't mention it in his journals; he must have been trying to protect something."
+
+REFERENCE           10TAA001
+NOTES               "(pleased) HOLO or via comm"
+LANG_ENGLISH        "Well done, my apprentice.  Meet me there."
+
+REFERENCE           10ALO005
+LANG_ENGLISH        "Ah.  You must be the saber-wielding troublemaker who neutralized our perimeter guard.  Are the Jedi stretched so thin that Skywalker sends children to battle the Disciples of Ragnos?"
+
+REFERENCE           10ALO006
+NOTES               "(Pause)"
+LANG_ENGLISH        "We'll meet again, whelp."
+
+REFERENCE           10JAK004
+LANG_ENGLISH        "I can't wait."
+
+
+ENDMARKER
+
+

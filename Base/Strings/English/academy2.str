@@ -1,0 +1,88 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           09LUK001
+LANG_ENGLISH        "I have called you all here to relay some... disturbing news.  Someone sliced into my personal records and accessed some highly sensitive data about places where I felt a strong connection to the Force. Places like Cloud City, Hoth, and Byss."
+
+REFERENCE           09ROP001
+NOTES               "(piping up)"
+LANG_ENGLISH        "What could they get from that, besides a tour?"
+
+REFERENCE           09KYK001
+NOTES               "(glaring at Rosh)"
+LANG_ENGLISH        "Something nasty."
+
+REFERENCE           09LUK002
+LANG_ENGLISH        "I believe that the scepter Jaden saw was somehow used to drain the residual Force power from the Massassi Temple."
+
+REFERENCE           09JE1001
+LANG_ENGLISH        "Drain the Force?  How can anyone do that?"
+
+REFERENCE           09LUK003
+LANG_ENGLISH        "I'm not sure.  But I've learned from the Jedi Holocron that devices were created in the past that could absorb and store Force energy."
+
+REFERENCE           09KYK002
+LANG_ENGLISH        "Those people Jaden saw may have discovered some way to harvest Force power with that scepter."
+
+REFERENCE           09LUK004
+LANG_ENGLISH        "Which could be dangerous indeed."
+
+REFERENCE           09JAK001
+NOTES               "(speaks up)"
+LANG_ENGLISH        "So what are we going to do?"
+
+REFERENCE           09LUK005
+LANG_ENGLISH        "We'll have to investigate any locations from my records.  That includes all of you students.  Corran, you're going to Wayland.  Kyle, I need you to look at the Valley of the Jedi..."
+
+REFERENCE           09ROP002
+NOTES               "(turning towards Jaden)"
+LANG_ENGLISH        "Finally, some real action!"
+
+REFERENCE           09JAK002
+NOTES               "(seems worried)"
+LANG_ENGLISH        "Why would they be stealing Force power?"
+
+REFERENCE           09ROP003
+NOTES               "(shrugs, doesn't care)"
+LANG_ENGLISH        "I don't know.  You worry too much, Jaden.  I bet that these cult guys can't take on a Jedi."
+
+REFERENCE           09JAK003
+LANG_ENGLISH        "Well, we're not Jedi yet.  We're just students."
+
+REFERENCE           09KYK003
+LANG_ENGLISH        "You may be 'just' students, but you're both well on your way.  Don't rush it."
+
+REFERENCE           09LUK006
+LANG_ENGLISH        "Jaden, I'm sending you to Hoth, where I had a vision of Obi-Wan Kenobi.  I imagine there is a pretty strong aura there."
+
+REFERENCE           09LUK007
+NOTES               "(To Rosh:)"
+LANG_ENGLISH        "Rosh, I'm sending you to the remains of the planet Byss.  It's very remote, so I doubt the Cult has been there.  Don't stay too long; the Imperial Remnant may still be operating in the area."
+
+REFERENCE           09ROP004
+NOTES               "(cockily)"
+LANG_ENGLISH        "No problem."
+
+REFERENCE           09LUK008
+LANG_ENGLISH        "That's everyone then.  May the Force be with all of you."
+
+REFERENCE           09ROP005
+NOTES               "(joking)"
+LANG_ENGLISH        "Good luck. Call me if you need any help."
+
+
+ENDMARKER
+
+

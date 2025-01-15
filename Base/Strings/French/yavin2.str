@@ -1,0 +1,223 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           02KYK001
+NOTES               "in a by the book tone"
+LANG_ENGLISH        "Ahem. This is one of the many training grounds here at the Academy. I'm going to put you two in separate courses. When you're ready, Jaden, go through that door."
+LANG_FRENCH         "Кхм. Это одна из многих тренировочных площадок Академии. Я назначу вам\nраздельные курсы. Раз есть готовность, Джейден, иди в ту дверь."
+
+REFERENCE           02KYK002
+NOTES               "to Rosh"
+LANG_ENGLISH        "Rosh, follow me."
+LANG_FRENCH         "Рош, за мной."
+
+REFERENCE           02KYK003
+LANG_ENGLISH        "This course will familiarize you with your core Force abilities. These are powers that every Force user has. As you progress in your training, you will learn new abilities. Both the light and dark sides will be open to you. Remember, abilities are not inherently good or evil. It's how you use them. Every Jedi is naturally stronger in different areas of the Force, and it will be up to you to decide what to focus on."
+LANG_FRENCH         "Этот курс ознакомит вас с основными Навыками Силы - ими владеет каждый ее адепт. В ходе учебы вы освоите новые Навыки. Вам открыты обе стороны Силы. Cами Навыки не злы и не добры. Важно их применение."
+
+REFERENCE           02KYK004
+LANG_ENGLISH        "Alright, let's get started.  In the next area, you'll find some training remotes. These will help you learn how to handle a lightsaber. Ready?"
+LANG_FRENCH         "Каждый джедай от природы силен в неких видах Силы,\nи вам решать, на чем сосредоточиться...\nЛадно, начинаем. Сейчас будет бой с учебными дронами.\nЭто поможет вам овладеть светомечом. Готовы?"
+
+REFERENCE           02ROP001
+NOTES               "(O.S.)"
+LANG_ENGLISH        "Ready!"
+LANG_FRENCH         "Готов!"
+
+REFERENCE           02JAK001
+LANG_ENGLISH        "Ready."
+LANG_FRENCH         "Да!"
+
+REFERENCE           02KYK005
+LANG_ENGLISH        "Here come the remotes!"
+LANG_FRENCH         "А вот и дроны!"
+
+REFERENCE           02ROP002
+NOTES               "(O.S.)"
+LANG_ENGLISH        "Done!"
+LANG_FRENCH         "Сделано!"
+
+REFERENCE           02KYK006
+NOTES               "looking over the wall"
+LANG_ENGLISH        "Nice work, Rosh."
+LANG_FRENCH         "Хорошая работа, Рош."
+
+REFERENCE           02KYK007
+NOTES               "(to Jaden)"
+LANG_ENGLISH        "You did well too, Jaden."
+LANG_FRENCH         "И у тебя неплохо, Джейден."
+
+REFERENCE           02KYK008
+NOTES               "(to both of them)"
+LANG_ENGLISH        "Your lightsaber is an invaluable tool. Even when inactive, it can defuse a potentially volatile situation. Trust me on that. As you train, you'll learn additional fighting styles. Changing styles during combat can surprise your opponent, allowing you to gain the upper hand."
+LANG_FRENCH         "Светомеч - бесценный инструмент. Даже отключенный, он поможет избежать\nмногих неприятных ситуаций. Поверьте мне.\nПо ходу обучения вы изучите дополнительные стили фехтования.\nСмена стиля во время боя может озадачить противника\nи дать вам преимущество."
+
+REFERENCE           02KYK009
+LANG_ENGLISH        "From here on out, we'll talk via comlink in each area. Let's move on."
+LANG_FRENCH         "Теперь будем говорить через коммуникатор. Двигаем дальше."
+
+REFERENCE           02KYK010
+NOTES               "(via comm)"
+LANG_ENGLISH        "Okay, Jaden.  You need to use the Force to jump across the ravine.  It shouldn't be a problem.  If you fall, jump back up to the bridge and try again."
+LANG_FRENCH         "Хорошо, Джейден. Нужно применить Силу, чтобы перепрыгнуть через провал.\nЭто не трудно. Если упадешь, запрыгни обратно на мост и повтори попытку."
+
+REFERENCE           02KYK011
+NOTES               "(via comm)"
+LANG_ENGLISH        "You'll have to use Push to get out of here and into the next area."
+LANG_FRENCH         "Нужно применить Толчок, чтобы выбраться отсюда в следующую зону."
+
+REFERENCE           02KYK012
+NOTES               "(via comm)"
+LANG_ENGLISH        "Remember: you can sense objects that can be affected by your powers.  Examine the area and see if anything stands out..."
+LANG_FRENCH         "Запомни: ты можешь ощущать предметы, на которые может действовать\nтвоя Cила. Проверь место, нет ли чего выделяющегося..."
+
+REFERENCE           02ROP003
+NOTES               "(laughing)"
+LANG_ENGLISH        "Hey Jaden!  This should keep you busy 'til I finish the course!"
+LANG_FRENCH         "Эй, Джейден! Это займет тебя, пока я закончу курс!"
+
+REFERENCE           02KYK013
+NOTES               "(via comm)"
+LANG_ENGLISH        "What took you so long, Jaden?"
+LANG_FRENCH         "Что тебя так задержало, Джейден?"
+
+REFERENCE           02JAK002
+NOTES               "(grimacing)"
+LANG_ENGLISH        "Nothing."
+LANG_FRENCH         "Ничего."
+
+REFERENCE           02KYK014
+NOTES               "(via comm)"
+LANG_ENGLISH        "You're sure?"
+LANG_FRENCH         "Правда?"
+
+REFERENCE           02JAK003
+NOTES               "(a bit angry)"
+LANG_ENGLISH        "It was nothing."
+LANG_FRENCH         "Ничего особенного."
+
+REFERENCE           02KYK015
+NOTES               "(via comm) (not convinced) (pause after okay)"
+LANG_ENGLISH        "To get to the next area, you must "Pull" a lever somewhere in the room.  But you can't reach the lever with your hands.  Remember to examine your environment carefully.  When you are out on a mission, if you find a locked door, look for the guy in charge.  He usually has a key."
+LANG_FRENCH         "Для перехода в следующую зону нужно "Дернуть" рычаг где-то в помещении. Но\nрукой до рычага не достать. Не забывай внимательно исследовать окружение.\nЕсли на задании обнаружишь запертую дверь, поищи дежурного.\nОбычно у него есть ключ."
+
+REFERENCE           02KYK016
+NOTES               "(via comm) (cont'd)"
+LANG_ENGLISH        "Solutions to problems aren't always obvious.  Use your Force Sense to see if you can find a way out of the room."
+LANG_FRENCH         "Решения проблем не всегда очевидны.\nПримени Силовое Прозрение, чтобы найти выход из комнаты."
+
+REFERENCE           02KYK017
+NOTES               "(via comm)"
+LANG_ENGLISH        "You're almost done. You'll need to move fast in this next area.  You can use the Force to Speed up both physically and mentally, allowing you more time to make decisions. "
+LANG_FRENCH         "Почти закончили. В следующей зоне придется побегать.\nМожно использовать Силу, чтобы ускориться физически и психически,\nчто дает больше времени на принятие решений."
+
+REFERENCE           02ROP004
+NOTES               "overly excited"
+LANG_ENGLISH        "So, did I win?"
+LANG_FRENCH         "Что, я победил?"
+
+REFERENCE           02KYK018
+LANG_ENGLISH        "It wasn't a competition."
+LANG_FRENCH         "Это не состязание."
+
+REFERENCE           02ROP005
+LANG_ENGLISH        "I'm sorry. I..."
+LANG_FRENCH         "Прошу прощения. Я..."
+
+REFERENCE           02KYK019
+NOTES               "(interrupting)"
+LANG_ENGLISH        "I'm not the one you should be apologizing to."
+LANG_FRENCH         "Это не передо мной тебе бы надо извиниться."
+
+REFERENCE           02JAK004
+NOTES               "seething"
+LANG_ENGLISH        "It's no big deal. You said yourself this wasn't a competition."
+LANG_FRENCH         "Не велико дело. Вы же сами сказали, что это не состязание."
+
+REFERENCE           02ROP006
+NOTES               "(squirming)"
+LANG_ENGLISH        "Hey, it was just a joke!  I didn't think it would-"
+LANG_FRENCH         "Эй, я же пошутил! Не думаю, что-"
+
+REFERENCE           02KYK020
+NOTES               "(intervening)"
+LANG_ENGLISH        "If that droid was set to Luke's training regimen, it would have killed Jaden.  What were you thinking?"
+LANG_FRENCH         "Если бы тот дроид был в тренировочном режиме Люка,\nто было бы не избежать смертельного исхода. Чем ты думал?"
+
+REFERENCE           02ROP007
+NOTES               "(frantic)"
+LANG_ENGLISH        "Jaden, I'm so sorry. I can't believe I ...I mean I wasn't trying to ..."
+LANG_FRENCH         "Джейден, мне очень жаль. Не могу поверить... хочу сказать, что и не..."
+
+REFERENCE           02JAK005
+NOTES               "(still pretty pissed)"
+LANG_ENGLISH        "Save it, Rosh."
+LANG_FRENCH         "Хватит, Рош."
+
+REFERENCE           02KYK021
+LANG_ENGLISH        "Jaden, you have a right to be angry, but believe me when I say you don't want to feed that emotion."
+LANG_FRENCH         "Джейден, ты вправе сердиться,\nно поверь мне, не стоит лелеять такие чувства."
+
+REFERENCE           02JAK006
+LANG_ENGLISH        "I understand, Master Katarn.  "
+LANG_FRENCH         "Я понимаю, мастер Катарн.  "
+
+REFERENCE           02JAK007
+NOTES               "(turns to Rosh, no longer angry)"
+LANG_ENGLISH        "Apology accepted, Rosh."
+LANG_FRENCH         "Извинения приняты, Рош."
+
+REFERENCE           02KYK022
+NOTES               "(in good humor)"
+LANG_ENGLISH        "Good, that's settled.  And remember, it's Kyle."
+LANG_FRENCH         "Хорошо, все в порядке. И помните, меня зовут Кайл."
+
+REFERENCE           02JAK008
+LANG_ENGLISH        "Yes Mas-... Kyle."
+LANG_FRENCH         "Да, мас-... Кайл."
+
+REFERENCE           02ROP008
+NOTES               "(cocky again"
+LANG_ENGLISH        "Sure thing, Kyle!"
+LANG_FRENCH         "Верняк, Кайл!"
+
+REFERENCE           02KYK023
+LANG_ENGLISH        "Okay, you're both ready to start putting what you've learned to use.  Let's see how you do in the real world."
+LANG_FRENCH         "Хорошо, похоже, вы готовы начать применять то, чему научились.\nПосмотрим, каковы вы будете в реальном мире."
+
+REFERENCE           02LUK001
+LANG_ENGLISH        "Kyle. I did some research on that strange mark from the clothing we found at the temple. It is the symbol of Marka Ragnos, a Sith Lord that died almost five thousand years ago."
+LANG_FRENCH         "Кайл. Я исследовал тот странный знак на одежде, которую мы нашли в храме.\nЭто знак Марки Рагноса, владыки сифхов, умершего почти пять тысяч лет назад."
+
+REFERENCE           02KYK024
+LANG_ENGLISH        "Five thousand years, are you serious? Wait, of course you're serious..."
+LANG_FRENCH         "Пять тысяч лет, ты серьезно? Хотя, конечно, ты не шутишь..."
+
+REFERENCE           02LUK002
+LANG_ENGLISH        "While you're out training your students, be on the lookout for information regarding a group affiliated with Ragnos."
+LANG_FRENCH         "Тренируя учеников, попутно ищи сведения о группе, связанной с Рагносом."
+
+REFERENCE           02KYK025
+LANG_ENGLISH        "Sure thing Luke."
+LANG_FRENCH         "Обязательно, Люк."
+
+REFERENCE           02KYK026
+LANG_ENGLISH        "The journey to become a Jedi begins with a single step. Which, I should point out, you have not yet taken. Move it, Jaden."
+LANG_FRENCH         "Путь становления джедаем начинается с одного шага.\nКоторого, должен указать, вы еще не сделали. Идем, Джейден."
+
+
+ENDMARKER
+
+

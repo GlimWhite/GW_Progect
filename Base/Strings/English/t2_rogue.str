@@ -1,0 +1,48 @@
+// Note to translators:
+// If a sentence is the same in your language then please change it to "#same"
+//
+// eg:
+// LANG_ENGLISH  "HALT"
+// LANG_GERMAN   "#same"
+//
+// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
+//  and because we do not store duplicate strings, which will then get exported again next time
+//  as being untranslated.)
+//
+VERSION             "1"
+CONFIG              "W:\bin\stringed.cfg"
+FILENOTES           "XMAKE-auto-generated from "w:\documents\script\jedi academy script2.txt""
+
+REFERENCE           14KYK001
+NOTES               "(VIA COMM)"
+LANG_ENGLISH        "Hey, Jaden.  You should be able to handle this no problem.  Small-time thugs like Racto are usually very intimidated by the sight of a lightsaber!"
+
+REFERENCE           14LAR001
+NOTES               "(yelling)"
+LANG_ENGLISH        "Did you think you could just barge in here and take me into custody, Jedi? "
+
+REFERENCE           14LAR002
+LANG_ENGLISH        "How did you get up here?  No matter.  If it's trouble you're looking for, you came to the right place, Jedi."
+
+REFERENCE           14LAR003
+LANG_ENGLISH        "That'll teach a Jedi to break into..."
+
+REFERENCE           14JAK001
+LANG_ENGLISH        "Now, let's talk about these assassin droids."
+
+REFERENCE           14LAR004
+LANG_ENGLISH        "Ummm... okay."
+
+REFERENCE           14JAK002
+LANG_ENGLISH        "Where is your factory?"
+
+REFERENCE           14LAR005
+LANG_ENGLISH        "Hidden on Nar Shaddaa.  If you don't hurt me, I'll tell you where it is."
+
+REFERENCE           14JAK003
+LANG_ENGLISH        "You're coming with me."
+
+
+ENDMARKER
+
+
