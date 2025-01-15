@@ -1,0 +1,67 @@
+Sat Dec 28 14:18:59 2024
+
+glGetString
+glGetString
+glGetString
+glGetString
+glGetIntegerv
+glGetFloatv
+glGetIntegerv
+glGetIntegerv
+glClearDepth( 1.000000 )
+glCullFace( GL_FRONT )
+glColor4f( 1.000000,1.000000,1.000000,1.000000 )
+glActiveTextureARB( GL_TEXTURE1_ARB )
+glClientActiveTextureARB( GL_TEXTURE1_ARB )
+glTexEnvf( 0x2300, 0x2200, 8448.000000 )
+glDisable( GL_TEXTURE_2D )
+glActiveTextureARB( GL_TEXTURE0_ARB )
+glClientActiveTextureARB( GL_TEXTURE0_ARB )
+glEnable( GL_TEXTURE_2D )
+glTexEnvf( 0x2300, 0x2200, 8448.000000 )
+glShadeModel
+glDepthFunc( GL_LEQUAL )
+glEnableClientState( GL_VERTEX_ARRAY )
+glPolygonMode( 0x408, 0x1b02 )
+glDepthMask( GL_TRUE )
+glDisable( GL_DEPTH_TEST )
+glEnable( 0xc11 )
+glDisable( GL_CULL_FACE )
+glDisable( GL_BLEND )
+glDisable( GL_ALPHA_TEST )
+glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA )
+glBindTexture( 0xde1, 2048 )
+glTexImage2D
+glTexParameterf( 0xde1, 0x2801, 9729.000000 )
+glTexParameterf( 0xde1, 0x2800, 9729.000000 )
+glGetError
+glTexParameterf( 0xde1, 0x2802, 33071.000000 )
+glTexParameterf( 0xde1, 0x2803, 33071.000000 )
+glBindTexture( 0xde1, 0 )
+glViewport( 0, 0, 1280, 720 )
+glScissor( 0, 0, 1280, 720 )
+glMatrixMode
+glLoadIdentity
+glOrtho
+glMatrixMode
+glLoadIdentity
+glEnable( GL_BLEND )
+glBlendFunc( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA )
+glDepthMask( GL_FALSE )
+glDisable( GL_CULL_FACE )
+glDisable( GL_CLIP_PLANE0 )
+glBindTexture( 0xde1, 2048 )
+glEnable( GL_BLEND )
+glBlendFunc( GL_ONE, GL_ZERO )
+glEnable( GL_DEPTH_TEST )
+glBegin( GL_TRIANGLE_STRIP )
+glTexCoord2f
+glVertex2f
+glTexCoord2f
+glVertex2f
+glTexCoord2f
+glVertex2f
+glTexCoord2f
+glVertex2f
+glEnd
+*** CLOSING LOG ***
