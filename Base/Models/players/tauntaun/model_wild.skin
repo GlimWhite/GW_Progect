@@ -1,0 +1,11 @@
+torso, models/players/tauntaun/tauntaun_body_bare_back.tga
+torso_tail, models/players/tauntaun/tauntaun_body_bare_back.tga
+torso_l, models/players/tauntaun/tauntaun_body_bare_back.tga
+torso_saddle, *off
+head, models/players/tauntaun/tauntaun_head_bare_back.tga
+head_r, models/players/tauntaun/tauntaun_head_bare_back.tga
+head_strap, *off
+head_rteeth, models/players/tauntaun/tauntaun_teeth_strap.tga
+head_lteeth, models/players/tauntaun/tauntaun_teeth_strap.tga
+torso_rpacks, *off
+torso_lpacks, *off

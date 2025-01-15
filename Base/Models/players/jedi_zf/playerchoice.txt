@@ -1,0 +1,65 @@
+//colorshadername	{action block}
+
+*white
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 255
+	setcvar			ui_char_color_blue 255
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_red1
+{
+	setcvar			ui_char_color_red 204
+	setcvar			ui_char_color_green 19
+	setcvar			ui_char_color_blue 21
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_orange1
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 107
+	setcvar			ui_char_color_blue 40
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_pink1
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 148
+	setcvar			ui_char_color_blue 155
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_gold1
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 164
+	setcvar			ui_char_color_blue 59
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_violet1
+{
+	setcvar			ui_char_color_red 216
+	setcvar			ui_char_color_green 160
+	setcvar			ui_char_color_blue 255
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_blue1
+{
+	setcvar			ui_char_color_red 101
+	setcvar			ui_char_color_green 159
+	setcvar			ui_char_color_blue 255
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_blue2
+{
+	setcvar			ui_char_color_red 161
+	setcvar			ui_char_color_green 226
+	setcvar			ui_char_color_blue 240
+}
+
+gfx/menus/players/jedi_zf/tintchoice_zabrak_blue3
+{
+	setcvar			ui_char_color_red 37
+	setcvar			ui_char_color_green 155
+	setcvar			ui_char_color_blue 181
+}
+

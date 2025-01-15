@@ -1,0 +1,6 @@
+body,models/map_objects/ships/tie_bomber
+r_wing1,models/map_objects/ships/tie_bomber_wing2
+r_wing2,models/map_objects/ships/tie_bomber_wing2
+nose,models/map_objects/ships/tie_bomber_window
+l_wing1,models/map_objects/ships/tie_bomber_wing2
+l_wing2,models/map_objects/ships/tie_bomber_wing2

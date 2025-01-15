@@ -1,0 +1,43 @@
+//colorshadername	{action block}
+
+gfx/menus/players/jedi_tf/tintchoice_twilek_green1
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 235 
+	setcvar			ui_char_color_blue 100
+}
+
+gfx/menus/players/jedi_tf/tintchoice_twilek_blue1
+{
+	setcvar			ui_char_color_red 62
+	setcvar			ui_char_color_green 155 
+	setcvar			ui_char_color_blue 255
+}
+
+gfx/menus/players/jedi_tf/tintchoice_twilek_red1
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 110 
+	setcvar			ui_char_color_blue 120
+}
+
+gfx/menus/players/jedi_tf/tintchoice_twilek_purple1
+{
+	setcvar			ui_char_color_red 180
+	setcvar			ui_char_color_green 150 
+	setcvar			ui_char_color_blue 255
+}
+
+gfx/menus/players/jedi_tf/tintchoice_twilek_flesh1
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 200 
+	setcvar			ui_char_color_blue 212
+}
+
+gfx/menus/players/jedi_tf/tintchoice_twilek_base
+{
+	setcvar			ui_char_color_red 255
+	setcvar			ui_char_color_green 255
+	setcvar			ui_char_color_blue 255
+}

@@ -1,0 +1,10 @@
+head_cap_torso_off,models/players/stormtrooper/caps.tga
+heada,models/players/jedi_zf/head_01.tga
+heada_face,models/players/jedi_zf/face_01.tga
+heada_pieces,models/players/jedi_zf/face_01.tga
+headb,*off
+headb_face,*off
+headb_pieces,*off
+headc,*off
+headc_face,*off
+headc_pieces,*off

@@ -1,0 +1,13 @@
+head_cap_torso_off,models/players/stormtrooper/caps.tga
+heada,models/players/jedi_hm/bald_head2.tga
+heada_face,models/players/jedi_hm/face2.tga
+heada_teeth,models/players/jedi_hm/teeth.tga
+headc,*off
+headc_face,*off
+headc_teeth,*off
+headb,*off
+headb_face,*off
+headb_teeth,*off
+headb_bang,*off
+r_handd,models/players/jedi_hm/hands2.tga
+l_handd,models/players/jedi_hm/hands2.tga

@@ -1,0 +1,14 @@
+hips,models/players/r5d2/body_r5d2.tga
+l_leg,models/players/r5d2/legs_r5d2.tga
+l_leg_cylindera,models/players/r5d2/legs_r5d2.tga
+l_leg_cylinderb,models/players/r5d2/legs_r5d2.tga
+l_leg_foot,models/players/r5d2/legs_r5d2.tga
+torso,models/players/r5d2/body_r5d2.tga
+l_arm,models/players/r5d2/legs_r5d2.tga
+l_hand,models/players/r5d2/legs_r5d2.tga
+r_arm,models/players/r5d2/legs_r5d2.tga
+r_hand,models/players/r5d2/legs_r5d2.tga
+torso_r_joint,models/players/r5d2/legs_r5d2.tga
+torso_l_joint,models/players/r5d2/legs_r5d2.tga
+torso_cap,models/players/r5d2/body_r5d2.tga
+head,models/players/r5d2/body_r5d2.tga

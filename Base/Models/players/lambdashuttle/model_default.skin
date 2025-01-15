@@ -1,0 +1,10 @@
+body,models/players/lambdashuttle/shuttle_body
+guns_left,models/players/lambdashuttle/shuttle_wing02
+guns_right,models/players/lambdashuttle/shuttle_wing02
+landing,models/players/lambdashuttle/shuttle_nose
+nose,models/players/lambdashuttle/shuttle_nose
+wing_center,models/players/lambdashuttle/shuttle_wing01
+r_wing1,models/players/lambdashuttle/shuttle_wing02
+l_wing1,models/players/lambdashuttle/shuttle_wing02
+r_wing2,models/players/lambdashuttle/shuttle_wing02
+l_wing2,models/players/lambdashuttle/shuttle_wing02

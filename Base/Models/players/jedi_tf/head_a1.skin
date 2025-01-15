@@ -1,0 +1,11 @@
+head_cap_torso_off,models/players/stormtrooper/caps.tga
+heada,models/players/jedi_tf/head.tga
+heada_tentacles,models/players/jedi_tf/tentacles.tga
+heada_face,models/players/jedi_tf/face.tga
+heada_teeth,models/players/jedi_tf/mouth_eyes.tga
+headb,*off
+headb_tentacles,*off
+headb_face,*off
+headb_teeth,*off
+
+
