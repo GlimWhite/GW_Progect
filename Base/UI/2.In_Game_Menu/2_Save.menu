@@ -1,0 +1,309 @@
+//------------------------------------------------------------------------------------------------
+// 										INGAME MAIN MENU
+//								Allows player to save current game
+//------------------------------------------------------------------------------------------------
+{
+	menuDef 
+	{
+		name					"ingamesaveMenu"
+		fullScreen				0								// MENU_TRUE				
+		rect					0 0 640 480						// Size and position of the menu
+		visible					1								// Visible on open
+		focusColor				1 1 1 1							// Focus color for text and items
+	onOpen 
+		{
+			uiScript			ReadSaveDirectory
+
+			transition			resumebuttun		 -2 -100 160  30  -2   0 160  30 15 15
+			transition			savegamebutton	    478 -100 160  30 478   0 160  30 15 15
+			transition			deletegamebutton	158 -100 160  30 158   0 160  30 15 15
+			transition			backbutton		    318 -100 160  30 318   0 160  30 15 15
+			
+			transition			savegamelist		  0   30 640   0   0  30 640 280 15 15
+			transition			savegamedesc	   -150  310 250  30  -2 310 250  30 15 15
+			transition			savegame_desc	   -120  342 360  16 120 342 360  16 15 15
+			transition			border_list		      0   30 640   0   0  30 640 280 15 15
+			
+			fadein				load
+			fadein				back
+			fadein				delete
+			fadein				cheacpoint
+		}
+	onClose
+		{
+			open				ingameMainMenu
+		}
+	onESC 
+		{ 
+			play				"sound/interface/esc.wav" 					
+			close				all								// Close menu
+			open				ingameMainMenu
+		}	
+//----------------------------------------------------------------------------------------
+// 									Blur
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				Blur
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"menu/ground/blur"
+			forecolor			1 1 0.9 0.45
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//	                               СИНИЯ СТРОКА ДЛЯ МЕНЮ
+//----------------------------------------------------------------------------------------------	
+//ВЫДЕЛЕНИЕ
+	itemDef 
+		{
+			name				sidebutton_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendbox"
+			forecolor			1 0 0 0.5
+			decoration
+		}
+// БАРДЮР ДЛЯ СПИСКА ЗАГРУЗОК
+	itemDef 
+		{
+			name				border_list
+			group				border
+			style				WINDOW_STYLE_FILLED
+			rect				0 30 640 280
+			border				1
+			bordersize			1
+			bordercolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//								ОСНОВНОЕ МЕНЮ СЛЕВОЙ СТОРОНЫ
+//----------------------------------------------------------------------------------------------		
+//Кнопка с текстом: "Продолжить"
+	itemDef 
+		{
+			name				resumebuttun
+			group				none
+			style				WINDOW_STYLE_SHADER
+			type				ITEM_TYPE_BUTTON
+			text				@MENUS_RESUME
+			rect				-2 0 160 30
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			35
+			textaligny			0
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			-2 0 160 30
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			} 	  	  
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				uiScript		closeingame			// Close menu				
+			}
+		}
+//Кнопка с текстом: "Сохранить"		
+	itemDef 
+		{
+			name				savegamebutton
+			group				toprow
+			text				@MENUS_SAVE
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				158 0 160 30
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			40
+			textaligny			0
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+				
+			visible				1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow				158 0 160 30
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			} 
+		action 
+			{ 
+				play			sound/interface/button1.wav ;
+				uiScript		savegame
+			}
+		}
+//Кнопка с текстом: "Удалить"
+	itemDef 
+		{
+			name				deletegamebutton
+			group				toprow
+			text				@MENUS_DELETE_GAME
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				318 0 160 30
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			30
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+			cvarTest			"ui_SelectionOK"
+			enableCvar			{ "1" }
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow				318 0 160 30
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			} 
+		action 
+			{ 
+				play			sound/interface/button1.wav ;
+				hide			glow ;
+				uiScript		deletegame
+			}
+		}
+//Кнопка с текстом "Назад"	
+	itemDef 
+		{
+			name				backbutton
+			group				exit
+			text				@MENUS_BACK_CAPS
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				478 0 161 30
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5			
+			textalignx			54
+			textaligny			0
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			-20 415 200 40
+			}
+		mouseExit 
+			{ 
+				hide				sidebutton_glow
+			}	  	  
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 					
+				close			all ; 
+				open			ingamemainMenu 
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	SAVE GAME FIELDS
+//----------------------------------------------------------------------------------------------
+//Описание опирации
+	itemDef 
+		{
+			name				savegamedesc
+			group				savegame
+			type				ITEM_TYPE_EDITFIELD
+			style				WINDOW_STYLE_SHADER
+			text				@MENUS_DESC
+			cvar				ui_gameDesc
+			maxChars			16
+	      	rect				-2 310 250 30
+			font				3
+			textscale			1
+			textalignx			0.5
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+	
+			visible				1 
+		}
+//Лист загрузок/сохранения игры	
+	itemDef 
+		{
+			name				savegamelist
+			group				loadscreen
+			rect				0 30 640 280
+			type				ITEM_TYPE_LISTBOX
+			style				WINDOW_STYLE_FILLED
+				//Текст в колонках
+			elementwidth		400
+			elementheight		20
+			textaligny			15
+			font				5
+			textscale			0.45
+			forecolor			.95 .64 .37 1
+				//Бардюр и окно
+			bordersize			1
+			bordercolor			0 0 .8 	1
+			backcolor			0 0 .5 .25
+			outlinecolor		1 1 1 0.1
+			//Элементы входящие в этот список
+			elementtype			LISTBOX_TEXT
+			feeder				FEEDER_SAVEGAMES
+			notselectable	
+			columns				2 2 100 400 460 200 160
+			
+			visible				1
+		mouseEnter 
+			{ 
+				setitemcolor	savegamelist bordercolor 1 1 1 1
+			} 
+		mouseExit 
+			{ 
+				setitemcolor	savegamelist bordercolor 0 0 .8 1
+			} 
+		}
+	itemDef 
+		{
+			name				savegame_desc	
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_TEXT
+			rect				120 342 360 16
+			text				@MENUS_SAVEGAME_DESC
+			textstyle			1
+			font				3
+			textscale			1			
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			1 0 0 1
+			decoration
+			visible				1
+		}
+	}
+}

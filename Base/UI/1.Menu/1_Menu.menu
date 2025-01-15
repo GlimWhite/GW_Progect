@@ -1,0 +1,468 @@
+//_______________________________________________________________________________________
+//
+//	                                     ОСНОВНОЕ МЕНЮ
+//_______________________________________________________________________________________
+//****************************************************************************************
+{ 
+	menuDef 
+		{
+			name				"ReduxMainMenu"
+			rect				0 0 640 480
+			fullScreen			1
+			focusColor			1 1 1 1
+			visible				1	
+//****************************************************************************************				
+	onOpen 
+		{		
+			exec 				"music music/menu"			
+			hide				black_ground
+//********************
+// Для Меню "МОДЫ"
+//********************		
+			setitemrect			mods_list	 		 680  15 430 435
+			setitemrect			mods_load	 		 680 450 430  25
+			setitemrect			Escape				 680  15  15  15
+//********************
+// Бордер меню
+//********************	
+			transition			border				230 110 195 250 230 110 195 250 15 15
+			transition			academy				250  30 170  85 250  30 170  85 15 15	
+//********************
+// Кнопки меню
+//********************			
+			transition			newgamebutton		240 120 180   0 240 120 180  30 10 10
+			transition			loadgamebutton		240 160 180   0 240 160 180  30 11 11
+			transition			controlsbutton		240 200 180   0 240 200 180  30 12 12
+			transition			setupbutton			240 240 180   0 240 240 180  30 13 13
+			transition			modsmenubutton		240 280 180   0 240 280 180  30 14 14
+			transition			exitgamebutton		240 320 180   0 240 320 180  30 15 15
+//********************
+// Стрелки меню
+//********************			
+			transition			arrow1			   -210 125  20  20  210 125 20  20 10 10	
+			transition			arrow2			   -210 165  20  20  210 165 20  20 11 11
+			transition			arrow3			   -210 205  20  20  210 205 20  20 12 12	
+			transition			arrow4			   -210 245  20  20  210 245 20  20 13 13	
+			transition			arrow5			   -210 285  20  20  210 285 20  20 14 14	
+			transition			arrow6			   -210 335  20  20  210 325 20  20 15 15			
+		}		
+//****************************************************************************************	
+	onESC 
+		{ 	
+			play					"sound/interface/menuroam.wav"  
+			close					all
+			open					quitMenu 
+		}
+//_______________________________________________________________________________________
+//
+//									ЭЛЕМЕНТЫ В МЕНЮ                              
+//_______________________________________________________________________________________
+//**********************
+// Фон меню
+//**********************	
+	itemDef 
+		{
+			name				groundmenu
+			group				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//**********************
+//  Выделение текста
+//**********************
+	itemDef 
+		{
+			name				sidebutton_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 0 0
+			background			"menu/menu_blendbox"
+			forecolor			1 0 0 0.5
+			visible				1
+			decoration
+		}
+//**********************
+//  Затемнения фона
+//**********************
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.1
+			forecolor			0 0 0 0.1
+			visible				1
+			decoration
+		}
+//**********************
+//  Бордюр под текст
+//**********************
+	 itemDef 
+		{
+			name				border
+			group				allmenu
+			style				WINDOW_STYLE_FILLED
+			backcolor			.03 .12 0.8 0.4
+			border				1
+			bordersize			2
+			bordercolor			0.5 0.5 0.5 0.5
+			decoration
+		}			
+//_______________________________________________________________________________________
+//
+//	                               МЕНЮ ДОБАВЛЕНИЕ СТРЕЛКИ
+//_______________________________________________________________________________________
+	itemDef 
+		{
+			name				arrow1
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			background			"menu/arrow_r"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				arrow2
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			background			"menu/arrow_r"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				arrow3
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			background			"menu/arrow_r"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				arrow4
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			background			"menu/arrow_r"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				arrow5
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			background			"menu/arrow_r"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}			
+	itemDef 
+		{
+			name				arrow6
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			background			"menu/arrow_r"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//_______________________________________________________________________________________
+//
+//									ОСНОВНОЕ КОНТЕКСТНОЕ МЕНЮ
+//_______________________________________________________________________________________
+//**********************
+//  Выделение текста
+//**********************
+	itemDef 
+		{
+			name					arrow
+			style					WINDOW_STYLE_SHADER
+			background				"menu/arrow_ron"				
+			forecolor				1 1 1 1
+			decoration
+		}
+//**********************
+//  Кнопка "Новая"
+//**********************
+	itemDef 
+		{
+			name					newgamebutton
+			group					allmenu
+			style					WINDOW_STYLE_SHADER
+			type					ITEM_TYPE_BUTTON
+			text					@MENUS_NEW
+			textalign				ITEM_ALIGN_CENTER
+			textstyle				3
+			font					5
+			textscale				0.7
+			forecolor				.95 .64 .37 1
+			textalignx				90
+			textaligny				7		
+			background				"BoxMenu"
+			
+		mouseEnter 			
+			{ 
+				show 				arrow
+				setitemrect			arrow				212 127 18 18 
+				hide				arrow1
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow		240 120 180 30
+			}
+		mouseExit 			
+			{ 
+				hide 				arrow
+				show				arrow1
+				hide				sidebutton_glow
+			}	 	
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				open				newgamefirstMenu 
+			}
+		}	
+//**********************
+//  Кнопка "Загрузить"
+//**********************
+	itemDef 
+		{
+			name					loadgamebutton
+			group					allmenu
+			text					@MENUS_LOAD
+			style					WINDOW_STYLE_SHADER
+			font					5
+			textscale				0.7
+			textalign				ITEM_ALIGN_LEFT
+			textstyle				3
+			forecolor				.95 .64 .37 1
+			textaligny				7	
+			textalignx				35	
+			background				"BoxMenu"
+			
+		mouseEnter 			
+			{ 
+				hide				arrow2
+				show 				arrow
+				setitemrect			arrow				212 167 18 18 
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow		240 160 180 30
+			}
+		mouseExit 			
+			{ 
+				hide 				arrow
+				show				arrow2
+				hide				sidebutton_glow
+			}
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				open				loadgameMenu 
+			}
+		}
+//**********************
+//  Кнопка "Управление"
+//**********************
+	itemDef 
+		{
+			name					controlsbutton
+			group					allmenu
+			text					@MENUS_CONTROLS
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			font					5
+			textscale				0.7
+			textalign				ITEM_ALIGN_LEFT
+			textstyle				3
+			forecolor				.95 .64 .37 1
+			textaligny				7	
+			textalignx				25	
+			background				"BoxMenu"
+			
+		mouseEnter 			
+			{ 
+				hide				arrow3
+				show 				arrow
+				setitemrect			arrow				212 207 18 18  
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow		240 200 180 30
+			}
+		mouseExit 			
+			{ 
+				show				arrow3
+				hide 				arrow
+				hide				sidebutton_glow
+			}
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				open				controlsMenu  
+			}
+		}
+//**********************
+//  Кнопка "Настройки"
+//**********************
+	itemDef 
+		{
+			name					setupbutton
+			group					allmenu
+			text					@MENUS_SETUP
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			font					5
+			textscale				0.7
+			textalign				ITEM_ALIGN_LEFT
+			textstyle				3
+			forecolor				.95 .64 .37 1
+			textaligny				7		
+			textalignx				30
+			background				"BoxMenu"
+  	
+		mouseEnter 			
+			{ 
+				hide				arrow4
+				show 				arrow 
+				setitemrect			arrow				212 247 18 18   
+				show				sidebutton_glow 
+				setitemrect			sidebutton_glow		240 240 180 30
+			}
+		mouseExit 			
+			{ 
+				show				arrow4
+				hide 				arrow 
+				hide				sidebutton_glow 
+			}
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				open				setupMenu
+			}
+		}
+//**********************
+//  Кнопка "Моды"
+//**********************
+	itemDef 
+		{
+			name					modsmenubutton
+			text					@MENUS_MODS
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			rect					30 380 120 15
+			font					5
+			textscale				.7
+			textstyle				3
+			textalign				ITEM_ALIGN_LEFT
+			forecolor				.95 .64 .37 1
+			textalignx				55
+			textaligny				7		
+			background				"BoxMenu"
+
+		mouseEnter 			
+			{ 
+				hide				arrow5
+				show 				arrow 
+				setitemrect			arrow				212 287 18 18 
+				show				sidebutton_glow 
+				setitemrect			sidebutton_glow		240 280 180 30
+			}
+		mouseExit 			
+			{ 
+				hide 				arrow 
+				show				arrow5
+				hide				sidebutton_glow 
+			}
+		action 
+			{ 
+				play				sound/interface/sub_select 				
+				close				all
+				open				ModsMenu
+			}
+		}	
+//**********************
+//  Кнопка "Выход"
+//**********************
+	itemDef 
+		{
+			name					exitgamebutton
+			group					allmenu
+			text					@MENUS_EXIT
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			rect					30 430 130 30
+			font					5
+			textscale				0.7
+			textalign				ITEM_ALIGN_LEFT
+			textstyle				3
+			forecolor				.95 .64 .37 1
+			textalignx				50
+			textaligny				7		
+			background				"BoxMenu"
+			
+		mouseEnter 			
+			{ 
+				hide				arrow6
+				show 				arrow 
+				setitemrect			arrow				212 327 18 18 
+				show				sidebutton_glow 
+				setitemrect			sidebutton_glow		240 320 180 30
+			}
+		mouseExit 			
+			{ 
+				hide 				arrow 
+				show				arrow6
+				hide				sidebutton_glow 
+			}
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				open				quitMenu 
+			}
+		}
+//_______________________________________________________________________________________
+//
+//								ЭЛЕМЕНТЫ ВЫШЕ ДРУГИХ
+//_______________________________________________________________________________________
+//***************************
+// Текст "Академия джедаев" 
+//***************************
+	itemDef 
+		{
+			name				academy
+			group				allmenu
+			style				WINDOW_STYLE_SHADER
+			rect				3 5 175 60
+			background			"academy"
+			visible				1
+			decoration
+		}
+//**********************
+//	Текст "REDUX"
+//**********************		
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	}
+}

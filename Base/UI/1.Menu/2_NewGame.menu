@@ -1,0 +1,440 @@
+//----------------------------------------------------------------------------------------
+//								  МЕНЮ НОВАЯ ИГРА
+//----------------------------------------------------------------------------------------
+{					   
+menuDef 
+	{
+		name					"newgamefirstMenu"
+		fullScreen				1									
+		visible					1							
+		focusColor				1 1 1 1					
+	
+	onOpen
+		{ 
+			play				"sound/interface/transition.wav" 
+			
+			setcvar				g_spskill 1
+			setcvar				cg_crosshairForceHint 1
+			setcvar				handicap 100
+			setfocus			medbut
+		//Скрываем выделение
+			hide				sidebutton_glow_red
+			hide				sidebutton_glow
+		//Меню
+			transition			newgame_background -345  -3 343 483  -3  -3 343 483 18 18
+		//Легко
+			transition			box_easy	   	   -345  15 342  44	 -2  15 342  44 18 18
+			transition			easy			   -345  31 120  40	124  31 120  40 18 18
+		//Средняя
+			transition			box_med	   		   -345  63 342  44  -2  63 342  44 18 18
+			transition			med				   -345  77 120  40 128  77 120  40 18 18
+		//Сложная
+			transition		 	box_hard	   	   -345 111 342  44	 -2 111 342  44 18 18
+			transition			hard			   -345 126 120  40	 90 126 120  40 18 18
+		//Хардкор
+			transition			box_vhard     	   -345 159 342  44	 -2 159 342  44	18 18
+			transition			vhard		       -345 174 120  40	 95 174 120  40 18 18
+		//Назад
+			transition			box_back	         -2 448 170  32	 -2 448 170  32 18 18
+			transition			back		    	 55 450 160  24  55 450 160  24 18 18
+		//Далее
+			transition			box_next	   		168 448 172  32 168 448 172  32 18 18
+			transition			next			    210 450 170  32 210 450 170  32	18 18	
+		//Титул
+			transition			newgame_title      -345   0 370  20	-57   0 370  20 18 18	
+		}
+	onESC 
+		{ 
+			play				"sound/interface/esc.wav" 
+			close				newgamefirstMenu
+			open				ReduxMainMenu
+		}
+//----------------------------------------------------------------------------------------
+//	                          	   ФОН МЕНЮ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				groundmenu
+			group				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				-10 -5 650 485
+			background			"menu/ground/MenuGround"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------
+//   							ЗАТЕМНЕНЕНИЕ ФОНА
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			forecolor			0 0 0 0.5
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------
+// 									ВЫДЕЛЕНИЕ 
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				sidebutton_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 0 0
+			background			"menu/menu_blendbox"
+			forecolor			0 0 1 0.5
+			visible				0
+			decoration
+		}
+//При активации
+	itemDef 
+		{
+			name				sidebutton_glow_red
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 0 0
+			background			"menu/menu_blendboxr"
+			forecolor			1 1 1 1
+			visible				0
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//							ОСНОВНОЕ КОНТЕКСТНОЕ МЕНЮ
+//----------------------------------------------------------------------------------------------
+//ПОЛЕ ДЛЯ ИГРЫ
+	itemDef 
+		{
+			name				newgame_background
+			group				none
+			style				WINDOW_STYLE_FILLED
+			rect				183 290 272 190	
+			backcolor			0 0 .6 .5
+			forecolor			0 0 1 1
+			border				1
+			bordercolor			1 1 1 0.5
+			bordersize			1
+			visible				1
+			decoration
+		}
+//Коробка BOX
+	itemDef 
+		{
+			name				box_easy
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 0.8
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//НОВИЧОК
+	itemDef 
+		{
+			name				easybut
+			group				easy
+			text				@MENUS_APPRENTICE
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				5
+			textscale			0.7
+			forecolor			0 1 0 1
+			visible				1		
+		mouseEnter
+			{
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			0  15 340  40
+			}
+		mouseExit
+			{
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/button1.wav"
+				setcvar			g_spskill 0
+				setcvar			cg_crosshairForceHint 1
+				setcvar			handicap 100
+				
+				hide			sidebutton_glow
+				show			sidebutton_glow_red 
+				setitemrect		sidebutton_glow_red		0  15 340  40
+			}
+		}
+	itemDef 
+		{
+			name				box_med
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 0.8
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//СЛОЖНОСТЬ СРЕДНЯЯ
+	itemDef 
+		{
+			name				medbut
+			group				med
+			text				@MENUS_JEDI
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textstyle			3
+			font				5
+			textscale			0.7
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			1 1 0 1
+			visible			1
+			descText			@MENUS_NORMAL_GAME_SETTINGS
+		mouseEnter
+			{
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow		0  67 340  40 
+			}
+		mouseExit
+			{
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/button1.wav"
+				setcvar			g_spskill 1
+				setcvar			cg_crosshairForceHint 1
+				setcvar			handicap 100
+				
+				hide			sidebutton_glow
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		0  67 340  40   
+			}
+
+		}
+	itemDef 
+		{
+			name				box_hard
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 0.8
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//СЛОЖНОСТЬ ХАРД
+	itemDef 
+		{
+			name				hardbut
+			group				hard
+			text				@MENUS_JEDI_KNIGHT
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textstyle			3
+			font				5
+			textscale			0.7
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			1 .682 0 1 
+			visible				1
+		mouseEnter
+			{
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow		0 111 340  40  
+			}
+		mouseExit
+			{
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/button1.wav"
+				setcvar			g_spskill 2
+				setcvar			cg_crosshairForceHint 0
+				setcvar			handicap 100
+				
+				hide			sidebutton_glow
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		0 111 340  40 
+
+			}
+
+		}
+	itemDef 
+		{
+			name				box_vhard
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 0.8
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//СЛОЖНОСТЬ ПИЗДЕЦ
+	itemDef 
+		{
+			name				vhardbut
+			group				vhard
+			text				@MENUS_JEDI_MASTER
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textstyle			3
+			font				5
+			textscale			0.7
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			1 0 0 1
+			visible				1	
+		mouseEnter
+			{
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow		0 111 340  40  
+			}
+		mouseExit
+			{
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/button1.wav"
+				setcvar			g_spskill 2
+				setcvar			cg_crosshairForceHint 0
+				setcvar			handicap 50
+				
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		0 164 340  40
+				hide			sidebutton_glow
+			}
+
+		}
+//----------------------------------------------------------------------------------------
+//	OTHER MAIN MENU BUTTONS
+//----------------------------------------------------------------------------------------
+//Назад - возращение в меню
+	itemDef 
+		{
+			name				box_back
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				back
+			group				fade_buttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY	
+			text				@MENUS_BACK_CAPS
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.95 .64 .37 1
+			
+			visible				1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+				setitemrect		sidebutton_glow		-30 450 220 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow 
+			}	  	  
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 
+				close			all ; 
+				open			ReduxMainMenu 
+			}
+		}
+		
+//СЛОВА "СЛЕДУЮЩИЙ"
+	itemDef 
+		{
+			name				box_next
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				next
+			group				fade_buttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY		
+			text				@MENUS_NEXT
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.95 .64 .37 1
+			visible				1
+		action 
+			{ 
+				play			"sound/interface/button1.wav" 
+				close			all 
+				open			characterMenu 
+			}
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+				setitemrect		sidebutton_glow		150 450 220 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}	  	  
+		}
+//----------------------------------------------------------------------------------------------
+//							Титульное меню
+//----------------------------------------------------------------------------------------------
+//ТИТУЛ
+	itemDef 
+		{
+			name				newgame_title
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			text				@MENUS_SELECT_SKILL
+			background			"menu/menu_blendbox"
+			textalign			ITEM_ALIGN_CENTER		
+			textalignx			225
+			textaligny			-5
+			font				3
+			textscale			0.9
+			forecolor			.95 .64 .37 1
+			visible				1 
+			decoration 
+		}
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	}
+}

@@ -1,0 +1,585 @@
+//----------------------------------------------------------------------------------------
+// 								МЕНЮ СОЗДАНИЕ ПЕРСАНАЖА
+//----------------------------------------------------------------------------------------
+{						   
+	menuDef 
+	{
+		name					"characterMenu"
+		fullScreen				1			
+		visible					1		
+		focusColor				1 1 1 1
+		
+	onOpen
+		{ 
+			uiScript 		 	"getcharcvars"
+			uiScript 		 	"character"
+		//Меню
+			transition			border_character   -345  -3 343 483  -3  -3 343 483 18 18
+			transition			character			860   0 700 500 160   0 700 500 18 18
+		//Раса
+			transition			box_rasa	   	   -345  15 342  44	 -2  15 342  44 18 18
+			transition			species			   -345  31   0   0	 14  31   0   0 18 18
+			transition			speciesbut		   -345  30 200  20	120  30 200  20 18 18
+		//Цвет
+			transition			box_color	   	   -345  59 342  44  -2  59 342  44 18 18
+			transition			color			   -345  73 160  24	140  73 160  24 18 18
+			transition			colorbox		   -345 102 342  34	 -2 102 342  34 18 18
+		//Голова
+			transition		 	box_head	   	   -345 134 342  44	 -2 134 342  44 18 18
+			transition			headbut			   -345 148 342  44	140 148 342  44 18 18
+			transition			headlistbox		   -345 178 342  68	 -2 178 342  68 18 18
+		//Торс
+			transition			box_torso	   	   -345 244 342  44	 -2 244 342  44	18 18
+			transition			torsobut		   -345 259 342  44	110 259 342  44 18 18
+			transition			torsolistbox	   -345 286 342  68	 -2 286 342  68 18 18
+		//Ноги
+			transition			box_legs	   	   -345 352 342  44  -2 352 342  44 18 18
+			transition			legsbut			   -345 368 200  20 140 368 200  20 18 18
+			transition			lowerlistbox	   -345 395 342  51  -2 395 342  51 18 18
+		//Назад
+			transition			box_back	         -2 448 170  32	 -2 448 170  32 18 18
+			transition			backbutton		     55 450 120  24  55 450 120  24 18 18
+		//Далее
+			transition			box_next	   		168 448 172  32 168 448 172  32 18 18
+			transition			next			    210 450 120  32 210 450 120  32	18 18	
+		//Титул
+			transition			create_title	   -345 0 370  20	-25   0 370  20 18 18
+		}
+	
+	onESC 
+		{ 
+			play				"sound/interface/esc.wav" 					
+			close				characterMenu			
+			open				newgamefirstMenu
+		}
+//----------------------------------------------------------------------------------------	
+//	                                   ФОН МЕНЮ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				groundmenu
+			group				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				-10 -5 650 485
+			background			"menu/ground/MenuGround"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------
+//   							ЗАТЕМНЕНЕНИЕ ФОНА
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			forecolor			0 0 0 0.5
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------
+//   							МОДЕЛЬ ПЕРСАНАЖА
+//----------------------------------------------------------------------------------------
+	itemDef
+		{
+			name				character
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				-200 -125 900 700
+			
+			model_g2anim 		"BOTH_STABDOWN"
+			asset_model			"ui_char_model"
+			model_angle			180
+			model_g2mins		-10 -15 -10
+			model_g2maxs		20 15 30
+			model_rotation		50
+			model_fovx			50
+			model_fovy			50
+			
+			isCharacter			1
+			visible				1
+			decoration
+		}
+//Бардюр под меню с левой сторны
+	 itemDef 
+		{
+			name				border_character
+			group				none
+			style				WINDOW_STYLE_FILLED
+			backcolor			0 0 .6 .5
+			forecolor			0 0 1 1
+			border				1
+			bordercolor			1 1 1 0.5
+			bordersize			1
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------
+// 									ВЫДЕЛЕНИЕ 
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				sidebutton_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 0 0
+			background			"menu/menu_blendbox"
+			forecolor			1 0 0 0.5
+			visible				0
+			decoration
+		}
+//----------------------------------------------------------------------------------------
+// 									НАИМЕНОВАНИЕ ВЫБОРА РАСЫ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				box_rasa
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 0.8
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//Тест: "Расы"
+	itemDef
+		{
+			name				species
+			group				none
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			text				@MENUS_SPECIES
+			textalign			ITEM_ALIGN_LEFT	
+			textstyle			3
+			font				5
+			textscale			0.7
+			forecolor			.95 .64 .37 1
+			visible 			1
+			decoration
+		}	
+//Выбор расы
+	itemDef 
+		{
+			name				speciesbut
+			group				none
+			text				" "
+			type				ITEM_TYPE_MULTI
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			4
+			font				5
+			textscale			0.7
+			forecolor			.549 .854 1 1
+			feeder				16	//FEEDER_PLAYER_SPECIES
+			cvar				"ui_char_model"
+			cvarStrList			feeder
+			visible			1 
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+				setitemrect		sidebutton_glow		-15 25 340 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow 
+			}	  	  
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				uiScript 		"characterchanged"
+				uiScript		"resetcharacterlistboxes"
+			}
+		}
+
+//----------------------------------------------------------------------------------------
+// 								ВЫБОР ЦВЕТА СНАРЕЖЕНИЕ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				box_color
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//Текст: "Цвет"	
+	itemDef
+		{
+			name				color
+			group				none
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY		
+			text				@MENUS_COLOR
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				5
+			textscale			0.7
+			forecolor			.549 .854 1 1
+			visible 			1
+			decoration
+		}	
+	itemDef
+		{
+			name				colorbox
+			group				tints
+			type				ITEM_TYPE_LISTBOX
+			style				WINDOW_STYLE_FILLED	
+			elementwidth		32
+			elementheight		32
+			elementtype			1 			//LISTBOX_IMAGE
+			feeder				20			//FEEDER_COLORCHOICES
+			horizontalscroll
+			border				2
+			bordercolor			0 0.5 1 0.6
+			backcolor			1 1 1 .5
+			visible				1
+			action 
+			{
+				play			"sound/interface/choose_color.wav"
+			}
+		}
+//----------------------------------------------------------------------------------------
+//							ВНЕШНОСТЬ: ГОЛОВА МЕНЮ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				box_head
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//Кнопка "Голова"
+	itemDef 
+		{
+			name				headbut
+			group				none
+			text				@MENUS_HEAD
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			4
+			font				5
+			textscale			0.7
+			forecolor			.549 .854 1 1
+			visible				1	 
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+			    setitemrect		sidebutton_glow		-15 143 340 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow 
+			}	  	  
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				transition2		character -100 100 1200 900 20 25
+			}
+		}
+//Лист внешность "Голова"
+	itemDef
+		{
+			name				headlistbox
+			group				heads
+			type				ITEM_TYPE_LISTBOX
+			style				WINDOW_STYLE_FILLED
+			
+			elementwidth		56.5
+			elementheight		50
+			elementtype			1 						//LISTBOX_IMAGE
+			feeder				17 						//FEEDER_PLAYER_SKIN_HEAD
+			horizontalscroll
+			border				2
+			bordersize			0
+			backcolor			.66 .66 1 .25
+			bordercolor			0 0.5 1 0.6
+			forecolor			-1						//use playercolor
+			
+			visible				1
+		action
+			{
+				play			"sound/interface/choose_head.wav"
+				uiScript 		"char_skin"
+			}
+		}
+//----------------------------------------------------------------------------------------
+//							ВНЕШНОСТЬ: ТОРС МЕНЮ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				box_torso
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//Кнопка "Торс"
+	itemDef 
+		{
+			name				torsobut
+			group				none
+			text				@MENUS_TORSO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			4
+			font				5
+			textscale			0.7
+			forecolor			.549 .854 1 1
+			visible				1
+
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+			    setitemrect		sidebutton_glow		-15 254 340 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow 
+			}	  	  
+		action 
+			{
+				play				"sound/interface/button1.wav"
+				transition2			character 160 0 700 500 20 25
+			}
+		}
+//Торс Лист
+	itemDef
+		{
+			name					torsolistbox
+			group					torso
+			type					ITEM_TYPE_LISTBOX
+			style					WINDOW_STYLE_FILLED
+			
+			elementwidth			56.5
+			elementheight			50
+			elementtype				1 						//LISTBOX_IMAGE
+			feeder					18 						//FEEDER_PLAYER_SKIN_TORSO
+			horizontalscroll
+			border					0
+			bordersize				1
+			backcolor				.66 .66 1 .25
+			bordercolor				.66 .66 1 1
+			forecolor				-1						//use playercolor
+
+			visible					1
+		action
+			{
+				play				"sound/interface/choose_torso.wav"
+				uiScript 			"char_skin"
+			}
+		}		
+//----------------------------------------------------------------------------------------
+//							ВНЕШНОСТЬ: НОГИ МЕНЮ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				box_legs
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}	
+//Ноги		
+	itemDef 
+		{
+			name				legsbut
+			group				none
+			text				@MENUS_LEGS
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			4
+			font				5
+			textscale			0.7
+			forecolor			.549 .854 1 1
+			visible				1
+			 
+			mouseEnter 
+			{ 
+				show			sidebutton_glow 
+			    setitemrect		sidebutton_glow		-15 363 340 30
+			}
+			mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}	  	  
+			action 
+			{
+				play			"sound/interface/button1.wav"	
+				transition2		character 180 0 600 400 20 25
+			}
+		}
+//Ноги Лист
+	itemDef
+		{
+			name				lowerlistbox
+			group				lower
+			type				ITEM_TYPE_LISTBOX
+			style				WINDOW_STYLE_FILLED
+			
+			elementwidth		56.5
+			elementheight		50
+			elementtype			1 							//LISTBOX_IMAGE
+			feeder				19 							//FEEDER_PLAYER_SKIN_LEGS
+			horizontalscroll
+			border				1
+			bordersize			2
+			backcolor			.66 .66 1 .25
+			bordercolor			.66 .66 1 1
+			forecolor			-1							//use playercolor
+			visible				1
+		action
+			{
+				play			"sound/interface/choose_head.wav"
+				uiScript 		"char_skin"
+			}
+		}
+//----------------------------------------------------------------------------------------
+//								ПЕРЕМЕЩЕНИЕ В МЕНЮ
+//----------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				box_back
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//Назад	
+	itemDef 
+		{
+			name				backbutton
+			group				exit
+			text				@MENUS_BACK_CAPS
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.95 .64 .37 1
+			visible				1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+			    setitemrect		sidebutton_glow		-30 450 220 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow 
+			}	  	  
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 								
+				close			all ; 
+				open			newgamefirstMenu 
+			}
+		}
+	itemDef 
+		{
+			name				box_next
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			bordercolor			0 0.5 1 0.4
+			visible				1
+			decoration
+		}
+//Далее
+	itemDef 
+		{
+			name				next
+			group				none
+			text				@MENUS_NEXT
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.95 .64 .37 1
+			visible				1
+		action 
+			{ 
+				play			"sound/interface/button1.wav" 
+				close			all 
+				uiScript 		"updatecharcvars"
+				setcvar			saber_menu  0
+				setcvar			ui_saber_type  single
+				open			saberMenu 
+			}
+		mouseEnter 
+			{ 
+				show			sidebutton_glow 
+			    setitemrect		sidebutton_glow		150 450 220 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}	  	  
+		}	
+//----------------------------------------------------------------------------------------
+//								ЭЛЕМЕНТЫ ВЫШЕ ДРУГИХ
+//----------------------------------------------------------------------------------------	
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//ТИТУТЛ
+	itemDef 
+		{
+			name				create_title
+			group				title
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendbox"
+			text				@MENUS_CHARACTER_CREATION
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			textalignx			115
+			textaligny			-5
+			font				3
+			textscale			0.9
+			forecolor			.95 .64 .37 1
+			visible				1 
+			decoration 
+		}
+	}
+}

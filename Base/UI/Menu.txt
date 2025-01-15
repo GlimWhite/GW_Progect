@@ -1,0 +1,20 @@
+{
+//###############################################
+//****************Настройки меню*****************
+//###############################################
+LoadMenu	{ "UI/1.Menu/0_Main.menu" 			}
+LoadMenu	{ "UI/1.Menu/1_Menu.menu" 			}
+LoadMenu	{ "UI/1.Menu/2_Newgame.menu" 		}
+LoadMenu	{ "UI/1.Menu/3_Loadgame.menu" 		}
+LoadMenu	{ "UI/1.Menu/4_Controls.menu" 		}
+LoadMenu	{ "UI/1.Menu/5_Setup.menu" 			}
+LoadMenu	{ "UI/1.Menu/6_Quit.menu" 			}
+LoadMenu	{ "UI/1.Menu/7_Character.menu" 		}
+LoadMenu	{ "UI/1.Menu/8_Saber.menu" 			}
+Loadmenu	{ "UI/1.Menu/9_Global.menu"			}
+LoadMenu	{ "UI/1.Menu/10_Mods.menu" 			}
+LoadMenu	{ "UI/OtherMenu/LoadScreen.menu" 	}
+LoadMenu	{ "UI/OtherMenu/Warning.menu" 		}
+LoadMenu	{ "UI/OtherMenu/Error.menu" 		}
+}
+

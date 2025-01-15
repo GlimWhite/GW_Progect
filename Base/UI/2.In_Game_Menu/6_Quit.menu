@@ -1,0 +1,211 @@
+//___________________________________________________________________________________________
+//	
+//								QUIT MENU/ Меню выхода
+//___________________________________________________________________________________________
+{
+	menuDef 
+	{
+		name					"ingamequitMenu"	
+		fullScreen				0					
+		focusColor				1 1 1 1			
+		visible					1					
+	onESC 
+		{ 
+			play				"sound/interface/esc.wav" 					
+			close				quitMenu ; 
+			open				InGameMainMenu ;
+		}
+	onOpen 
+		{
+		}
+//___________________________________________________________________________________________
+//
+//									ОСНОВНОЕ МЕНЮ
+//___________________________________________________________________________________________		
+//********************
+// Фон для меню
+//********************		
+	itemDef 
+		{
+			name				Blur
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"menu/ground/blur"
+			forecolor			1 1 0.9 0.45
+			visible				1
+			decoration
+		}
+//********************
+// Фон под текст
+//********************
+	itemDef 
+		{
+			name				border_setup	
+			rect				120 150 410 220
+			style				WINDOW_STYLE_FILLED
+			backcolor			.1 .1 .6 .5
+			border				1
+			bordercolor			1 1 1 1
+			decoration	
+			visible				1
+			
+		mouseEnter 			
+			{ 	
+				setitemcolor	border_setup		bordercolor			0 0 1 1
+			}
+		mouseExit 			
+			{
+				setitemcolor	border_setup		bordercolor			1 1 1 1
+			}
+		}
+//********************
+// Выделение текста
+//********************	
+	itemDef 
+		{
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"side_vertex"
+			forecolor			0.1 0.1 0.1 1
+			decoration
+		}
+//*************************************
+// Текст: "Покинуть Академию джедаев?"
+//*************************************	
+	itemDef 
+		{
+			name 				confirm
+			group				none
+			text 				@MENUS_QUIT_JEDI_KNIGHT_II
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			rect 				160 180 330 40
+			font				5
+			textscale 			0.75
+			textalign 			ITEM_ALIGN_CENTER
+			textalignx	 		160
+			textaligny			10
+			forecolor			.95 .64 .37 1
+			border				4
+			bordercolor			1 1 1 1
+			visible 			1
+			decoration
+		}
+//********************
+// Текст: "Нет"
+//********************			
+	itemDef 
+		{
+			name				quitgame_no
+			text				@MENUS_NO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			rect				403 300 60 25
+			font				5
+			textscale			0.65
+			textalignx			14
+			textaligny			5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			border				4
+			bordersize			1
+			visible				1
+		mouseEnter
+			{
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			403 300 60 25
+			}
+		mouseExit
+			{
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 					
+				close			quitMenu ; 
+				open			InGameMainMenu;
+			}	  	  
+		}
+//********************
+// Текст: "Да"
+//********************	
+	itemDef 
+		{
+			name				quitgame_yes
+			text				@MENUS_YES
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			rect				200 300 60 25
+			font				5
+			textscale			0.65
+			textalignx			18
+			textaligny			4
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			border				4
+			bordersize			1
+			visible				1
+		mouseEnter
+			{
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			200 300 60 25
+			}
+		mouseExit
+			{
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				uiScript		Quit			
+			}	  	  
+		}
+//___________________________________________________________________________________________
+//
+//										ЭЛЕМЕНТЫ В МЕНЮ ВЫШЕ ДРУГИХ
+//___________________________________________________________________________________________		
+	itemDef 
+		{
+			name				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textaligny			1
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				academy
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				220 -1 200 75
+			background			"academy"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

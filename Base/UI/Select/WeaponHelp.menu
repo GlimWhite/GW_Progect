@@ -1,0 +1,122 @@
+{
+	menuDef 
+	{
+		name					"ingameWpnSelectHelp"
+	   	visible					0
+	   	fullscreen				0
+	   	rect					140 20 350 375
+		focusColor				1 1 1 1					   	
+		style					WINDOW_STYLE_FILLED
+	   	border					1
+		popup
+		outOfBoundsClick
+		descX					240
+		descY					375
+		descScale				1
+		descColor				1 .682 0 .8
+	onOpen 
+		{
+ 		}							
+	onESC 
+		{ 
+			close				ingameWpnSelectHelp
+			open				ingameWpnSelect
+		}
+	itemDef 
+		{
+			name				window
+			rect				0 0 350 375
+			style 				WINDOW_STYLE_FILLED
+			backcolor			.015 .015 .229 1
+			forecolor			0 0 0 1
+			border				1
+			bordercolor			.388 .396 .925 1
+			bordersize			5
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				instruction_title
+			group				inst_stuff
+			type				ITEM_TYPE_TEXT
+			rect				0 10 350 18
+			text				@MENUS_HELP
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			175
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				instruction_text
+			group				inst_stuff
+			type				ITEM_TYPE_TEXTSCROLL
+			rect				25 35 350 300				
+			text				@MENUS_WEAPON_SELECTION_HELP
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.95 .64 .37 1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			decoration			autowrapped
+			textaligny			0
+			lineHeight			20			
+
+		}
+	itemDef 
+		{
+			name				button_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			visible				0
+			decoration
+		}
+//--------------------------------------------------------------------------------
+//	BUTTON	
+//--------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				inst_done_button
+			group				inst_stuff
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_BUTTON
+			rect				0 315 350 18
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1
+			textaligny			0
+			textalign			ITEM_ALIGN_CENTER
+			textstyle			1
+			textalignx			175
+			forecolor			.95 .64 .37 1
+			visible				1
+
+		mouseEnter 
+			{ 
+				show			button_glow 
+				setitemrect		button_glow		230 335 170 30
+			}
+		mouseExit 
+			{ 
+				hide			button_glow 
+			}	  	  
+		action 
+			{ 
+				play			"sound/misc/nomenu.wav"  
+				close			ingameWpnSelectHelp  
+			}
+		}
+	}
+}
+
+

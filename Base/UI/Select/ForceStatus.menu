@@ -1,0 +1,658 @@
+//----------------------------------------------------------------------------------------------
+// Force Status Menu
+//
+// The screen where after calculating the amount of light side force powers you allocated,
+// Luke or Kyle will congratulate or warn you, depending on which way you're going.
+//
+//	90 % - 100 : very light
+//	60 % - 89  : semi-light
+//    41 % - 59  : neutral
+//    11 % - 40  : semi-dark
+//    0%   - 10  : very dark
+//
+//----------------------------------------------------------------------------------------------
+{			   
+	menuDef 
+	{
+		name					"ingameForceStatus"
+		fullScreen				1		
+		rect					0 0 640 480	
+		visible					1
+	onOpen 
+		{
+		// Compare light/dark force powers allocated
+			uiScript			"calcforcestatus"
+
+			uiScript	  		"initallocforcepower" "absorb"
+			uiScript  			"initallocforcepower" "heal"
+			uiScript  			"initallocforcepower" "mindtrick"
+			uiScript  			"initallocforcepower" "protect"
+
+			uiScript  			"initallocforcepower" "drain"
+			uiScript  			"initallocforcepower" "grip"
+			uiScript  			"initallocforcepower" "lightning"
+			uiScript  			"initallocforcepower" "rage"
+		}							
+	onESC 
+		{ 
+			close				all
+		}
+//----------------------------------------------------------------------------------------------
+//	MENU BACKGROUND
+//----------------------------------------------------------------------------------------------
+		itemDef 
+		{
+			name				background
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"menu/ground/forcestatus"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			decoration
+		}
+// Текущие распределение силы
+	itemDef 
+		{
+			name				top_models
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				160 -5 340 30
+			background			"menu/menu_buttonback"
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				allocate_text
+			type				ITEM_TYPE_TEXT
+			rect				0 0 340 18
+			text				@MENUS_CUR_FORCE_ALLOC
+			textstyle			3
+			font				3
+			textscale			1
+			textalignx			220
+			textaligny			-5
+			forecolor			.95 .64 .37 1
+			visible				1
+			decoration
+		}
+//--------------------------------------
+//	Light Force Icons
+//--------------------------------------
+//--------------------------------------
+//  Absorb Icon
+//--------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+itemDef 
+		{
+			name				absorb_hexpic
+			group				lighthexes
+			style				WINDOW_STYLE_SHADER
+			rect				100 35 80 75
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				absorb_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				30 35 70 75
+			background			"light_absorb"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//--------------------------------------
+//  Heal Icon
+//--------------------------------------
+	itemDef 
+		{
+			name				heal_hexpic
+			group				lighthexes
+			style				WINDOW_STYLE_SHADER
+			rect				100 120 80 70
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				heal_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				30 120 70 70
+			background			"light_heal"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//--------------------------------------
+//  Mindtrick Icon
+//--------------------------------------
+	itemDef 
+		{
+			name				mindtrick_hexpic
+			group				lighthexes
+			style				WINDOW_STYLE_SHADER
+			rect				100 205 80 70
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				mindtrick_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				30 205 70 70
+			background			"light_telepathy"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//--------------------------------------
+//  Protect Icon
+//--------------------------------------
+	itemDef 
+		{
+			name				protect_hexpic
+			group				lighthexes
+			style				WINDOW_STYLE_SHADER
+			rect				100 290 80 70
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				protect_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				30 290 70 70
+			background			"light_protect"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+
+
+//----------------------------------------------------------------------------------------------
+//	Dark Force Icons
+//----------------------------------------------------------------------------------------------
+//----------------------------------
+//  Drain Icon
+//----------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+	itemDef 
+		{
+			name				drain_hexpic
+			group				darkhexes
+			style				WINDOW_STYLE_SHADER
+			rect				540 35 80 75
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				drain_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				470 35 70 70
+			background			"dark_drain"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------
+//  Grip Icon
+//----------------------------------
+		itemDef 
+		{
+			name				grip_hexpic
+			group				darkhexes
+			style				WINDOW_STYLE_SHADER
+			rect				540 120 80 70
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				grip_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				470 120 70 70
+			background			"dark_grip"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------
+//  Lighting Icon
+//----------------------------------
+		itemDef 
+		{
+			name				lightning_hexpic
+			group				darkhexes
+			style				WINDOW_STYLE_SHADER
+			rect				540 205 80 70
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				lightning_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				470 205 70 70
+			background			"dark_lightning"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------
+//  Rage Icon
+//----------------------------------
+		itemDef 
+		{
+			name				rage_hexpic
+			group				darkhexes
+			style				WINDOW_STYLE_SHADER
+			rect				540 290 80 70
+			background			"gfx/menus/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				rage_iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				470 290 70 70
+			background			"dark_rage"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+
+//----------------------------------------------------------------------------------------------
+//	MODELS FOR V-O
+//----------------------------------------------------------------------------------------------
+	itemDef
+		{
+			name				luke_face
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				155 150 350 340
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/luke/model_menu.skin"
+			asset_model			"models/players/luke/model.glm"
+			model_angle			180
+			model_g2mins		13 -20 15
+			model_g2maxs		60  20 55
+			model_rotation		0
+			model_fovx			10
+			model_fovy			10
+			isCharacter			1
+			visible				1
+			cvarTest			ui_forcestatus
+			showCvar			{ "vll"; "sll"; "ntl"; "sdl"; "vdl"  }
+			
+			decoration
+
+		}
+	itemDef
+		{
+			name				kyle_face
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				155 150 350 340
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/kyle/model_menu.skin"
+			asset_model			"models/players/kyle/model.glm"
+			model_angle			180
+			model_g2mins		13 -20 15
+			model_g2maxs		60  20 55
+			model_rotation		0
+			model_fovx			10
+			model_fovy			10
+			isCharacter			1
+			visible				1
+			cvarTest			ui_forcestatus
+			showCvar			{ "vlk"; "slk"; "ntk"; "sdk"; "vdk"  }
+
+			decoration
+		}
+
+//----------------------------------------------------
+// LUKE SUBTITLES 
+//----------------------------------------------------
+		itemDef
+		{
+			name				luke_very_light
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MLUK_03
+			textalign			ITEM_ALIGN_LEFT
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "vll" }
+			
+		}
+
+		itemDef
+		{
+			name				luke_semi_light
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MLUK_04
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "sll" }
+			
+		}
+
+		itemDef
+		{
+			name				luke_neutral
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MLUK_05
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "ntl" }
+			
+		}
+
+		itemDef
+		{
+			name				luke_semi_dark
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MLUK_01
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "sdl" }
+			
+		}
+
+		itemDef
+		{
+			name				luke_very_dark
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MLUK_02
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "vdl" }
+			
+		}
+
+
+//----------------------------------------------------
+// KYLE SUBTITLES 
+//----------------------------------------------------
+		itemDef
+		{
+			name				kyle_very_light
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MKYK_05
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "vlk" }
+			
+		}
+
+		itemDef
+		{
+			name				kyle_semi_light
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MKYK_04
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "slk" }
+			
+		}
+
+		itemDef
+		{
+			name				kyle_neutral
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MKYK_03
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "ntk" }
+			
+		}
+
+		itemDef
+		{
+			name				kyle_semi_dark
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MKYK_01
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			20
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "sdk" }
+			
+		}
+
+		itemDef
+		{
+			name				kyle_very_dark
+			type				ITEM_TYPE_TEXT
+			rect				200 30 250 300
+			text				@MISC_MKYK_02
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			visible				1
+			lineHeight			18
+			autowrapped
+			
+			cvarTest			ui_forcestatus
+			showCvar			{ "vdk" }
+			
+		}
+
+//-----------------------------------------
+// Go to Academy (taken from ingameMissionSelect)
+//----------------------------------------
+	itemDef
+		{
+			name				continue_stats
+			group				stats
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				230 140 200 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			53
+			textaligny			0
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+			cvartest			"tier_storyinfo"
+			showCvar			{ "5"; "6" }
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow	222	160	218	30
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}			
+		action
+			{
+				close			all
+				uiScript		startmap academy2
+			}
+		}
+
+		itemDef
+		{
+			name				story11_continue
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				230 140 200 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			53
+			textaligny			0
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+			showCvar			{ "11"; "12" }
+			
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow	222	160	218	30
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}	
+			action
+			{
+				close			all
+				uiScript		startmap academy4
+			}
+		}
+
+		itemDef
+		{
+			name				story17_continue
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				230 140 200 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			53
+			textaligny			0
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+			showCvar			{ "17"; "18" }
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow	222	160	218	30
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}	
+		action
+			{
+				close			all
+				uiScript		startmap academy6
+			}
+		}
+	}
+}

@@ -1,0 +1,146 @@
+//------------------------------------------------------------------------------------------------
+// 									INGAME VIDEO WARNING
+//------------------------------------------------------------------------------------------------
+{
+	menuDef 
+	{
+		name					"ingamevideowarningMenu"
+		visible					0
+		fullScreen				1						// MENU_TRUE			
+		focusColor				1 1 1 1					// Focus color for text and items
+		outOfBoundsClick								// this closes the window if it gets a click out of the rectangle	
+		popup						
+	onESC 
+		{ 
+			play				"sound/interface/esc.wav" 					
+			close				all ; 
+			open				ingameSetupMenu ;
+		}
+	onClose
+		{
+			play				"sound/interface/button1.wav" ; 
+		}
+//----------------------------------------------------------------------------------------------
+//										MENU BACKGROUND
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				background
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				-10 -5 650 485
+			background			"menu/ground/MenuGround"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//КРАСНЫЙ КВАДРАТ ПОД ТЕКСТ		
+	itemDef 
+		{
+			name				warn_background
+			group				vidwarn
+			style				WINDOW_STYLE_SHADER
+			rect				100 120 460 250
+			background			"menu/menu_boxred"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+// БАРДЮР ДЛЯ СТРОКИ ВНЕСТИ ИЗМЕНЕНИЯ ГРАФИКА
+	itemDef 
+		{
+			name				setup_border
+			group				vidwarn
+			style				WINDOW_STYLE_FILLED
+			rect				98 118 461 249
+			border				1
+			bordersize			2
+			bordercolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//ОТКАЗ ОТ ВНЕСЕНИЙ - ВОЗРАЩАЕТ В МЕНЮ
+		itemDef 
+		{
+			name				vidwarn_no
+			group				vidwarn
+			text				@MENUS_DISCARD
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			rect				415 300 140 25
+			textalign			ITEM_ALIGN_LEFT
+			font 				3
+			textstyle			1
+			textscale 			1
+			forecolor			.95 .64 .37 1
+			visible				1
+		action
+			{ 
+				play			"sound/interface/esc.wav" 					
+				close			all ;
+				uiScript		getvid1data	;					// Get video settings
+				open			ingameSetupMenu ;
+				activate		ingameSetupMenu 	video1menubutton
+			}
+		mouseEnter 
+			{ 
+				show		vidwarn_no_button
+			}
+		mouseExit 
+			{ 
+				hide		vidwarn_no_button
+			}	  	  
+		}
+//ФОН ДЛЯ СЛОВА ДА
+	itemDef 
+		{
+			name				default_yes_button
+			group				vidwarn
+			style				WINDOW_STYLE_SHADER
+			rect				133 300 100 25
+			background			"menu/menu_top_mp"
+			forecolor			.95 .64 .37 1
+			border				1
+			bordersize			1
+			bordercolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//ПРИНЯТИЕ ИЗМЕНЕНИЙ
+	itemDef 
+		{
+			name				vidwarn_yes
+			group				vidwarn
+			text				@MENUS_APPLY
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			rect				145 300 140 25
+			textalign			ITEM_ALIGN_LEFT
+			font 				3
+			textstyle			1
+			textscale 			1
+			forecolor			.95 .64 .37 1
+			visible				1
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				uiScript		setvid1data	ingameSetupMenu ;		// Set video settings
+				close			all
+			}
+		mouseEnter 
+			{ 
+				show		vidwarn_yes_button
+			}
+		mouseExit 
+			{ 
+				hide		vidwarn_yes_button			
+			}	  	  
+		}
+	}
+}
+
+
+
+
+
+

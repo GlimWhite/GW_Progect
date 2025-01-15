@@ -1,0 +1,71 @@
+//###############################################################
+//#						МЕНЮ ПРИ ЗАПУСКЕ						#
+//###############################################################
+{																
+	menuDef 													
+		{														
+			name				"MainMenu"						
+			rect				0 0 640 480
+			fullScreen			1
+			visible				1					
+	onESC 
+		{ 	
+			play				"sound/interface/menuroam.wav"  
+			close				mainMenu  
+			open				quitMenu 
+		}
+//--------------------------------------------------------------
+//	   					ЭЛЕМЕНТЫ В МЕНЮ
+//--------------------------------------------------------------
+//**********************
+//  Черный фон для видео
+//**********************
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 1
+			visible				1
+			decoration
+		}
+//**********************
+//  Видео при запуске
+//**********************		
+	itemDef 
+		{
+			name				video
+			style				WINDOW_STYLE_SHADER
+			type				ITEM_TYPE_BUTTON
+			rect				0 0 640 480
+			background			"video"
+			forecolor			1 1 1 1
+			visible				1	
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				open				ReduxMainMenu
+			}
+		}
+//**********************
+//  Значек Redux
+//**********************
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	}
+}
+//###############################################################
+//#						МЕНЮ ПРИ ЗАПУСКЕ						#
+//###############################################################

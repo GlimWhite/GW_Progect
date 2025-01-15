@@ -1,0 +1,543 @@
+// Data Pad : Force Powers Screen
+// 
+// defines from ui_shared.h
+{
+
+	menuDef 
+	{
+		name					"datapadMovesMenu"
+		fullScreen				1							// MENU_TRUE				
+		rect					0 0 640 480						// Size and position of the menu
+		visible					1							// Visible on open
+		focusColor				1 1 1 1						// Focus color for text and items		
+	onESC 
+		{ 
+				play			"sound/interface/esc.wav" 					
+				uiScript		closedatapad					// Close menu				
+		}
+	onOpen
+		{ 
+			setcvar			"ui_movesflag"	0
+			setcvar			"ui_move_title"	0
+			uiScript		setMoveCharacter
+			setcvar			"ui_move_title" 2
+			uiScript		resetMovesDesc
+			uiScript		setMovesListDefault
+		}
+//----------------------------------------------------------------------------------------------
+//							MENU BACKGROUND
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				background
+			group				none
+			rect				0 0 640 480
+			style				WINDOW_STYLE_SHADER
+			background			"menu/ground/padmenu"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//-----------------------------------------------------
+//			ВИДЫ ДВИЖЕНИЯ
+//-----------------------------------------------------
+	itemDef 
+		{
+			name				move_titles_box
+			group				none
+			style				WINDOW_STYLE_FILLED
+			rect				10 29 270 30
+			backcolor			0 0 .6 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				move_titles_title
+			type				ITEM_TYPE_TEXT
+			rect				0 29 255 23
+			text				@MENUS_MOVE_TYPES
+			textstyle			3
+			font				3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			145
+			visible				1
+			decoration
+		}
+//-----------------------------------------------------
+//			ВИДЫ АТАКИ
+//-----------------------------------------------------		
+	itemDef 
+		{
+			name				move_titles_outline
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			rect				8 57 270 30
+			border				1
+			bordersize			2
+			bordercolor			0 0 .6 1
+			visible				1
+			decoration
+		}
+
+		
+	itemDef 
+		{
+			name				move_titles
+			group				none
+			text				" "
+			descText			@MENUS_CHOOSE_MOVE_DESC
+			type				ITEM_TYPE_MULTI
+			style				WINDOW_STYLE_EMPTY
+			rect				0 65 270 30
+			textstyle			3
+			font				3
+			textscale			1
+			textaligny			-5
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			10
+			backcolor			0 0 0 0
+			forecolor			.95 .64 .37 1
+			feeder				22				//FEEDER_MOVES_TITLES
+			cvar				"ui_move_title"
+			cvarFloatList		
+			{ 
+				"@MENUS_ACROBATICS"		0
+				"@MENUS_SINGLE_FAST"		1
+				"@MENUS_SINGLE_MEDIUM"		2
+				"@MENUS_SINGLE_STRONG"		3
+				"@MENUS_DUAL_SABERS"		4
+				"@MENUS_SABER_STAFF"		5
+			}
+
+			visible			1
+			 
+			mouseEnter 
+			{ 
+				show			button_glow
+				setitemrect		button_glow	8 60 270 30
+			}
+			mouseExit 
+			{ 
+				hide			button_glow 
+			}	  	  
+			action 
+			{
+				uiScript		resetMovesList				
+				uiScript	resetMovesDesc
+				play			"sound/interface/button1.wav"
+			}
+		}
+//-----------------------------------------------------
+//			ВИДЫ АТАКИ
+//-----------------------------------------------------		
+	
+	itemDef 
+		{
+			name				moveslist_title_box
+			group				none
+			style				WINDOW_STYLE_FILLED
+			rect				10 89 270 30
+			backcolor			0 0 .6 1
+			visible				1
+			decoration
+		}
+	
+	itemDef
+		{
+			name				moveslist_title
+			type				ITEM_TYPE_TEXT
+			rect				18 89 253 26
+			text				@MENUS_MOVES
+			font				3
+			forecolor			.549 .854 1 1
+			textscale			1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			125
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				moveslist
+			group				none
+			rect				8 118 270 299
+			type				ITEM_TYPE_LISTBOX
+			style				WINDOW_STYLE_FILLED
+			elementwidth		120
+			elementheight		20
+			textstyle			3
+			font				3
+			textscale			1
+			textaligny			8
+			
+			textscale			1
+			border				1
+			bordersize			2
+			bordercolor			0 0 .8 1
+			forecolor			.95 .64 .37 1
+			backcolor			0 0 .5 .25
+			outlinecolor			.5 .5 .5 .5
+			elementtype			LISTBOX_TEXT
+			feeder				21
+			desctext			@MENUS_MOVE_DESC2
+			notselectable
+			visible				1
+			columns				1 	2 55 225
+			mouseEnter 
+			{ 
+				setitemcolor	moveslist bordercolor 1 1 1 1
+			} 
+			mouseExit 
+			{ 
+				setitemcolor	moveslist bordercolor 0 0 .8 1
+			} 
+			action 
+			{
+				uiScript	resetMovesDesc
+			}			
+			
+			doubleclick
+			{
+				play			sound/interface/button1.wav
+				uiScript	resetMovesDesc
+			}
+		}
+//-----------------------------------------------------
+//			Модель
+//-----------------------------------------------------	
+	itemDef 
+		{
+			name				character_box
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			rect				278 27 351 390
+			border				1
+			bordersize			2
+			bordercolor			0 0 .6 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				character
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				295 -30 340 380
+			
+			model_g2anim 		"BOTH_ROLL_F"
+			isSaber				1
+			isCharacter			1
+			asset_model			"ui_char_model"
+			model_angle			90
+			model_g2mins		-20 -15 -10
+			model_g2maxs		20 15 45
+			//model_rotation		50
+			model_fovx			50
+			model_fovy			50
+			visible				1
+			decoration
+			
+		}
+		
+	itemDef
+		{
+			name				item_desc
+			type				ITEM_TYPE_TEXTSCROLL
+			rect				285 320 330 90
+			text				"  "
+			cvar				ui_move_desc
+			textstyle			3
+			font				3
+			textscale			0.8
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			6
+			visible				1
+			lineHeight			13			
+			
+		}
+//---------------------------------------------------------------------
+//						LOWER BUTTONS MISSION
+//---------------------------------------------------------------------
+		itemDef 
+		{
+			name				moveslist_title_box
+			group				none
+			style				WINDOW_STYLE_FILLED
+			rect				0 420 640	60
+			backcolor			0 0 .6 1
+			visible				1
+			decoration
+		}
+//---------------------------------------------------------------------
+//						LOWER BUTTONS MISSION
+//---------------------------------------------------------------------		
+	itemDef 
+		{
+			name				mission_box
+			style				WINDOW_STYLE_SHADER
+			rect				10 428 110 30
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			visible				1
+			border				4
+			decoration
+		}
+	itemDef 
+		{
+			name				mission
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_BUTTON
+			rect				10 430 110 30
+			text				@MENUS_DP_MISSION
+			descText			@MENUS_AN_OVERVIEW_OF_MISSION
+			textstyle			3
+			font				3
+			textscale			1
+			textalignx			55
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 .682 0 1
+			visible				1
+			mouseEnter 
+			{ 
+				show			button_glow
+				setitemrect		button_glow		5 430 125 25
+			}
+			mouseExit 
+			{ 
+				hide			button_glow 
+			}	  	  
+			action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			datapadMissionMenu 
+			}
+		}
+//---------------------------------------------------------------------
+//						LOWER BUTTONS WEAPONS
+//---------------------------------------------------------------------		
+	itemDef 
+		{
+			name				weapons_box
+			style				WINDOW_STYLE_SHADER
+			rect				130 428 110 30
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			visible				1
+			border				4
+			decoration
+		}
+	itemDef 
+		{
+			name				weapons
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_BUTTON
+			rect				130 430 110 30
+			text				@MENUS_WEAPONS
+			textstyle			3
+			font				3
+			textscale			1
+			textalignx			55
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 .682 0 1
+			visible				1
+		mouseEnter 
+			{ 
+				show			button_glow
+				setitemrect		button_glow		125 430 125 30
+			}
+		mouseExit 
+			{ 
+				hide			button_glow 
+			}		  	  
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			datapadWeaponsMenu 
+			}
+		}
+//---------------------------------------------------------------------
+//						LOWER BUTTONS FORSE
+//---------------------------------------------------------------------		
+	itemDef 
+		{
+			name				force_box
+			style				WINDOW_STYLE_SHADER
+			rect				250 428 110 30
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			visible				1
+			border				4
+			decoration
+		}
+	itemDef 
+		{
+			name				force
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_BUTTON
+			rect				250 430 110 30
+			text				@MENUS_DP_FORCE
+			descText			@MENUS_VIEW_CURRENT_FORCE_POWERS
+			textstyle			3
+			font				3
+			textscale			1
+			textalignx			55
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 .682 0 1
+			visible				1
+			
+		mouseEnter 
+			{ 
+				show			button_glow
+				setitemrect		button_glow		245 430 125 30
+			}
+		mouseExit 
+			{ 
+				hide			button_glow 
+			}	
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			datapadForcePowersMenu
+			} 	  
+		}
+//---------------------------------------------------------------------
+//						LOWER BUTTONS FORSE
+//---------------------------------------------------------------------	
+	itemDef 
+		{
+			name				moves_box
+			style				WINDOW_STYLE_SHADER
+			rect				370 428 110 30
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			visible				1
+			border				4
+			decoration
+		}	
+	itemDef 
+		{
+			name				moves
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_BUTTON
+			rect				370 430 110 25
+			text				@MENUS_MOVES
+			textstyle			3
+			font				3
+			textscale			1
+			textalignx			55
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 .682 0 1
+			visible				1
+			
+		mouseEnter 
+			{ 
+				show			button_glow
+				setitemrect		button_glow		365 430 125 30
+			}
+		mouseExit 
+			{ 
+				hide			button_glow 
+			}	  	  
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+			}
+		}
+//---------------------------------------------------------------------
+//						LOWER BUTTONS FORSE
+//---------------------------------------------------------------------			
+	itemDef 
+		{
+			name				exit_box
+			style				WINDOW_STYLE_SHADER
+			rect				490 428 138 30
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			visible				1
+			border				4
+			decoration
+		}
+	itemDef 
+		{
+			name				exit
+			group				none
+			style				WINDOW_STYLE_EMPTY
+			type				ITEM_TYPE_BUTTON
+			rect				490 430 125 30
+			text				@MENUS_RESUME
+			descText			@MENUS_RETURN_TO_GAME
+			textstyle			3
+			font				3
+			textscale			1
+			textalignx			73
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 .682 0 1
+			visible				1
+
+			mouseEnter 
+			{ 
+				show			button_glow
+				setitemrect		button_glow		485 430 150 30
+			}
+			mouseExit 
+			{ 
+				hide			button_glow 
+			}	  	  
+			
+			action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				uiScript		closedatapad			// Close menu				
+			}
+		}
+//------------------------------------------------------------------------
+//								Рамка
+//------------------------------------------------------------------------			
+	itemDef 
+		{
+			name				galagramma
+			group				none
+			rect				0 0 640 420
+			style				WINDOW_STYLE_SHADER
+			background			"bordermenu"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				background
+			group				none
+			rect				0 0 640 480
+			style				WINDOW_STYLE_SHADER
+			background			"menu/ground/padmenu_wall"	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				button_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 0 0
+			background			"menu/menu_blendboxr"
+			forecolor			1 1 1 1
+			visible				0
+			decoration
+		}
+
+	}
+}

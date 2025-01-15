@@ -1,0 +1,2420 @@
+//
+//Меню выбора силы
+//
+// Игроку разрешается присвоить одно очко любой из заданных силовых способностей
+//
+//
+// Не меняйте названия полей, которые заканчиваются на
+// _hexpic 
+// _fbutton 
+// _level1desc
+// _level2desc
+// _level3desc
+//
+// Также не изменяйте 
+// allocate_text
+// выделенный текст
+//
+//
+// В uiScript initallocforcepower задается ранговый фон для силы силы
+//
+// В uiScript showforceleveldesc отображается описание соответствующего уровня для этой силы.
+//
+// uiScript affectforcepowerlevel повышает ранг силы. Оно 
+// также отображает значки серым цветом или без него.
+//
+{				   
+	menuDef 
+	{
+		name					"ForceSelect"
+		fullScreen				1		
+		rect					0 0 640 480	
+		visible					1
+		focusColor				1 1 1 1
+		descX					320
+		descY					438
+		descScale				1
+		desctextstyle			5
+		desccolor				1 0.2 0.2 1
+		descAlignment			ITEM_ALIGN_CENTER	
+	onOpen 
+		{
+		// Update force power pics to current force power levels
+		// Light powers
+			uiScript  			"initallocforcepower" "absorb"
+			uiScript  			"initallocforcepower" "heal"
+			uiScript  			"initallocforcepower" "mindtrick"
+			uiScript  			"initallocforcepower" "protect"
+
+		// Core powers
+			uiScript  			"initallocforcepower" "jump"
+			uiScript  			"initallocforcepower" "pull"
+			uiScript  			"initallocforcepower" "push"
+			uiScript  			"initallocforcepower" "sense"
+			uiScript  			"initallocforcepower" "speed"
+			uiScript  			"initallocforcepower" "sabdef"
+			uiScript  			"initallocforcepower" "saboff"
+			uiScript  			"initallocforcepower" "sabthrow"
+			
+		// Dark powers
+			uiScript  			"initallocforcepower" "drain"
+			uiScript  			"initallocforcepower" "grip"
+			uiScript  			"initallocforcepower" "lightning"
+			uiScript  			"initallocforcepower" "rage"
+			
+			uiScript  			"forcehelpactive" 
+			hide				sidebutton_glow_red
+			close				ingameForceHelp
+			stopVoice	
+		}
+	onESC 
+		{ 
+			play				"sound/interface/menuroam.wav" //CLOSE 				ALL
+		}
+//----------------------------------------------------------------------------------------------
+//								MENU BACKGROUND
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				background
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"menu/ground/selectforce"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//								SCANLINES
+//----------------------------------------------------------------------------------------------
+		itemDef 
+		{
+			name				scan
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 640
+			background			"menu/scanlines"
+			forecolor			0.5 0.5 0.5 0.1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				sidebutton_glow_red
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendboxr"
+			forecolor			1 1 1 1
+			decoration
+		}
+//Glow title text 
+	itemDef 
+		{
+			name				titleGlow
+			group				none
+			rect				120 0 420 28
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//							TEXT - Описание силы
+//----------------------------------------------------------------------------------------------
+//Текст: "Выбирите Навык Силы"
+		itemDef
+		{
+			name				allocate_text
+			type				ITEM_TYPE_TEXT
+			rect				0 2 620 22
+			text				@MENUS_ALLOCATE_FP
+			textstyle			3
+			font				3
+			textscale			1.2
+			textaligny			-5
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			320
+			visible				1
+			decoration
+		}
+//Текст: "Новый навык выбран"
+		itemDef
+		{
+			name				allocated_text
+			type				ITEM_TYPE_TEXT
+			rect				0 2 640 18
+			text				@MENUS_ALLOCATED_FP
+			textstyle			3
+			font				3
+			textscale			1.2
+			textaligny			-5
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			320
+			visible				0
+			decoration
+		}
+// Core Power message
+		itemDef
+		{
+			name				allocated_text_core
+			type				ITEM_TYPE_TEXT
+			rect				0 5 640 18
+			text				@MENUS_COREPOWER_DESC
+			textstyle			3
+			font				3
+			textscale			1
+			textaligny			-5
+			forecolor			1 0 0 1 // .95 .64 .37 1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			320
+			visible				0
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//								So these will precache
+//----------------------------------------------------------------------------------------------
+		itemDef 
+		{
+			name				precache
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_1"
+			forecolor			.65 .65 .65 1
+			visible				0
+			decoration
+		}
+		itemDef 
+		{
+			name				precache
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_2"
+			forecolor			.65 .65 .65 1
+			visible				0
+			decoration
+		}
+		itemDef 
+		{
+			name				precache
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_3"
+			forecolor			.65 .65 .65 1
+			visible				0
+			decoration
+		}
+		itemDef 
+		{
+			name				precache
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_1_gold"
+			forecolor			.65 .65 .65 1
+			visible				0
+			decoration
+		}
+		itemDef 
+		{
+			name				precache
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_2_gold"
+			forecolor			.65 .65 .65 1
+			visible				0
+			decoration
+		}
+		itemDef 
+		{
+			name				precache
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_3_gold"
+			forecolor			.65 .65 .65 1
+			visible				0
+			decoration
+		}
+	itemDef 
+		{
+			name				button_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 0 0
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			visible				0
+			decoration
+		}
+		
+//----------------------------------------------------------------------------------------------
+//	DEALLOCATION BUTTON - this button is hidden until a power is chosen then this
+//				becomes active so the power can be deallocated
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				deallocate_fbutton
+			group				none
+			type				ITEM_TYPE_BUTTON
+			rect				0 0 0 0
+			forecolor			0 0 1 1
+			visible				0
+		// Decrement force power
+		action
+			{
+				// Hide all force level descrptions and have script determine the level of this one			
+				uiScript		"decrementcurrentforcepower"
+ 				
+				hide			deallocate_fbutton
+				hide			leveltext
+				
+				show			force_button
+				show			force_icon
+				show			force_desc
+			}
+		}	
+//---------------------------------------------------------------------------------------------
+//	ABSORB BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+	itemDef 
+		{
+			name				absorb_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				76 31 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}	
+	itemDef
+		{
+			name				absorb_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				28 31 49 49
+			background			"light_absorb"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				absorb_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				33 41 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+// Show force power description
+		mouseEnter 
+			{ 
+				setitemcolor		absorb_iconpic  forecolor 1 1 1 1
+				setitemcolor		absorb_hexpic  forecolor  1 1 1 1				
+
+				show				force_icon
+				show				force_desc
+			}			
+		mouseExit 
+			{ 
+				setitemcolor		absorb_iconpic  forecolor 1 1 1 1
+				setitemcolor		absorb_hexpic  forecolor  1 1 1 1
+			}
+// Because this gets focus when the menu first opens.
+		onFocus	
+			{
+				setitemcolor		absorb_iconpic  forecolor 1 1 1 1
+				setitemcolor		absorb_hexpic  forecolor  1 1 1 1	
+// Hide all force level descrptions and have script determine the level of this one
+				hide				leveltext
+				uiScript  			"showforceleveldesc" "absorb"
+				
+				setitembackground	force_icon	"light_absorb"	
+				setitemtext			force_desc	@SP_INGAME_FORCE_ABSORB_DESC
+			}
+		// Increment force power
+	action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide				leveltext
+				uiScript			"affectforcepowerlevel" "absorb"
+				hide				force_button
+				
+				setitemrect			deallocate_fbutton	33 31 115 46
+				show				deallocate_fbutton
+				
+				setitemcolor		absorb_iconpic  forecolor 1 1 1 1
+				setitemcolor		absorb_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	HEAL BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+	itemDef 
+		{
+			name				heal_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				76 85 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				heal_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				28 85 49 49
+			background			"light_heal"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				heal_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				33 85 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+// Show force power description
+		mouseEnter 
+			{ 	
+				setitemcolor		heal_iconpic  forecolor 1 1 1 1
+				setitemcolor		heal_hexpic  forecolor  1 1 1 1
+				
+// Hide all force level descrptions and have script determine the level of this one
+				hide				leveltext
+				uiScript  			"showforceleveldesc" "heal"
+				
+				setitembackground	force_icon	"light_heal"
+				setitemtext			force_desc	@SP_INGAME_FORCE_HEAL_DESC				
+
+				show				force_icon
+				show				force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		heal_iconpic  forecolor 1 1 1 1
+				setitemcolor		heal_hexpic  forecolor  1 1 1 1
+			}
+// Increment force power
+		action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide				leveltext
+				uiScript			"affectforcepowerlevel" "heal"
+				hide				force_button
+				
+				setitemrect			deallocate_fbutton	33 85 115 46
+				show				deallocate_fbutton
+				
+				setitemcolor		heal_iconpic  forecolor 1 1 1 1
+				setitemcolor		heal_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	MINDTRICK BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+		itemDef 
+		{
+			name				mindtrick_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				76 139 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				mindtrick_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				28 139 49 49
+			background			"light_telepathy"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				mindtrick_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				33 139 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+			// Show force power description
+			mouseEnter 
+			{ 				
+				setitemcolor		mindtrick_iconpic  forecolor 1 1 1 1
+				setitemcolor		mindtrick_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "mindtrick"
+				
+				setitembackground	force_icon	"light_telepathy"
+				setitemtext		force_desc	@SP_INGAME_FORCE_MIND_TRICK_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+			mouseExit 
+			{ 
+				setitemcolor		mindtrick_iconpic  forecolor 1 1 1 1
+				setitemcolor		mindtrick_hexpic  forecolor  1 1 1 1
+			}
+
+			// Increment force power
+			action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide			leveltext
+				uiScript		"affectforcepowerlevel" "mindtrick"
+				
+				hide			force_button
+				
+				setitemrect		deallocate_fbutton	33 139 115 46
+				show			deallocate_fbutton
+				
+				setitemcolor		mindtrick_iconpic  forecolor 1 1 1 1
+				setitemcolor		mindtrick_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	PROTECT BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+		itemDef 
+		{
+			name				protect_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				76 195 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				protect_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				28 195 49 49
+			background			"light_protect"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+		
+		itemDef 
+		{
+			name				protect_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				33 195 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+			// Show force power description
+			mouseEnter 
+			{
+				
+				setitemcolor		protect_iconpic  forecolor 1 1 1 1
+				setitemcolor		protect_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "protect"
+				
+				setitembackground	force_icon	"light_protect"
+				setitemtext		force_desc	@SP_INGAME_FORCE_PROTECT_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+			mouseExit 
+			{ 
+				setitemcolor		protect_iconpic  forecolor 1 1 1 1
+				setitemcolor		protect_hexpic  forecolor  1 1 1 1
+			}
+
+			// Increment force power
+			action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide			leveltext
+				uiScript		"affectforcepowerlevel" "protect"
+				
+				hide			force_button
+				
+				setitemrect		deallocate_fbutton	33 195 115 46
+				show			deallocate_fbutton
+				
+				setitemcolor		protect_iconpic  forecolor 1 1 1 1
+				setitemcolor		protect_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	JUMP BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+		itemDef 
+		{
+			name				jump_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				225 31 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			.55 .55 .55 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				jump_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				177 31 49 49
+			background			"jump"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				jump_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				184 31 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		jump_iconpic  forecolor 1 1 1 1
+				setitemcolor		jump_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "jump"
+				
+				setitembackground	force_icon	"jump"
+				setitemtext		force_desc	@SP_INGAME_FORCE_JUMP_DESC
+						
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		jump_iconpic  forecolor .55 .55 .55 1
+				setitemcolor		jump_hexpic  forecolor  .55 .55 .55 1
+
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	PULL BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+		// The hex powerlevel graphic (this has to print first because it's additive)
+		itemDef 
+		{
+			name				pull_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				225 85 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			.55 .55 .55 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				pull_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				177 85 49 49
+			background			"pull"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+
+		itemDef 
+		{
+			name				pull_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				184 85 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+			mouseEnter 
+			{
+				
+				setitemcolor		pull_iconpic  forecolor 1 1 1 1
+				setitemcolor		pull_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "pull"
+				
+				setitembackground	force_icon	"pull"
+				setitemtext		force_desc	@SP_INGAME_FORCE_PULL_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+			mouseExit 
+			{ 
+				setitemcolor		pull_iconpic  forecolor .55 .55 .55 1
+				setitemcolor		pull_hexpic  forecolor  .55 .55 .55 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	PUSH BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+	itemDef 
+		{
+			name				push_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				225 139 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			.55 .55 .55 1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				push_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				177 139 49 49
+			background			"push"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+
+		itemDef 
+		{
+			name				push_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				184 139 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+			mouseEnter 
+			{
+				
+				setitemcolor		push_iconpic  forecolor 1 1 1 1
+				setitemcolor		push_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "push"
+				
+				setitembackground	force_icon	"push"
+				setitemtext		force_desc	@SP_INGAME_FORCE_PUSH_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+			mouseExit 
+			{ 
+				setitemcolor		push_iconpic  forecolor .55 .55 .55 1
+				setitemcolor		push_hexpic  forecolor  .55 .55 .55 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	SENSE BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+	itemDef 
+		{
+			name				sense_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				225 195 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			.55 .55 .55 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				sense_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				177 195 49 49
+			background			"sight"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				sense_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				184 195 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		sense_iconpic  forecolor 1 1 1 1
+				setitemcolor		sense_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "sense"
+				
+				setitembackground	force_icon	"sight"
+				setitemtext		force_desc	@SP_INGAME_FORCE_SENSE_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		sense_iconpic  forecolor .55 .55 .55 1
+				setitemcolor		sense_hexpic  forecolor  .55 .55 .55 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	SPEED BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive)
+		itemDef 
+		{
+			name				speed_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				380 31 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			0 1 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				speed_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				332 31 49 49
+			background			"speed"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				speed_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				336 31 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		speed_iconpic  forecolor 1 1 1 1
+				setitemcolor		speed_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "speed"
+				
+				setitembackground	force_icon	"speed"
+				setitemtext		force_desc	@SP_INGAME_FORCE_SPEED_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		speed_iconpic  forecolor 0 1 0 1
+				setitemcolor		speed_hexpic  forecolor  0 1 0 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	SABER DEFENSIVE BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+		itemDef 
+		{
+			name				sabdef_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				380 85 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			0 1 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				sabdef_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				332 85 49 49
+			background			"saber_defend"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				sabdef_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				336 85 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		sabdef_iconpic  forecolor 1 1 1 1
+				setitemcolor		sabdef_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "sabdef"
+				
+				setitembackground	force_icon	"saber_defend"
+				setitemtext		force_desc	@SP_INGAME_FORCE_SABER_DEFENSE_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		sabdef_iconpic  forecolor 0 1 0 1
+				setitemcolor		sabdef_hexpic  forecolor   0 1 0 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	SABER OFFENSIVE BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+	itemDef 
+		{
+			name				saboff_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				380 139 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			0 1 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				saboff_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				332 139 49 49
+			background			"saber_attack"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				saboff_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				336 139 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		saboff_iconpic  forecolor 1 1 1 1
+				setitemcolor		saboff_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "saboff"
+				
+				setitembackground	force_icon	"saber_attack"
+				setitemtext		force_desc	@SP_INGAME_FORCE_SABER_OFFENSE_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		saboff_iconpic  forecolor 0 1 0 1
+				setitemcolor		saboff_hexpic  forecolor  0 1 0 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	SABER THROW BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+	itemDef 
+		{
+			name				sabthrow_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				380 195 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			0 1 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				sabthrow_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				332 195 49 49
+			background			"saber_throw"
+			forecolor			.5 .5 .5 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				sabthrow_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				336 195 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_COREPOWER_DESC
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		sabthrow_iconpic  forecolor 1 1 1 1
+				setitemcolor		sabthrow_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "sabthrow"
+				
+				setitembackground	force_icon	"saber_throw"
+				setitemtext		force_desc	@SP_INGAME_FORCE_SABER_THROW_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		sabthrow_iconpic  forecolor 0 1 0 1
+				setitemcolor		sabthrow_hexpic  forecolor  0 1 0 1
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	DRAIN BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+	itemDef 
+		{
+			name				drain_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				527 31 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 0 0  1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				drain_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				479 31 49 49
+			background			"dark_drain"
+			forecolor			.5 .5 .5 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				drain_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				484 31 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+			// Show force power description
+			mouseEnter 
+			{
+				
+				setitemcolor		drain_iconpic  forecolor 1 1 1 1
+				setitemcolor		drain_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "drain"
+				
+				setitembackground	force_icon	"dark_drain"
+				setitemtext		force_desc	@SP_INGAME_FORCE_DRAIN_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		drain_iconpic  forecolor 1 0 0 1
+				setitemcolor		drain_hexpic  forecolor  1 0 0 1
+			}
+
+			// Increment force power
+		action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide			leveltext
+				uiScript		"affectforcepowerlevel" "drain"				
+				
+				hide			force_button
+				
+				setitemrect		deallocate_fbutton	484 31 115 46
+				show			deallocate_fbutton
+				
+				setitemcolor		drain_iconpic  forecolor 1 1 1 1
+				setitemcolor		drain_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	GRIP BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+	itemDef 
+		{
+			name				grip_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				527 85 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				grip_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				479 85 49 49
+			background			"dark_grip"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				grip_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				484 85 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		grip_iconpic  forecolor 1 1 1 1
+				setitemcolor		grip_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "grip"
+				
+				setitembackground	force_icon	"dark_grip"
+				setitemtext		force_desc	@SP_INGAME_FORCE_GRIP_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		grip_iconpic  forecolor 1 0 0 1
+				setitemcolor		grip_hexpic  forecolor  1 0 0 1
+			}
+
+			// Increment force power
+		action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide			leveltext
+				uiScript		"affectforcepowerlevel" "grip"				
+				
+				hide			force_button
+				
+				setitemrect		deallocate_fbutton	484 85 115 46
+				show			deallocate_fbutton
+				
+				setitemcolor		grip_iconpic  forecolor 1 1 1 1
+				setitemcolor		grip_hexpic  forecolor  1 1 1 1								
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	LIGHTNING BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+	itemDef 
+		{
+			name				lightning_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				527 139 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				lightning_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				479 139 49 49
+			background			"dark_lightning"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				lightning_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				484 139 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		lightning_iconpic  forecolor 1 1 1 1
+				setitemcolor		lightning_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "lightning"
+				
+				setitembackground	force_icon	"dark_lightning"
+				setitemtext		force_desc	@SP_INGAME_FORCE_LIGHTNING_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		lightning_iconpic forecolor  1 0 0 1
+				setitemcolor		lightning_hexpic  forecolor  1 0 0 1
+			}
+
+			// Increment force power
+		action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide			leveltext
+				uiScript		"affectforcepowerlevel" "lightning"
+				
+				hide			force_button
+				
+				setitemrect		deallocate_fbutton	484 139 115 46
+				show			deallocate_fbutton
+				
+				setitemcolor		lightning_iconpic  forecolor 1 1 1 1
+				setitemcolor		lightning_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	RAGE BUTTONS AND BUTTON GRAPHICS
+//----------------------------------------------------------------------------------------------
+// The hex powerlevel graphic (this has to print first because it's additive
+	itemDef 
+		{
+			name				rage_hexpic
+			group				hexpic
+			style				WINDOW_STYLE_SHADER
+			rect				527 195 70 49
+			background			"menu/hex/hex_pattern_0"
+			forecolor			1 0 0 1
+			visible				1
+			decoration
+		}
+	itemDef
+		{
+			name				rage_iconpic
+			group				iconpic
+			style				WINDOW_STYLE_SHADER
+			rect				479 195 49 49
+			background			"dark_rage"
+			forecolor			.65 .65 .65 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				rage_fbutton
+			group				force_button
+			type				ITEM_TYPE_BUTTON
+			rect				484 195 115 46
+			forecolor			1 1 1 1
+			visible				1
+			desctext			@MENUS_ADDFP
+			// Show force power description
+		mouseEnter 
+			{
+				
+				setitemcolor		rage_iconpic  forecolor 1 1 1 1
+				setitemcolor		rage_hexpic  forecolor  1 1 1 1
+				
+				// Hide all force level descrptions and have script determine the level of this one
+				hide			leveltext
+				uiScript  		"showforceleveldesc" "rage"
+				
+				setitembackground	force_icon	"dark_rage"
+				setitemtext		force_desc	@SP_INGAME_FORCE_RAGE_DESC
+				
+				show			force_icon
+				show			force_desc
+			}
+		mouseExit 
+			{ 
+				setitemcolor		rage_iconpic forecolor 	1 0 0 1
+				setitemcolor		rage_hexpic  forecolor  1 0 0 1
+			}
+
+			// Increment/decrement force power
+		action
+			{	// hide descriptions and let affectforcepowerlevel determine the corect one
+				hide			leveltext
+				uiScript		"affectforcepowerlevel" "rage"
+				
+				hide			force_button
+				
+				setitemrect		deallocate_fbutton	484 195 115 46
+				show			deallocate_fbutton
+				
+				setitemcolor		rage_iconpic  forecolor 1 1 1 1
+				setitemcolor		rage_hexpic  forecolor  1 1 1 1				
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//	BIG FORCE ICON AND FORCE DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				force_icon
+			group				bigicons
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			rect				35 281  100 100
+			forecolor			1 1 1 1
+			visible				0	
+			decoration
+		}
+	itemDef 
+		{
+			name				force_desc
+			rect				150 274 510 120
+			type				ITEM_TYPE_TEXTSCROLL
+			text				"This is the text"
+			textalign			ITEM_ALIGN_LEFT
+			textScale			1
+			textstyle			3
+			font				3
+			Forecolor			.95 .64 .37 1
+			visible				0
+			autowrapped
+			lineHeight			20			
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//	ABSORB LEVEL DESCRIPTION
+//----------------------------------------------------------------------------------------------
+// Level 1 description 
+		itemDef 
+		{
+			name				absorb_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_ABSORB_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+// Level 2 description 
+		itemDef 
+		{
+			name				absorb_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_ABSORB_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+// Level 3 description 
+		itemDef 
+		{
+			name				absorb_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_ABSORB_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	HEAL DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				heal_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_HEAL_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				heal_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_HEAL_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				heal_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_HEAL_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	MIND TRICK DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				mindtrick_level1desc
+			group				leveltext
+			rect				40 374 600 80
+			text				@SP_INGAME_FORCE_MIND_TRICK_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				mindtrick_level2desc
+			group				leveltext
+			rect				40 374 600 80
+			text				@SP_INGAME_FORCE_MIND_TRICK_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				mindtrick_level3desc
+			group				leveltext
+			rect				40 374 600 80
+			text				@SP_INGAME_FORCE_MIND_TRICK_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+
+//----------------------------------------------------------------------------------------------
+//	PROTECT DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				protect_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PROTECT_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				protect_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PROTECT_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				protect_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PROTECT_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//
+//	JUMP DESCRIPTION
+//
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				jump_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_JUMP_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				jump_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_JUMP_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				jump_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_JUMP_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	PULL DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				pull_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PULL_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				pull_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PULL_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				pull_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PULL_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	PUSH DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				push_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PUSH_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				push_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PUSH_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				push_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_PUSH_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	SENSE DESCRIPTION
+//----------------------------------------------------------------------------------------------
+itemDef 
+		{
+			name				big_sense
+			group				bigicons
+			style				WINDOW_STYLE_SHADER
+			rect				30 265 128 128
+			background			"gfx/mp/NEW_f_icon_sight"
+			forecolor			1 1 1 1
+			visible				0
+			decoration
+		}
+	itemDef 
+		{
+			name				sense_text
+			group				mainpowertext
+			rect				157 264 460 120
+			text				@SP_INGAME_FORCE_SENSE_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			decoration
+		}
+	itemDef 
+		{
+			name				sense_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SENSE_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+
+	itemDef 
+		{
+			name				sense_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SENSE_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				sense_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SENSE_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	
+//----------------------------------------------------------------------------------------------
+//	SPEED DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				speed_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SPEED_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				speed_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SPEED_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				speed_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SPEED_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	SABER DEFENSE DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				sabdef_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_DEFENSE_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				sabdef_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_DEFENSE_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				sabdef_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_DEFENSE_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	SABER OFFENSE DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				saboff_text
+			group				mainpowertext
+			rect				157 264 460 120
+			text				@SP_INGAME_FORCE_SABER_OFFENSE_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			decoration
+		}
+	itemDef 
+		{
+			name				saboff_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_OFFENSE_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				saboff_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_OFFENSE_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				saboff_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_OFFENSE_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	SABER THROW DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				sabthrow_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_THROW_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				sabthrow_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_THROW_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				sabthrow_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_SABER_THROW_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	DRAIN DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				drain_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_DRAIN_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				drain_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_DRAIN_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				drain_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_DRAIN_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	GRIP DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				grip_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_GRIP_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				grip_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_GRIP_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				grip_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_GRIP_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	LIGHTNING DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				lightning_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_LIGHTNING_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				lightning_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_LIGHTNING_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				lightning_level3desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_LIGHTNING_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//	RAGE DESCRIPTION
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				rage_level1desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_RAGE_LVL1_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+	itemDef 
+		{
+			name				rage_level2desc
+			group				leveltext
+			rect				40 374 580 60
+			text				@SP_INGAME_FORCE_RAGE_LVL2_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+itemDef 
+		{
+			name				rage_level3desc
+			group				leveltext
+			rect				157 384 460 40
+			text				@SP_INGAME_FORCE_RAGE_LVL3_DESC
+			forecolor			0 1 0 1
+			textScale			1
+			textstyle			3
+			font				3
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			visible				0
+			autowrapped
+			type				ITEM_TYPE_TEXTSCROLL
+			lineHeight			20			
+		}
+//----------------------------------------------------------------------------------------------
+//							BOTTOM ROW OF BUTTONS
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name					sidebutton_glow
+			group					none
+			style					WINDOW_STYLE_SHADER
+			background				"menu/menu_buttonback"
+			forecolor				1 1 1 1
+			decoration
+		}
+	itemDef
+		{
+			name					backbut
+			type					ITEM_TYPE_BUTTON
+			rect					40 455 140 24
+			forecolor				.95 .64 .37 1
+			text					@MENUS_HELP
+			textstyle				3
+			font					3
+			textscale				1
+			textalign				ITEM_ALIGN_LEFT
+			textalignx				0
+			textaligny				-1
+			desctext				@MENUS_HELP_DESC1
+			visible					1
+		mouseEnter 
+			{ 
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow				0 455 150 28
+			}
+		mouseExit 
+			{ 
+				hide				sidebutton_glow
+			}
+// If we're backing up then we have to reset levels to what they were
+			action
+			{
+				play				"sound/interface/menuroam.wav"
+				open				ingameForceHelp
+				show				sidebutton_glow_red
+				setitemrect			sidebutton_glow_red			0 455 150 28
+				hide				sidebutton_glow
+			}
+		}
+	itemDef
+		{
+			name				weaponbutton
+			type				ITEM_TYPE_BUTTON
+			rect				540 455 140 24
+			text				@MENUS_WEAPONS
+			forecolor			.95 .64 .37 1
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			desctext			@MENUS_CHOOSEWEAPONS
+			visible				1
+		mouseEnter 
+			{ 
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow				490 455 150 28
+			}
+		mouseExit 
+			{ 
+				hide				sidebutton_glow
+			}
+		action
+			{
+				play			"sound/interface/menuroam.wav"
+				close			all
+				open			ingameWpnSelect
+			}
+		}	
+	}
+}
+
+
+
+
+
+
+
+
+
+

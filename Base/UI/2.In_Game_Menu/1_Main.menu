@@ -1,0 +1,403 @@
+//_______________________________________________________________________________________________
+//
+//									IN GAME MAIM MENU/ ВНУТРИ ИГРОВОЕ МЕНЮ
+//_______________________________________________________________________________________________
+{
+	menuDef 
+	{
+		name						"InGameMainMenu"
+		fullScreen					0						// MENU_FALSE				
+		rect						0 0 640 480				// Size and position of the menu
+		visible						1						// Visible on open
+		focusColor					1 1 1 1					// Focus color for text and items
+		
+		fadeClamp					1						// Sets the fadeup alpha
+		fadeCycle					10						// How often fade happens in milliseconds
+		fadeAmount					0.1						// Amount to adjust alpha per cycle	
+	onOpen 
+		{
+			close					mainhud
+			play 					"sound/interface/transition"
+			
+			transition				main_resume				190 120 260 0 190 120 260 30 15 15
+			transition				main_save				190 160 260 0 190 160 260 30 15 15
+			transition				main_load				190 200 260 0 190 200 260 30 15 15
+			transition				main_controls			190 240 260 0 190 240 260 30 15 15
+			transition				main_setup				190 280 260 0 190 280 260 30 15 15
+			transition				main_exit				190 320 260 0 190 320 260 30 15 15
+			
+			transition				line_white			   -262  29 262 0 188  29 262  0 13 13
+			transition				line_black			   	640  30 260 0 190  30 260  0 13 13
+			transition				starwars			   -262   5 240 0 246   5 240  0 13 13
+			transition				jediacademy				640  40 240 0 230  40 240  0 13 13		
+			
+			setitemcolor			main_resume				foreColor  		1   1   1   0 	
+			setitemcolor			main_save				foreColor  		1   1   1   0
+			setitemcolor			main_load				foreColor  		1   1   1   0
+			setitemcolor			main_controls			foreColor  		1   1   1   0
+			setitemcolor			main_setup				foreColor  		1   1   1   0
+			setitemcolor			main_exit				foreColor  		1   1   1   0
+			
+			fadein					main_resume			
+			fadein					main_save	
+			fadein					main_load			
+			fadein					main_controls			
+			fadein					main_setup			
+			fadein					main_exit
+		}
+	onESC 
+		{ 
+			play					"sound/interface/esc.wav" 		
+			close					ingameMainMenu ;
+			open					MainHUD
+		}
+//_______________________________________________________________________________________________
+//
+//	СТРУКТУРА МЕНЮ
+//_______________________________________________________________________________________________
+//********************
+// Фон для меню
+//********************
+	itemDef 
+		{
+			name				Blur
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"menu/ground/blur"
+			forecolor			1 1 0.9 0.45
+			visible				1
+			decoration
+		}	
+		
+//
+//					TEST MENU
+	itemDef 
+		{
+			name				TEST
+			group				textmenu
+			text				"TEST_MENU"
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_EMPTY
+			rect				250 430 130 30
+			font				5
+			textscale			0.7
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			forecolor			.95 .64 .37 0
+			visible				1
+		action 
+			{ 
+				play			"sound/interface/button1.wav"  
+				close			all  
+				open			missionfailed_menu
+			}
+		}
+//********************
+// Выделение для текста
+//********************
+	itemDef 
+		{
+			name				sidebutton_glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendbox"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//********************
+// Линия 1
+//********************
+	itemDef 
+		{
+			name				line_white
+			style				WINDOW_STYLE_FILLED
+			rect				188 27 262 1	
+			border				1
+			bordersize			3
+			bordercolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//********************
+// Линия 2
+//********************		
+	itemDef 
+		{
+			name				line_black
+			style				WINDOW_STYLE_FILLED
+			rect				190 28 260 1	
+			border				1
+			bordersize			2
+			bordercolor			0 0 0 1
+			visible				1
+			decoration
+		}
+//********************
+// Текст: "STAR WARS"
+//********************		
+	itemDef 
+		{
+			name				starwars
+			rect				246 5 240 40
+			text				"STAR WARS"
+			textstyle			3
+			font				5
+			textscale			0.9	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//********************
+// Текст: "JEDI ACADEMY"
+//********************		
+	itemDef 
+		{
+			name				jediacademy
+			rect				230 38 240 40
+			text				"JEDI ACADEMY"
+			textstyle			3
+			font				5
+			textscale			0.9	
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//_______________________________________________________________________________________________
+//
+//									ОСНОВНОЕ КОНТЕКСТНОЕ МЕНЮ
+//_______________________________________________________________________________________________	
+//**********************
+// Кнопка: "Продолжить"
+//**********************	
+	itemDef 
+		{
+			name				main_resume
+			group				none
+			style				WINDOW_STYLE_SHADER
+			type				ITEM_TYPE_BUTTON
+			text				@MENUS_RESUME
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5			
+			textalignx			80
+			textaligny			8
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+		mouseEnter 			
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			190 120 260 30
+			}
+		mouseExit 			
+			{ 
+				hide			sidebutton_glow
+			}  	  
+			action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all			
+			}
+		}
+//**********************
+// Кнопка: "Сохранить"
+//**********************
+	itemDef 
+		{
+			name				main_save
+			group				nbut
+			text				@MENUS_SAVE
+			style				WINDOW_STYLE_SHADER
+			type				ITEM_TYPE_BUTTON
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5				
+			textalignx			87
+			textaligny			8
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+		mouseEnter 			
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			190 160 260 30
+			}
+		mouseExit 			
+			{ 
+				hide			sidebutton_glow
+			}	 	  	  
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			ingamesaveMenu 
+			}
+		}
+//**********************
+// Кнопка: "Загрузить"
+//**********************
+	itemDef 
+		{
+			name				main_load
+			group				lbut
+			text				@MENUS_LOAD
+			style				WINDOW_STYLE_SHADER
+			type				ITEM_TYPE_BUTTON
+			font				5
+			textscale			0.5				
+			textalignx			90
+			textaligny			8
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
+
+		mouseEnter 			
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow				190 200 260 30
+			}
+		mouseExit 			
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			ingameloadMenu 
+			}	  	  
+		}
+//**********************
+// Кнопка: "Управление"
+//**********************
+	itemDef 
+		{
+			name				main_controls
+			group				cbut
+			text				@MENUS_CONTROLS
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			font				5
+			textscale			0.5				
+			textalignx			84
+			textaligny			8
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1	 
+		mouseEnter 			
+			{ 
+				show			sidebutton_glow 
+				setitemrect		sidebutton_glow			190 240 260 30
+			}
+		mouseExit 			
+			{ 
+				hide			sidebutton_glow 
+			} 	  	  
+		action 
+			{
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			ingameControlsMenu ; 
+			}
+		}
+//**********************
+// Кнопка: "Настройки"
+//**********************
+	itemDef
+		{
+			name				main_setup
+			group				sbut
+			text				@MENUS_SETUP
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			font				5
+			textscale			0.5				
+			textalignx			85
+			textaligny			8
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1	 
+		mouseEnter 			
+			{ 
+				show			sidebutton_glow 
+				setitemrect		sidebutton_glow			190 280 260 30 
+			}
+		mouseExit 			
+			{ 
+				hide			sidebutton_glow 
+			}  	  
+		action 
+			{
+				play			"sound/interface/button1.wav" ; 
+				close			all ; 
+				open			ingamesetupMenu ; 
+			}
+		}
+//**********************
+// Кнопка: "Выход"
+//**********************
+	itemDef 
+		{
+			name				main_exit
+			group				exit
+			text				@MENUS_EXIT
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			font				5
+			textscale			0.5				
+			textalignx			100
+			textaligny			8
+			
+			background			"menu/box_redux"
+			forecolor			1 1 1 1
+			border				4
+
+			visible				1
+		mouseEnter 			
+			{ 
+			show				sidebutton_glow 
+			setitemrect			sidebutton_glow			190 320 260 30 
+			}
+		mouseExit 			
+			{ 
+			hide				sidebutton_glow 
+			}	  	  
+		action 
+			{ 
+				play			"sound/weapons/saber/saberoff.mp3" ; 
+				close			all ; 
+				open			ingamequitMenu 
+			}
+		}
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	}
+}

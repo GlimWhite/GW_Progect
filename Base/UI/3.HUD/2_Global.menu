@@ -1,0 +1,19 @@
+//----------------------------------------------------------------------------------------
+//	                               НАСТРОЙКА ГЛОБАЛЬНАЯ ДЛЯ HUD.MENU
+//----------------------------------------------------------------------------------------
+{
+assetGlobalDef 
+	{
+	//	BigFont					"fonts/reallybigfont" 20		// font
+	
+			mediumFont				"russian" 	16
+			smallFont				"russian" 	20	
+			smallFont				"russian" 	22
+			smallFont				"russian" 	20	
+			smallFont				"russian" 	20	
+		forecolor				1 0 0 1
+	}
+	{
+		shadowColor				0.1 0.1 0.1 0.5
+	}
+}

@@ -1,0 +1,2635 @@
+//----------------------------------------------------------------------------------------------
+// 										INGAME SETUP MENU
+//								Allow user to setup video and stuff
+//----------------------------------------------------------------------------------------------
+{
+	menuDef 
+	{
+		name						"InGameSetupMenu"
+		fullScreen					0								
+		rect						0 0 640 480			
+		visible						1				
+		focusColor					1 0.2 0.2 1				
+	onOpen 
+		{
+		uiScript					getvideosetup 
+		
+			hide						group_defaults
+			hide						group_sound
+			hide						group_graphics
+
+			hide						ApplyChanges 
+			hide						group_vidrestart 
+			
+			show						defaults
+			show						group_screen
+			show						group_menu
+			show						group_screen
+//*********************
+// Кнопки в меню
+//*********************	
+			transition					border_setup	   80 57 480 0 80 57 480 412 15 15
+		
+//*********************
+// Кнопки в меню
+//*********************
+			transition					Videobutton			 10 18 0 30   10 18 150 30 15 15
+			transition					Graphicsbutton		160 18 0 30  160 18 160 30 15 15
+			transition					Soundbutton			320 18 0 30  320 18 160 30 15 15
+			transition					Defaultsbutton		480 18 0 30  480 18 150 30 15 15
+			setitemrect					escapebutton		530 58 30 28  				
+//*********************	
+		}
+	onClose
+		{
+			open					ingameMainMenu
+		}	
+	onESC 
+		{ 
+			play					"sound/interface/esc.wav" 					
+			defer					VideoSetup	ingamevideowarningMenu
+			close					all
+			open					ingameMainMenu
+		}
+//_______________________________________________________________________________________________
+//
+//									MENU SETUP/МЕНЮ НАСТРОЙКИ
+//_______________________________________________________________________________________________
+//********************
+// Фон для меню
+//********************		
+	itemDef 
+		{
+			name				Blur
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"menu/ground/blur"
+			forecolor			1 1 0.9 0.45
+			visible				1
+			decoration
+		}
+//********************
+// Поля для настроек
+//********************
+	itemDef 
+		{
+			name				border_setup	
+			group				group_menu
+			style				WINDOW_STYLE_FILLED
+			backcolor			.1 .1 .6 .5
+			border				1
+			bordercolor			1 1 1 1
+			decoration	
+		mouseEnter 			
+			{ 	
+				setitemcolor	border_setup		bordercolor			0 0 1 1
+			}
+		mouseExit 			
+			{
+				setitemcolor	border_setup		bordercolor			1 1 1 1
+			}
+		}
+//********************
+// Титул меню
+//********************
+	itemDef 
+		{
+			name				setup_title
+			group				group_menu
+			text				@MENUS_SETUP_OPTIONS
+			rect				0 -2 640 22
+			textalign			ITEM_ALIGN_CENTER		
+			textalignx			320
+			textaligny			3	
+			font				5
+			textscale			0.6
+			forecolor			.95 .64 .37 1
+			visible				1 
+			decoration
+		}
+//********************
+// Выделение текста
+//********************	
+	itemDef 
+		{
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"side_vertex"
+			forecolor			0.1 0.1 0.1 1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//									ОСНОВНОЕ КОНТЕКСТНОЕ МЕНЮ
+//----------------------------------------------------------------------------------------------
+//********************
+// Кнопка "Изображение"
+//********************	
+	itemDef 
+		{
+			name					videobutton	
+			group					group_menu
+			text					@MENUS_OPTIONS
+			text2					@MENUS_SCREEN
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			textalign				ITEM_ALIGN_LEFT
+			forecolor				.95 .64 .37 1
+			font					5
+			textscale				.45
+			textalignx				40
+			textaligny				4
+			text2alignx				16
+			text2aligny				12
+			visible					1
+			
+			background				"BoxMenu"
+			
+		mouseEnter 			
+			{ 	
+				show				sidebutton_glow 
+				setitemrect			sidebutton_glow		10 18 150  30
+			}
+		mouseExit 			
+			{
+				hide 				sidebutton_glow
+			}
+		action 
+			{ 
+				play				sound/interface/sub_select 
+				defer				VideoSetup			videowarningMenu 
+				uiScript			getvideosetup 	   	// Get video settings
+					
+			transition				border_setup	   	80  57 480  0  80 57 480 412 15 15
+			setitemrect				escapebutton	    530 58 30 28 
+				show				group_screen
+				show				defaults
+				
+				hide				group_defaults	
+				hide				group_sound
+				hide				group_vidrestart
+				hide				group_graphics
+				hide				applyChanges  
+			}
+		}
+//********************
+// Кнопка "Графика"
+//********************	
+itemDef 
+		{
+			name					Graphicsbutton
+			group					group_menu
+			text					@MENUS_OPTIONS
+			text2					@MENUS_GRAPHICS
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			textalign				ITEM_ALIGN_LEFT
+			forecolor				.95 .64 .37 1
+			font					5
+			textscale				.45
+			textalignx				46
+			textaligny				4
+			text2alignx				9
+			text2aligny				12
+			visible					1
+			
+			background				"BoxMenu"
+			
+		mouseEnter
+			{ 
+				show				sidebutton_glow ; 	
+				setitemrect			sidebutton_glow 		160 18 160  30
+			}
+		mouseExit 		
+			{ 
+				hide 				sidebutton_glow 
+			}
+		action 
+			{ 
+				play				sound/interface/sub_select 
+				defer				VideoSetup	videowarningMenu 	
+				
+				transition			border_setup	   10 57 620 0 10 57 620 412 15 15
+				setitemrect			escapebutton	   600 58 30 28
+				show				group_graphics
+				show				defaults
+				
+				hide				group_screen
+				hide				group_defaults	
+				hide				group_sound
+				hide				group_vidrestart
+				hide				applyChanges  			
+			}
+		}
+//********************
+// Кнопка "Звук"
+//********************	
+	itemDef 
+		{
+			name					soundbutton	
+			group					group_menu
+			text					@MENUS_OPTIONS
+			text2					@MENUS_SOUNDED
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_SHADER
+			textalign				ITEM_ALIGN_LEFT
+			forecolor				.95 .64 .37 1
+			font					5
+			textscale				.45
+			textalignx				46
+			textaligny				4
+			text2alignx				19
+			text2aligny				12
+			visible					1
+			
+			background				"BoxMenu"
+			
+		mouseEnter
+			{ 
+				show				sidebutton_glow 	
+				setitemrect			sidebutton_glow 	320 18 160  30
+			}
+		mouseExit 		
+			{ 
+				hide 				sidebutton_glow 
+			}
+		action 
+			{ 
+				play				sound/interface/sub_select 
+				defer				VideoSetup			videowarningMenu 	
+				
+				transition			border_setup	  	80 57 480 0 80 57 480 412 15 15
+				setitemrect			escapebutton	    530 58 30 28
+				show				group_sound
+				
+				hide				group_graphics
+				hide				group_screen
+				hide				group_defaults	
+				hide				defaults
+				hide				group_vidrestart
+				hide				applyChanges
+			}
+		}
+//********************
+// Кнопка "Выйти"
+//********************	
+	itemDef
+		{
+			name					escapebutton
+			group					group_menu
+			type					ITEM_TYPE_BUTTON
+			style					WINDOW_STYLE_FILLED
+			background				"Escape"
+			border					1
+			bordercolor				0.5 0.5 0.5 1
+			visible					0		
+		mouseEnter 			
+			{
+				setitemcolor		escapebutton	bordercolor	1 1 1 1	
+			}
+		mouseExit 			
+			{ 
+				setitemcolor		escapebutton	bordercolor	0.5 0.5 0.5 0.5	
+			}
+		action 
+			{ 
+				play				"sound/interface/esc.wav"
+				close				all
+				open				ingameMainMenu				
+			}
+		}
+//_______________________________________________________________________________________________
+//
+//							MENU SCREEEN/ МЕНЮ ЭКРАН (НАСТРОЙКА ЭКРАНА)
+//_______________________________________________________________________________________________
+//********************
+// "Полный экран"
+//********************
+	itemDef  
+		{	
+			name				fullscreen_text
+			group				group_screen
+			text				@MENUS_FULL_SCREEN
+			rect				170 90 250 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+	itemDef 
+		{	
+			name				fullscreen
+			group				group_screen
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				160 90 300 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.45
+			textalignx			200
+			forecolor			1 1 1 1
+
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"ui_r_fullscreen"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 85 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************
+// "Размер экрана"
+//********************
+	itemDef  
+		{	
+			name				video_mode_text
+			group				group_screen
+			text				@MENUS_VIDEO_MODE
+			rect				170 110 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************
+// Высота экрана
+//********************
+	itemDef  
+		{	
+			name				video_mode_1
+			group				group_screen
+      		type				ITEM_TYPE_MULTI
+			text				" "
+			cvarFloatList		{ "2560" 2560 "1920" 1920 "1600" 1600 "1440" 1440 "1366" 1366 "1280" 1280 "640" 640 }
+			cvar				"r_customwidth"
+			rect				360 110 50 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 105 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			""
+				show			applyChanges
+			}
+		}
+//********************
+// Текст "Х"
+//********************
+	itemDef  
+		{	
+			name				video_mode_x
+			group				group_screen
+			text				"X"
+			rect				408 115 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.3
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************
+// Ширина экрана
+//********************
+	itemDef  
+		{	
+			name				video_mode_2
+			group				group_screen
+      		type				ITEM_TYPE_MULTI
+			text				" "
+			cvarFloatList		{ "1080" 1080 "900" 900 "720" 720 "480" 480 }
+			cvar				"r_customheight"
+			rect				415 110 50 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 105 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			""
+				show			applyChanges
+			}
+		}
+//********************
+// Частота кадров "Текст"
+//********************
+	itemDef  
+		{	
+			name				FPS
+			group				group_screen
+			text				@MENUS_FPS
+			rect				170 130 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************
+// "Частота кадров"
+//********************
+	itemDef 
+		{
+			name				FPS
+			group				group_screen
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"com_maxfps"	
+			cvarFloatList		
+			{ 
+				@MENUS_FPS_30 30  
+				@MENUS_FPS_45 45
+				@MENUS_FPS_60 60 
+				@MENUS_UNLIMITED -1 
+			}
+			rect				160 130 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textalignx			200
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 125 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}			
+		action 				
+			{ 
+				play			"sound/interface/button1.wav" 	
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//*************************************
+// Текст "Частота обновление монитора"
+//*************************************	
+	itemDef  
+		{	
+			name				FPS_MONITOR
+			group				group_screen
+			text				@MENUS_FPS_MONITOR
+			rect				170 150 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//*************************************
+// "Частота обновление монитора"
+//*************************************	
+	itemDef 
+		{
+			name				FPS_MONITOR
+			group				group_screen
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"r_displayrefresh"	
+			cvarFloatList		{ "60 Hz" 60 "75 Hz" 75 "120 Hz" 120 "144 Hz" 144 }
+			rect				160 150 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textalignx			200
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 145 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 				
+			{ 
+				play			"sound/interface/button1.wav" 	
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			}
+		}
+//*************************************
+// Текст "Вертекальная синхорнизация"
+//*************************************	
+	itemDef  
+		{	
+			name				video_sync
+			group				group_screen
+			text				@MENUS_VIDEO_SYNC
+			rect				170 170 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//*************************************
+// "Вертекальная синхорнизация"
+//*************************************			
+	itemDef 
+		{			
+			name				video_sync
+			group				group_screen
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"r_swapInterval"	
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				160 170 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textalignx			200
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 165 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action 
+			{
+				play			"sound/interface/button1.wav" 
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 		
+			} 
+		}
+//************************
+// Текст "Рисовать ФПС"
+//************************
+	itemDef  
+		{	
+			name				DRAW_FPS
+			group				group_screen
+			text				@MENUS_DRAW_FPS
+			rect				170 190 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//*****************
+// "Рисовать ФПС"
+//*****************
+	itemDef 
+		{
+			name				DRAW_FPS
+			group				group_screen
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"cg_drawFPS"	
+			cvarFloatList		{ @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				160 190 320 20
+			font				5
+			textalignx			200
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 185 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 				
+			{ 
+				play			"sound/interface/button1.wav" 	
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			}
+		}
+//*****************
+// Текст "Яркость"
+//*****************
+	itemDef 
+		{
+			name				brightness
+			group				group_screen
+			text				@MENUS_VIDEO_BRIGHTNESS
+			rect				170 210 180 20
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+	   		textalign			ITEM_ALIGN_LEFT
+			decoration
+		}
+//*****************
+// "Яркость"
+//*****************		
+	itemDef 
+		{
+			name				brightness
+			group				group_screen
+			type				ITEM_TYPE_SLIDER
+			text				" "
+			cvarfloat			"r_gamma" 0 .5 1
+			rect				250 230 200 20
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 230 320 20
+				setitemcolor	Blur	forecolor		1 1 0.9 0.1
+				
+				hide			defaults
+				hide			group_graphics
+				hide			group_vidrestart 
+				hide			group_screen
+				hide			group_menu
+				hide			redux
+				
+				show			brightness
+			} 
+		mouseExit 
+			{
+				hide			sidebutton_glow
+				
+				show			defaults 
+				show			group_screen
+				show			group_menu
+				show			redux
+					
+				setitemcolor	Blur	forecolor		1 1 0.9 0.45
+			}			
+		action 
+			{ 
+			play			"sound/interface/button1.wav" 
+			uiScript		glCustom 
+			setcvar			ui_r_modified	1 
+			}
+		}	
+//************************
+// Текст "Размер прицела"
+//************************
+	itemDef 
+		{
+			name				CrossHairSize
+			group				group_screen
+			text				"@MENUS_CROSS_HAIR_SIZE"
+			rect				170 260 180 20
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+	   		textalign			ITEM_ALIGN_LEFT
+			decoration
+		}	
+//************************
+// "Размер Прицела"
+//************************	
+	itemDef 
+		{
+			name				CrossHairSize
+			group				group_screen
+			type				ITEM_TYPE_SLIDER
+			text				" "
+			cvarfloat			"cg_crosshairSize" 0 1 100
+			rect				250 280 180 20
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 280 320 20
+				setitemcolor	Blur	forecolor		1 1 0.9 0.1
+				
+				hide			defaults
+				hide			group_graphics
+				hide			group_vidrestart 
+				hide			group_screen
+				hide			group_menu
+				hide			redux
+				
+				show			CrossHairSize
+			} 
+		mouseExit 
+			{
+				hide			sidebutton_glow
+				
+				show			defaults 
+				show			group_screen
+				show			group_menu
+				show			redux
+					
+				setitemcolor	Blur	forecolor		1 1 0.9 0.45
+			}			
+		action 				
+			{ 
+				play			"sound/interface/button1.wav" 	
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1
+			}
+		}
+//************************
+// Текст "Угол Обзора"
+//************************
+	itemDef 
+		{
+			name				fov
+			group				group_screen
+			text				"@MENUS_POV"
+			rect				170 310 180 20
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+	   		textalign			ITEM_ALIGN_LEFT
+			decoration
+		}
+//************************
+// "Угол Обзора"
+//************************		
+	itemDef 
+		{
+			name				fov
+			group				group_screen
+			type				ITEM_TYPE_SLIDER
+			text				" "
+			cvarfloat			"cg_fov" 0 45 100
+			rect				250 330 180 25
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 330 320 20
+				setitemcolor	Blur	forecolor		1 1 0.9 0.1
+				
+				hide			defaults
+				hide			group_graphics
+				hide			group_vidrestart 
+				hide			group_screen
+				hide			group_menu
+				hide			redux
+				
+				show			fov
+			} 
+		mouseExit 
+			{
+				hide			sidebutton_glow
+				
+				show			defaults 
+				show			group_screen
+				show			group_menu
+				show			redux
+					
+				setitemcolor	Blur	forecolor		1 1 0.9 0.45
+			}			
+		action 				
+			{ 
+				play			"sound/interface/button1.wav" 	
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1
+			}
+		}
+//************************
+// Текст "Рисовать ФПС"
+//************************
+	itemDef  
+		{	
+			name				VIDEOQ
+			group				group_screen
+			text				@MENUS_VIDEOQ
+			rect				170 360 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//*****************
+// "Рисовать ФПС"
+//*****************
+	itemDef 
+		{
+			name				VIDEOQ
+			group				group_screen
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"cl_VideoQuality"	
+			cvarFloatList		{ @MENUS_LOW 0 @MENUS_HIGH 1 }
+			rect				160 360 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textalignx			200
+			textscale			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			160 355 320 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 				
+			{ 
+				play			"sound/interface/button1.wav" 	
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			}
+		}
+//_______________________________________________________________________________________________
+//
+//							MENU Graphics/ МЕНЮ Графики (НАСТРОЙКА ГРАФИКИ)
+//_______________________________________________________________________________________________
+//********************************
+// Текст "Дитализация текстур"
+//********************************
+	itemDef  
+		{	
+			name				texture_detail
+			group				group_graphics
+			text				@MENUS_TEXTURE_DETAIL
+			rect				20 70 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************
+// "ДЕТАЛИЗАЦИЯ ТЕКСТУР"
+//********************
+	itemDef 
+		{	
+			name				texture_detail
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 70 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.4
+			forecolor			1 1 1 1
+			cvarFloatList		{  @MENUS_LOW 3 @MENUS_MEDIUM 2 @MENUS_HIGH 1 @MENUS_VERY_HIGH 0 }
+			cvar				"ui_r_picmip"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 65 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Детализация геометрии"
+//********************************
+	itemDef  
+		{	
+			name				geometric_detail
+			group				group_graphics
+			text				@MENUS_GEOMETRIC_DETAIL
+			rect				20 90 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Дитализация геометрии"
+//********************************
+	itemDef 
+		{	
+			name				geometric_detail
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 90 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList		{  @MENUS_LOW 3 @MENUS_MEDIUM 2 @MENUS_HIGH 1 @MENUS_VERY_HIGH 0 }
+			cvar				"ui_r_lodbias"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 85 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				uiScript 		update "ui_r_lodbias" 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Детализация шейдоров"
+//********************************
+	itemDef  
+		{	
+			name				geometric_detail
+			group				group_graphics
+			text				@MENUS_DETAILED_SHADERS
+			rect				20 110 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Дитализация шейдеров"
+//********************************
+	itemDef 
+		{	
+			name				simple_shaders
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 110 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList			{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"ui_r_detailtextures"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			 10 105 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Мульти-текстуры"
+//********************************
+	itemDef  
+		{	
+			name				multi_textures
+			group				group_graphics
+			text				@MENUS_MULTI_TEXTURES
+			rect				20 130 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Мульти-текстуры"
+//********************************
+	itemDef 
+		{	
+			name				multi_textures
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 130 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList			{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"r_ext_multitexture"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 125 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			}
+		}
+//********************************
+// Текст "Компиляция текстур"
+//********************************
+	itemDef  
+		{	
+			name				COMPILED_TEXTURES
+			group				group_graphics
+			text				@MENUS_COMPILED_TEXTURES
+			rect				20 150 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Компиляция текстур"
+//********************************
+	itemDef 
+		{	
+			name				COMPILED_TEXTURES
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 150 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList			{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"r_ext_compiled_vertex_array"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 145 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Отражения от текстур"
+//********************************
+	itemDef  
+		{	
+			name				ENV_ADD
+			group				group_graphics
+			text				@MENUS_ENV_ADD
+			rect				20 170 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Отражения от текстур"
+//********************************
+	itemDef 
+		{	
+			name				COMPILED_TEXTURES
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 170 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"r_ext_texture_env_add"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 165 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Глубина цвета"
+//********************************
+	itemDef  
+		{	
+			name				color_depth
+			group				group_graphics
+			text				@MENUS_COLOR_DEPTH
+			rect				20 190 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Глубина цвета"
+//********************************
+	itemDef 
+		{	
+			name				color_depth
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 190 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			
+			cvarFloatList		{  @MENUS_DEFAULT 0 @MENUS_16_BIT 16 @MENUS_32_BIT 32 }
+			cvar				"ui_r_colorbits"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 185 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				uiScript 		update 	"ui_r_colorbits" 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Качество текстур
+//********************************
+	itemDef  
+		{	
+			name				QUALITY
+			group				group_graphics
+			text				@MENUS_TEXTURE_QUALITY
+			rect				20 210 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Качество текстур"
+//********************************
+	itemDef 
+		{	
+			name				texture_quality
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 210 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList			{  @MENUS_DEFAULT 0 @MENUS_16_BIT 16 @MENUS_32_BIT 32  }
+			cvar				"ui_r_texturebits"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 205 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Качество текстуры"
+//********************************
+	itemDef  
+		{	
+			name				DEPHTBITS
+			group				group_graphics
+			text				@MENUS_DEPHTBITS
+			rect				20 230 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Качество текстуры"
+//********************************
+	itemDef 
+		{	
+			name				DEPHTBITS
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 230 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList			{  @MENUS_DEFAULT 0 @MENUS_8_BIT 8 @MENUS_16_BIT 16 @MENUS_24_BIT 24 }
+			cvar				"r_depthbits "
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 225 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Фильтация текстур"
+//********************************
+	itemDef  
+		{	
+			name				texture_filter
+			group				group_graphics
+			text				@MENUS_TEXTURE_FILTER
+			rect				20 250 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Фильтрация текстур"
+//********************************
+	itemDef 
+		{	
+			name				texture_filter
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 250 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarStrList			{  @MENUS_BILINEAR , "GL_LINEAR_MIPMAP_NEAREST" , @MENUS_TRILINEAR , "GL_LINEAR_MIPMAP_LINEAR" }
+			cvar				"ui_r_texturemode"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 245 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Аназатропия"
+//********************************
+	itemDef  
+		{	
+			name				anisotropic
+			group				group_graphics
+			text				@MENUS_ANISOTROPIC_FILTERING
+			rect				20 270 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Аназатропия текстур"
+//********************************
+itemDef 
+		{	
+			name				anisotropic
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				r_ext_texture_filter_anisotropic
+			cvarFloatList			
+			{
+			"2x" 				2
+			"4x"				4
+			"8x"				8
+			"16x" 				16
+			} 		
+			rect				310 270 180 20
+			textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 265 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			} 
+		}
+//********************************
+// Текст "Компресор текстур"
+//********************************
+	itemDef  
+		{	
+			name				compress_textures
+			group				group_graphics
+			text				@MENUS_COMPRESSED_TEXTURES
+			rect				20 290 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Компресор текстур"
+//********************************
+		itemDef 
+		{	
+			name				compress_textures
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 290 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"ui_r_ext_compress_textures"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 285 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				uiScript		glCustom
+				setcvar			ui_r_modified	1
+				show			applyChanges
+			}
+		}
+//********************************
+// Текст "Динамические лучи"
+//********************************
+	itemDef  
+		{	
+			name				dynamic_light
+			group				group_graphics
+			text				@MENUS_DYNAMIC_LIGHTS
+			rect				20 330 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Динамические лучи"
+//********************************
+	itemDef 
+		{			
+			name				dynamic_light
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"r_dynamiclight"	
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				310 330 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 325 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+
+			} 
+		}
+//********************************
+// Текст "Тень"
+//********************************
+	itemDef  
+		{	
+			name				shadows
+			group				group_graphics
+			text				@MENUS_SHADOWS
+			rect				20 350 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Качество Тени"
+//********************************
+	itemDef 
+		{			
+			name				shadows
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 350 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			cvar				"cg_shadows"
+			cvarFloatList		
+			{
+			@MENUS_NONE						0	
+			@MENUS_SHADOWS_SIMPLE			1	
+			@MENUS_SHADOWS_VOLUMETRIC		2	
+			@MENUS_UPGRATED					3
+			}
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 345 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			} 
+		}
+//********************************
+// Текст "Динамическое свещение"
+//********************************
+	itemDef  
+		{	
+			name				dynamic_glow
+			group				group_graphics
+			text				@MENUS_DYNAMIC_GLOW
+			rect				20 370 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Динамическое свещение"
+//********************************
+	itemDef 
+		{			
+			name				dynamic_glow
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"r_dynamicglow"	
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				310 370 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 365 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"  
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			} 
+		}
+//********************************
+// Текст "Вспышки"
+//********************************
+	itemDef  
+		{	
+			name				light_flares
+			group				group_graphics
+			text				@MENUS_LIGHT_FLARES
+			rect				20 390 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Вспышки"
+//********************************
+	itemDef 
+		{			
+			name				light_flares
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"r_flares"	
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				310 390 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 385 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+			} 
+		}
+//********************************
+// Текст "Следы на стенах"
+//********************************
+	itemDef  
+		{	
+			name				wall_marks
+			group				group_graphics
+			text				@MENUS_WALL_MARKS
+			rect				20 410 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale			0.5
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Следы на стенах"
+//********************************	
+	itemDef 
+		{			
+			name				wall_marks
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"cg_marks"	
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				310 410 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.4
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			10 405 620 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				uiScript		glCustom 
+				setcvar			ui_r_modified	1 
+				show			applyChanges
+			} 
+		}
+//_______________________________________________________________________________________________
+//
+//									SOUND FIELDS/ ЗВУК
+//_______________________________________________________________________________________________
+//********************************
+// Текст "Звук"
+//********************************
+	itemDef 
+		{
+			name				Sound_text
+			group				group_sound
+			text				@MENUS_SOUND
+			rect				300 90 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// Текст "Громкрость Эффектов"
+//********************************
+	itemDef 
+		{
+			name				effects_volume
+			group				group_sound
+			text				@MENUS_EFFECTS_VOLUME
+			rect				170 110 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Громкрость Эффектов"
+//********************************
+	itemDef 
+		{
+			name				effects_volume
+			group				group_sound
+			type				ITEM_TYPE_SLIDER
+			text				" "
+			cvarfloat			"s_volume" 0 0 1
+			rect				360 107 200 20
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 105 480 25
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 	
+			{	play			"sound/interface/button1.wav" 	}
+		}
+//********************************
+// Текст "Громкрость речи"
+//********************************
+	itemDef 
+		{
+			name				music_volume
+			group				group_sound
+			text				@MENUS_MUSIC_VOLUME
+			rect				170 130 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Громкрость речи"
+//********************************
+	itemDef 
+		{
+			name				music_volume
+			group				group_sound
+			type				ITEM_TYPE_SLIDER
+			text				" "
+			cvarfloat			"s_musicvolume" 0 0 1
+			rect				360 127 200 20
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 125 480 25
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			
+		action 				{ play			"sound/interface/button1.wav" 	}
+		}
+//********************************
+// Текст "Громкрость музыки"
+//********************************
+	itemDef 
+		{
+			name				voice_volume
+			group				group_sound
+			text				@MENUS_VOICE_VOLUME
+			rect				170 150 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Громкрость Голоса"
+//********************************	
+	itemDef 
+		{
+			name				voice_volume
+			group				group_sound
+			type				ITEM_TYPE_SLIDER
+			text				" "
+			cvarfloat			"s_volumevoice" 0 0 1
+			rect				360 147 200 20
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 145 480 25
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}		
+			action 				{ play			"sound/interface/button1.wav" 	}
+		}
+//********************************
+// Текст "Качество звуков"
+//********************************
+	itemDef 
+		{
+			name				sound_quality
+			group				group_sound
+			text				@MENUS_SOUND_QUALITY
+			rect				170 170 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Качество звуков"
+//********************************	
+	itemDef 
+		{	
+			name				sound_quality
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"s_khz"
+			cvarFloatList		{ @MENUS_LOW 11  @MENUS_MEDIUM 22 @MENUS_HIGH 44 }
+			rect				160 170 360 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+			cvarTest			"s_UseOpenAL"
+			hideCvar			{ 1 }
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 165 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}			
+		action 				{ play			"sound/interface/button1.wav"  uiScript		update s_khz  }
+		}
+//********************************
+// Текст "Звук окружения"
+//********************************
+	itemDef 
+		{
+			name				footsteps
+			group				group_sound
+			text				@MENUS_FOOTSTEPS
+			rect				170 190 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Звук окружения"
+//********************************	
+	itemDef 
+		{	
+			name				footsteps
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"cg_footsteps"
+			cvarFloatList		{ @MENUS_OFF 0 @MENUS_SOUNDS 1 @MENUS_SOUNDS_AND_EFFECTS 2 @MENUS_SOUNDS_EFFECTS_GRAPHICS 3	}
+			rect				160 190 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 185 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}			
+			action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//********************************
+// Текст "Настройка Языка"
+//********************************
+	itemDef 
+		{
+			name				language
+			group				group_sound
+			text				@MENUS_LANG
+			rect				260 230 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// Текст "Язык меню"
+//********************************
+	itemDef 
+		{
+			name				language
+			group				group_sound
+			text				@MENUS_TEXT
+			rect				170 250 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Язык меню"
+//********************************		
+	itemDef 
+		{	
+			name				language
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"se_language"
+			feeder				23				//FEEDER_PLAYER_SPECIES
+			cvarStrList			feeder
+			rect				160 250 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 245 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action				{ play			"sound/interface/button1.wav" }
+		}
+//********************************
+// Текст "Язык озвучки"
+//********************************
+	itemDef 
+		{
+			name				language
+			group				group_sound
+			text				@MENUS_VOICE
+			rect				170 270 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Язык озвучки"
+//********************************		
+	itemDef 
+		{	
+			name				voice
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvarTest			com_demo
+			hideCvar			{ 1 }     
+			cvar				"s_language"
+			cvarStrList			{ "English", "english" @MENUS_LANG_FRENCH "francais" }
+			rect				160 270 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 275 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//********************************
+// Текст "Субтитры"
+//********************************
+	itemDef 
+		{
+			name				language
+			group				group_sound
+			text				@MENUS_SUBTITLES
+			rect				170 290 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Субтитры"
+//********************************	
+	itemDef 
+		{	
+			name				voice
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"g_subtitles"
+			cvarFloatList		{ @MENUS_NONE 0 @MENUS_IN_CINEMATICS 2 @MENUS_ALL_VOICEOVERS 1 }
+			rect				160 290 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 285 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//********************************
+// Текст "РАЗНОЕ"
+//********************************
+	itemDef 
+		{
+			name				other
+			group				group_sound
+			text				@MENUS_OTHER
+			rect				300 330 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// Текст "ПОКАЗАТЬ ПРИЦЕЛ"
+//********************************
+	itemDef 
+		{
+			name				draw_crosshair
+			group				group_sound
+			text				@MENUS_DRAW_CROSSHAIR
+			rect				170 350 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Субтитры"
+//********************************		
+	itemDef 
+		{	
+			name				draw_crosshair
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"cg_drawcrosshair"
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				160 350 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 345 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}			
+			action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//********************************
+// Текст "Замедление"
+//********************************
+	itemDef 
+		{
+			name				slowmo
+			group				group_sound
+			text				@MENUS_SLOW_MOTION_DEATH
+			rect				170 370 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Замедление при:"
+//********************************
+	itemDef 
+		{	
+			name				slowmo
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"d_slowmodeath"
+			cvarFloatList		{ @MENUS_NEVER 0 @MENUS_ON_DEATH 1 @MENUS_RARELY 2 @MENUS_SLOW_MO_NORMAL 3 @MENUS_OFTEN 4 @MENUS_FREQUENTLY 5 @MENUS_EXCESSIVELY 6 }
+			rect				160 370 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 365 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//********************************
+// Текст "Вид от первого лица"
+//********************************
+	itemDef 
+		{
+			name				force1st
+			group				group_sound
+			text				@MENUS_1ST_PERSON_GUNS
+			rect				170 390 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Вид от первого лица"
+//********************************		
+	itemDef 
+		{	
+			name				force1st
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"cg_gunAutoFirst"
+			cvarFloatList		{ @MENUS_OFF 0 @MENUS_ON 1 }
+			rect				160 390 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 385 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+			action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//********************************
+// Текст "Расчленение"
+//********************************
+	itemDef 
+		{
+			name				force1st
+			group				group_sound
+			text				@MENUS_DISMEMBERMENT
+			rect				170 410 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Расчленение"
+//********************************	
+	itemDef 
+		{	
+			name				dismemberment
+			group				group_sound
+			type				ITEM_TYPE_MULTI
+			text				" "
+			cvar				"g_dismemberment"
+			cvarFloatList		{ @MENUS_OFF 0 @MENUS_ON 1 }
+			cvarTest			ui_iscensored
+			hideCvar			{ 1 }
+			rect				160 410 320 20
+	   		textalign			ITEM_ALIGN_LEFT
+			textalignx			200
+			font 				5
+			textscale 			0.45
+			forecolor			1 1 1 1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			80 405 480 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action
+			{
+				play			"sound/interface/button1.wav"
+			}
+		}
+//_______________________________________________________________________________________________
+//
+//									ПРИНЯТИЕ ИЗМЕНЕНИЙ
+//_______________________________________________________________________________________________		
+//********************************
+// Кнопка "Принять изменения"
+//********************************
+	itemDef 
+		{
+			name				applyChanges
+			text				@MENUS_APPLY_CHANGES
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			textalign			ITEM_ALIGN_LEFT
+			rect				200 430 240 25
+			forecolor			0 1 0 1	
+			font 				5
+			textscale 			0.5
+			textalignx			30
+			textaligny			7
+			
+			background			"menu/box_redux"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			200 430 240 25
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action
+			{
+				play			"sound/interface/button1.wav"  
+				
+				hide			group_defaults
+				hide			group_menu
+				hide			group_screen
+				hide			group_sound
+				hide			group_graphics
+				hide			applyChanges
+				hide			defaults
+				hide			sidebutton_glow
+			
+				show			group_vidrestart 
+			}
+		}
+//********************************
+// Фон для текста "Обращения"
+//********************************
+	itemDef 
+		{
+			name				top_mp
+			group				group_vidrestart
+			style				WINDOW_STYLE_SHADER
+			rect				120 120 420 250
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			border				1
+			bordersize			1
+			bordercolor			1 1 1 1
+			decoration
+		}	
+//********************************
+// Обращение о изменений
+//********************************
+	itemDef 
+		{
+			name				confirm
+			group				group_vidrestart
+			text				@MENUS_THIS_WILL_APPLY_VIDEO
+			text2				@MENUS_AND_RETURN_TO_THE_MAIN
+			text2alignx			40
+			text2aligny			20
+			rect				320 200 290 20
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			.95 .64 .37 1
+			font 				5
+			textscale 			0.7
+			decoration
+		}
+//************
+// Текст "Да"
+//************
+		itemDef 
+		{
+			name				Yes
+			group				group_vidrestart
+			text				@MENUS_YES
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				185 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.6
+			textalignx			20
+			textaligny			8
+			forecolor			.95 .64 .37 1
+			
+			background			"menu/box_redux"
+			visible				-1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			185 300 60 30
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play				"sound/interface/button1.wav"  
+				close				all  
+				uiScript			updatevideosetup
+			}  	  
+		}
+//*************
+// Текст "Нет"
+//*************
+	itemDef 
+		{
+			name				No
+			group				group_vidrestart
+			text				@MENUS_NO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				415 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.6
+			textalignx			18
+			textaligny			8
+			forecolor			.95 .64 .37 1
+			
+			background			"menu/box_redux"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			415 300 60 30
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{ 
+				play				"sound/interface/esc.wav"
+				hide				default_no_button 
+				uiscript 			clearmouseover	default_no 
+				close				all  
+				open				ingameMainMenu all 
+			}	
+		}	
+//_______________________________________________________________________________________________
+//
+//							СБРОСИТЬ ВСЕ НАСТРОЙКИ
+//_______________________________________________________________________________________________
+//*******************
+// Кнопка "Сбросить"
+//*******************		
+	itemDef 
+		{
+			name				defaultsbutton
+			group				defaults
+			text				@MENUS_DEFAULTS
+			text2				@MENUS_OPTIONS
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			font 				5
+			textscale 			.45
+			textalignx			46
+			textaligny			4
+			text2alignx			-4
+			text2aligny			12
+			textalign			ITEM_ALIGN_LEFT
+			forecolor			.95 .64 .37 1
+			visible				1
+			
+			background			"BoxMenu"
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			480 18 150 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}
+		action 
+			{ 
+				play				sound/interface/sub_select 
+				defer				VideoSetup	videowarningMenu 
+				
+				hide				group_screen
+				hide				group_graphics
+				hide				group_menu
+				hide				defaults
+				hide				sidebutton_glow
+				
+				show				group_defaults	
+			}
+		}
+//*******************************
+// Фон для текста предупреждения
+//*******************************
+	itemDef 
+		{
+			name				group_vidrestart_background
+			group				group_defaults
+			style				WINDOW_STYLE_FILLED	
+			background			"BoxMenu"
+			rect				120 120 420 250
+			border				1
+			bordersize			1
+			bordercolor			1 1 1 1
+			decoration
+		}
+//******************
+// Текст "Внимания"
+//******************
+	itemDef 
+		{
+			name				options
+			group				group_defaults
+			text				@MENUS_WARNING
+			rect				320 145 290 20
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 0 0 .8
+			font 				5
+			textscale 			0.7
+			decoration
+		}
+//*********************
+// Текст "Информация"
+//*********************
+	itemDef 
+		{
+			name				options
+			group				group_defaults
+			text				@MENUS_THIS_WILL_SET_ALL_GAME
+			text2				@MENUS_TO_THEIR_FACTORY_SETTINGS
+			text2alignx			40
+			text2aligny			20
+			rect				320 175 290 20
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			.95 .64 .37 1
+			font 				5
+			textscale 			0.6
+
+			decoration
+		}
+//**********************
+// Текст "Продолжить?"
+//**********************
+	itemDef 
+		{
+			name				options
+			group				group_defaults
+			text				@MENUS_VID_RESTART3
+			rect				320 235 290 20
+			textalign			ITEM_ALIGN_CENTER
+			font				5
+			textscale			0.8    
+			forecolor			1 0 0 1
+
+			decoration
+		}
+//**************
+// Кнопка "Да"
+//**************
+	itemDef 
+		{
+			name				default_yes
+			group				group_defaults
+			text				@MENUS_YES
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				185 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textscale 			0.6
+			textalignx			20
+			textaligny			8
+			forecolor			.95 .64 .37 1
+			
+			background			"menu/box_redux"
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			185 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
+		action 
+			{ 
+				play			"sound/interface/button1.wav" 
+				close			all  
+				uiscript		resetdefaults
+			}	  	  
+		}
+//**************
+// Кнопка "Нет"
+//**************
+	itemDef 
+		{
+			name				default_no
+			group				group_defaults
+			text				@MENUS_NO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				415 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textscale 			0.6
+			textalignx			17
+			textaligny			8
+			forecolor			.95 .64 .37 1
+
+			background			"menu/box_redux"	
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			415 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 
+				uiscript 		clearmouseover	default_no 
+				close			all  
+				open			ingameMainMenu 
+			}	
+		}
+//----------------------------------------------------------------------------------------------
+//								ЭЛЕМЕНТЫ ВЫШЕ ДРУГИХ
+//----------------------------------------------------------------------------------------------	
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				615 468 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}		
+	}
+}
+

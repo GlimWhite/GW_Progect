@@ -1,0 +1,41 @@
+//----------------------------------------------------------------------------------------
+//	                ГЛОБАЛЬНАЯ НАСТРОЙКА
+//----------------------------------------------------------------------------------------
+{
+assetGlobalDef 
+	{
+		smallFont						"aurabesh" 	10	
+		mediumFont						"ergoec" 	10
+		bigFont							"anewhope" 	10
+		smallFont						"arialnb" 	10
+		smallFont						"russian" 	5		
+		
+		cursor							"cursorblue"	
+		itemFocusSound					"sound/interface/menuroam.wav"
+		itemFocusForce					"fffx/interface/menuroam"
+
+		fadeClamp						1.0									// sets the fadeup alpha
+		fadeCycle						1									// how often fade happens in milliseconds
+		fadeAmount						0.1									// amount to adjust alpha per cycle
+		shadowColor						0.1 0.1 0.1 0.0						// shadow color
+		focuscolor						0.8 0.8 0.8 0.8
+		forecolor						1 0 0 1
+			
+	precacheSound
+		{
+			"sound/interface/choose_color.wav"
+			"sound/interface/choose_head.wav"
+			"sound/interface/choose_torso.wav"
+			"sound/interface/choose_saber.wav"
+			"sound/interface/choose_hilt.wav"
+			"sound/interface/choose_blade.wav"
+			"sound/interface/transition.wav" 
+			"sound/interface/esc.wav"
+			"sound/interface/sub_select.wav"
+		}
+		{
+			forecolor				1 0 0 1
+			shadowColor				0.1 0.1 0.1 0.5			// shadow color
+		}
+	}
+}

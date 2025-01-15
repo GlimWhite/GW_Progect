@@ -1,0 +1,1057 @@
+//----------------------------------------------------------------------------------------------
+// Mission Select Menu
+//
+//----------------------------------------------------------------------------------------------
+{
+					   
+	menuDef 
+	{
+		name					"ingameGotoTier"
+		fullScreen				1		
+		rect					0 0 640 480	
+		visible					1
+		focusColor				1 1 1 1
+		descX					320
+		descY					426
+		descScale				1
+		descColor				1 .682 0 .8
+		descAlignment			ITEM_ALIGN_CENTER	
+		disablecolor			.5 .5 .5 1
+		fadeClamp				1.0					// sets the fadeup alpha
+		fadeCycle				20					// how often fade happens in milliseconds
+		fadeAmount				0.1					// amount to adjust alpha per cycle	
+		onOpen 
+		{
+			uiScript			loadmissionselectmenu tier_storyinfo
+			fadein				background
+			hide				story
+			hide				storyheads
+		}							
+		onESC 
+		{ 
+		}
+//----------------------------------------------------------------------------------------------
+//									MENU BACKGROUND
+//----------------------------------------------------------------------------------------------	
+	itemDef 
+		{
+			name				blackground
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"textures/colors/black"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				glow
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//									ТЕКСТ
+//----------------------------------------------------------------------------------------------	
+	itemDef 
+		{
+			name				complete_glow
+			group				none
+			rect				170 -4 300 32
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//Текст "Миссия Выполнина"
+	itemDef
+		{
+			name				complete
+			type				ITEM_TYPE_TEXT
+			rect				170 -2 300 32
+			text				@MENUS_MISSION_COMPLETE
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			150
+			textaligny			-1
+			visible				1
+			decoration
+		}
+
+//----------------------------------------------------------------------------------------------
+//	Killed, Secrets
+//----------------------------------------------------------------------------------------------	
+//Галаграмма
+	itemDef 
+		{
+			name				top_mission
+			group				stats
+			style				WINDOW_STYLE_SHADER
+			rect				31 25 575 40
+			background			"menu/menu_top_mp"
+			border				1
+			bordersize			1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+//Текст: "Убито"	
+	itemDef
+		{
+			name				killed
+			group				stats
+			rect				0 32 320 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_ENEMIESKILLED
+			cvar				"ui_stats_enemieskilled"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			160
+			textaligny			-1
+			visible				1
+			decoration
+		}
+//Текст: "Найдено секретов"
+		itemDef
+		{
+			name				secretsfound
+			group				stats
+			rect				280 32 320 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_SECRETAREAS
+			cvar				"ui_stats_secretsfound"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			160
+			textaligny			-1
+			visible				1
+			decoration
+			cvartest			"ui_stats_secretsfound"
+			hidecvar
+			{
+				"0"
+			}
+		}
+// Lines above and below lightsaber info
+	itemDef 
+		{
+			name				border
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				62 22 514 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				border
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				62 64 514 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+	
+//----------------------------------------------------------------------------------------------
+//	Saber use data
+//----------------------------------------------------------------------------------------------	
+	itemDef
+		{
+			name				saberuse
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				0 70 640 32
+			text				@SP_INGAME_LIGHTSABERUSE
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			320
+			textaligny			-1
+			visible			1
+			decoration
+		}
+//Галаграмма
+	itemDef 
+		{
+			name				top_mission
+			group				stats
+			style				WINDOW_STYLE_SHADER
+			rect				31 98 575 90
+			background			"menu/menu_top_mp"
+			border				1
+			bordersize			1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}	
+	itemDef 
+		{
+			name				border
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				62 95 514 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				border
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				62 187 514 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+//Бросков
+	itemDef
+		{
+			name				saber_thrown
+			group				stats
+			rect				65 110 200 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_THROWN
+			cvar				"ui_stats_thrown"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible			1
+			decoration
+		}
+//Блоков
+	itemDef
+		{
+			name				saber_blocks
+			group				stats
+			rect				65 150 200 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_BLOCKS
+			cvar				"ui_stats_blocks"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible				1
+			decoration
+		}
+//Удар по ногам
+		itemDef
+		{
+			name				leg_attacks
+			group				stats
+			rect				220 110 200 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_LEGATTACKS
+			cvar				"ui_stats_legattacks"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				arm_attacks
+			group				stats
+			rect				220 150 200 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_ARMATTACKS
+			cvar				"ui_stats_armattacks"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible				1
+			decoration
+		}
+//Ударов по корпусу		
+	itemDef
+		{
+			name				body_attacks
+			group				stats
+			rect				425 110 300 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_BODYATTACKS
+			cvar				"ui_stats_bodyattacks"
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible			1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//	Lower 1st column of force stats (light side powers)
+//----------------------------------------------------------------------------------------------	
+		itemDef
+		{
+			name				forceuse
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				0 192 150 32
+			text				@SP_INGAME_FORCEUSE
+			font				3
+			textstyle			3
+			forecolor			.95 .64 .37 1
+			textscale			1
+			textalign			ITEM_ALIGN_CENTER
+			textalignx			320
+			textaligny			-1
+			visible				1
+			decoration
+		}
+//Галаграмма
+	itemDef 
+		{
+			name				top_mission
+			group				stats
+			style				WINDOW_STYLE_SHADER
+			rect				31 220 575 140
+			background			"menu/menu_top_mp"
+			border				1
+			bordersize			1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}	
+	itemDef 
+		{
+			name				border
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				62 217 514 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+	itemDef 
+		{
+			name				border
+			group				stats
+			type				ITEM_TYPE_TEXT
+			rect				62 359 514 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+		}
+//Погшлощение
+	itemDef
+		{
+			name				absorb
+			group				stats
+			rect				65 230 150 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_ABSORB
+			cvar				"ui_stats_absorb"
+			font				3
+			textstyle			3
+			forecolor			.549 .854 1 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+//Лечение
+	itemDef
+		{
+			name				heal
+			group				stats
+			rect				65 260 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_HEAL
+			cvar				"ui_stats_heal"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+//Внушение
+	itemDef
+		{
+			name				mindtrick
+			group				stats
+			rect				65 290 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_MINDTRICK
+			cvar				"ui_stats_mindtrick"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+//Защита		
+	itemDef
+		{
+			name				protection
+			group				stats
+			rect				65 320 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_PROTECTION
+			cvar				"ui_stats_protect"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//	Lower 2nd column of force stats (neutral powers)
+//----------------------------------------------------------------------------------------------	
+		itemDef
+		{
+			name				jump
+			group				stats
+			rect				200 230 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_FORCE_JUMP
+			cvar				"ui_stats_jump"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				pull
+			group				stats
+			rect				200 260 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_PULL
+			cvar				"ui_stats_pull"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				push
+			group				stats
+			rect				200 290 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_PUSH
+			cvar				"ui_stats_push"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name				sense
+			group				stats
+			rect				200 320 160 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_FORCE_SENSE
+			cvar				"ui_stats_sense"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible			1
+			decoration
+		}
+
+//----------------------------------------------------------------------------------------------
+//	Lower 3rd column of force stats (neutral powers)
+//----------------------------------------------------------------------------------------------	
+		itemDef
+		{
+			name				speed
+			group				stats
+			rect				335 230 150 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@SP_INGAME_SPEED
+			cvar				"ui_stats_speed"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				defense
+			group				stats
+			rect				335 260 300 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_DEFENSE
+			cvar				"ui_stats_defense"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name				offense
+			group				stats
+			rect				335 290 300 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_OFFENSE
+			cvar				"ui_stats_offense"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible			1
+			decoration
+		}
+
+		itemDef
+		{
+			name				throw
+			group				stats
+			rect				335 320 300 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_THROW
+			cvar				"ui_stats_throw"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 1 1 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			-1
+			visible			1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//	Lower 4th column of force stats (dark powers)
+//----------------------------------------------------------------------------------------------	
+		itemDef
+		{
+			name				grip
+			group				stats
+			rect				470 230 150 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_FORCE_DRAIN
+			cvar				"ui_stats_drain"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 0 0 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				grip
+			group				stats
+			rect				470 260 150 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_FORCE_GRIP
+			cvar				"ui_stats_grip"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 0 0 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				lightning
+			group				stats
+			rect				470 290 150 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_FORCE_LIGHTNING
+			cvar				"ui_stats_lightning"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 0 0 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+
+		itemDef
+		{
+			name				rage
+			group				stats
+			rect				470 320 150 32
+			type				ITEM_TYPE_EDITFIELD
+			text				@MENUS_RAGE
+			cvar				"ui_stats_rage"
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			1 0 0 1
+			textalign			ITEM_ALIGN_LEFT
+			textaligny			0
+			visible				1
+			decoration
+		}
+//----------------------------------------------------------------------------------------------
+//											MODELS FOR LUKE
+//----------------------------------------------------------------------------------------------
+	itemDef
+		{
+			name					luke
+			group					storyheads
+			type 					ITEM_TYPE_MODEL
+			rect					180 53 300 260
+			model_g2anim 			"BOTH_STAND1_TALK2"
+			model_g2skin			"models/players/luke/model_menu.skin"
+			asset_model				"models/players/luke/model.glm"
+			model_angle				180
+			model_g2mins			12 -20 16
+			model_g2maxs			60  20 55
+			model_rotation			0
+			model_fovx				10
+			model_fovy				10
+			isCharacter				1
+			visible					1
+			/*
+			decoration	
+			cvartest				"storyhead"
+		showcvar
+			{
+				"luke"
+				"yavin2"
+			}*/
+		}	
+//----------------------------------------------------------------------------------------------
+//											MODELS FOR KYLE
+//----------------------------------------------------------------------------------------------		
+	itemDef
+		{
+			name					kyle
+			group					storyheads
+			type 					ITEM_TYPE_MODEL
+			rect					180 53 300 260
+			model_g2anim 			"BOTH_STAND1_TALK2"
+			model_g2skin			"models/players/kyle/model_menu.skin"
+			asset_model				"models/players/kyle/model.glm"
+			model_angle				180
+			model_g2mins			12 -20 16
+			model_g2maxs			60  20 55
+			model_rotation			0
+			model_fovx				10
+			model_fovy				10
+			isCharacter				1
+			visible					1
+			decoration
+			
+			cvartest			"storyhead"
+			showcvar
+			{
+				"kyle"
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//											MODELS FOR PROTOCOL
+//----------------------------------------------------------------------------------------------			
+	itemDef
+		{
+			name					protocol
+			group					storyheads
+			type 					ITEM_TYPE_MODEL
+			rect					180 53 300 260
+			model_g2anim 			"BOTH_STAND1_TALK2"
+			model_g2skin			"models/players/protocol/model_menu.skin"
+			asset_model				"models/players/protocol/model.glm"
+			model_angle				180
+			model_g2mins			14 -20 14
+			model_g2maxs			60  20 55
+			model_rotation			0
+			model_fovx				10
+			model_fovy				10
+			isCharacter				1
+			visible					1
+			decoration
+			cvartest			"storyhead"
+			showcvar
+			{
+				"protocol"
+				"academy3"
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//										coming from Yavin2
+//----------------------------------------------------------------------------------------------
+	itemDef 
+		{
+			name				top_mission
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				220 440 220 24
+			background			"menu/menu_top_mp"
+			border				1
+			bordersize			1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"1", "7", "13"
+			}
+		}
+	itemDef 
+		{
+			name				border
+			group				none
+			type				ITEM_TYPE_TEXT
+			rect				240 437 180 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration			
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"1", "7", "13"
+			}
+		}
+	
+	itemDef 
+		{
+			name				border
+			group				none
+			type				ITEM_TYPE_TEXT
+			rect				240 463 180 4
+			forecolor			1 1 1 1
+			border				1
+			bordercolor			.549 .854 1 1
+			visible				1
+			decoration			
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"1", "7", "13"
+			}
+		}	
+//--------------------------------------------------------------		
+//Галаграмма
+	itemDef 
+		{
+			name					top_mission
+			group					story
+			style					WINDOW_STYLE_SHADER
+			rect					5 310 630 180
+			background				"menu/menu_top_mp"
+			bordercolor				.549 .854 1 1
+			border					1
+			visible					0
+			decoration
+		}
+	itemDef
+		{
+			name				story1
+			group				story
+			type				ITEM_TYPE_BUTTON
+			rect				300 440 172 24
+			text				@MENUS_OKAY
+			font				3
+			textstyle			3
+			forecolor			1 1 1 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+		
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"1"
+			}
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow		220 440 220 24
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}
+		action
+			{
+				close			all
+				open			ingameMissionSelect1
+			}
+		}
+	itemDef
+		{
+			name				story1text
+			group				story
+			type				ITEM_TYPE_TEXTSCROLL
+			text				@TIER1_1
+			rect				10 310	620 180
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				0
+			lineHeight			20
+			autowrapped
+			cvartest			"tier_storyinfo"		
+			showcvar
+			{
+				"1"
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//coming from Hoth3
+//----------------------------------------------------------------------------------------------
+	itemDef
+		{
+			name				story6
+			group				story
+			type				ITEM_TYPE_BUTTON
+			rect				300 440 172 24
+			text				@MENUS_OKAY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			8
+			textaligny			-1
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"7"
+			}
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow		220 440 220 24
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}
+			action
+			{
+				close			all
+				open			ingameMissionSelect2
+			}
+		}
+	itemDef
+		{
+			name				story2text
+			group				story
+			type				ITEM_TYPE_TEXTSCROLL
+			text				@TIER2_7
+			rect				10 310	620 180
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				0
+			lineHeight			20
+			autowrapped
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"7"
+			}
+		}
+//----------------------------------------------------------------------------------------------
+//coming from Vjun3
+//----------------------------------------------------------------------------------------------
+	itemDef
+		{
+			name				story11
+			group				story
+			type				ITEM_TYPE_BUTTON
+			rect				300 440 172 24
+			text				@MENUS_OKAY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			8
+			textaligny			-1
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"13"
+			}
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow		220 440 220 24
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}
+			action
+			{
+				close		all
+				open		ingameMissionSelect3
+			}
+		}	
+	itemDef
+		{
+			name				story3text
+			group				story
+			type				ITEM_TYPE_TEXTSCROLL
+			text				@TIER3_13
+			rect				10 310	620 180
+			font				3
+			textstyle			3
+			textscale			1
+			forecolor			.549 .854 1 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				0
+			lineHeight			20
+			autowrapped
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"13"
+			}
+		}
+	itemDef
+		{
+			name				okay
+			group				okay
+			type				ITEM_TYPE_BUTTON
+			rect				300 440 172 24
+			text				@MENUS_OKAY
+			font				3
+			textstyle			3
+			forecolor			1 1 1 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+		
+			visible				1
+		mouseEnter 
+			{ 
+				show			glow
+				setitemrect		glow		220 440 220 24
+			}
+		mouseExit 
+			{ 
+				hide			glow
+			}
+		action
+			{
+				hide			stats
+				hide			okay
+				
+				show			storyheads
+				show			story
+			}
+		}
+		
+	itemDef 
+		{
+			name				scan
+			group				none
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 640
+			background			"menu/scanlines"
+			forecolor			.5 .5 .5 .2
+			visible				1
+			decoration
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+

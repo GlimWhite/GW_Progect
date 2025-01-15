@@ -1,0 +1,46 @@
+{	
+	assetGlobalDef 
+	{	
+		smallFont						"aurabesh" 	5	
+		mediumFont						"ergoec" 	5
+		bigFont							"anewhope" 	5
+		smallFont						"arialnb" 	5
+		smallFont						"russian" 	16
+		smallFont						"russian" 	20
+
+		cursor							"cursorred"	
+		itemFocusSound					"sound/interface/menuroam.wav"
+		itemFocusForce					"fffx/interface/menuroam"
+		
+		forceChosenSound				"sound/effects/hologram_on"
+		forceUnchosenSound				"sound/effects/hologram_off"
+		
+		datapadmoveRollSound			"sound/player/roll1"
+		datapadmoveJumpSound			"sound/weapons/force/jump"
+
+		datapadmoveSaberSound1			"sound/weapons/saber/saberhup1"
+		datapadmoveSaberSound2			"sound/weapons/saber/saberhup2"
+		datapadmoveSaberSound3			"sound/weapons/saber/saberhup3"
+		datapadmoveSaberSound4			"sound/weapons/saber/saberhup4"
+		datapadmoveSaberSound5			"sound/weapons/saber/saberhup5"
+		datapadmoveSaberSound6			"sound/weapons/saber/saberhup6"
+
+		fadeClamp						1.0									// sets the fadeup alpha
+		fadeCycle						1									// how often fade happens in milliseconds
+		fadeAmount						0.1									// amount to adjust alpha per cycle
+//		shadowColor						0.1 0.1 0.1 0.0						// shadow color
+		focuscolor						1 1 1 1
+	precacheSound
+		{
+		"sound/interface/choose_color.wav"
+		"sound/interface/choose_head.wav"
+		"sound/interface/choose_torso.wav"
+		"sound/interface/choose_saber.wav"
+		"sound/interface/choose_hilt.wav"
+		"sound/interface/choose_blade.wav"
+		"sound/interface/transition.wav" 
+		"sound/interface/esc.wav"
+		"sound/interface/sub_select.wav"
+		}
+  	}
+}
