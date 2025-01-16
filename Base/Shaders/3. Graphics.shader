@@ -643,318 +643,6 @@ gfx/2d/crosshairi
 		glow
 	}
 }
-//--------------------------------
-//	  New Binocular Shaders
-//--------------------------------
-gfx/2d/binTopTri
-{
-	cull	disable
-
-	{
-		map 	gfx/2d/binTopTri.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen 	vertex
-	}
-}
-
-gfx/2d/binCircle
-{
-	cull	disable
-
-	{
-		map 	gfx/2d/binCircle.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen 	vertex
-	}
-}
-
-gfx/2d/binSideArrow
-{
-	cull	disable
-
-	{
-		map 	gfx/2d/binSideArrow.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen 	vertex
-	}
-}
-
-gfx/2d/binMask
-{
-	cull	disable
-
-	{
-		map 	gfx/2d/binMask.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen 	identity
-		alphaGen identity
-	}
-}
-
-gfx/2d/amp_mask
-{
-	cull	disable
-
-	{
-		map 	gfx/2d/amp_mask.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen 	identity
-		alphaGen identity
-	}
-}
-
-gfx/2d/side_bit
-{
-	cull disable
-	{
-		map gfx/2d/side_bit.tga
-		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		rgbGen identity
-		alphaGen identity
-		tcMod scale 1 1.5
-		tcMod scroll 0 3
-	}
-}
-
-gfx/2d/bracket
-{
-	cull disable
-	{
-		map gfx/2d/bracket.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen identity
-		alphaGen identity
-	}
-}
-
-gfx/2d/bracket2
-{
-	cull disable
-	{
-		map gfx/2d/bracket2.tga
-		blendFunc GL_ONE GL_ONE
-		rgbGen identity
-		alphaGen identity
-	}
-}
-
-gfx/2d/workingCamera
-{
-	nopicmip
-	nomipmaps
-	cull disable
-	{
-		map gfx/2d/lagogglesWindow
-		blendFunc GL_DST_COLOR GL_SRC_COLOR
-		tcmod scale 2 2
-		tcmod scroll -30 10
-	}	
-	{
-		map gfx/misc/scanline2
-		blendFunc GL_DST_COLOR GL_SRC_COLOR
-		tcmod scale 1 10
-	}	
-}
-
-gfx/2d/brokenCamera
-{
-	nopicmip
-	nomipmaps
-	cull disable
-	{
-		map gfx/2d/brokenCamera
-		blendFunc GL_ONE GL_ZERO
-		tcmod scale 3.5 3
-		tcmod scroll -30 20
-	}	
-	{
-		map gfx/misc/scanline2
-		blendFunc GL_DST_COLOR GL_SRC_COLOR
-		tcmod scale 1 10
-	}	
-}
-gfx/2d/binocularWindow
-{
-	nopicmip
-	nomipmaps
-	cull	disable
-    {
-        map gfx/2d/zoomWindow.tga
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        tcMod scroll 60 41.5
-        rgbGen exactVertex
-    }
-    {
-        map gfx/misc/scanline.tga
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        detail
-        rgbGen identity
-        tcMod scale 1 	5
-    }
-}
-
-gfx/2d/lagogglesWindow
-{
-	nopicmip
-	nomipmaps
-	cull	disable
-    {
-        map gfx/2d/lagogglesWindow.tga
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        tcMod scroll 70 45.5
-	tcmod scale	3.0 2.0
-        rgbGen exactVertex
-    }
-}
-
-gfx/2d/binocularBottom
-{
-	nopicmip
-	nomipmaps
-	cull	disable
-    {
-       clampmap gfx/2d/zoomBottom.tga
-        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-        detail
-        rgbGen identity
-    }
-}
-
-gfx/2d/binocularTop
-{
-	nopicmip
-	nomipmaps
-	cull	disable
-    {
-       clampmap gfx/2d/zoomTop.tga
-        blendFunc	 GL_ONE		GL_ZERO
-        detail
-        rgbGen identity
-    }
-    {
-	map gfx/2d/zoomTopGlow.tga
-	blendFunc 	GL_ONE 		GL_ONE
-	detail
-	rgbGen wave sin 0.25 0.15 0.0 0.6
-    }
-}
-
-gfx/2d/binocularNumOverlay
-{
-	nopicmip
-	nomipmaps
-	cull	disable
-    {
-      map gfx/2d/zoomNumOverlay2.tga
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        rgbGen identity
-    }
-    {
-      map gfx/2d/zoomNumOverlay.tga
-        blendFunc GL_ONE GL_ONE
-        rgbGen identity
-    }
-    {
-        map gfx/misc/scanline2.tga
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        rgbGen identity
-        tcMod scale 1 		0.7
-	tcMod scroll 0	6.2
-    }
-}
-
-gfx/2d/zoomStatic
-{
-	nopicmip
-	nomipmaps
-	cull	disable
-    {
-       map gfx/2d/zoomStatic.tga
-        blendFunc GL_ONE GL_ONE
-        detail
-        rgbGen vertex
-        tcMod scale 3 		3
-	tcMod scroll 20	10
-    }
-}
-
-gfx/2d/watermark
-{
-	nopicmip
-	cull	disable
-    {
-       map gfx/2d/watermark.tga
-        blendFunc GL_ONE GL_ONE
-        detail
-        rgbGen vertex
-    }
-}
-
-gfx/2d/disruptorMask
-{
-	nopicmip
-	cull	disable
-    {
-        map gfx/misc/scanline.tga
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        detail
-        rgbGen identity
-        tcMod scale 1 9.5
-    }
-    {
-        map gfx/2d/disruptorMask.tga
-        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-        detail
-        rgbGen exactVertex
-    }
-}
-
-gfx/2d/wedge
-{
-	nomipmaps
-	cull	twosided
-    {
-        map gfx/2d/wedge
-        blendFunc GL_ONE GL_ONE
-        rgbGen vertex
-    }
-}
-
-gfx/2d/lock
-{
-	cull	twosided
-    {
-        map gfx/2d/lock
-        blendFunc GL_ONE GL_ONE
-        glow
-        rgbGen vertex
-    }
-}
-
-gfx/2d/insertTick
-{
-	nomipmaps
-	cull	twosided
-    {
-        map gfx/2d/tick
-        blendFunc GL_ONE GL_ONE
-        glow
-        rgbGen vertex
-    }
-}
-
-
-gfx/2d/cropCircleGlow
-{
-	nomipmaps
-	cull	twosided
-    {
-        map gfx/2d/cropcircleglow
-        blendFunc GL_DST_COLOR GL_SRC_COLOR
-        rgbGen identity
-    }
-}
-
 
 //###################################################//
 //#						Chunks						#//
@@ -1574,6 +1262,15 @@ textures/decals/slashmark1
 //###################################################//
 //#			ЭФФЕКТ СПОСОБНОСТИ Лечение				#//
 //###################################################//
+gfx/effects/gCircle
+{
+    {
+        clampmap gfx/effects/Circle
+		blendFunc GL_ONE GL_ONE
+		rgbGen Vertex
+    }
+}
+
 gfx/effects/caustic1
 {
 	surfaceparm	trans
@@ -3967,12 +3664,12 @@ deformvertexes	bulge	10 0.75 10
 //###################################################//
 //#			ЭФФЕКТ СПОСОБНОСТИ МОЛНИЯ				#//
 //###################################################//
-gfx/misc/lightningFlash
+gfx/force/lightningflash
 {
 	deformvertexes	bulge	10 0.75 10
 	cull	twosided
     {
-        map gfx/misc/lightningflash
+        map gfx/force/lightningflash
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
 		glow
@@ -3990,7 +3687,7 @@ gfx/misc/blueLine
 	deformvertexes	bulge	10 0.75 10
 	cull	twosided
     {
-        map gfx/force/lightning
+        clampmap gfx/force/lightning
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -4425,7 +4122,7 @@ gfx/misc/spikeb
 	surfaceparm	trans
 	cull	twosided
     {
-        map gfx/effects/spikeb
+        clampmap gfx/spark/sparkglow
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex

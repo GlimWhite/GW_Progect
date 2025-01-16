@@ -1266,7 +1266,7 @@ small_smoke
 {
 	cull	twosided
     {
-       clampmap gfx/smoke/white_smoke01
+       map gfx/smoke/white_smoke01
 	   blendFunc GL_ONE GL_ONE
     }       
 }

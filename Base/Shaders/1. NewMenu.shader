@@ -488,7 +488,7 @@ menu/interface/academy
 	nopicmip
 	nomipmaps
     {
-        clampmap menu/academy2
+        clampmap menu/academy
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
     }
 }
@@ -1287,6 +1287,52 @@ gfx/hud/useablehint
     }
 }
 
+gfx/hud/vehicle_frame
+{
+    {
+        map hud/vehicle_frame
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+    }
+}
+
+gfx/hud/vehicle_ammo_tick
+{
+    {
+        map hud/vehicle_ammo_tick
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+    }
+}
+
+gfx/hud/vehicle_armor_tick
+{
+    {
+        map hud/vehicle_armor_tick
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+    }
+}
+
+gfx/hud/vehicle_health_tick
+{
+    {
+        map hud/vehicle_health_tick
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+    }
+	
+}
+
+gfx/hud/vehicle_turbo_tick
+{
+    {
+        map hud/vehicle_turbo_tick
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+    }
+}
+
 FrameHUD
 {
 	nopicmip
@@ -1649,7 +1695,7 @@ greyscale
     }
 }
 
-menu/arrow_r
+menu/dp_arrow_r
 {
 	nopicmip
 	nomipmaps
@@ -1660,7 +1706,7 @@ menu/arrow_r
     }
 }
 
-menu/arrow_ron
+menu/dp_arrow_ron
 {
 	nopicmip
 	nomipmaps

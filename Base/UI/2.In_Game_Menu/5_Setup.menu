@@ -650,7 +650,7 @@ itemDef
 			name				brightness
 			group				group_screen
 			text				@MENUS_VIDEO_BRIGHTNESS
-			rect				170 210 180 20
+			rect				170 225 180 20
 			font				5
 			textscale			0.5
 			forecolor			.95 .64 .37 1
@@ -667,11 +667,11 @@ itemDef
 			type				ITEM_TYPE_SLIDER
 			text				" "
 			cvarfloat			"r_gamma" 0 .5 1
-			rect				250 230 200 20
+			rect				360 220 200 20
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 230 320 20
+				setitemrect		sidebutton_glow			160 220 320 20
 				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
 				hide			defaults
@@ -709,7 +709,7 @@ itemDef
 			name				CrossHairSize
 			group				group_screen
 			text				"@MENUS_CROSS_HAIR_SIZE"
-			rect				170 260 180 20
+			rect				170 255 180 20
 			font				5
 			textscale			0.5
 			forecolor			.95 .64 .37 1
@@ -726,11 +726,11 @@ itemDef
 			type				ITEM_TYPE_SLIDER
 			text				" "
 			cvarfloat			"cg_crosshairSize" 0 1 100
-			rect				250 280 180 20
+			rect				360 250 180 20
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 280 320 20
+				setitemrect		sidebutton_glow			160 250 320 20
 				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
 				hide			defaults
@@ -768,7 +768,7 @@ itemDef
 			name				fov
 			group				group_screen
 			text				"@MENUS_POV"
-			rect				170 310 180 20
+			rect				170 285 180 20
 			font				5
 			textscale			0.5
 			forecolor			.95 .64 .37 1
@@ -785,11 +785,11 @@ itemDef
 			type				ITEM_TYPE_SLIDER
 			text				" "
 			cvarfloat			"cg_fov" 0 45 100
-			rect				250 330 180 25
+			rect				360 280 180 25
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 330 320 20
+				setitemrect		sidebutton_glow			160 275 320 20
 				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
 				hide			defaults
@@ -827,7 +827,7 @@ itemDef
 			name				VIDEOQ
 			group				group_screen
 			text				@MENUS_VIDEOQ
-			rect				170 360 0 0
+			rect				170 320 0 0
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
 			textscale			0.5
@@ -835,7 +835,7 @@ itemDef
 			decoration
 		}
 //*****************
-// "Рисовать ФПС"
+// "Качество Видео"
 //*****************
 	itemDef 
 		{
@@ -845,7 +845,7 @@ itemDef
 			text				" "
 			cvar				"cl_VideoQuality"	
 			cvarFloatList		{ @MENUS_LOW 0 @MENUS_HIGH 1 }
-			rect				160 360 320 20
+			rect				160 320 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
 			textalignx			200
@@ -854,7 +854,7 @@ itemDef
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 355 320 20
+				setitemrect		sidebutton_glow			160 315 320 20
 			} 
 		mouseExit 
 			{ 
