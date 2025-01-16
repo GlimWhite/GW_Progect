@@ -1,10 +1,6 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
-
-# Блокировка загрузки в облока данные расширения
-
-
 *.log
 *.cfg
 *.dll
