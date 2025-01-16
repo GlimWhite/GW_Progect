@@ -1,3 +1,6 @@
+[Bb]ase/*.cfg
+[Bb]ase/*.log
+
 *.dll
 *.log
 *.cfg
