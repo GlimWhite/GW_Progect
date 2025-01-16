@@ -162,7 +162,8 @@ locked hardware.  ok
 Shutting down OpenGL subsystem
 ...wglMakeCurrent( NULL, NULL ): success
 ...deleting GL context: success
-...releasing DC: failed
+...releasing DC: success
+...destroying window
 ...shutting down QGL
 ...unloading OpenGL DLL
 -----------------------
