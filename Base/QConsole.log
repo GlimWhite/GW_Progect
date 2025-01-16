@@ -158,40 +158,6 @@ Initializing DirectSound
 locked hardware.  ok
 ^3WARNING: reused image menu/static_base with mixed mipmap parm
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: yavin1b
-Loading shader text .....
-..... 3071 shader definitions loaded
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 818 faces, 26 meshes, 150 trisurfs, 0 flares
-^3WARNING: reused image gfx/damage/bodyburnmark_glow with mixed glWrapClampMode parm
-^3WARNING: reused image gfx/damage/bodyburnmark_glow with mixed glWrapClampMode parm
-^5Загрузка... auto_yavin2
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: yavin2
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 12813 faces, 28 meshes, 59 trisurfs, 0 flares
-^3WARNING: reused image gfx/damage/bodyburnmark_glow with mixed glWrapClampMode parm
-^3WARNING: reused image gfx/damage/bodyburnmark_glow with mixed glWrapClampMode parm
-]noclip
-noclip ON
 ----- CL_Shutdown -----
 Shutting down OpenGL subsystem
 ...wglMakeCurrent( NULL, NULL ): success
