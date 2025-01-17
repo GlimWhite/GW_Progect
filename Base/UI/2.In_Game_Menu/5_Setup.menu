@@ -394,6 +394,7 @@ itemDef
 				uiScript		glCustom 
 				setcvar			""
 				show			applyChanges
+				setcvar			r_mode -1
 			}
 		}
 //********************
