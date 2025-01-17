@@ -5,6 +5,7 @@
 /[Bb]ase/*.cfg
 /[Bb]ase/*.log
 
-*.dll
-*.log
+
+GL.log
 *.cfg
+*.dll
