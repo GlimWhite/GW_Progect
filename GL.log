@@ -1,9 +1,12 @@
-Thu Jan 16 17:46:47 2025
+Fri Jan 17 08:19:35 2025
 
 glGetString
 glGetString
 glGetString
 glGetString
+glGetIntegerv
+glGetFloatv
+glGetIntegerv
 glGetIntegerv
 glGetFloatv
 glGetIntegerv

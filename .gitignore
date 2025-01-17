@@ -1,5 +1,9 @@
-[Bb]ase/*.cfg
-[Bb]ase/*.log
+#
+# Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
+#
+
+/[Bb]ase/*.cfg
+/[Bb]ase/*.log
 
 *.dll
 *.log
