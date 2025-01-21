@@ -6,7 +6,7 @@
 	menuDef 
 	{
 		name					"ingamequitMenu"	
-		fullScreen				0					
+		fullScreen				1					
 		focusColor				1 1 1 1			
 		visible					1					
 	onESC 
@@ -159,7 +159,7 @@
 		action 
 			{ 
 				play			"sound/interface/button1.wav" ; 
-				uiScript		Quit			
+				uiScript		Quit
 			}	  	  
 		}
 //___________________________________________________________________________________________

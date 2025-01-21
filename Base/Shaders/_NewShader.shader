@@ -157,15 +157,12 @@ textures/stair_academy2
 textures/skip
 {
 	q3map_material			SolidMetal
-	q3map_shadeangle		150
-	q3map_alphashadow
 	{
         map $lightmap
     }
     {
         map textures/skip
-		blendFunc GL_DST_COLOR GL_ZERO
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		tcMod scale 2 2
-		rgbGen vertex
     }
 }
