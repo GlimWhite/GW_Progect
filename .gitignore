@@ -9,3 +9,9 @@
 GL.log
 *.cfg
 *.dll
+Base/JAConfig.cfg
+Base/QConsole.log
+GL.log
+*.log
+*.log
+*.cfg
