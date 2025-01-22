@@ -145,7 +145,7 @@ gfx/2d/brokenCamera
 		tcmod scroll -30 20
 	}	
 	{
-		map gfx/misc/scanline2
+		map gfx/2d/scanline
 		blendFunc GL_DST_COLOR GL_SRC_COLOR
 		tcmod scale 1 10
 	}	

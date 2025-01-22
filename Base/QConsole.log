@@ -158,21 +158,349 @@ Initializing DirectSound
 locked hardware.  ok
 ^3WARNING: reused image menu/static_base with mixed mipmap parm
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-]map test
+^5Загрузка... quick
 ------ Server Initialization ------
 Jedi Academy: Redux version 2.0
-Server: test
+Server: t3_hevil
 Loading shader text .....
-..... 3071 shader definitions loaded
+..... 3079 shader definitions loaded
 ------- Game Initialization -------
 gamename: base
 gamedate: Oct 24 2003
 -----------------------------------
 -----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_field with mixed mipmap parm
+^3WARNING: reused image menu/static_field with mixed allowPicmip parm
+^3WARNING: reused image menu/static_field2 with mixed mipmap parm
+^3WARNING: reused image menu/static_field2 with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
 ^3WARNING: reused image menu/static_base with mixed mipmap parm
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-^3WARNING: Couldn't find image for shader textures/yavin/center
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: reused image menu/static_base with mixed glWrapClampMode parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: reused image menu/static_base with mixed glWrapClampMode parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_field with mixed mipmap parm
+^3WARNING: reused image menu/static_field with mixed allowPicmip parm
+^3WARNING: reused image menu/static_field2 with mixed mipmap parm
+^3WARNING: reused image menu/static_field2 with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed glWrapClampMode parm
+^3WARNING: reused image menu/static_field with mixed mipmap parm
+^3WARNING: reused image menu/static_field with mixed allowPicmip parm
+^3WARNING: reused image menu/static_field2 with mixed mipmap parm
+^3WARNING: reused image menu/static_field2 with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_field with mixed mipmap parm
+^3WARNING: reused image menu/static_field with mixed allowPicmip parm
+^3WARNING: reused image menu/static_field2 with mixed mipmap parm
+^3WARNING: reused image menu/static_field2 with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: reused image menu/static_base with mixed glWrapClampMode parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_field with mixed mipmap parm
+^3WARNING: reused image menu/static_field with mixed allowPicmip parm
+^3WARNING: reused image menu/static_field2 with mixed mipmap parm
+^3WARNING: reused image menu/static_field2 with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^3WARNING: R_FindImageFile could not find 'gfx/misc/shockwave' in shader 'shockwave'
+^3Shader shockwave has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^3WARNING: R_FindImageFile could not find 'gfx/misc/rline' in shader 'gfx/misc/redLine'
+^3Shader gfx/misc/redLine has a stage with no image
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_hevil
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+glGetError() = 0x501
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader gfx/misc/spark_group
+^3WARNING: R_FindImageFile could not find 'textures/skies/alphasquare' in shader 'textures/skies/cloudlayer_test'
+^3Shader textures/skies/cloudlayer_test has a stage with no image
+...loaded 9040 faces, 403 meshes, 95 trisurfs, 0 flares
+^5Запись игры "quick"...
+^5Готово.
 ----- CL_Shutdown -----
 Shutting down OpenGL subsystem
 ...wglMakeCurrent( NULL, NULL ): success

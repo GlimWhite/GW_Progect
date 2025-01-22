@@ -114,7 +114,7 @@ spark5
 {
 	cull	twosided
     {
-       clampmap gfx/spark/spark5
+       clampmap gfx/spark/spark5glow
 	   blendFunc GL_ONE GL_ONE
 	   
     }       
@@ -186,7 +186,7 @@ shockwave
 	polygonOffset
 	cull	twosided
     {
-        clampmap gfx/misc/shockwave
+        clampmap gfx/effects/shockwave
 	    blendFunc GL_ONE GL_ONE
 		glow
     }       

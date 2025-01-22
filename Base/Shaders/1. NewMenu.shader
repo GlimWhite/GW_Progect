@@ -506,11 +506,6 @@ gfx/menus/menu_box1
 bordermenu
 {
 	{
-        map menu/static_base
-        blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
-        tcMod scroll 0 -0.35
-    }
-	{
         map menu/static_field
         blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
         tcMod scroll 0 -0.45
@@ -519,7 +514,11 @@ bordermenu
         map menu/static_field2
         blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
         tcMod scroll 0 -0.25
-	
+    }
+	{
+        map menu/static_base
+        blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
+        tcMod scroll 0 -0.25
     }
 }
 

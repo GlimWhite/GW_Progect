@@ -20,7 +20,7 @@ gfx/2d/cropCircle2
 	nomipmaps
 	cull	twosided
     {
-        map gfx/misc/scanline
+        map gfx/2d/scanline
         blendFunc GL_DST_COLOR GL_SRC_COLOR
         rgbGen vertex
         tcMod scale 1 8
@@ -1329,18 +1329,20 @@ gfx/effects/wcloudA
     }
 }
 
-gfx/effects/wcloud
+gfx/effects/Wcloud
 {
+	qer_editorimage	gfx/effects/snowpuff2
 	surfaceparm	nonsolid
 	surfaceparm	nonopaque
 	surfaceparm	trans
 	cull	twosided
     {
-        map gfx/Effects/wcloud
+        map gfx/effects/wcloud
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
 }
+
 //###################################################//
 //#			 		ЭФФЕКТ ДЫМА						#//
 //###################################################//
@@ -1583,7 +1585,7 @@ gfx/misc/shockwave
 {
 	cull	twosided
     {
-        map gfx/misc/shockwave
+        map gfx/effects/shockwave
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -1782,13 +1784,14 @@ gfx/effects/blasterFrontFlash
     }
 }
 
-gfx/effects/redLine
+gfx/misc/redLine
 {
 	cull	twosided
     {
-        map gfx/misc/rline
+        map gfx/effects/redlightning
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
+		glow
     }
 }
 
@@ -1826,7 +1829,7 @@ gfx/effects/rorangeShot
 {
 	cull	twosided
     {
-        map gfx/misc/OLine
+        map gfx/effects/OLine
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -2346,7 +2349,7 @@ probechunk01
 {
 	cull	twosided
     {
-        map gfx/misc/probechunk01
+        map gfx/decals/probechunk01
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
         rgbGen vertex
         alphaGen vertex
@@ -2358,7 +2361,7 @@ probechunk02
 {
 	cull	twosided
     {
-        map gfx/misc/probechunk02
+        map gfx/decals/probechunk02
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
         rgbGen vertex
         alphaGen vertex
@@ -2370,7 +2373,7 @@ probechunk03
 {
 	cull	twosided
     {
-        map gfx/misc/probechunk03
+        map gfx/decals/probechunk03
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
         rgbGen vertex
         alphaGen vertex
@@ -2678,7 +2681,29 @@ gfx/exp/demp2
     }
 }
 
+
 gfx/exp/explosion3
+{
+	cull disable
+	{
+		oneshotanimmap 100 gfx/explosion/exp3_1 gfx/explosion/exp3_2 gfx/explosion/exp3_3 gfx/explosion/exp3_4 gfx/explosion/exp3_5 gfx/explosion/exp3_6 gfx/explosion/exp3_7 gfx/colors/black
+		blendFunc GL_ONE GL_ONE
+		rgbGen wave inversesawtooth 0.0  1.0  0.0 6
+	}
+
+	{
+		oneshotanimmap 100 gfx/explosion/exp3_2 gfx/explosion/exp3_3 gfx/explosion/exp3_4 gfx/explosion/exp3_5 gfx/explosion/exp3_6 gfx/explosion/exp3_7 gfx/colors/black
+		blendFunc GL_ONE GL_ONE
+		rgbGen wave sawtooth 0.0  1.0  0.0  6
+	}
+
+    {
+        map $lightmap
+        blendFunc GL_DST_COLOR GL_ZERO
+    }
+}
+
+gfx/explosion/explosion3
 {
 	cull disable
 	{
@@ -3403,7 +3428,7 @@ gfx/effects/fire2
 		rgbGen	vertex
     }
 	{
-        map gfx/misc/spark4
+        map gfx/spark/spark4
         blendFunc GL_ONE GL_ONE
 		glow
     }
@@ -3443,7 +3468,7 @@ gfx/effects/fire4
         rgbGen vertex
     }
 	{
-        map gfx/misc/spark_group
+        map gfx/spark/spark_group
         blendFunc GL_ONE GL_ONE
 		glow
     }
@@ -3632,21 +3657,21 @@ gfx/misc/bolt1
 {
 deformvertexes	bulge	10 0.75 10
     {
-        map gfx/misc/bolt1
+        map gfx/effects/bluebolt
         blendFunc GL_ONE GL_ONE
         tcMod scroll 0 -5
         rgbGen vertex
 		glow
     }
 	{
-        map gfx/misc/blueline_2
+        map gfx/effects/blueline2
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
         tcMod scroll 0 -5
         rgbGen vertex
 		glow
     }
 	{
-        map gfx/force/lightning
+        clampmap gfx/force/lightning
         blendFunc GL_ONE GL_ONE
         tcMod scroll 0 -5
         rgbGen vertex
@@ -3654,7 +3679,7 @@ deformvertexes	bulge	10 0.75 10
 		glow
     }
     {
-        map gfx/misc/blueline1
+        map gfx/effects/blueline1
         blendFunc GL_SRC_ALPHA GL_ONE
         tcMod scroll 0 -3
         rgbGen vertex
@@ -3664,6 +3689,24 @@ deformvertexes	bulge	10 0.75 10
 //###################################################//
 //#			ЭФФЕКТ СПОСОБНОСТИ МОЛНИЯ				#//
 //###################################################//
+gfx/misc/lightningflash
+{
+	deformvertexes	bulge	10 0.75 10
+	cull	twosided
+    {
+        clampmap gfx/force/lightningflash
+        blendFunc GL_ONE GL_ONE
+        rgbGen vertex
+		glow
+    }
+	{
+        clampmap gfx/Force/lightning
+        blendFunc GL_ONE GL_ONE
+        rgbGen vertex
+		glow
+    }
+}
+
 gfx/force/lightningflash
 {
 	deformvertexes	bulge	10 0.75 10
@@ -3675,7 +3718,7 @@ gfx/force/lightningflash
 		glow
     }
 	{
-        map gfx/effects/lightning
+        map gfx/Force/lightning
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
 		glow
@@ -3698,7 +3741,7 @@ gfx/misc/electric
 	cull	twosided
 	deformvertexes	bulge	10 0 10
     {
-        map gfx/misc/lightning3
+        map gfx/force/lightning3
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
         tcMod scroll 	0.5 1
@@ -3720,7 +3763,7 @@ gfx/misc/fullbodyelectric2
 	cull	twosided
 	deformvertexes	bulge	0 0.25 0
     {
-        map gfx/misc/lightning2
+        map gfx/Force/lightning2
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
         tcMod scroll 0.5 1
@@ -3765,17 +3808,28 @@ gfx/misc/forceprotect
 //###################################################//
 //#		 		ЭФФЕКТ ОТ ОРУЖИЯ ОСКОЛКИ			#//
 //###################################################//
+gfx/misc/csparks
+{
+	cull	twosided
+    {
+        clampmap gfx/spark/spark
+        blendFunc GL_ONE GL_ONE
+        glow
+        rgbGen vertex
+    }
+}
+
 gfx/misc/spark
 {
 	cull	twosided
     {
-        map gfx/misc/spark
+        clampmap gfx/spark/spark
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
     }
 	{
-        map gfx/misc/spark4
+        clampmap gfx/spark/spark4
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
 		glow
@@ -3787,7 +3841,7 @@ gfx/misc/spark2
 	cull	twosided
 	deformvertexes	wave	90 sin 0 0 5 1
     {
-        map gfx/misc/rline
+        map gfx/effects/redline
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -3798,7 +3852,7 @@ gfx/misc/spark3
 {
 	cull	twosided
     {
-        map gfx/misc/spark2
+        clampmap gfx/spark/spark2
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -3809,7 +3863,7 @@ gfx/misc/redbolt
 {
 	cull	twosided
     {
-        map gfx/misc/redline
+        map gfx/effects/redline
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -3821,7 +3875,7 @@ gfx/misc/borgeyeflare
 {
 	cull	disable
     {
-        map gfx/misc/borgeyeflare
+        map gfx/effects/borgeyeflare
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -3829,13 +3883,11 @@ gfx/misc/borgeyeflare
 
 sun
 {
-	qer_editorimage	gfx/misc/sun
 	cull	twosided
     {
-        map gfx/misc/sun
+        map gfx/effects/sun
         blendFunc GL_ONE GL_ONE
         glow
-        rgbGen vertex
     }
 }
 
@@ -3850,33 +3902,31 @@ rain
 }
 sun2
 {
-	qer_editorimage	gfx/misc/sun
 	cull	twosided
     {
-        map gfx/misc/sun
+        map gfx/effects/sun
        blendFunc GL_ONE GL_ONE
         glow
-        rgbGen vertex
     }
 }
 // wake is the mark on water surfaces for paddling players
-
 wake
 {
 	cull	twosided
     {
-        clampmap gfx/misc/splash
+        clampmap gfx/effects/splash
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
 }
+
 gfx/misc/zoom_mask2
 {
 	nopicmip
 	nomipmaps
 	cull	disable
     {
-        map gfx/misc/scanline.tga
+        map gfx/2d/scanline
         blendFunc GL_DST_COLOR GL_SRC_COLOR
         detail
         rgbGen identity
@@ -3913,7 +3963,7 @@ gfx/misc/steam
 {
 	cull	twosided
     {
-        map gfx/misc/steam
+        map gfx/effects/steam
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -3923,7 +3973,7 @@ gfx/misc/steam2
 {
 	cull	twosided
     {
-        map gfx/misc/steam2
+        map gfx/effects/steam2
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -3933,7 +3983,7 @@ gfx/misc/steam3
 {
 	cull	twosided
     {
-        map gfx/misc/steam3
+        map gfx/effects/steam3
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -3943,7 +3993,7 @@ gfx/misc/dotfill
 {
 	cull	twosided
     {
-        map gfx/misc/dotfill
+        map gfx/effects/steam4
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -3953,8 +4003,8 @@ gfx/misc/dotfill_a
 {
 	cull	twosided
     {
-        map gfx/misc/dotfill_a
-        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+        map gfx/effects/steam4
+        blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
 }
@@ -4026,7 +4076,7 @@ gfx/misc/smallGlassChunk1
 {
 	cull	twosided
     {
-        map gfx/misc/small_glass1
+        map gfx/effects/glass_small
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -4036,20 +4086,17 @@ gfx/misc/smallGlassChunk2
 {
 	cull	twosided
     {
-        map gfx/misc/small_glass2
+        map gfx/effects/glass_small2
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
 }
 
-
-
-
 gfx/misc/dust
 {
 	cull	twosided
     {
-        map gfx/misc/dust
+        map gfx/effects/dust
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -4072,7 +4119,7 @@ gfx/misc/cring
 	surfaceparm	trans
 	cull	twosided
     {
-        map gfx/misc/csparks
+        map gfx/spark/spark5glow
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -4096,7 +4143,7 @@ gfx/misc/bluebolt
 {
 	cull	twosided
     {
-        map gfx/misc/blueline1
+        map gfx/effects/blueline1
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
         tcMod scroll 0 -3
@@ -4134,7 +4181,7 @@ flare
 	surfaceparm	trans
 	cull	twosided
     {
-        map gfx/misc/flare
+        map gfx/spark/flare
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -4158,7 +4205,7 @@ gfx/misc/rline
 {
 	cull	twosided
     {
-        map gfx/misc/rline
+        map gfx/effects/redlightning
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
     }
@@ -4181,10 +4228,10 @@ gfx/misc/mine
 	q3map_nolightmap
 	cull	twosided
     {
-        clampmap gfx/misc/mine1
+        clampmap gfx/effects/mine
         blendFunc GL_ONE GL_ONE
         glow
-        rgbGen identity
+        rgbGen vertex
     }
 }
 
@@ -4287,13 +4334,12 @@ gfx/misc/shields_blue
 
 gfx/misc/ftailside_c
 {
-	qer_editorimage	gfx/misc/flaretailup
 	surfaceparm	nonsolid
 	surfaceparm	nonopaque
 	surfaceparm	trans
 	cull	twosided
     {
-        map gfx/misc/flaretailside_c
+        map gfx/effects/flaretailside_c
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
         tcMod scroll 5 0
@@ -4302,13 +4348,40 @@ gfx/misc/ftailside_c
 
 gfx/misc/flaretailup
 {
-	qer_editorimage	gfx/misc/flaretailup
 	surfaceparm	nonsolid
 	surfaceparm	nonopaque
 	surfaceparm	trans
 	cull	twosided
     {
-        map gfx/misc/flaretailup
+        map gfx/effects/flaretailup
+        blendFunc GL_ONE GL_ONE
+        rgbGen vertex
+        tcMod scroll 5 0
+    }
+}
+
+gfx/misc/flaretailuo
+{
+	surfaceparm	nonsolid
+	surfaceparm	nonopaque
+	surfaceparm	trans
+	cull	twosided
+    {
+        map gfx/effects/flaretailuo
+        blendFunc GL_ONE GL_ONE
+        rgbGen vertex
+        tcMod scroll 5 0
+    }
+}
+
+gfx/misc/flaretail_c1
+{
+	surfaceparm	nonsolid
+	surfaceparm	nonopaque
+	surfaceparm	trans
+	cull	twosided
+    {
+        map gfx/effects/flaretail_c1
         blendFunc GL_ONE GL_ONE
         rgbGen vertex
         tcMod scroll 5 0
@@ -4332,7 +4405,7 @@ gfx/misc/whiteLine2
 {
 	cull	twosided
     {
-        map gfx/misc/whiteline2
+        map gfx/effects/whiteline
         blendFunc GL_ONE GL_ONE
         glow
         rgbGen vertex
@@ -4410,15 +4483,14 @@ gfx/misc/iring
 
 gfx/misc/vbolt
 {
-	qer_editorimage	gfx/misc/bolt1
     {
-        map gfx/misc/bolt1_green
+        map gfx/effects/greenbolt
         blendFunc GL_ONE GL_ONE
         tcMod scroll 0 -5
     }
     {
-        map gfx/misc/blueline1_green
-        blendFunc GL_SRC_ALPHA GL_ONE
+        map gfx/effects/greenline
+        blendFunc GL_ONE GL_ONE
         tcMod scroll 0 -3
     }
 }
@@ -4427,14 +4499,22 @@ gfx/misc/dr1
 {
 	cull	twosided
     {
-        map gfx/misc/dr1
+        map gfx/effects/redbolt
         blendFunc GL_ONE GL_ONE
         tcMod scale 1 0.5
         tcMod scroll 0 3
     }
 }
 
-
+gfx/misc/test_crackle
+{
+	cull	twosided
+    {
+        map gfx/effects/glass_crackle
+        blendFunc GL_ONE GL_ONE
+		rgbGen vertex
+    }
+}
 
 
 //###################################################//
