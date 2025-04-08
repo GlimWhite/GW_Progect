@@ -16,7 +16,7 @@ Initializing OpenGL subsystem
 succeeded
 ...setting mode -1: 1280 720 W
 ...registered window class
-...created window@38,12 (1286x749)
+...created window@369,200 (1286x749)
 Initializing OpenGL driver
 ...getting DC: succeeded
 ...GLW_ChoosePFD( 32, 24, 16 )
@@ -158,12 +158,30 @@ Initializing DirectSound
 locked hardware.  ok
 ^3WARNING: reused image menu/static_base with mixed mipmap parm
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-SetDeviceGammaRamp failed.
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: kor1
+Loading shader text .....
+..... 3077 shader definitions loaded
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader textures/korriban/korriban1_phongdirt
+^3WARNING: R_FindImageFile could not find 'textures/imp_mine/lava2' in shader 'textures/korriban/kor1_lava'
+^3Shader textures/korriban/kor1_lava has a stage with no image
+...loaded 8402 faces, 95 meshes, 170 trisurfs, 0 flares
 ----- CL_Shutdown -----
 Shutting down OpenGL subsystem
 ...wglMakeCurrent( NULL, NULL ): success
 ...deleting GL context: success
-...releasing DC: failed
+...releasing DC: success
+...destroying window
 ...shutting down QGL
 ...unloading OpenGL DLL
 -----------------------
