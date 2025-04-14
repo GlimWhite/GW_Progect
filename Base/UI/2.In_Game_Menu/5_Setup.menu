@@ -18,25 +18,26 @@
 			hide						group_sound
 			hide						group_graphics
 
-			hide						ApplyChanges 
+			//hide						ApplyChanges 
 			hide						group_vidrestart 
 			
 			show						defaults
 			show						group_screen
 			show						group_menu
 			show						group_screen
+			show 						redux
 //*********************
 // Кнопки в меню
 //*********************	
 			transition					border_setup	   80 57 480 0 80 57 480 412 15 15
-		
 //*********************
 // Кнопки в меню
 //*********************
-			transition					Videobutton			 10 18 0 30   10 18 150 30 15 15
-			transition					Graphicsbutton		160 18 0 30  160 18 160 30 15 15
-			transition					Soundbutton			320 18 0 30  320 18 160 30 15 15
-			transition					Defaultsbutton		480 18 0 30  480 18 150 30 15 15
+			transition					Videobutton			  0 -100 160  30   0 0 160  30 15 15
+			transition					Graphicsbutton		160 -100 160  30 160 0 160  30 15 15
+			transition					Soundbutton			320 -100 160  30 320 0 160  30 15 15
+			transition					Defaultsbutton		480 -100 160  30 480 0 160  30 15 15
+			
 			setitemrect					escapebutton		530 58 30 28  				
 //*********************	
 		}
@@ -47,7 +48,7 @@
 	onESC 
 		{ 
 			play					"sound/interface/esc.wav" 					
-			defer					VideoSetup	ingamevideowarningMenu
+			defer					VideoSetup				VideoWarningGameMenu
 			close					all
 			open					ingameMainMenu
 		}
@@ -90,24 +91,6 @@
 			}
 		}
 //********************
-// Титул меню
-//********************
-	itemDef 
-		{
-			name				setup_title
-			group				group_menu
-			text				@MENUS_SETUP_OPTIONS
-			rect				0 -2 640 22
-			textalign			ITEM_ALIGN_CENTER		
-			textalignx			320
-			textaligny			3	
-			font				5
-			textscale			0.6
-			forecolor			.95 .64 .37 1
-			visible				1 
-			decoration
-		}
-//********************
 // Выделение текста
 //********************	
 	itemDef 
@@ -128,18 +111,16 @@
 		{
 			name					videobutton	
 			group					group_menu
-			text					@MENUS_OPTIONS
-			text2					@MENUS_SCREEN
+			text					@MENUS_SCREEN
 			type					ITEM_TYPE_BUTTON
 			style					WINDOW_STYLE_SHADER
 			textalign				ITEM_ALIGN_LEFT
-			forecolor				.95 .64 .37 1
-			font					5
-			textscale				.45
-			textalignx				40
-			textaligny				4
-			text2alignx				16
-			text2aligny				12
+			forecolor				1 1 1 1
+			textstyle				3
+			font					3
+			textscale				1
+			textalignx				55
+			textaligny				0
 			visible					1
 			
 			background				"BoxMenu"
@@ -147,7 +128,7 @@
 		mouseEnter 			
 			{ 	
 				show				sidebutton_glow 
-				setitemrect			sidebutton_glow		10 18 150  30
+				setitemrect			sidebutton_glow		-2 0 160 30
 			}
 		mouseExit 			
 			{
@@ -178,18 +159,15 @@ itemDef
 		{
 			name					Graphicsbutton
 			group					group_menu
-			text					@MENUS_OPTIONS
-			text2					@MENUS_GRAPHICS
+			text					@MENUS_GRAPHICS
 			type					ITEM_TYPE_BUTTON
 			style					WINDOW_STYLE_SHADER
 			textalign				ITEM_ALIGN_LEFT
-			forecolor				.95 .64 .37 1
-			font					5
-			textscale				.45
-			textalignx				46
-			textaligny				4
-			text2alignx				9
-			text2aligny				12
+			forecolor				1 1 1 1
+			textstyle				3
+			font					3
+			textscale				1
+			textalignx				52
 			visible					1
 			
 			background				"BoxMenu"
@@ -197,7 +175,7 @@ itemDef
 		mouseEnter
 			{ 
 				show				sidebutton_glow ; 	
-				setitemrect			sidebutton_glow 		160 18 160  30
+				setitemrect			sidebutton_glow 		160 0 160  30
 			}
 		mouseExit 		
 			{ 
@@ -208,7 +186,7 @@ itemDef
 				play				sound/interface/sub_select 
 				defer				VideoSetup	videowarningMenu 	
 				
-				transition			border_setup	   10 57 620 0 10 57 620 412 15 15
+				transition			border_setup	   -2 30 641 0 -2 30 641 448 15 15
 				setitemrect			escapebutton	   600 58 30 28
 				show				group_graphics
 				show				defaults
@@ -227,18 +205,15 @@ itemDef
 		{
 			name					soundbutton	
 			group					group_menu
-			text					@MENUS_OPTIONS
-			text2					@MENUS_SOUNDED
+			text					@MENUS_SOUNDED
 			type					ITEM_TYPE_BUTTON
 			style					WINDOW_STYLE_SHADER
 			textalign				ITEM_ALIGN_LEFT
-			forecolor				.95 .64 .37 1
-			font					5
-			textscale				.45
-			textalignx				46
-			textaligny				4
-			text2alignx				19
-			text2aligny				12
+			forecolor				1 1 1 1
+			textstyle				3
+			font					3
+			textscale				1
+			textalignx				60
 			visible					1
 			
 			background				"BoxMenu"
@@ -246,7 +221,7 @@ itemDef
 		mouseEnter
 			{ 
 				show				sidebutton_glow 	
-				setitemrect			sidebutton_glow 	320 18 160  30
+				setitemrect			sidebutton_glow 	320 0 160  30
 			}
 		mouseExit 		
 			{ 
@@ -311,8 +286,9 @@ itemDef
 			text				@MENUS_FULL_SCREEN
 			rect				170 90 250 20
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -325,16 +301,18 @@ itemDef
 			rect				160 90 300 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			textalignx			200
 			forecolor			1 1 1 1
+			textaligny			2
 
 			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
 			cvar				"ui_r_fullscreen"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 85 320 20
+				setitemrect		sidebutton_glow			120 90 420 20
 			} 
 		mouseExit 
 			{ 
@@ -358,8 +336,9 @@ itemDef
 			text				@MENUS_VIDEO_MODE
 			rect				170 110 180 20
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -377,12 +356,14 @@ itemDef
 			rect				360 110 50 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textscale			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 105 320 20
+				setitemrect		sidebutton_glow			120 110 420 20
 			} 
 		mouseExit 
 			{ 
@@ -405,10 +386,11 @@ itemDef
 			name				video_mode_x
 			group				group_screen
 			text				"X"
-			rect				408 115 0 0
+			rect				408 110 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.3
+			font				4
+			textstyle			5
+			textscale			1
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -426,12 +408,14 @@ itemDef
 			rect				415 110 50 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textscale			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 105 320 20
+				setitemrect		sidebutton_glow			120 110 420 20
 			} 
 		mouseExit 
 			{ 
@@ -455,8 +439,9 @@ itemDef
 			text				@MENUS_FPS
 			rect				170 130 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -480,13 +465,15 @@ itemDef
 			rect				160 130 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textalignx			200
 			textscale			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 125 320 20
+				setitemrect		sidebutton_glow			120 130 420 20
 			} 
 		mouseExit 
 			{ 
@@ -510,8 +497,9 @@ itemDef
 			text				@MENUS_FPS_MONITOR
 			rect				170 150 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -529,13 +517,15 @@ itemDef
 			rect				160 150 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textalignx			200
 			textscale			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 145 320 20
+				setitemrect		sidebutton_glow			120 150 420 20
 			} 
 		mouseExit 
 			{ 
@@ -558,8 +548,9 @@ itemDef
 			text				@MENUS_VIDEO_SYNC
 			rect				170 170 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -577,13 +568,15 @@ itemDef
 			rect				160 170 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textalignx			200
 			textscale			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 165 320 20
+				setitemrect		sidebutton_glow			120 170 420 20
 			} 
 		mouseExit 
 			{ 
@@ -606,8 +599,9 @@ itemDef
 			text				@MENUS_DRAW_FPS
 			rect				170 190 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -624,13 +618,15 @@ itemDef
 			cvarFloatList		{ @MENUS_OFF 0 @MENUS_ON 1 }
 			rect				160 190 320 20
 			font				5
+			textstyle			5
 			textalignx			200
 			textscale			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 185 320 20
+				setitemrect		sidebutton_glow			120 190 420 20
 			} 
 		mouseExit 
 			{ 
@@ -652,8 +648,9 @@ itemDef
 			group				group_screen
 			text				@MENUS_VIDEO_BRIGHTNESS
 			rect				170 225 180 20
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 	   		textalign			ITEM_ALIGN_LEFT
 			decoration
@@ -668,11 +665,11 @@ itemDef
 			type				ITEM_TYPE_SLIDER
 			text				" "
 			cvarfloat			"r_gamma" 0 .5 1
-			rect				360 220 200 20
+			rect				360 225 200 20
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 220 320 20
+				setitemrect		sidebutton_glow			120 225 420 20
 				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
 				hide			defaults
@@ -699,7 +696,7 @@ itemDef
 			{ 
 			play			"sound/interface/button1.wav" 
 			uiScript		glCustom 
-			setcvar			ui_r_modified	1 
+			setcvar			ui_r_modified	1
 			}
 		}	
 //************************
@@ -711,8 +708,9 @@ itemDef
 			group				group_screen
 			text				"@MENUS_CROSS_HAIR_SIZE"
 			rect				170 255 180 20
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 	   		textalign			ITEM_ALIGN_LEFT
 			decoration
@@ -726,12 +724,13 @@ itemDef
 			group				group_screen
 			type				ITEM_TYPE_SLIDER
 			text				" "
-			cvarfloat			"cg_crosshairSize" 0 1 100
-			rect				360 250 180 20
+			cvarfloat			"cg_crosshairSize" 		0 1 100
+			rect				360 255 180 20
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 250 320 20
+				setitemrect		sidebutton_glow			120 255 420 20
+			/*
 				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
 				hide			defaults
@@ -740,19 +739,19 @@ itemDef
 				hide			group_screen
 				hide			group_menu
 				hide			redux
-				
-				show			CrossHairSize
+			*/
 			} 
 		mouseExit 
 			{
 				hide			sidebutton_glow
-				
+			/*	
 				show			defaults 
 				show			group_screen
 				show			group_menu
 				show			redux
 					
 				setitemcolor	Blur	forecolor		1 1 0.9 0.45
+			*/
 			}			
 		action 				
 			{ 
@@ -770,8 +769,9 @@ itemDef
 			group				group_screen
 			text				"@MENUS_POV"
 			rect				170 285 180 20
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 	   		textalign			ITEM_ALIGN_LEFT
 			decoration
@@ -786,11 +786,11 @@ itemDef
 			type				ITEM_TYPE_SLIDER
 			text				" "
 			cvarfloat			"cg_fov" 0 45 100
-			rect				360 280 180 25
+			rect				360 285 180 25
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 275 320 20
+				setitemrect		sidebutton_glow			120 285 420 20
 				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
 				hide			defaults
@@ -830,8 +830,9 @@ itemDef
 			text				@MENUS_VIDEOQ
 			rect				170 320 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -849,13 +850,14 @@ itemDef
 			rect				160 320 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textalignx			200
 			textscale			0.45
 			forecolor			1 1 1 1
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			160 315 320 20
+				setitemrect		sidebutton_glow			120 320 420 20
 			} 
 		mouseExit 
 			{ 
@@ -880,10 +882,12 @@ itemDef
 			name				texture_detail
 			group				group_graphics
 			text				@MENUS_TEXTURE_DETAIL
-			rect				20 70 0 0
+			rect				20 40 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -896,17 +900,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 70 180 20
+			rect				310 40 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textscale			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList		{  @MENUS_LOW 3 @MENUS_MEDIUM 2 @MENUS_HIGH 1 @MENUS_VERY_HIGH 0 }
 			cvar				"ui_r_picmip"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 65 620 20
+				setitemrect		sidebutton_glow			0 40 640 20
 			} 
 		mouseExit 
 			{ 
@@ -928,10 +934,11 @@ itemDef
 			name				geometric_detail
 			group				group_graphics
 			text				@MENUS_GEOMETRIC_DETAIL
-			rect				20 90 0 0
+			rect				20 60 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -944,17 +951,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 90 180 20
+			rect				310 60 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList		{  @MENUS_LOW 3 @MENUS_MEDIUM 2 @MENUS_HIGH 1 @MENUS_VERY_HIGH 0 }
 			cvar				"ui_r_lodbias"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 85 620 20
+				setitemrect		sidebutton_glow			0 60 640 20
 			} 
 		mouseExit 
 			{ 
@@ -977,10 +986,11 @@ itemDef
 			name				geometric_detail
 			group				group_graphics
 			text				@MENUS_DETAILED_SHADERS
-			rect				20 110 0 0
+			rect				20 80 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -993,17 +1003,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 110 180 20
+			rect				310 80 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList			{  @MENUS_OFF 0 @MENUS_ON 1 }
 			cvar				"ui_r_detailtextures"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			 10 105 620 20
+				setitemrect		sidebutton_glow			 0 80 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1025,10 +1037,11 @@ itemDef
 			name				multi_textures
 			group				group_graphics
 			text				@MENUS_MULTI_TEXTURES
-			rect				20 130 0 0
+			rect				20 100 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1041,17 +1054,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 130 180 20
+			rect				310 100 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList			{  @MENUS_OFF 0 @MENUS_ON 1 }
 			cvar				"r_ext_multitexture"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 125 620 20
+				setitemrect		sidebutton_glow			0 100 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1072,10 +1087,11 @@ itemDef
 			name				COMPILED_TEXTURES
 			group				group_graphics
 			text				@MENUS_COMPILED_TEXTURES
-			rect				20 150 0 0
+			rect				20 120 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1088,17 +1104,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 150 180 20
+			rect				310 120 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList			{  @MENUS_OFF 0 @MENUS_ON 1 }
 			cvar				"r_ext_compiled_vertex_array"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 145 620 20
+				setitemrect		sidebutton_glow			0 120 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1120,10 +1138,11 @@ itemDef
 			name				ENV_ADD
 			group				group_graphics
 			text				@MENUS_ENV_ADD
-			rect				20 170 0 0
+			rect				20 140 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1136,17 +1155,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 170 180 20
+			rect				310 140 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
 			cvar				"r_ext_texture_env_add"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 165 620 20
+				setitemrect		sidebutton_glow			0 140 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1168,10 +1189,11 @@ itemDef
 			name				color_depth
 			group				group_graphics
 			text				@MENUS_COLOR_DEPTH
-			rect				20 190 0 0
+			rect				20 160 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1184,18 +1206,20 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 190 180 20
+			rect				310 160 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			
 			cvarFloatList		{  @MENUS_DEFAULT 0 @MENUS_16_BIT 16 @MENUS_32_BIT 32 }
 			cvar				"ui_r_colorbits"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 185 620 20
+				setitemrect		sidebutton_glow			0 160 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1218,10 +1242,11 @@ itemDef
 			name				QUALITY
 			group				group_graphics
 			text				@MENUS_TEXTURE_QUALITY
-			rect				20 210 0 0
+			rect				20 180 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1234,17 +1259,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 210 180 20
+			rect				310 180 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList			{  @MENUS_DEFAULT 0 @MENUS_16_BIT 16 @MENUS_32_BIT 32  }
 			cvar				"ui_r_texturebits"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 205 620 20
+				setitemrect		sidebutton_glow			0 180 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1266,10 +1293,11 @@ itemDef
 			name				DEPHTBITS
 			group				group_graphics
 			text				@MENUS_DEPHTBITS
-			rect				20 230 0 0
+			rect				20 200 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1282,17 +1310,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 230 180 20
+			rect				310 200 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarFloatList			{  @MENUS_DEFAULT 0 @MENUS_8_BIT 8 @MENUS_16_BIT 16 @MENUS_24_BIT 24 }
 			cvar				"r_depthbits "
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 225 620 20
+				setitemrect		sidebutton_glow			0 200 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1314,10 +1344,11 @@ itemDef
 			name				texture_filter
 			group				group_graphics
 			text				@MENUS_TEXTURE_FILTER
-			rect				20 250 0 0
+			rect				20 220 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1330,17 +1361,19 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 250 180 20
+			rect				310 220 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvarStrList			{  @MENUS_BILINEAR , "GL_LINEAR_MIPMAP_NEAREST" , @MENUS_TRILINEAR , "GL_LINEAR_MIPMAP_LINEAR" }
 			cvar				"ui_r_texturemode"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 245 620 20
+				setitemrect		sidebutton_glow			0 220 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1362,10 +1395,11 @@ itemDef
 			name				anisotropic
 			group				group_graphics
 			text				@MENUS_ANISOTROPIC_FILTERING
-			rect				20 270 0 0
+			rect				20 240 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1386,15 +1420,17 @@ itemDef
 			"8x"				8
 			"16x" 				16
 			} 		
-			rect				310 270 180 20
+			rect				310 240 180 20
 			textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 265 620 20
+				setitemrect		sidebutton_glow			0 240 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1408,6 +1444,56 @@ itemDef
 			} 
 		}
 //********************************
+// Текст "Растительность"
+//********************************
+	itemDef  
+		{	
+			name				compress_textures
+			group				group_graphics
+			text				@MENUS_Sprites
+			rect				20 260 0 0
+	   		textalign			ITEM_ALIGN_LEFT
+			font				4
+			textstyle			5
+			textscale			1.05
+			forecolor			.95 .64 .37 1
+			decoration
+		}
+//********************************
+// "Растительность"
+//********************************		
+	itemDef 
+		{	
+			name				compress_textures
+			group				group_graphics
+			type				ITEM_TYPE_MULTI
+			text				" "
+			rect				310 260 180 20
+	   		textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textstyle			5
+			textscale 			0.4
+			forecolor			1 1 1 1
+			textaligny    		2
+			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			cvar				"r_surfaceSprites"
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			0 260 640 20
+			} 
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}
+		action 
+			{
+				play			"sound/interface/button1.wav"
+				uiScript		glCustom
+				setcvar			ui_r_modified	1
+			}
+		}			
+//********************************
 // Текст "Компресор текстур"
 //********************************
 	itemDef  
@@ -1415,10 +1501,11 @@ itemDef
 			name				compress_textures
 			group				group_graphics
 			text				@MENUS_COMPRESSED_TEXTURES
-			rect				20 290 0 0
+			rect				20 280 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1431,17 +1518,20 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 290 180 20
+			rect				310 280 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
-			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
+			textaligny    		2
+			textaligny    		2
+			cvarFloatList		{  @MENUS_OFF 1 @MENUS_ON 0 }
 			cvar				"ui_r_ext_compress_textures"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 285 620 20
+				setitemrect		sidebutton_glow			0 280 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1463,10 +1553,11 @@ itemDef
 			name				dynamic_light
 			group				group_graphics
 			text				@MENUS_DYNAMIC_LIGHTS
-			rect				20 330 0 0
+			rect				20 320 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1481,15 +1572,17 @@ itemDef
 			text				" "
 			cvar				"r_dynamiclight"	
 			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
-			rect				310 330 180 20
+			rect				310 320 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 325 620 20
+				setitemrect		sidebutton_glow			0 320 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1511,10 +1604,11 @@ itemDef
 			name				shadows
 			group				group_graphics
 			text				@MENUS_SHADOWS
-			rect				20 350 0 0
+			rect				20 340 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1527,11 +1621,13 @@ itemDef
 			group				group_graphics
 			type				ITEM_TYPE_MULTI
 			text				" "
-			rect				310 350 180 20
+			rect				310 340 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 			cvar				"cg_shadows"
 			cvarFloatList		
 			{
@@ -1543,7 +1639,7 @@ itemDef
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 345 620 20
+				setitemrect		sidebutton_glow			0 340 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1564,10 +1660,11 @@ itemDef
 			name				dynamic_glow
 			group				group_graphics
 			text				@MENUS_DYNAMIC_GLOW
-			rect				20 370 0 0
+			rect				20 360 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1582,15 +1679,17 @@ itemDef
 			text				" "
 			cvar				"r_dynamicglow"	
 			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
-			rect				310 370 180 20
+			rect				310 360 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 365 620 20
+				setitemrect		sidebutton_glow			0 360 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1611,10 +1710,11 @@ itemDef
 			name				light_flares
 			group				group_graphics
 			text				@MENUS_LIGHT_FLARES
-			rect				20 390 0 0
+			rect				20 380 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1629,15 +1729,17 @@ itemDef
 			text				" "
 			cvar				"r_flares"	
 			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
-			rect				310 390 180 20
+			rect				310 380 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 385 620 20
+				setitemrect		sidebutton_glow			0 380 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1658,10 +1760,11 @@ itemDef
 			name				wall_marks
 			group				group_graphics
 			text				@MENUS_WALL_MARKS
-			rect				20 410 0 0
+			rect				20 400 0 0
 	   		textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			forecolor			.95 .64 .37 1
 			decoration
 		}
@@ -1676,15 +1779,17 @@ itemDef
 			text				" "
 			cvar				"cg_marks"	
 			cvarFloatList		{  @MENUS_OFF 0 @MENUS_ON 1 }
-			rect				310 410 180 20
+			rect				310 400 180 20
 	   		textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.4
 			forecolor			1 1 1 1
+			textaligny    		2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			10 405 620 20
+				setitemrect		sidebutton_glow			0 400 640 20
 			} 
 		mouseExit 
 			{ 
@@ -1711,8 +1816,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_SOUND
 			rect				300 90 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1726,8 +1832,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_EFFECTS_VOLUME
 			rect				170 110 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1764,8 +1871,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_MUSIC_VOLUME
 			rect				170 130 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1802,8 +1910,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_VOICE_VOLUME
 			rect				170 150 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1822,7 +1931,7 @@ itemDef
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 145 480 25
+				setitemrect		sidebutton_glow			80 150 480 25
 			} 
 		mouseExit 
 			{ 
@@ -1839,8 +1948,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_SOUND_QUALITY
 			rect				170 170 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1860,14 +1970,16 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 			cvarTest			"s_UseOpenAL"
 			hideCvar			{ 1 }
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 165 480 20
+				setitemrect		sidebutton_glow			80 170 480 20
 			} 
 		mouseExit 
 			{ 
@@ -1884,8 +1996,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_FOOTSTEPS
 			rect				170 190 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1905,12 +2018,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 185 480 20
+				setitemrect		sidebutton_glow			80 190 480 20
 			} 
 		mouseExit 
 			{ 
@@ -1930,8 +2045,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_LANG
 			rect				260 230 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1945,8 +2061,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_TEXT
 			rect				170 250 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -1967,12 +2084,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 245 480 20
+				setitemrect		sidebutton_glow			80 250 480 20
 			} 
 		mouseExit 
 			{ 
@@ -1989,8 +2108,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_VOICE
 			rect				170 270 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2007,17 +2127,20 @@ itemDef
 			cvarTest			com_demo
 			hideCvar			{ 1 }     
 			cvar				"s_language"
-			cvarStrList			{ "English", "english" @MENUS_LANG_FRENCH "francais" }
+			cvarStrList			{ "English", "english" @MENUS_LANG_Russian "russian" }
 			rect				160 270 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
+			textaligny			0
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 275 480 20
+				setitemrect		sidebutton_glow			80 270 480 20
 			} 
 		mouseExit 
 			{ 
@@ -2037,8 +2160,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_SUBTITLES
 			rect				170 290 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2058,12 +2182,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 285 480 20
+				setitemrect		sidebutton_glow			80 290 480 20
 			} 
 		mouseExit 
 			{ 
@@ -2075,7 +2201,7 @@ itemDef
 			}
 		}
 //********************************
-// Текст "РАЗНОЕ"
+// Текст "Другое"
 //********************************
 	itemDef 
 		{
@@ -2083,8 +2209,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_OTHER
 			rect				300 330 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2098,8 +2225,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_DRAW_CROSSHAIR
 			rect				170 350 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2119,12 +2247,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 345 480 20
+				setitemrect		sidebutton_glow			80 350 480 20
 			} 
 		mouseExit 
 			{ 
@@ -2144,8 +2274,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_SLOW_MOTION_DEATH
 			rect				170 370 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2165,12 +2296,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 365 480 20
+				setitemrect		sidebutton_glow			80 370 480 20
 			} 
 		mouseExit 
 			{ 
@@ -2190,8 +2323,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_1ST_PERSON_GUNS
 			rect				170 390 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2211,12 +2345,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 385 480 20
+				setitemrect		sidebutton_glow			80 390 480 20
 			} 
 		mouseExit 
 			{ 
@@ -2236,8 +2372,9 @@ itemDef
 			group				group_sound
 			text				@MENUS_DISMEMBERMENT
 			rect				170 410 0 0
-			font				5
-			textscale			0.5
+			font				4
+			textstyle			5
+			textscale			1.05
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			.95 .64 .37 1
 			decoration
@@ -2259,12 +2396,14 @@ itemDef
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200
 			font 				5
+			textstyle			5
 			textscale 			0.45
 			forecolor			1 1 1 1
+			textaligny			2
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			80 405 480 20
+				setitemrect		sidebutton_glow			80 410 480 20
 			} 
 		mouseExit 
 			{ 
@@ -2289,18 +2428,19 @@ itemDef
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
 			textalign			ITEM_ALIGN_LEFT
-			rect				200 430 240 25
+			rect				200 440 240 25
 			forecolor			0 1 0 1	
 			font 				5
+			textstyle			5
 			textscale 			0.5
 			textalignx			30
-			textaligny			7
-			
-			background			"menu/box_redux"
+			textaligny			3
+						
+			background			"BoxMenu"
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			200 430 240 25
+				setitemrect		sidebutton_glow			200 440 240 25
 			} 
 		mouseExit 
 			{ 
@@ -2318,6 +2458,7 @@ itemDef
 				hide			applyChanges
 				hide			defaults
 				hide			sidebutton_glow
+				hide			redux
 			
 				show			group_vidrestart 
 			}
@@ -2348,13 +2489,15 @@ itemDef
 			group				group_vidrestart
 			text				@MENUS_THIS_WILL_APPLY_VIDEO
 			text2				@MENUS_AND_RETURN_TO_THE_MAIN
-			text2alignx			40
+			textalignx			10
+			text2alignx			55
 			text2aligny			20
 			rect				320 200 290 20
 			textalign			ITEM_ALIGN_CENTER
 			forecolor			.95 .64 .37 1
 			font 				5
-			textscale 			0.7
+			textstyle			5
+			textscale 			0.60
 			decoration
 		}
 //************
@@ -2370,9 +2513,10 @@ itemDef
 			rect				185 300 60 30
 			textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.6
 			textalignx			20
-			textaligny			8
+			textaligny			4
 			forecolor			.95 .64 .37 1
 			
 			background			"menu/box_redux"
@@ -2406,9 +2550,10 @@ itemDef
 			rect				415 300 60 30
 			textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.6
 			textalignx			18
-			textaligny			8
+			textaligny			4
 			forecolor			.95 .64 .37 1
 			
 			background			"menu/box_redux"
@@ -2445,21 +2590,22 @@ itemDef
 			text2				@MENUS_OPTIONS
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			font 				5
-			textscale 			.45
-			textalignx			46
-			textaligny			4
-			text2alignx			-4
+			textstyle			3
+			font				3
+			textscale			0.9
+			textalignx			55
+			textaligny			-4
+			text2alignx			-3
 			text2aligny			12
 			textalign			ITEM_ALIGN_LEFT
-			forecolor			.95 .64 .37 1
+			forecolor			1 1 1 1
 			visible				1
 			
 			background			"BoxMenu"
 		mouseEnter
 			{
 				show				sidebutton_glow
-				setitemrect			sidebutton_glow			480 18 150 30
+				setitemrect			sidebutton_glow			480 0 160 30
 			}
 		mouseExit	
 			{
@@ -2475,6 +2621,7 @@ itemDef
 				hide				group_menu
 				hide				defaults
 				hide				sidebutton_glow
+				hide				redux
 				
 				show				group_defaults	
 			}
@@ -2494,21 +2641,6 @@ itemDef
 			bordercolor			1 1 1 1
 			decoration
 		}
-//******************
-// Текст "Внимания"
-//******************
-	itemDef 
-		{
-			name				options
-			group				group_defaults
-			text				@MENUS_WARNING
-			rect				320 145 290 20
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 0 0 .8
-			font 				5
-			textscale 			0.7
-			decoration
-		}
 //*********************
 // Текст "Информация"
 //*********************
@@ -2518,29 +2650,16 @@ itemDef
 			group				group_defaults
 			text				@MENUS_THIS_WILL_SET_ALL_GAME
 			text2				@MENUS_TO_THEIR_FACTORY_SETTINGS
+			textalignx			10
+			textaligny			10
 			text2alignx			40
-			text2aligny			20
+			text2aligny			30
 			rect				320 175 290 20
 			textalign			ITEM_ALIGN_CENTER
 			forecolor			.95 .64 .37 1
 			font 				5
-			textscale 			0.6
-
-			decoration
-		}
-//**********************
-// Текст "Продолжить?"
-//**********************
-	itemDef 
-		{
-			name				options
-			group				group_defaults
-			text				@MENUS_VID_RESTART3
-			rect				320 235 290 20
-			textalign			ITEM_ALIGN_CENTER
-			font				5
-			textscale			0.8    
-			forecolor			1 0 0 1
+			textstyle			5
+			textscale 			0.60
 
 			decoration
 		}
@@ -2557,9 +2676,10 @@ itemDef
 			rect				185 300 60 30
 			textalign			ITEM_ALIGN_LEFT
 			font 				5
+			textstyle			5
 			textscale 			0.6
 			textalignx			20
-			textaligny			8
+			textaligny			4
 			forecolor			.95 .64 .37 1
 			
 			background			"menu/box_redux"
@@ -2592,9 +2712,10 @@ itemDef
 			rect				415 300 60 30
 			textalign			ITEM_ALIGN_LEFT
 			font				5
+			textstyle			5
 			textscale 			0.6
 			textalignx			17
-			textaligny			8
+			textaligny			4
 			forecolor			.95 .64 .37 1
 
 			background			"menu/box_redux"	
@@ -2621,13 +2742,12 @@ itemDef
 	itemDef 
 		{
 			name				redux
-			group				redux
 			text				"REDUX"
-			rect				615 468 0 0
+			rect				610 460 0 0
 			font				5
 			textscale			0.5
 			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
+			forecolor			1 0.1 0.1 1
 			visible				1
 			decoration
 		}		

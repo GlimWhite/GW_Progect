@@ -9,7 +9,7 @@
 		fullScreen					0						// MENU_FALSE				
 		rect						0 0 640 480				// Size and position of the menu
 		visible						1						// Visible on open
-		focusColor					1 1 1 1					// Focus color for text and items
+		focusColor					1 0 0 1					// Focus color for text and items
 		
 		fadeClamp					1						// Sets the fadeup alpha
 		fadeCycle					10						// How often fade happens in milliseconds
@@ -90,7 +90,7 @@
 			{ 
 				play			"sound/interface/button1.wav"  
 				close			all  
-				open			missionfailed_menu
+				open			saberMenu
 			}
 		}
 //********************
@@ -102,7 +102,7 @@
 			group				none
 			style				WINDOW_STYLE_SHADER
 			background			"menu/menu_blendbox"
-			forecolor			1 1 1 1
+			forecolor			0.1 0 0.4 0.05
 			visible				1
 			decoration
 		}
@@ -182,9 +182,9 @@
 			font				5
 			textscale			0.5			
 			textalignx			80
-			textaligny			8
+			textaligny			5
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -192,7 +192,7 @@
 		mouseEnter 			
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			190 120 260 30
+				setitemrect		sidebutton_glow			192 120 258 30
 			}
 		mouseExit 			
 			{ 
@@ -218,9 +218,9 @@
 			font				5
 			textscale			0.5				
 			textalignx			87
-			textaligny			8
+			textaligny			5
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -228,7 +228,7 @@
 		mouseEnter 			
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			190 160 260 30
+				setitemrect		sidebutton_glow			192 160 258 30
 			}
 		mouseExit 			
 			{ 
@@ -254,9 +254,9 @@
 			font				5
 			textscale			0.5				
 			textalignx			90
-			textaligny			8
+			textaligny			5
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -265,7 +265,7 @@
 		mouseEnter 			
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow				190 200 260 30
+				setitemrect		sidebutton_glow				192 200 258 30
 			}
 		mouseExit 			
 			{ 
@@ -291,9 +291,9 @@
 			font				5
 			textscale			0.5				
 			textalignx			84
-			textaligny			8
+			textaligny			5
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -301,7 +301,7 @@
 		mouseEnter 			
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			190 240 260 30
+				setitemrect		sidebutton_glow			192 240 258 30
 			}
 		mouseExit 			
 			{ 
@@ -327,9 +327,9 @@
 			font				5
 			textscale			0.5				
 			textalignx			85
-			textaligny			8
+			textaligny			5
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -337,7 +337,7 @@
 		mouseEnter 			
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			190 280 260 30 
+				setitemrect		sidebutton_glow			192 280 258 30 
 			}
 		mouseExit 			
 			{ 
@@ -363,9 +363,9 @@
 			font				5
 			textscale			0.5				
 			textalignx			100
-			textaligny			8
+			textaligny			5
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 
@@ -373,7 +373,7 @@
 		mouseEnter 			
 			{ 
 			show				sidebutton_glow 
-			setitemrect			sidebutton_glow			190 320 260 30 
+			setitemrect			sidebutton_glow			192 320 258 30 
 			}
 		mouseExit 			
 			{ 
@@ -386,16 +386,17 @@
 				open			ingamequitMenu 
 			}
 		}
+		
 	itemDef 
 		{
 			name				redux
 			group				redux
 			text				"REDUX"
-			rect				615 468 0 0
+			rect				610 460 0 0
 			font				5
 			textscale			0.5
 			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
+			forecolor			1 0.1 0.1 1
 			visible				1
 			decoration
 		}

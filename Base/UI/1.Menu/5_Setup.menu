@@ -1966,7 +1966,7 @@ itemDef
 			cvarTest			com_demo
 			hideCvar			{ 1 }     
 			cvar				"s_language"
-			cvarStrList			{ "English", "english" @MENUS_LANG_FRENCH "francais" }
+			cvarStrList			{ "English", "english" "Russian", @MENUS_LANG_RUSSIAN}
 			rect				160 270 320 20
 	   		textalign			ITEM_ALIGN_LEFT
 			textalignx			200

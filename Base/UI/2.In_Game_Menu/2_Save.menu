@@ -15,9 +15,9 @@
 			uiScript			ReadSaveDirectory
 
 			transition			resumebuttun		 -2 -100 160  30  -2   0 160  30 15 15
-			transition			savegamebutton	    478 -100 160  30 478   0 160  30 15 15
-			transition			deletegamebutton	158 -100 160  30 158   0 160  30 15 15
-			transition			backbutton		    318 -100 160  30 318   0 160  30 15 15
+			transition			savegamebutton	    158 -100 160  30 158   0 160  30 15 15
+			transition			deletegamebutton	318 -100 160  30 318   0 160  30 15 15
+			transition			backbutton		    478 -100 160  30 478   0 160  30 15 15
 			
 			transition			savegamelist		  0   30 640   0   0  30 640 280 15 15
 			transition			savegamedesc	   -150  310 250  30  -2 310 250  30 15 15
@@ -59,7 +59,6 @@
 	itemDef 
 		{
 			name				sidebutton_glow
-			group				none
 			style				WINDOW_STYLE_SHADER
 			background			"menu/menu_blendbox"
 			forecolor			1 0 0 0.5
@@ -85,7 +84,6 @@
 	itemDef 
 		{
 			name				resumebuttun
-			group				none
 			style				WINDOW_STYLE_SHADER
 			type				ITEM_TYPE_BUTTON
 			text				@MENUS_RESUME
@@ -94,10 +92,10 @@
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			35
+			textalignx			32
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -121,11 +119,9 @@
 	itemDef 
 		{
 			name				savegamebutton
-			group				toprow
 			text				@MENUS_SAVE
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			rect				158 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
@@ -133,7 +129,7 @@
 			textalignx			40
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 				
@@ -141,7 +137,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow				158 0 160 30
+				setitemrect		sidebutton_glow				160 0 158 30
 			} 
 		mouseExit 
 			{ 
@@ -157,18 +153,16 @@
 	itemDef 
 		{
 			name				deletegamebutton
-			group				toprow
 			text				@MENUS_DELETE_GAME
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			rect				318 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
 			textalignx			30
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -178,7 +172,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow				318 0 160 30
+				setitemrect		sidebutton_glow				320 0 158 30 
 			} 
 		mouseExit 
 			{ 
@@ -195,18 +189,16 @@
 	itemDef 
 		{
 			name				backbutton
-			group				exit
 			text				@MENUS_BACK_CAPS
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			rect				478 0 161 30
 			textalign			ITEM_ALIGN_LEFT
-			font				5
-			textscale			0.5			
-			textalignx			54
-			textaligny			0
+			textstyle			3
+			font				3
+			textscale			1			
+			textalignx			58
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -214,7 +206,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow			-20 415 200 40
+				setitemrect		sidebutton_glow			480 0 158 30
 			}
 		mouseExit 
 			{ 
@@ -244,10 +236,11 @@
 			font				3
 			textscale			1
 			textalignx			0.5
+			textalignx			10
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 	
@@ -301,9 +294,22 @@
 			font				3
 			textscale			1			
 			textalign			ITEM_ALIGN_LEFT
-			forecolor			1 0 0 1
+			forecolor			1 1 1 0.8
 			decoration
 			visible				1
+		}
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				610 460 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 0.1 0.1 1
+			visible				1
+			decoration
 		}
 	}
 }

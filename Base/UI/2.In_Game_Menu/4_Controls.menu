@@ -112,7 +112,7 @@
 			textalignx			40
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -691,7 +691,7 @@
 			textalignx			50
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -710,7 +710,7 @@
 				play			sound/interface/sub_select 
 
 				transition		backcontrols				100 50 440  0 100 50 440 340 15 15
-				transition		sidebutton_glow_red			158  0 160 30 158  0 160  30 15 15
+				setitemrect		sidebutton_glow_red			160  0 158 30
 				
 				hide			movecontrols_text
 				hide			movecontrols 
@@ -1087,13 +1087,13 @@
 			textaligny			0
 			visible				1
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow 		318 0 160 30
+				setitemrect		sidebutton_glow 		320 0 158 30
 			}
 		mouseExit 
 			{ 
@@ -1103,7 +1103,7 @@
 			{ 
 				play			sound/interface/sub_select 
 				transition		backcontrols				100 50 440  0 100 50 440 340 15 15
-				transition		sidebutton_glow_red			318  0 160 30 318  0 160  30 15 15
+				setitemrect		sidebutton_glow_red			320  0 158 30
 				
 				hide			movecontrols_text
 				hide			movecontrols 
@@ -1527,14 +1527,14 @@ itemDef
 			textaligny			0
 			visible				1
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
 		mouseEnter 
 			{ 				
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		478 0 161 30
+				setitemrect		sidebutton_glow		480 0 158 30
 			}
 		mouseExit 
 			{ 
@@ -1545,7 +1545,7 @@ itemDef
 				play			sound/interface/sub_select 
 				
 				transition		backcontrols				100 50 440  0 100 50 440 300 15 15
-				transition		sidebutton_glow_red			478  0 161 30 478  0 161  30  0  0
+				setitemrect		sidebutton_glow_red			480  0 158 30 
 				
 				hide			movecontrols_text
 				hide			movecontrols
@@ -1906,7 +1906,7 @@ itemDef
 			group				exit
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			background			"menu/x"
+			background			"Escape"
 			forecolor			0 0 0 1
 			rect				520 50 20 20 
 			border				1
@@ -1939,7 +1939,7 @@ itemDef
 			group				exit
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			background			"menu/x"
+			background			"Escape"
 			forecolor			0 0 0 1
 			rect				618 30 20 20 
 			border				1
@@ -1973,11 +1973,11 @@ itemDef
 			name				redux
 			group				redux
 			text				"REDUX"
-			rect				615 468 0 0
+			rect				610 460 0 0
 			font				5
 			textscale			0.5
 			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
+			forecolor			1 0.1 0.1 1
 			visible				1
 			decoration
 		}

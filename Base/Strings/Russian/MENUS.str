@@ -1,14 +1,4 @@
-// Note to translators:
-// If a sentence is the same in your language then please change it to "#same"
-//
-// eg:
-// LANG_ENGLISH  "HALT"
-// LANG_GERMAN   "#same"
-//
-// (This is so we can tell which strings have been signed-off as ok to be the same words for QA
-//  and because we do not store duplicate strings, which will then get exported again next time
-//  as being untranslated.)
-//
+
 VERSION             "1"
 CONFIG              ""
 FILENOTES           ""
@@ -2089,11 +2079,11 @@ LANG_RUSSIAN         "РЕЖИМ ИГРЫ"
 
 REFERENCE           BILINEAR
 LANG_ENGLISH        "BILINEAR"
-LANG_RUSSIAN         "БИЛИНЕЙНАЯ"
+LANG_RUSSIAN         "Билинейная"
 
 REFERENCE           TRILINEAR
 LANG_ENGLISH        "TRILINEAR"
-LANG_RUSSIAN         "ТРИЛИНЕЙНАЯ"
+LANG_RUSSIAN         "Трехлинейная"
 
 REFERENCE           VOICE_VOLUME
 NOTES               "Used on sound menu"
@@ -5450,14 +5440,14 @@ LANG_RUSSIAN         "Инструкции для текущего меню"
 REFERENCE           MYLANGUAGE
 NOTES               "This should be the native language name, eg francais, deutsche, etc."
 LANG_ENGLISH        "English"
-LANG_RUSSIAN         "Русский (Старый)"
+LANG_RUSSIAN         "Русский"
 
 REFERENCE           LANG_RUSSIAN
-LANG_ENGLISH        "Franзais"
-LANG_RUSSIAN         "Русский (Старый)"
+LANG_ENGLISH        "francais"
+LANG_RUSSIAN         "Русский"
 
 REFERENCE           LANG_RUSSIAN1
-LANG_ENGLISH        "Franзais"
+LANG_ENGLISH        "francais"
 LANG_RUSSIAN         "Русская"
 
 REFERENCE           BACKTORULES
@@ -5739,7 +5729,7 @@ LANG_RUSSIAN         "Частота кадров:"
 REFERENCE           FPS_MONITOR
 NOTES				"Menus"
 LANG_ENGLISH        "FPS"
-LANG_RUSSIAN         "Частота обновления монитора:"
+LANG_RUSSIAN         "Частота монитора:"
 
 REFERENCE           DRAW_FPS
 NOTES				"Menus"
@@ -5801,12 +5791,44 @@ NOTES				"Menus"
 LANG_ENGLISH        "8 - bit"
 LANG_RUSSIAN         "8 - разряда"
 
-
 REFERENCE           24_BIT
 NOTES				"Menus"
 LANG_ENGLISH        "24 - bit"
 LANG_RUSSIAN         "24 - разряда"
 
+REFERENCE          	UPGRATED
+NOTES				"Menus"
+LANG_ENGLISH        "Upgrated"
+LANG_RUSSIAN         "Улучшеные"
+
+REFERENCE         	 LANG
+NOTES				"Menus"
+LANG_ENGLISH        "Language"
+LANG_RUSSIAN         "НАСТРОЙКА ЯЗЫКА"
+
+REFERENCE           SOUNDED
+NOTES               "Setup/Sound button"
+LANG_ENGLISH        "SOUND"
+LANG_RUSSIAN         "ЗВУК"
+
+REFERENCE           FPS_60
+NOTES               "Setup/Sound button"
+LANG_ENGLISH        "60 fps"
+LANG_RUSSIAN         "60 кадров/с"
+
+REFERENCE           FPS_45
+NOTES               "Setup/Sound button"
+LANG_ENGLISH        "45 fps"
+LANG_RUSSIAN         "45 кадров/с"
+
+REFERENCE           FPS_30
+NOTES               "Setup/Sound button"
+LANG_ENGLISH        "30 fps"
+LANG_RUSSIAN         "30 кадров/с"
+
+REFERENCE           LEAVE_MAIN
+NOTES               "Game"
+LANG_ENGLISH        "Leave main"
+LANG_RUSSIAN         "ВЫЙТИ ИЗ ИГРЫ"
+
 ENDMARKER
-
-

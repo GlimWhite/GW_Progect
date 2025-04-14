@@ -25,9 +25,9 @@
 			setitemcolor		cheacpoint			forecolor					   1 1 1 0
 
 			transition			load				 -2 -100 160  30  -2  0 160   30 15 15
-			transition			back			    478 -100 160  30 478  0 160   30 15 15
 			transition			delete			    158 -100 160  30 158  0 160   30 15 15
-			transition			cheacpoint		    318 -100 160  30 318  0 160   30 15 15
+			transition			cheacpoint		    318 -100 200  30 318  0 200   30 15 15
+			transition			back			    518 -100 121  30 518  0 121   30 15 15
 			
 			transition			backload			156  640 322 250 156 228 322 250 15 15
 			transition			loadgamepic		    158 -230 320 200 158  30 320 200 15 15
@@ -108,17 +108,16 @@
 			group				textmenu
 			text				@MENUS_LOAD_GAME
 			style				WINDOW_STYLE_SHADER
-			rect				-2 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			25
+			textalignx			18
 			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -146,17 +145,16 @@
 			group				textmenu
 			text				@MENUS_DELETE_GAME
 			style				WINDOW_STYLE_SHADER
-			rect				158 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			30
+			textalignx			28
 			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -164,7 +162,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		158 0 160 30
+				setitemrect		sidebutton_glow		160 0 158 30
 			} 
 		mouseExit 
 			{ 
@@ -185,25 +183,24 @@
 			text				@MENUS_RESUME_MISSION
 			text2				@MENUS_RESUME_MISSIONN
 			style				WINDOW_STYLE_SHADER
-			rect				318 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			5
+			textalignx			18
 			textaligny			0
-			text2alignx			104
+			text2alignx			118
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		318 0 160 30
+				setitemrect		sidebutton_glow		320 0 198 30
 			} 
 		mouseExit 
 			{ 
@@ -224,17 +221,16 @@
 			text				@MENUS_BACK_CAPS
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			rect				478 0 161 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			50
+			textalignx			40
 			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -242,7 +238,7 @@
 		mouseEnter 
 			{
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		478 0 161 30
+				setitemrect		sidebutton_glow		520 0 118 30
 			}
 		mouseExit 
 			{ 				
@@ -310,6 +306,18 @@
 				play			sound/interface/sub_select 
 			}
 		}
-	
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				610 460 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 0.1 0.1 1
+			visible				1
+			decoration
+		}
 	}
 }

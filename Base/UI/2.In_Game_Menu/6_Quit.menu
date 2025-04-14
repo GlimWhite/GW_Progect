@@ -12,173 +12,165 @@
 	onESC 
 		{ 
 			play				"sound/interface/esc.wav" 					
-			close				quitMenu ; 
+			close				ingamequitMenu ; 
 			open				InGameMainMenu ;
+		}
+	OnClose
+		{
+			close				quitMenu
 		}
 	onOpen 
 		{
-		}
+		}	
 //___________________________________________________________________________________________
-//
-//									ОСНОВНОЕ МЕНЮ
-//___________________________________________________________________________________________		
-//********************
-// Фон для меню
-//********************		
+//	
+//								Основное меню
+//___________________________________________________________________________________________
+	itemDef 
+		{
+			name				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
+			visible				1
+			decoration
+		}
+//******************
+// 		BLUR
+//******************
 	itemDef 
 		{
 			name				Blur
 			style				WINDOW_STYLE_SHADER
 			rect				0 0 640 480
 			background			"menu/ground/blur"
-			forecolor			1 1 0.9 0.45
+			forecolor			0.5 0.5 0.5 0.45
 			visible				1
 			decoration
 		}
-//********************
-// Фон под текст
-//********************
-	itemDef 
-		{
-			name				border_setup	
-			rect				120 150 410 220
-			style				WINDOW_STYLE_FILLED
-			backcolor			.1 .1 .6 .5
-			border				1
-			bordercolor			1 1 1 1
-			decoration	
-			visible				1
-			
-		mouseEnter 			
-			{ 	
-				setitemcolor	border_setup		bordercolor			0 0 1 1
-			}
-		mouseExit 			
-			{
-				setitemcolor	border_setup		bordercolor			1 1 1 1
-			}
-		}
-//********************
-// Выделение текста
-//********************	
+//*******************************
+//	ВЫДЕЛЕНИЕ СТРОКИ	
+//*******************************
 	itemDef 
 		{
 			name				sidebutton_glow
-			style				WINDOW_STYLE_SHADER
-			background			"side_vertex"
-			forecolor			0.1 0.1 0.1 1
-			decoration
-		}
-//*************************************
-// Текст: "Покинуть Академию джедаев?"
-//*************************************	
-	itemDef 
-		{
-			name 				confirm
 			group				none
-			text 				@MENUS_QUIT_JEDI_KNIGHT_II
 			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_buttonback"
+			forecolor			1 1 1 1
+			decoration
+		}		
+//*******************************
+// Фон для текста предупреждения
+//*******************************
+	itemDef 
+		{
+			name				text
+			style				WINDOW_STYLE_FILLED	
 			background			"BoxMenu"
-			rect 				160 180 330 40
-			font				5
-			textscale 			0.75
-			textalign 			ITEM_ALIGN_CENTER
-			textalignx	 		160
-			textaligny			10
-			forecolor			.95 .64 .37 1
-			border				4
+			rect				120 120 420 250
+			border				1
+			bordersize			1
 			bordercolor			1 1 1 1
-			visible 			1
+			decoration			
+			visible				1
+		}
+//*********************
+// Текст "Информация"
+//*********************
+	itemDef 
+		{
+			name				options
+			text				@MENUS_QUIT_JEDI_KNIGHT_II
+			textalignx			10
+			textaligny			10
+			rect				320 175 290 20
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			.95 .64 .37 1
+			font 				5
+			textstyle			5
+			textscale 			0.60
+			visible				1
+
 			decoration
 		}
-//********************
-// Текст: "Нет"
-//********************			
+//**************
+// Кнопка "Да"
+//**************
 	itemDef 
 		{
-			name				quitgame_no
-			text				@MENUS_NO
-			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_SHADER
-			background			"BoxMenu"
-			rect				403 300 60 25
-			font				5
-			textscale			0.65
-			textalignx			14
-			textaligny			5
-			textalign			ITEM_ALIGN_LEFT
-			forecolor			.95 .64 .37 1
-			border				4
-			bordersize			1
-			visible				1
-		mouseEnter
-			{
-				show			sidebutton_glow
-				setitemrect		sidebutton_glow			403 300 60 25
-			}
-		mouseExit
-			{
-				hide			sidebutton_glow
-			}
-		action 
-			{ 
-				play			"sound/interface/esc.wav" 					
-				close			quitMenu ; 
-				open			InGameMainMenu;
-			}	  	  
-		}
-//********************
-// Текст: "Да"
-//********************	
-	itemDef 
-		{
-			name				quitgame_yes
+			name				default_yes
+			group				videowarning
 			text				@MENUS_YES
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			background			"BoxMenu"
-			rect				200 300 60 25
-			font				5
-			textscale			0.65
-			textalignx			18
-			textaligny			4
+			rect				185 300 60 30
 			textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textstyle			5
+			textscale 			0.6
+			textalignx			20
+			textaligny			4
 			forecolor			.95 .64 .37 1
-			border				4
-			bordersize			1
 			visible				1
+			
+			background			"menu/box_redux"
 		mouseEnter
 			{
-				show			sidebutton_glow
-				setitemrect		sidebutton_glow			200 300 60 25
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			185 300 60 30
 			}
-		mouseExit
+		mouseExit	
 			{
-				hide			sidebutton_glow
-			}
+				hide				sidebutton_glow
+			}			
 		action 
 			{ 
-				play			"sound/interface/button1.wav" ; 
-				uiScript		Quit
+				play			"sound/interface/esc.wav" 
+				uiScript		Quit 
 			}	  	  
+		}
+//**************
+// Кнопка "Нет"
+//**************
+	itemDef 
+		{
+			name				default_no
+			group				videowarning
+			text				@MENUS_NO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				415 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textstyle			5
+			textscale 			0.6
+			textalignx			17
+			textaligny			4
+			forecolor			.95 .64 .37 1
+			visible				1
+
+			background			"menu/box_redux"	
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			415 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 					
+				close			ingamequitMenu ; 
+				open			InGameMainMenu ;
+			}	
 		}
 //___________________________________________________________________________________________
 //
 //										ЭЛЕМЕНТЫ В МЕНЮ ВЫШЕ ДРУГИХ
 //___________________________________________________________________________________________		
-	itemDef 
-		{
-			name				redux
-			text				"REDUX"
-			rect				615 468 0 0
-			font				5
-			textscale			0.5
-			textaligny			1
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
 	itemDef 
 		{
 			name				academy
@@ -191,6 +183,7 @@
 			decoration
 		}
 	}
+	
 }
 
 

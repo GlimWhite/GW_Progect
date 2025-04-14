@@ -5,159 +5,152 @@
 {
 	menuDef 
 	{
-		name					"videowarningMenu"
+		name					"VideoWarningMenu"
 		visible					0
 		fullScreen				1						// MENU_TRUE
 		focusColor				1 1 1 1					// Focus color for text and items
-		outOfBoundsClick								// this closes the window if it gets a click out of the rectangle	
-	popup								
+		outOfBoundsClick								// this closes the window if it gets a click out of the rectangle popup		
+	OnOpen
+		{
+			Show				videowarning
+		}
 	onESC 
 		{ 
 			play				"sound/interface/esc.wav" 		
 			close				all
-			open				setupMenu
+			hide				videowarning
 		}
 	onClose
 		{
+			hide				videowarning
 		}
-//----------------------------------------------------------------------------------------------
-//										MENU BACKGROUND
-//----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________
+//
+//									ЭЛЕМЕНТЫ В МЕНЮ                              
+//_______________________________________________________________________________________
+//**********************
+// Фон меню
+//**********************	
 	itemDef 
 		{
-			name				background
-			group				none
+			name				groundmenu
+			group				groundmenu
 			style				WINDOW_STYLE_SHADER
-			rect				-10 -5 650 485
-			background			"menu/ground/MenuGround"
+			rect				0 0 640 480
+			background			"GroundMenu"
 			forecolor			1 1 1 1
 			visible				1
 			decoration
 		}
-//КРАСНЫЙ КВАДРАТ ПОД ТЕКСТ		
+//********************
+// Фон для меню
+//********************		
 	itemDef 
 		{
-			name				warn_background
-			group				vidwarn
+			name				Blur
 			style				WINDOW_STYLE_SHADER
-			rect				100 120 460 250
-			background			"menu/menu_boxred"
+			rect				0 0 640 480
+			background			"menu/ground/blur"
+			forecolor			1 1 0.9 0.45
+			visible				1
+			decoration
+		}
+//********************
+// Выделение текста
+//********************	
+	itemDef 
+		{
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"side_vertex"
+			forecolor			0.1 0.1 0.1 1
+			decoration
+		}
+//_______________________________________________________________________________________
+//
+//									Основное меню                              
+//_______________________________________________________________________________________
+//**********************
+// Фон меню
+//**********************	
+	itemDef 
+		{
+			name				groundmenu
+			group				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
 			forecolor			1 1 1 1
 			visible				1
 			decoration
 		}
-// БАРДЮР ДЛЯ СТРОКИ ВНЕСТИ ИЗМЕНЕНИЯ ГРАФИКА
+//*******************************
+// Фон для текста предупреждения
+//*******************************
 	itemDef 
 		{
-			name				setup_border
-			group				vidwarn
-			style				WINDOW_STYLE_FILLED
-			rect				98 118 461 249
+			name				text
+			group				videowarning
+			style				WINDOW_STYLE_FILLED	
+			background			"BoxMenu"
+			rect				120 120 420 250
 			border				1
-			bordersize			2
+			bordersize			1
 			bordercolor			1 1 1 1
-			visible				1
 			decoration
+	
 		}
-//----------------------------------------------------------------------------------------------
-//											VIDEO WARNING
-//----------------------------------------------------------------------------------------------
+//*********************
+// Текст "Информация"
+//*********************
 	itemDef 
 		{
-			name				vidwarn_text1
-			group				vidwarn
+			name				options
+			group				videowarning
 			text				@MENUS_YOU_HAVE_MADE_CHANGES
-			rect				320 140 290 20
+			text2				@MENUS_APPLY_THESE_CHANGES_OR
+			textalignx			10
+			textaligny			10
+			text2alignx			-50
+			text2aligny			30
+			rect				320 175 290 20
 			textalign			ITEM_ALIGN_CENTER
 			forecolor			.95 .64 .37 1
 			font 				5
 			textstyle			5
-			textscale 			0.7
-			visible				1
+			textscale 			0.60
+
 			decoration
 		}
+//**************
+// Кнопка "Да"
+//**************
 	itemDef 
 		{
-			name				vidwarn_text2
-			group				vidwarn
-			text				@MENUS_APPLY_THESE_CHANGES_OR
-			rect				320 160 290 20
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			.95 .64 .37 1
+			name				default_yes
+			group				videowarning
+			text				@MENUS_YES
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				185 300 60 30
+			textalign			ITEM_ALIGN_LEFT
 			font 				5
 			textstyle			5
-			textscale 			0.7	
-			visible				1		
-			decoration
-		}
-//ФОН ДЛЯ СЛОВА НЕТ
-	itemDef 
-		{
-			name				default_no_button
-			group				vidwarn
-			style				WINDOW_STYLE_SHADER
-			rect				403 300 100 25
-			background			"menu/menu_top_mp"
+			textscale 			0.6
+			textalignx			20
+			textaligny			4
 			forecolor			.95 .64 .37 1
-			border				1
-			bordersize			1
-			bordercolor			1 1 1 1
-			visible				1
-			decoration
-		}
-//ОТКАЗ ОТ ВНЕСЕНИЙ - ВОЗРАЩАЕТ В МЕНЮ
-		itemDef 
-		{
-			name				vidwarn_no
-			group				vidwarn
-			text				@MENUS_DISCARD
-			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
-			rect				415 300 140 25
-			textalign			ITEM_ALIGN_LEFT
-			font 				3
-			textstyle			1
-			textscale 			1
-			forecolor			.95 .64 .37 1
-			visible				1
-		action 
-			{ 
-				play			"sound/interface/esc.wav" 		
-				close			"videowarningMenu" ;
-				setcvar			"ui_r_modified" 0 ;
-				rundeferred ;
-			}	  	  
-		}
-//ФОН ДЛЯ СЛОВА ДА
-	itemDef 
-		{
-			name				default_yes_button
-			group				vidwarn
-			style				WINDOW_STYLE_SHADER
-			rect				133 300 100 25
-			background			"menu/menu_top_mp"
-			forecolor			.95 .64 .37 1
-			border				1
-			bordersize			1
-			bordercolor			1 1 1 1
-			visible				1
-			decoration
-		}
-//ПРИНЯТИЕ ИЗМЕНЕНИЙ
-	itemDef 
-		{
-			name				vidwarn_yes
-			group				vidwarn
-			text				@MENUS_APPLY
-			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
-			rect				145 300 140 25
-			textalign			ITEM_ALIGN_LEFT
-			font 				3
-			textstyle			1
-			textscale 			1
-			forecolor			.95 .64 .37 1
-			visible				1
+			
+			background			"menu/box_redux"
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			185 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
 		action 
 			{ 
 				play			"sound/interface/button1.wav" ; 
@@ -165,6 +158,43 @@
 				uiScript		updatevideosetup ;
 				close			all
 			}	  	  
+		}
+//**************
+// Кнопка "Нет"
+//**************
+	itemDef 
+		{
+			name				default_no
+			group				videowarning
+			text				@MENUS_NO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				415 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textstyle			5
+			textscale 			0.6
+			textalignx			17
+			textaligny			4
+			forecolor			.95 .64 .37 1
+
+			background			"menu/box_redux"	
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			415 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 		
+				close			"videowarningMenu" ;
+				setcvar			"ui_r_modified" 0 ;
+				rundeferred ;
+			}	
 		}
 	}	
 }
