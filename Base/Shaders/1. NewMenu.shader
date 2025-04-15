@@ -167,7 +167,7 @@ missionselect
 	}		
 	{
 		clampmap menu/ground/Mission_glow2
-		rgbGen wave  1 0.1 0.1 0.1
+		//rgbGen wave triangle 1 0.1 0.1 0.1
 		blendFunc GL_ONE GL_ONE
 		glow
 	}

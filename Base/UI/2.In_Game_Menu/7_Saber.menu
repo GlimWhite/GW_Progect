@@ -14,29 +14,29 @@
 		//Титутл
 			transition			create_title	   -345   0 370 20 -25   0 370  20 18 18
 		//Тип меча
-			transition			box_typebut	  	   -345  15 342 44	-2  15 342  44 18 18
-			transition			typebut		   	   -345  31 120 40	14  31 120  40 18 18
+			transition			box_typebut	  	   -345  15 342 30	-2  15 342  30 18 18
+			transition			typebut		   	   -345  15 120 30	14  15 120  30 18 18
 		//Одноручный меч
-			transition			box_typebut_single -345  59 342 44  -2  59 342  44 18 18
-			transition			typebut_single	   -345  75 120 40  86  75 120  40 18 18		
-			transition			saberstyle	  	   -345 249 120 40  14 249 120  40 18 18
-			transition			box_single_style   -345 235 342 44  -2 235 342  44 18 18
+			transition			box_typebut_single -345  59 342 30  -2  59 342  30 18 18
+			transition			typebut_single	   -345  75 120 30  86  75 120  30 18 18		
+			transition			saberstyle	  	   -345 249 120 30  14 249 120  30 18 18
+			transition			box_single_style   -345 235 342 30  -2 235 342  30 18 18
 		//Двухрычный меч
-			transition			box_typebut_dual   -345 103 342 44  -2 103 342  44 18 18	
-			transition			typebut_dual	   -345 119 120 40 108 119 120  40 18 18	
+			transition			box_typebut_dual   -345 103 342 30  -2 103 342  30 18 18	
+			transition			typebut_dual	   -345 119 120 30 108 119 120  40 18 18	
 		//Посох
-			transition			box_typebut_staff  -345 147 342 44	-2 147 342  44 18 18	
-			transition			typebut_staff	   -345 163 120 40  84 163 120  40 18 18	
+			transition			box_typebut_staff  -345 147 342 30	-2 147 342  30 18 18	
+			transition			typebut_staff	   -345 163 120 30  84 163 120  40 18 18	
 		//Нефисы
-			transition			box_hilttype	   -345 191 342 44	-2 191 342  44 18 18
-			transition			hiltbut			   -345 205 120 40	14 205 120  40 18 18
-			transition			hiltbut2		   -345 205 120 40  14 249 120  40 18 18
-			transition			hiltbut_staves	   -345 205 120 40  14 205 120  40 18 18
+			transition			box_hilttype	   -345 191 342 30	-2 191 342  30 18 18
+			transition			hiltbut			   -345 205 120 30	14 205 120  40 18 18
+			transition			hiltbut2		   -345 205 120 30  14 249 120  40 18 18
+			transition			hiltbut_staves	   -345 205 120 30  14 205 120  40 18 18
 		//Цвета
-			transition			box_color1			640  15 342 44	340 15 298 	44 18 18
+			transition			box_color1			640  15 342 30	340 15 298 	30 18 18
 			transition			color_title			640   0 370 20  320  0 370  20 18 18
 			transition			border_color		640  -2 298 17 	340 -2 298  17 18 18
-			transition			box_color2			640  59 342 44	340 59 298 	44 18 18
+			transition			box_color2			640  59 342 30	340 59 298 	30 18 18
 			hide				box_color2
 		//Назад
 			transition			box_back	         -2 448 170  32	 -2 448 170  32 18 18
@@ -49,6 +49,7 @@
 			transition			saber			  -200 -200 900 700	-200 -200 900 700 18 18 
 		//Фон для меню
 			transition			border_menu		   -345  -2 342 280	-2  -2   342.5 280.5 18 18
+			*//
 		//Переменные
 			setcvar				"playersave" "(NULL)"
 			setcvar				"tiers_complete" "(NULL)"
@@ -134,7 +135,7 @@
 			name				box_typebut
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -151,10 +152,11 @@
 			rect				-2  15 342  44
 			textalign			ITEM_ALIGN_LEFT	
 			textstyle			3
-			font				5
-			textscale			0.7
+			font				3
+			textscale			1.1
 			forecolor			.95 .64 .37 1
 			visible				1
+			textaligny			2			
 			decoration
 		}
 //----------------------------------------------------------------------------------------
@@ -207,7 +209,7 @@
 			name				box_typebut_single
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -219,7 +221,7 @@
 			name				box_single_style
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			rect				-2 235 340  40
 			forecolor			1 1 1 0.8
 			border				4
@@ -282,7 +284,7 @@
 			name				box_typebut_dual
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -350,7 +352,7 @@
 			name				box_typebut_staff
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -415,7 +417,7 @@
 			name				box_hilttype
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -658,7 +660,7 @@
 			name				box_color1
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -671,7 +673,7 @@
 			name				box_color2
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 0.8
 			border				4
 			bordersize			2
@@ -774,7 +776,7 @@
 			name				box_back
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			bordercolor			0 0.5 1 0.4
@@ -817,7 +819,7 @@
 			name				box_next
 			group				none
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			bordercolor			0 0.5 1 0.4

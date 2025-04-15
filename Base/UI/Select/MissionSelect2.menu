@@ -265,13 +265,13 @@
 			}
 		action
 			{
-				playVoice		"sound/chars/kyle/07kyk001.mp3"
+				playVoice		"sound/chars/protocol/12pro001.mp3"
 				show			kyle
 				show			nextscreen_button
 				show			accept1text
 				
 				setfocus		nextscreen_button
-				setcvar 		tier_mapname "maptransition t1_sour"
+				setcvar 		tier_mapname "maptransition t2_rancor"
 								
 				hide			backbut
 				hide			briefing_text
@@ -314,14 +314,14 @@
 			}
 		action
 			{
-				playVoice		"sound/chars/kyle/04kyk001.mp3"
+				playVoice		"sound/chars/protocol/15pro001.mp3"
 
-				show			kyle
+				show			prot
 				show			nextscreen_button
 				show			accept2text
 				
 				setfocus		nextscreen_button
-				setcvar 		tier_mapname "maptransition t1_surprise"
+				setcvar 		tier_mapname "maptransition t2_trip"
 				
 				hide			backbut
 				hide			briefing_text
@@ -364,14 +364,14 @@
 			}
 		action
 			{
-				playVoice		"sound/chars/luke/08luk001.mp3"
+				playVoice		"sound/chars/wedge/13wea001.mp3"
 
-				show			luke
+				show			wedge
 				show			nextscreen_button
 				show			accept3text			
 
 				setfocus		nextscreen_button
-				setcvar 		tier_mapname "maptransition t1_fatal"
+				setcvar 		tier_mapname "maptransition t2_wedge"
 				
 				hide			backbut
 				hide			briefing_text
@@ -414,14 +414,14 @@
 			}
 		action
 			{
-				playVoice		"sound/chars/luke/06luk001.mp3"
+				playVoice		"sound/chars/kyle/14kyk001.mp3"
 				
-				show			luke
+				show			kyle
 				show			nextscreen_button
 				show			accept4text			
 
 				setfocus		nextscreen_button
-				setcvar 		tier_mapname "maptransition t1_danger"				
+				setcvar 		tier_mapname "maptransition t2_rogue"				
 				
 				hide			backbut
 				hide			briefing_text
@@ -464,15 +464,15 @@
 			}
 		action
 			{
-				playVoice		"sound/chars/kyle/05kyk001.mp3"
+				playVoice		"sound/chars/protocol/16pro001.mp3"
 				
-				show			kyle
+				show			prot
 				show			nextscreen_button
 				show			accept5text
 				
 				setfocus		nextscreen_button
-				setcvar 		tier_mapname "maptransition t1_rail"
-								
+				setcvar 		tier_mapname "maptransition t2_dpred"
+				
 				hide			backbut
 				hide			briefing_text
 				hide			sidebutton_glow
@@ -531,16 +531,16 @@
 				show			accbut1
 				show			top_planets
 				
-				show			krildor
+				hide			krildor
 				hide			zonju
 				hide			dosuun
-				hide			narkreeta
+				show			narkreeta
 				hide			coruscant
 
 				transition		planet_name		800  7 100  30 340  7 100  30 15 15
 				transition		top_planets		800  0 306 474 314  0 306 474 15 15
 				transition		decplanet		800  0 304 474 314  0 304 474 15 15
-				transition		planet			800 80 300 300 325 80 300 300 15 15
+				setitemrect		planet			325 80 300 300
 				
 				hide			mission_button					
 				hide			sidebutton_glow
@@ -593,8 +593,8 @@
 		
 				transition		briefing_text	 18 27 300   0  18 27 300 384 15 15
 				
-				show			krildor
-				hide			zonju
+				hide			krildor
+				show			zonju
 				hide			dosuun
 				hide			narkreeta
 				hide			coruscant
@@ -602,7 +602,7 @@
 				transition		planet_name		800  7 100  30 340  7 100  30 15 15
 				transition		top_planets		800  0 306 474 314  0 306 474 15 15
 				transition		decplanet		800  0 304 474 314  0 304 474 15 15
-				transition		planet			800 80 300 300 325 80 300 300 15 15
+				setitemrect		planet			325 80 300 300
 				
 				hide			mission_button
 				hide			sidebutton_glow
@@ -629,7 +629,7 @@
 			cvartest			"tiers_complete"
 			disablecvar		
 			{
-				"t1_surprise"
+				"t2_wedge"
 			}
 			cvarSubString
 		mouseEnter 
@@ -653,16 +653,16 @@
 				show			briefing_text
 				setitemtext		briefing_text 	@BRIEFINGS_T2_WEDGE
 				
-				hide			krildor
+				show			krildor
 				hide			zonju
 				hide			dosuun
-				show			narkreeta
+				hide			narkreeta
 				hide			coruscant
 
 				transition		planet_name		800  7 100  30 340  7 100  30 15 15
 				transition		top_planets		800  0 306 474 314  0 306 474 15 15
 				transition		decplanet		800  0 304 474 314  0 304 474 15 15
-				transition		planet			800 80 300 300 325 80 300 300 15 15
+				setitemrect		planet			325 80 300 300
 				
 				transition		briefing_text	 18 27 300   0  18 27 300 384 15 15
 					
@@ -690,7 +690,7 @@
 			cvartest			"tiers_complete"
 			disablecvar		
 			{
-				"t1_danger"
+				"t2_rogue"
 			}
 			cvarSubString
 		mouseEnter 
@@ -716,14 +716,14 @@
 					
 				hide			krildor
 				hide			zonju
-				show			dosuun
+				hide			dosuun
 				hide			narkreeta
-				hide			coruscant
+				show			coruscant
 				
 				transition		planet_name		800  7 100  30 340  7 100  30 15 15
 				transition		top_planets		800  0 306 474 314  0 306 474 15 15
 				transition		decplanet		800  0 304 474 314  0 304 474 15 15
-				transition		planet			800 80 300 300 325 80 300 300 15 15
+				setitemrect		planet			325 80 300 300
 				
 				transition		briefing_text	 18 27 300   0  18 27 300 384 15 15
 				
@@ -751,7 +751,7 @@
 			cvartest			"tiers_complete"
 			disablecvar			
 			{
-				"t1_rail"
+				"t2_dpred"
 			}
 			cvarSubString
 		mouseEnter 
@@ -776,15 +776,15 @@
 				setitemtext		briefing_text 	@BRIEFINGS_T2_DPRED	
 				
 				hide			krildor
-				show			zonju
-				hide			dosuun
+				hide			zonju
+				show			dosuun
 				hide			narkreeta
 				hide			coruscant				
 				
 				transition		planet_name		800  7 100  30 340  7 100  30 15 15
 				transition		top_planets		800  0 306 474 314  0 306 474 15 15
 				transition		decplanet		800  0 304 474 314  0 304 474 15 15
-				transition		planet			800 80 300 300 325 80 300 300 15 15
+				setitemrect		planet			325 80 300 300
 				
 				transition		briefing_text	 14 27 300   0  14 27 300 384 15 15
 				
@@ -1003,7 +1003,7 @@ itemDef
 		{
 			name				krildor
 			group				planet
-			style				WINDOW_STYLE_FILLED
+			style				WINDOW_STYLE_SHADER
 			rect				325 80 300 300
 			background			"menu/planets/krildor"
 			backcolor			1 1 1 1
@@ -1014,9 +1014,9 @@ itemDef
 		{
 			name				narkreeta
 			group				planet
-			style				WINDOW_STYLE_FILLED
+			style				WINDOW_STYLE_SHADER
 			rect				325 80 300 300
-			background			"menu/planets/narkreeta"
+			background			"menu/planets/NarKreeta"
 			backcolor			1 1 1 1
 			decoration
 		}
@@ -1024,7 +1024,7 @@ itemDef
 		{
 			name				dosuun
 			group				planet
-			style				WINDOW_STYLE_FILLED
+			style				WINDOW_STYLE_SHADER
 			rect				325 80 300 300
 			background			"menu/planets/dosuun"
 			backcolor			1 1 1 1
@@ -1034,24 +1034,22 @@ itemDef
 		{
 			name				zonju
 			group				planet
-			style				WINDOW_STYLE_FILLED
+			style				WINDOW_STYLE_SHADER
 			rect				325 80 300 300
 			background			"menu/planets/zonju"
 			backcolor			1 1 1 1
 			decoration
-		}
-		
+		}	
 	itemDef 
 		{
 			name				coruscant
 			group				planet
-			style				WINDOW_STYLE_FILLED
+			style				WINDOW_STYLE_SHADER
 			rect				325 80 300 300
 			background			"menu/planets/coruscant"
 			backcolor			1 1 1 1
 			decoration
 		}		
-		
 //-------------------------------------------------------------------------	
 //					РАМКА ДЛЯ ПЛАНЕТЫ
 //-------------------------------------------------------------------------
@@ -1095,7 +1093,7 @@ itemDef
 			textaligny			-5
 			text				@MENUS_MISSIONS
 			textstyle			3
-			front				5
+			font				5
 			textscale			1.2
 			textalignx			145
 			textaligny			-5
