@@ -4,7 +4,7 @@
 // intensity falls off with angle but not distance 100 is a fairly bright sun
 // degree of 0 = from the east, 90 = north, etc.  altitude of 0 = sunrise/set, 90 = noon
 
-/*
+
 textures/skies/normallight
 {
 	qer_editorimage	textures/skies/sky.tga
@@ -610,4 +610,3 @@ textures/skies/sky_nodraw
 	q3map_nolightmap
 	skyParms	textures/system/caulk 512 -
 }
-*/

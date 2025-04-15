@@ -1585,7 +1585,7 @@ menu/planets/bakura
 
 menu/planets/Blenjeel
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/blenjeel01 menu/planets/blenjeel02 menu/planets/blenjeel03 menu/planets/blenjeel04 menu/planets/blenjeel05 menu/planets/blenjeel06 menu/planets/blenjeel07 menu/planets/blenjeel08 menu/planets/blenjeel09 menu/planets/blenjeel10 menu/planets/blenjeel11 menu/planets/blenjeel12 menu/planets/blenjeel13 menu/planets/blenjeel14 menu/planets/blenjeel15 menu/planets/blenjeel16 menu/planets/blenjeel17 menu/planets/blenjeel18 menu/planets/blenjeel19 menu/planets/blenjeel20 menu/planets/blenjeel21 menu/planets/blenjeel22 menu/planets/blenjeel23 menu/planets/blenjeel24 menu/planets/blenjeel25 menu/planets/blenjeel26 menu/planets/blenjeel27 menu/planets/blenjeel28 menu/planets/blenjeel29 menu/planets/blenjeel30 menu/planets/blenjeel31 menu/planets/blenjeel32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1594,7 +1594,7 @@ menu/planets/Blenjeel
 
 menu/planets/Core
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/core01 menu/planets/core02 menu/planets/core03 menu/planets/core04 menu/planets/core05 menu/planets/core06 menu/planets/core07 menu/planets/core08 menu/planets/core09 menu/planets/core10 menu/planets/core11 menu/planets/core12 menu/planets/core13 menu/planets/core14 menu/planets/core15 menu/planets/core16 menu/planets/core17 menu/planets/core18 menu/planets/core19 menu/planets/core20 menu/planets/core21 menu/planets/core22 menu/planets/core23 menu/planets/core24 menu/planets/core25 menu/planets/core26 menu/planets/core27 menu/planets/core28 menu/planets/core29 menu/planets/core30 menu/planets/core31 menu/planets/core32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1603,7 +1603,7 @@ menu/planets/Core
 
 menu/planets/Dosuun
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/dosunn01 menu/planets/dosunn02 menu/planets/dosunn03 menu/planets/dosunn04 menu/planets/dosunn05 menu/planets/dosunn06 menu/planets/dosunn07 menu/planets/dosunn08 menu/planets/dosunn09 menu/planets/dosunn10 menu/planets/dosunn11 menu/planets/dosunn12 menu/planets/dosunn13 menu/planets/dosunn14 menu/planets/dosunn15 menu/planets/dosunn16 menu/planets/dosunn17 menu/planets/dosunn18 menu/planets/dosunn19 menu/planets/dosunn20 menu/planets/dosunn21 menu/planets/dosunn22 menu/planets/dosunn23 menu/planets/dosunn24 menu/planets/dosunn25 menu/planets/dosunn26 menu/planets/dosunn27 menu/planets/dosunn28 menu/planets/dosunn29 menu/planets/dosunn30 menu/planets/dosunn31 menu/planets/dosunn32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1612,7 +1612,7 @@ menu/planets/Dosuun
 
 menu/planets/Krildor
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/krildor01 menu/planets/krildor02 menu/planets/krildor03 menu/planets/krildor04 menu/planets/krildor05 menu/planets/krildor06 menu/planets/krildor07 menu/planets/krildor08 menu/planets/krildor09 menu/planets/krildor10 menu/planets/krildor11 menu/planets/krildor12 menu/planets/krildor13 menu/planets/krildor14 menu/planets/krildor15 menu/planets/krildor16 menu/planets/krildor17 menu/planets/krildor18 menu/planets/krildor19 menu/planets/krildor20 menu/planets/krildor21 menu/planets/krildor22 menu/planets/krildor23 menu/planets/krildor24 menu/planets/krildor25 menu/planets/krildor26 menu/planets/krildor27 menu/planets/krildor28 menu/planets/krildor29 menu/planets/krildor30 menu/planets/krildor31 menu/planets/krildor32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1621,16 +1621,16 @@ menu/planets/Krildor
 
 menu/planets/NarKreeta
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/narkreeta01 menu/planets/narkreeta02 menu/planets/narkreeta03 menu/planets/narkreeta04 menu/planets/narkreeta05 menu/planets/narkreeta06 menu/planets/narkreeta07 menu/planets/narkreeta08 menu/planets/narkreeta09 menu/planets/narkreeta10 menu/planets/narkreeta11 menu/planets/narkreeta12 menu/planets/narkreeta13 menu/planets/narkreeta14 menu/planets/narkreeta15 menu/planets/narkreeta16 menu/planets/narkreeta17 menu/planets/narkreeta18 menu/planets/narkreeta19 menu/planets/narkreeta20 menu/planets/narkreeta21 menu/planets/narkreeta22 menu/planets/narkreeta23 menu/planets/narkreeta24 menu/planets/narkreeta25 menu/planets/narkreeta26 menu/planets/narkreeta27 menu/planets/narkreeta28 menu/planets/narkreeta29 menu/planets/narkreeta30 menu/planets/narkreeta31 menu/planets/narkreeta32 
-        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
     }
 }
 
 menu/planets/OrdMan
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/ordman01 menu/planets/ordman02 menu/planets/ordman03 menu/planets/ordman04 menu/planets/ordman05 menu/planets/ordman06 menu/planets/ordman07 menu/planets/ordman08 menu/planets/ordman09 menu/planets/ordman10 menu/planets/ordman11 menu/planets/ordman12 menu/planets/ordman13 menu/planets/ordman14 menu/planets/ordman15 menu/planets/ordman16 menu/planets/ordman17 menu/planets/ordman18 menu/planets/ordman19 menu/planets/ordman20 menu/planets/ordman21 menu/planets/ordman22 menu/planets/ordman23 menu/planets/ordman24 menu/planets/ordman25 menu/planets/ordman26 menu/planets/ordman27 menu/planets/ordman28 menu/planets/ordman29 menu/planets/ordman30 menu/planets/ordman31 menu/planets/ordman32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1639,7 +1639,7 @@ menu/planets/OrdMan
 
 menu/planets/Tanaab
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/tanaab01 menu/planets/tanaab02 menu/planets/tanaab03 menu/planets/tanaab04 menu/planets/tanaab05 menu/planets/tanaab06 menu/planets/tanaab07 menu/planets/tanaab08 menu/planets/tanaab09 menu/planets/tanaab10 menu/planets/tanaab11 menu/planets/tanaab12 menu/planets/tanaab13 menu/planets/tanaab14 menu/planets/tanaab15 menu/planets/tanaab16 menu/planets/tanaab17 menu/planets/tanaab18 menu/planets/tanaab19 menu/planets/tanaab20 menu/planets/tanaab21 menu/planets/tanaab22 menu/planets/tanaab23 menu/planets/tanaab24 menu/planets/tanaab25 menu/planets/tanaab26 menu/planets/tanaab27 menu/planets/tanaab28 menu/planets/tanaab29 menu/planets/tanaab30 menu/planets/tanaab31 menu/planets/tanaab32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1648,7 +1648,7 @@ menu/planets/Tanaab
 
 menu/planets/Zonju
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/zonju01 menu/planets/zonju02 menu/planets/zonju03 menu/planets/zonju04 menu/planets/zonju05 menu/planets/zonju06 menu/planets/zonju07 menu/planets/zonju08 menu/planets/zonju09 menu/planets/zonju10 menu/planets/zonju11 menu/planets/zonju12 menu/planets/zonju13 menu/planets/zonju14 menu/planets/zonju15 menu/planets/zonju16 menu/planets/zonju17 menu/planets/zonju18 menu/planets/zonju19 menu/planets/zonju20 menu/planets/zonju21 menu/planets/zonju22 menu/planets/zonju23 menu/planets/zonju24 menu/planets/zonju25 menu/planets/zonju26 menu/planets/zonju27 menu/planets/zonju28 menu/planets/zonju29 menu/planets/zonju30 menu/planets/zonju31 menu/planets/zonju32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1657,7 +1657,7 @@ menu/planets/Zonju
 
 menu/planets/Yalara
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/yalara01 menu/planets/yalara02 menu/planets/yalara03 menu/planets/yalara04 menu/planets/yalara05 menu/planets/yalara06 menu/planets/yalara07 menu/planets/yalara08 menu/planets/yalara09 menu/planets/yalara10 menu/planets/yalara11 menu/planets/yalara12 menu/planets/yalara13 menu/planets/yalara14 menu/planets/yalara15 menu/planets/yalara16 menu/planets/yalara17 menu/planets/yalara18 menu/planets/yalara19 menu/planets/yalara20 menu/planets/yalara21 menu/planets/yalara22 menu/planets/yalara23 menu/planets/yalara24 menu/planets/yalara25 menu/planets/yalara26 menu/planets/yalara27 menu/planets/yalara28 menu/planets/yalara29 menu/planets/yalara30 menu/planets/yalara31 menu/planets/yalara32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1666,7 +1666,7 @@ menu/planets/Yalara
 
 menu/planets/Byss
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/ast01 menu/planets/ast02 menu/planets/ast03 menu/planets/ast04 menu/planets/ast05 menu/planets/ast06 menu/planets/ast07 menu/planets/ast08 menu/planets/ast09 menu/planets/ast10 menu/planets/ast11 menu/planets/ast12 menu/planets/ast13 menu/planets/ast14 menu/planets/ast15 menu/planets/ast16 menu/planets/ast17 menu/planets/ast18 menu/planets/ast19 menu/planets/ast20 menu/planets/ast21 menu/planets/ast22 menu/planets/ast23 menu/planets/ast24 menu/planets/ast25 menu/planets/ast26 menu/planets/ast27 menu/planets/ast28 menu/planets/ast29 menu/planets/ast30 menu/planets/ast31 menu/planets/ast32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
@@ -1675,7 +1675,7 @@ menu/planets/Byss
 
 menu/planets/Coruscant
 {
-	qer_editorimage	menu/planets/bakura
+	
     {
         animMap 10 menu/planets/cos01 menu/planets/cos02 menu/planets/cos03 menu/planets/cos04 menu/planets/cos05 menu/planets/cos06 menu/planets/cos07 menu/planets/cos08 menu/planets/cos09 menu/planets/cos10 menu/planets/cos11 menu/planets/cos12 menu/planets/cos13 menu/planets/cos14 menu/planets/cos15 menu/planets/cos16 menu/planets/cos17 menu/planets/cos18 menu/planets/cos19 menu/planets/cos20 menu/planets/cos21 menu/planets/cos22 menu/planets/cos23 menu/planets/cos24 menu/planets/cos25 menu/planets/cos26 menu/planets/cos27 menu/planets/cos28 menu/planets/cos29 menu/planets/cos30 menu/planets/cos31 menu/planets/cos32 
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA

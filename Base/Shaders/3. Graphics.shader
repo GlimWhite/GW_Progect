@@ -3777,32 +3777,38 @@ gfx/misc/fullbodyelectric2
 gfx/misc/forceprotect
 {
 	qer_editorimage	gfx/effects/p_shield
-	deformvertexes	wave	90 sin 0 0 1 0.2
+	deformvertexes	wave 75 sin 0 1 1 1
+
     {
         map gfx/force/caustic1
         blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
         rgbGen entity
         tcGen environment
-        //tcMod rotate 10
-        tcMod turb 0.6 -0.3 0 0.6
-        //tcMod stretch sin 1.5 0.5 0 1
-    }
-	
+		tcMod scale 2 3
+		tcMod scroll 0 2 
+    }	
+	{
+        map gfx/force/caustic1
+        blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
+        rgbGen entity
+        tcGen environment
+		tcMod scale 2 3
+		tcMod scroll 2 0 
+    }	
     {
         map gfx/effects/decoystatic2
         blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
         rgbGen entity
-        tcMod rotate -100
         tcMod scale 2 3
-		tcMod scroll 0 2 
+		tcMod scroll 2 0 
+        rgbGen wave sin 5 0.5 0 1
     }
 	{
-        map gfx/effects/decoystatic
+        map gfx/effects/decoystatic2
         blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
         rgbGen entity
-        tcMod rotate 100
         tcMod scale 2 3
-		tcMod scroll 0 -2 
+		tcMod scroll -2 0 
 	}
 }
 //###################################################//
