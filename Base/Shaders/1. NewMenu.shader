@@ -618,25 +618,25 @@ menu/menu_blendboxr
         map menu/staticnew
         blendFunc GL_DST_COLOR GL_ONE
         tcMod scroll 1 0
-		tcMod scale	1 2
+		tcMod scale	2 1
     }
     {
         map menu/staticnew
         blendFunc GL_DST_COLOR GL_ONE
         tcMod scroll -1 0
-		tcMod scale 1 2
+		tcMod scale 2 1 
     }
     {
         map menu/staticnew
         blendFunc GL_DST_COLOR GL_ONE
         tcMod scroll 1.7 0
-		tcMod scale	1 2
+		tcMod scale	2 1
     }
     {
         map menu/staticnew
         blendFunc GL_DST_COLOR GL_ONE
         tcMod scroll -1.7 0
-		tcMod scale	1 2
+		tcMod scale	2 1
     }
 }
 

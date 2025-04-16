@@ -1,15 +1,14 @@
-//----------------------------------------------------------------------------------------------
-// 										INGAME SETUP MENU
-//								Allow user to setup video and stuff
-//----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________________
+// 									ВНУТРИИГРОВОЕ МЕНЮ НАСТРОЙКИ ГРАФИКИ					
+//_______________________________________________________________________________________________
 {
 	menuDef 
 	{
-		name						"InGameSetupMenu"
-		fullScreen					0								
-		rect						0 0 640 480			
-		visible						1				
-		focusColor					1 0.2 0.2 1				
+		Name						"InGameSetupMenu"
+		FullScreen					0								
+		Rect						0 0 640 480			
+		Visible						1				
+		FocusColor					1 1 1 1			
 	onOpen 
 		{
 		uiScript					getvideosetup 
@@ -17,8 +16,7 @@
 			hide						group_defaults
 			hide						group_sound
 			hide						group_graphics
-
-			//hide						ApplyChanges 
+			hide						ApplyChanges 
 			hide						group_vidrestart 
 			
 			show						defaults
@@ -26,20 +24,16 @@
 			show						group_menu
 			show						group_screen
 			show 						redux
-//*********************
-// Кнопки в меню
-//*********************	
-			transition					border_setup	   80 57 480 0 80 57 480 412 15 15
-//*********************
-// Кнопки в меню
-//*********************
-			transition					Videobutton			  0 -100 160  30   0 0 160  30 15 15
-			transition					Graphicsbutton		160 -100 160  30 160 0 160  30 15 15
-			transition					Soundbutton			320 -100 160  30 320 0 160  30 15 15
-			transition					Defaultsbutton		480 -100 160  30 480 0 160  30 15 15
+			show						sidebutton_glow_red
 			
-			setitemrect					escapebutton		530 58 30 28  				
-//*********************	
+			transition					border_setup	   	 80   57 480  0  80 57 480 412 15 15
+			transition					Videobutton			  0 -100 160 30   0  0 160  30 15 15
+			transition					Graphicsbutton		160 -100 160 30 160  0 160  30 15 15
+			transition					Soundbutton			320 -100 160 30 320  0 160  30 15 15
+			transition					Defaultsbutton		480 -100 160 30 480  0 160  30 15 15
+			transition					sidebutton_glow_red	  0 -100 160 30   0  0 160  30 15 15
+			
+			setitemrect					escapebutton		530   58  30 28  	
 		}
 	onClose
 		{
@@ -49,7 +43,7 @@
 		{ 
 			play					"sound/interface/esc.wav" 					
 			defer					VideoSetup				VideoWarningGameMenu
-			close					all
+			close					InGameSetupMenu
 			open					ingameMainMenu
 		}
 //_______________________________________________________________________________________________
@@ -83,24 +77,35 @@
 			decoration	
 		mouseEnter 			
 			{ 	
-				setitemcolor	border_setup		bordercolor			0 0 1 1
+				setitemcolor	border_setup		bordercolor			1 1 1 1
 			}
 		mouseExit 			
 			{
-				setitemcolor	border_setup		bordercolor			1 1 1 1
+				setitemcolor	border_setup		bordercolor			0 0 1 1
 			}
 		}
 //********************
-// Выделение текста
+// Выделение текста (Синий)
 //********************	
 	itemDef 
 		{
 			name				sidebutton_glow
 			style				WINDOW_STYLE_SHADER
-			background			"side_vertex"
-			forecolor			0.1 0.1 0.1 1
+			background			"menu/menu_blendbox"
+			forecolor			1 0 0 0.5
 			decoration
 		}
+//*********
+// Выделение элементов (Красный)
+//*********
+	itemDef 
+		{
+			name				sidebutton_glow_red
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendboxr"
+			forecolor			.95 .64 .37 1
+			decoration
+		}		
 //----------------------------------------------------------------------------------------------
 //									ОСНОВНОЕ КОНТЕКСТНОЕ МЕНЮ
 //----------------------------------------------------------------------------------------------
@@ -140,8 +145,9 @@
 				defer				VideoSetup			videowarningMenu 
 				uiScript			getvideosetup 	   	// Get video settings
 					
-			transition				border_setup	   	80  57 480  0  80 57 480 412 15 15
-			setitemrect				escapebutton	    530 58 30 28 
+				transition				border_setup	   	80  57 480  0  80 57 480 412 15 15
+				setitemrect				escapebutton	    530 58 30 28
+				setitemrect				sidebutton_glow_red 0 0 160 30
 				show				group_screen
 				show				defaults
 				
@@ -186,8 +192,9 @@ itemDef
 				play				sound/interface/sub_select 
 				defer				VideoSetup	videowarningMenu 	
 				
-				transition			border_setup	   -2 30 641 0 -2 30 641 448 15 15
-				setitemrect			escapebutton	   600 58 30 28
+				transition			border_setup	   	-2 30 641 0 -2 30 641 448 15 15
+				setitemrect			escapebutton	   	600 58 30 28
+				setitemrect			sidebutton_glow_red	160 0 160 30
 				show				group_graphics
 				show				defaults
 				
@@ -234,6 +241,7 @@ itemDef
 				
 				transition			border_setup	  	80 57 480 0 80 57 480 412 15 15
 				setitemrect			escapebutton	    530 58 30 28
+				setitemrect			sidebutton_glow_red	320 0 160 30
 				show				group_sound
 				
 				hide				group_graphics
@@ -678,6 +686,7 @@ itemDef
 				hide			group_screen
 				hide			group_menu
 				hide			redux
+				hide			sidebutton_glow_red
 				
 				show			brightness
 			} 
@@ -689,6 +698,7 @@ itemDef
 				show			group_screen
 				show			group_menu
 				show			redux
+				show			sidebutton_glow_red
 					
 				setitemcolor	Blur	forecolor		1 1 0.9 0.45
 			}			
@@ -730,28 +740,26 @@ itemDef
 			{ 
 				show			sidebutton_glow
 				setitemrect		sidebutton_glow			120 255 420 20
-			/*
-				setitemcolor	Blur	forecolor		1 1 0.9 0.1
 				
-				hide			defaults
-				hide			group_graphics
-				hide			group_vidrestart 
-				hide			group_screen
-				hide			group_menu
-				hide			redux
-			*/
+			//	setitemcolor	Blur	forecolor		1 1 0.9 0.1
+				
+			//	hide			defaults
+			//	hide			group_graphics
+			//	hide			group_vidrestart 
+			//	hide			group_screen
+			//	hide			group_menu
+			//	hide			redux
 			} 
 		mouseExit 
 			{
-				hide			sidebutton_glow
-			/*	
-				show			defaults 
-				show			group_screen
-				show			group_menu
-				show			redux
-					
-				setitemcolor	Blur	forecolor		1 1 0.9 0.45
-			*/
+				hide			sidebutton_glow	
+				
+			//	show			defaults 
+			//	show			group_screen
+			//	show			group_menu
+			//	show			redux
+			//		
+			//	setitemcolor	Blur	forecolor		1 1 0.9 0.45
 			}			
 		action 				
 			{ 
@@ -799,6 +807,7 @@ itemDef
 				hide			group_screen
 				hide			group_menu
 				hide			redux
+				hide			sidebutton_glow_red
 				
 				show			fov
 			} 
@@ -810,6 +819,7 @@ itemDef
 				show			group_screen
 				show			group_menu
 				show			redux
+				show			sidebutton_glow_red
 					
 				setitemcolor	Blur	forecolor		1 1 0.9 0.45
 			}			
@@ -2622,6 +2632,7 @@ itemDef
 				hide				defaults
 				hide				sidebutton_glow
 				hide				redux
+				hide				sidebutton_glow_red
 				
 				show				group_defaults	
 			}

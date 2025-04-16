@@ -1,10 +1,9 @@
-//------------------------------------------------------------------------------------------------
-//										 LOADGAME MENU 
-//------------------------------------------------------------------------------------------------
+//										Загрузочное меню 
+//_______________________________________________________________________________________
 //									     ***ВАЖНО*** 										  
 //								Это имя нельзя изменить, его ищет код.
 //	   		 Если он должен измениться, измените его также в UI_AdjustSaveGameListBox()		
-//-----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________
 {
 	menuDef 
 	{
@@ -12,206 +11,131 @@
 		visible					1
 		fullScreen				1
 		focusColor				1 1 1 1	
+	onOpen
+		{
+			play 				"sound/interface/transition"
+			uiScript			ReadSaveDirectory ;
+			
+			setitemcolor		load				forecolor					   1 1 1 0
+			setitemcolor		back				forecolor					   1 1 1 0
+			setitemcolor		delete				forecolor					   1 1 1 0
+			setitemcolor		cheacpoint			forecolor					   1 1 1 0
+
+			transition			load				 -2 -100 160  30  -2  0 160   30 15 15
+			transition			delete			    158 -100 160  30 158  0 160   30 15 15
+			transition			cheacpoint		    318 -100 200  30 318  0 200   30 15 15
+			transition			back			    518 -100 121  30 518  0 121   30 15 15
+			
+			transition			backload			156  640 322 250 156 228 322 250 15 15
+			transition			loadgamepic		    158 -230 320 200 158  30 320 200 15 15
+			transition			loadgamelist		156  640 322 247 156 229 322 247 15 15
+			transition			backloadgamepic	    156 -230 322 202 156  29 322 202 15 15
+			
+			fadein				load
+			fadein				back
+			fadein				delete
+			fadein				cheacpoint
+		}
 	onESC 
 		{ 
 			play				"sound/interface/esc.wav" 
 			close				all
 			open				ReduxMainMenu
 		}
-	onOpen
+	onClose
 		{
-			uiScript			ReadSaveDirectory ;
-			
-			show				textmenu
-			setitemcolor		textmenu 			forecolor			.95 .64 .37 0
-			fadein				textmenu
-			
-			transition			border_load			640 198 460 280 	180 198 459 280	 	6 8	
-			transition			border_text_menu   -183  -3 185 483		 -3  -3 185 483		6 8	
-			transition			border_screan		640  -1 459 200		180  -1 459 200		6 8	
-			transition			border_academy	   -183   5 185  60		 -3  -3 185  70		6 8	
-			
-			transition			academy			   -180   5 175  60		  3   5 175  60		6 8	
-			
-			transition			loadgamelist		640 198 457 278		182 198 458 282		6 8 
-			transition			loadgamepic			640   0 460 200		183   0 460 200		6 8
 		}
-//----------------------------------------------------------------------------------------------
-//	                                      ФОН МЕНЮ
-//----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________
+//
+//									ЭЛЕМЕНТЫ В МЕНЮ                              
+//_______________________________________________________________________________________
+//************
 //ФОН МЕНЮ
+//************
 	itemDef 
 		{
 			name				groundmenu
 			group				groundmenu
 			style				WINDOW_STYLE_SHADER
-			rect				-10 -5 650 485
-			background			"menu/ground/MenuGround"
+			rect				0 0 640 480
+			background			"GroundMenu"
 			forecolor			1 1 1 1
 			visible				1
 			decoration
 		}
-//----------------------------------------------------------------------------------------
-//   							ЗАТЕМНЕНЕНИЕ ФОНА
-//----------------------------------------------------------------------------------------
-	
+//*********
+//СКРИН ЗАГРУЗОЧНОГО ЭКРАНА	
+//*********
 	itemDef 
 		{
-			name				black_ground
-			rect				0 0 640 480
-			style 				WINDOW_STYLE_FILLED
-			backcolor			0 0 0 0.5
-			forecolor			0 0 0 0.5
+			name				loadgamepic
+			style				WINDOW_STYLE_FILLED
+			rect				158 30 320 200			
+			ownerdraw			236					//UI_ALLMAPS_SELECTION		
+			forecolor			1 1 1 1
+			visible				1 
+			decoration 
+		}
+//*********
+// Фон
+//*********
+	itemDef 
+		{
+			name				backloadgamepic
+			style				WINDOW_STYLE_FILLED
+			rect				156 29 322 202	
+			border				3
+			bordersize			2
+			bordercolor			1 1 1 1
 			visible				1
 			decoration
-		}
-//----------------------------------------------------------------------------------------------
-//	                               СИНИЯ СТРОКА ДЛЯ МЕНЮ
-//----------------------------------------------------------------------------------------------
-
+		}	
+//*********		
 //ВЫДЕЛЕНИЕ
+//*********
 	itemDef 
 		{
 			name				sidebutton_glow
-			group				none
 			style				WINDOW_STYLE_SHADER
 			rect				0 0 0 0
 			background			"menu/menu_blendbox"
 			forecolor			1 0 0 0.5
 			decoration
 		}
-//СИИНЙ БАРДЮР ДЛЯ ТЕКСТА МЕНЮ
-	 itemDef 
-		{
-			name				border_text_menu
-			group				menu
-			style				WINDOW_STYLE_SHADER
-			rect				-3 -3 185 483
-			background			"bordermenu"		
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			border				1
-			bordersize			2
-			bordercolor			0.2 0.2 1 0.5
-			decoration
-		}
-	 itemDef 
-		{
-			name				border_academy
-			group				border_academy
-			style				WINDOW_STYLE_FILLED
-			rect				-3 -3 185 70	
-			forecolor			1 1 1 1
-			visible				1
-			border				2
-			bordersize			2
-			bordercolor			0.2 0.2 1 0.5
-			decoration
-		}
-//TEXT ACADEMY
-	itemDef 
-		{
-			name				academy
-			group				academy
-			style				WINDOW_STYLE_SHADER
-			rect				3 5 175 60
-			background			"menu/interface/academy"
-			visible				1
-			decoration
-		}
-//----------------------------------------------------------------------------------------------
-//	                               МЕНЮ ДОБАВЛЕНИЕ СТРЕЛКИ
-//----------------------------------------------------------------------------------------------
-	itemDef 
-		{
-			name				dp1
-			group				dp_arrow
-			style				WINDOW_STYLE_SHADER
-			rect				5 180 15 15
-			background			"menu/dp_arrow_r"		
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-	itemDef 
-		{
-			name				dp2
-			group				dp_arrow
-			style				WINDOW_STYLE_SHADER
-			rect				5 230 15 15
-			background			"menu/dp_arrow_r"		
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-	itemDef 
-		{
-			name				dp3
-			group				dp_arrow
-			style				WINDOW_STYLE_SHADER
-			rect				5 280 15 15
-			background			"menu/dp_arrow_r"		
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-	itemDef 
-		{
-			name				dp4
-			group				dp_arrow
-			style				WINDOW_STYLE_SHADER
-			rect				5 430 15 15
-			background			"menu/dp_arrow_r"		
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-//----------------------------------------------------------------------------------------------
-//								ОСНОВНОЕ МЕНЮ СЛЕВОЙ СТОРОНЫ
-//----------------------------------------------------------------------------------------------
-//ВЫДЕЛЕНИЕ СТРОК МЕНЮ
-	itemDef 
-		{
-			name				dp
-			group				none
-			style				WINDOW_STYLE_SHADER
-			rect				0 0 15 15
-			background			"menu/dp_arrow_ron"
-			forecolor			1 1 1 1
-			visible				0
-			decoration
-		}
+//_______________________________________________________________________________________
+//
+//									ОСНОВНОЕ МЕНЮ                              
+//_______________________________________________________________________________________
+//*******************
 //КНОПКА "ЗАГРУЗИТЬ"
+//*******************
 	itemDef 
 		{
-			name				loadgameaction
+			name				load
 			group				textmenu
-			text				@MENUS_LOAD
-			style				WINDOW_STYLE_EMPTY
-			rect				30 180 60 20
+			text				@MENUS_LOAD_GAME
+			style				WINDOW_STYLE_SHADER
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
-			font				5
-			textscale			0.7
-			forecolor			.95 .64 .37 1
-			visible				0
+			font				3
+			textscale			1			
+			textalignx			18
+			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
 		mouseEnter 
 			{ 
-				show 			dp
-				setitemrect		dp				 	 5 180 15 15
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-20 165 200 40
+				setitemrect		sidebutton_glow		-2 0 160 30
 			} 
 		mouseExit 
 			{ 
-				hide			dp
 				hide			sidebutton_glow
 			} 
 		action 
@@ -220,32 +144,36 @@
 				uiScript		loadgame
 			}
 		}
+//*******************
 //КНОПКА "УДАЛИТЬ"
+//*******************
 	itemDef 
 		{
-			name				deletegamebutton
+			name				delete
 			group				textmenu
 			text				@MENUS_DELETE_GAME
-			style				WINDOW_STYLE_EMPTY
-			rect				30 230 130 24
-			font				5
-			textscale			0.7
+			style				WINDOW_STYLE_SHADER
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
-			forecolor			.95 .64 .37 1
-			visible				0
+			font				3
+			textscale			1			
+			textalignx			28
+			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
 		mouseEnter 
 			{ 
-				show 			dp	
-				setitemrect		dp				  	5 230 15 15
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-20 215 200 40
+				setitemrect		sidebutton_glow		160 0 158 30
 			} 
 		mouseExit 
 			{ 
-				hide			dp
 				hide			sidebutton_glow
 			} 
 		action
@@ -254,35 +182,37 @@
 				uiScript		deletegame
 			}
 		}
+//*******************
 //КОНТРОЛЬНАЯ ТОЧКА
+//*******************
 	itemDef 
 		{
-			name				resumeautobutton
+			name				cheacpoint
 			group				textmenu
 			text				@MENUS_RESUME_MISSION
 			text2				@MENUS_RESUME_MISSIONN
-			style				WINDOW_STYLE_EMPTY
-			rect				30 280 150 30
-			font				5
-			textscale			0.7
+			style				WINDOW_STYLE_SHADER
 			textalign			ITEM_ALIGN_LEFT
-			text2alignx			40
-			text2aligny			20
 			textstyle			3
-			forecolor			.95 .64 .37 1
-			visible				0					// This button isn't used when not in game.
-			cvarTest			ui_ResumeOK
+			font				3
+			textscale			1			
+			textalignx			18
+			textaligny			0
+			text2alignx			118
+			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			border				4
+			visible				1
 		mouseEnter 
 			{ 
-				show			dp
-				setitemrect		dp				 	 5 280 15 15
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-20 265 200 40
+				setitemrect		sidebutton_glow		320 0 198 30
 			} 
 		mouseExit 
 			{ 
-				hide			dp
 				hide			sidebutton_glow
 			} 
 		action
@@ -291,33 +221,39 @@
 				uiScript		loadAuto
 			}
 		}
+//*******************
 //КНОПКА "НАЗАД"
+//*******************
 	itemDef 
 		{
-			name				backbutton
+			name				back
 			group				textmenu
 			text				@MENUS_BACK_CAPS
-			style				WINDOW_STYLE_EMPTY
-			rect				30 430 150 30
-			font				5
-			textscale			0.7
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
-			forecolor			.95 .64 .37 1
+			font				3
+			textscale			1			
+			textalignx			40
+			textaligny			0
+			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
-			visible				0
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			border				4
+			
+			visible				1
 		mouseEnter 
-			{ 
-				show			dp 					 
-				setitemrect		dp					 5	430	15	15
+			{
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-20 415 200 40
+				setitemrect		sidebutton_glow		520 0 118 30
 			}
 		mouseExit 
-			{ 
-				hide				dp
-				hide				sidebutton_glow
-			}			
+			{ 				
+				hide			sidebutton_glow
+			}	  	  
 		action 
 			{ 
 				play			"sound/interface/esc.wav" 
@@ -325,34 +261,43 @@
 				open			ReduxMainMenu 
 			}
 		}
-//----------------------------------------------------------------------------------------------
-//   								LOAD GAME MENU specific stuff
-//----------------------------------------------------------------------------------------------
-//СОХРАНЕНИЕ ИГР В ПРИВЕДЕННОМ СПИСКЕ
+//***
 	itemDef 
 		{
-
+			name				backload
+			style				WINDOW_STYLE_FILLED
+			rect				156 228 322 250	
+			bordersize			2
+			border				1
+			bordercolor			1 1 1 1
+			backcolor			.1 .1	.6 .5
+			decoration
+			visible				1
+		}
+//**********
+//СОХРАНЕНИЕ ИГР В ПРИВЕДЕННОМ СПИСКЕ
+//**********
+	itemDef 
+		{
 			name				loadgamelist
-			group				none
-			rect				183 205 457 280
+			rect				156 229 322.5 247
 			type				ITEM_TYPE_LISTBOX
-			style				WINDOW_STYLE_FILLED	
+			style				WINDOW_STYLE_FILLED
+			outlinecolor		1 1 1 0.5
 			elementwidth		400
 			elementheight		16
 			font				4
+			textstyle			5
 			textaligny			10
 			textscale			1.05
-	//БАРДЮР
-			//bordersize			1
-			//bordercolor			0 0 .8 1
-			forecolor			.549 .854 1 1
-			backcolor			0 0 .5 .25
-			outlinecolor		.5 .5 .5 .5
+			forecolor			.95 .64 .37 1
+			
 			elementtype			LISTBOX_TEXT
 			feeder				FEEDER_SAVEGAMES
 			notselectable
+			columns				2 2 200 0 600 0 0 //# кол., x лок. 1-го столбца, число 2, похоже, ничего не делает, третье - ширина столбца
+			
 			visible				1
-			columns				2 2 200 200 280 200 160 //# кол., x лок. 1-го столбца, число 2, похоже, ничего не делает, третье - ширина столбца
 		mouseEnter 
 			{ 
 				setitemcolor	loadgamelist bordercolor 1 1 1 1
@@ -371,17 +316,21 @@
 				play			sound/interface/sub_select 
 			}
 		}
-//СКРИН ЗАГРУЗОЧНОГО ЭКРАНА	
+//***********
+// REDUX 2025
+//************
 	itemDef 
 		{
-			name				loadgamepic
-			group				none
-			style				WINDOW_STYLE_EMPTY
-			rect				183 2 460 200			
-			ownerdraw			236					//UI_ALLMAPS_SELECTION		
-			forecolor			1 1 1 1
-			visible				1 
-			decoration 
+			name				redux
+			group				redux
+			text				"REDUX 2025"
+			rect				590 460 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			0.5 0.1 0.1 1
+			visible				1
+			decoration
 		}
 	}
 }

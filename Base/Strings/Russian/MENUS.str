@@ -5762,73 +5762,63 @@ LANG_ENGLISH        "COMPILED TEXTURES"
 LANG_RUSSIAN         "Компиляция текстур:"
 
 REFERENCE          	SHOW_SKY
-NOTES				"Menus"
 LANG_ENGLISH        "Show sky"
 LANG_RUSSIAN         "Прорисовка гор:"
 
 REFERENCE          	FAST_SKY
-NOTES				"Menus"
 LANG_ENGLISH        "Fast sky"
 LANG_RUSSIAN         "Небо:"
 
 REFERENCE          	SPRITES
-NOTES				"Menus"
 LANG_ENGLISH        "Sprites"
 LANG_RUSSIAN         "Растительность:"
 
 REFERENCE          	DEPHTBITS
-NOTES				"Menus"
 LANG_ENGLISH        "Depth bits"
 LANG_RUSSIAN         "Качесто пикселей:"
 
 REFERENCE          	ENV_ADD
-NOTES				"Menus"
 LANG_ENGLISH        "texture env add"
 LANG_RUSSIAN         "Отражения текстур:"
 
 REFERENCE           8_BIT
-NOTES				"Menus"
 LANG_ENGLISH        "8 - bit"
 LANG_RUSSIAN         "8 - разряда"
 
 REFERENCE           24_BIT
-NOTES				"Menus"
 LANG_ENGLISH        "24 - bit"
 LANG_RUSSIAN         "24 - разряда"
 
 REFERENCE          	UPGRATED
-NOTES				"Menus"
 LANG_ENGLISH        "Upgrated"
 LANG_RUSSIAN         "Улучшеные"
 
 REFERENCE         	 LANG
-NOTES				"Menus"
 LANG_ENGLISH        "Language"
 LANG_RUSSIAN         "НАСТРОЙКА ЯЗЫКА"
 
 REFERENCE           SOUNDED
-NOTES               "Setup/Sound button"
 LANG_ENGLISH        "SOUND"
 LANG_RUSSIAN         "ЗВУК"
 
 REFERENCE           FPS_60
-NOTES               "Setup/Sound button"
 LANG_ENGLISH        "60 fps"
 LANG_RUSSIAN         "60 кадров/с"
 
 REFERENCE           FPS_45
-NOTES               "Setup/Sound button"
 LANG_ENGLISH        "45 fps"
 LANG_RUSSIAN         "45 кадров/с"
 
 REFERENCE           FPS_30
-NOTES               "Setup/Sound button"
 LANG_ENGLISH        "30 fps"
 LANG_RUSSIAN         "30 кадров/с"
 
 REFERENCE           LEAVE_MAIN
-NOTES               "Game"
 LANG_ENGLISH        "Leave main"
 LANG_RUSSIAN         "ВЫЙТИ ИЗ ИГРЫ"
+
+REFERENCE           CAMERA_HEIGHT
+LANG_ENGLISH        "Camera height"
+LANG_RUSSIAN         "Высота камеры: N (Настройки в AutoExec.cfg)"
 
 ENDMARKER

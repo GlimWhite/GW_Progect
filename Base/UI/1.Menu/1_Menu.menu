@@ -207,7 +207,7 @@
 			textscale				0.7
 			forecolor				.95 .64 .37 1
 			textalignx				90
-			textaligny				7		
+			textaligny				4		
 			background				"BoxMenu"
 			
 		mouseEnter 			
@@ -245,7 +245,7 @@
 			textalign				ITEM_ALIGN_LEFT
 			textstyle				3
 			forecolor				.95 .64 .37 1
-			textaligny				7	
+			textaligny				4	
 			textalignx				35	
 			background				"BoxMenu"
 			
@@ -285,7 +285,7 @@
 			textalign				ITEM_ALIGN_LEFT
 			textstyle				3
 			forecolor				.95 .64 .37 1
-			textaligny				7	
+			textaligny				4	
 			textalignx				25	
 			background				"BoxMenu"
 			
@@ -325,7 +325,7 @@
 			textalign				ITEM_ALIGN_LEFT
 			textstyle				3
 			forecolor				.95 .64 .37 1
-			textaligny				7		
+			textaligny				4		
 			textalignx				30
 			background				"BoxMenu"
   	
@@ -362,11 +362,11 @@
 			rect					30 380 120 15
 			font					5
 			textscale				.7
-			textstyle				3
+			textstyle				4
 			textalign				ITEM_ALIGN_LEFT
 			forecolor				.95 .64 .37 1
 			textalignx				55
-			textaligny				7		
+			textaligny				4		
 			background				"BoxMenu"
 
 		mouseEnter 			
@@ -407,7 +407,7 @@
 			textstyle				3
 			forecolor				.95 .64 .37 1
 			textalignx				50
-			textaligny				7		
+			textaligny				4		
 			background				"BoxMenu"
 			
 		mouseEnter 			
@@ -456,7 +456,7 @@
 			name				redux
 			group				redux
 			text				"REDUX"
-			rect				615 468 0 0
+			rect				615 460 0 0
 			font				5
 			textscale			0.5
 			textalign			ITEM_ALIGN_CENTER

@@ -90,9 +90,11 @@
 			{ 
 				play			"sound/interface/button1.wav"  
 				close			all  
-				open			ingameMissionSelect2
+				open			saberMenu
 			}
 		}
+		
+		
 //********************
 // Выделение для текста
 //********************
@@ -102,7 +104,7 @@
 			group				none
 			style				WINDOW_STYLE_SHADER
 			background			"menu/menu_blendbox"
-			forecolor			0.1 0 0.4 0.05
+			forecolor			1 0 0 0.5
 			visible				1
 			decoration
 		}

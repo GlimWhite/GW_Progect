@@ -28,7 +28,7 @@
 		fadeClamp						1.0									// sets the fadeup alpha
 		fadeCycle						1									// how often fade happens in milliseconds
 		fadeAmount						0.1									// amount to adjust alpha per cycle
-//		shadowColor						0.1 0.1 0.1 0.0						// shadow color
+		//shadowColor						0.1 0.1 0.1 0.0						// shadow color
 		focuscolor						1 1 1 1
 	precacheSound
 		{

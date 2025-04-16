@@ -1,9 +1,7 @@
 
 {
-
-
 	
-	
+	LoadMenu	{ "UI/2.In_Game_Menu/0_Global.menu"   		}
 	LoadMenu	{ "UI/2.In_Game_Menu/1_Main.menu" 	    	}
 	LoadMenu	{ "UI/2.In_Game_Menu/2_Save.menu"      		}
 	LoadMenu	{ "UI/2.In_Game_Menu/3_Load.menu"      	 	}
@@ -11,10 +9,9 @@
 	LoadMenu	{ "UI/2.In_Game_Menu/5_Setup.menu"    		}
 	LoadMenu	{ "UI/2.In_Game_Menu/6_Quit.menu"      		}
 	LoadMenu	{ "UI/2.In_Game_Menu/7_Saber.menu"			}
-	loadMenu 	{ "UI/2.In_Game_Menu/8_SaberStyle.menu" 	}
-	LoadMenu	{ "UI/2.In_Game_Menu/9_Global.menu"   		}
-	LoadMenu	{ "UI/2.In_Game_Menu/10_Missionfailed.menu" }
-	LoadMenu	{ "UI/2.In_Game_Menu/11_LoadDead.menu"		}
+	//loadMenu 	{ "UI/2.In_Game_Menu/8_SaberStyle.menu" 	}
+	//LoadMenu	{ "UI/2.In_Game_Menu/10_Missionfailed.menu" }
+	//LoadMenu	{ "UI/2.In_Game_Menu/11_LoadDead.menu"		}
 
 	LoadMenu 	{ "UI/Select/GotoTier.menu"			}
 	LoadMenu	{ "UI/Select/ForceSelect.menu"		}
@@ -32,12 +29,9 @@
 	LoadMenu	{ "UI/OtherMenu/LoadScreen.menu" 	}
 	LoadMenu	{ "UI/OtherMenu/Error.menu" 		}
 	
-	LoadMenu 	{ "UI/Select/MissionSelect2.menu"		}
-	
-	LoadMenu	{ "UI/1.Menu/10_Mods.menu" 				}
-	LoadMenu	{ "UI/1.Menu/1_Menu.menu" 				}
-	LoadMenu	{ "UI/1.Menu/3_LoadGame.menu" 			}
-LoadMenu	{ "UI/OtherMenu/Warning.menu" 		}
+	LoadMenu 	{ "UI/Select/MissionSelect2.menu"	}
+
+	LoadMenu	{ "UI/OtherMenu/Warning.menu" 		}
 	
 	
 	
