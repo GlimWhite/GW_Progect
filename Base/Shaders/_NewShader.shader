@@ -13,7 +13,7 @@ textures/sky
 	skyParms	textures/skies/yavin 512 -
 }
 
-
+/*
 textures/doormetal
 {
 	q3map_material			SolidMetal
@@ -58,6 +58,7 @@ textures/wall_academy
         map textures/yavin/supports
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen vertex
+		tcMod	0.25 0.25
     }
 }
 
@@ -108,7 +109,7 @@ textures/flooracademy3
 		rgbGen vertex
     }
 }
-
+/*
 textures/flooracademy3
 {
 	q3map_material			SolidMetal
@@ -121,6 +122,7 @@ textures/flooracademy3
         map textures/yavin/floor
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen vertex
+		tcMod	0.25 0.25
     }
 }
 
@@ -136,6 +138,7 @@ textures/stair_academy
         map textures/yavin/trimblock2
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen vertex
+		tcMod	0.25 0.25
     }
 }
 
@@ -151,9 +154,10 @@ textures/stair_academy2
         map textures/yavin/stone4
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen vertex
+		tcMod	0.25 0.25
     }
 }
-
+*/
 textures/skip
 {
 	q3map_material			SolidMetal

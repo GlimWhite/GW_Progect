@@ -13,8 +13,8 @@ LoadMenu	{ "UI/1.Menu/7_Character.menu" 		}
 LoadMenu	{ "UI/1.Menu/8_Saber.menu" 			}
 Loadmenu	{ "UI/1.Menu/9_Global.menu"			}
 LoadMenu	{ "UI/1.Menu/10_Mods.menu" 			}
+LoadMenu	{ "UI/1.Menu/11_Warning.menu" 		}
 LoadMenu	{ "UI/OtherMenu/LoadScreen.menu" 	}
-LoadMenu	{ "UI/OtherMenu/Warning.menu" 		}
 LoadMenu	{ "UI/OtherMenu/Error.menu" 		}
 }
 

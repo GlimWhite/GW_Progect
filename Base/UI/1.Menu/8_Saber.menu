@@ -6,49 +6,34 @@
 	menuDef 
 	{
 		name					"saberMenu"
-		fullScreen				1					// MENU_TRUE				
-		visible					1					// Visible on open
-		focusColor				1 1 1 1				// Focus color for text and items	
+		fullScreen				1				
+		visible					1					
+		focusColor				1 1 1 1					
 	onOpen
 		{	
-		//Титутл
-			transition			create_title	   -345   0 370 20 -25   0 370  20 18 18
-		//Тип меча
-			transition			box_typebut	  	   -345  15 342 44	-2  15 342  44 18 18
-			transition			typebut		   	   -345  31 120 40	14  31 120  40 18 18
-		//Одноручный меч
-			transition			box_typebut_single -345  59 342 44  -2  59 342  44 18 18
-			transition			typebut_single	   -345  75 120 40  86  75 120  40 18 18		
-			transition			saberstyle	  	   -345 249 120 40  14 249 120  40 18 18
-			transition			box_single_style   -345 235 342 44  -2 235 342  44 18 18
-		//Двухрычный меч
-			transition			box_typebut_dual   -345 103 342 44  -2 103 342  44 18 18	
-			transition			typebut_dual	   -345 119 120 40 108 119 120  40 18 18	
-		//Посох
-			transition			box_typebut_staff  -345 147 342 44	-2 147 342  44 18 18	
-			transition			typebut_staff	   -345 163 120 40  84 163 120  40 18 18	
-		//Нефисы
-			transition			box_hilttype	   -345 191 342 44	-2 191 342  44 18 18
-			transition			hiltbut			   -345 205 120 40	14 205 120  40 18 18
-			transition			hiltbut2		   -345 205 120 40  14 249 120  40 18 18
-			transition			hiltbut_staves	   -345 205 120 40  14 205 120  40 18 18
-		//Цвета
-			transition			box_color1			640  15 342 44	340 15 298 	44 18 18
-			transition			color_title			640   0 370 20  320  0 370  20 18 18
-			transition			border_color		640  -2 298 17 	340 -2 298  17 18 18
-			transition			box_color2			640  59 342 44	340 59 298 	44 18 18
-			hide				box_color2
-		//Назад
-			transition			box_back	         -2 448 170  32	 -2 448 170  32 18 18
-			transition			back			     55 450 120  24  55 450 120  24 18 18
-		//Далее
-			transition			box_next	   		168 448 170  32 168 448 170  32 18 18
-			transition			next			    210 450 120  32 210 450 120  32	18 18
-			transition			continue		    210 450 120  32 210 450 120  32	18 18
-		//Лазерный меч
-			transition			saber			  -200 -200 900 700	-200 -200 900 700 18 18 
-		//Фон для меню
-			transition			border_menu		   -345  -2 342 280	-2  -2   342.5 280.5 18 18
+		//Перемещение
+			transition			create_title_saber	  0  10   0 30   0  10 220  30 15 15	//Титул создание меча
+			transition			typebut		   	      0  40   0 30   0  40 120  30 15 15	//Текст "Тип меча"
+			transition			saberstyle_text		  0 120   0 30   0 120 120  30 15 15	//Стиль боя - "Название"
+			transition			hilt_single_text	  0  80   0 30   0  80 120  30 15 15 	//Текст: Рукоять
+			transition			typebut_single		120  40   0 30 120  40 200  30 15 15	//Текст "Одиночный меч"
+			transition			hilt_single		   	120  80   0 30 120  80 200  30 15 15 	//Рукоять - Одноручный
+			transition			hilt_staff	   	    120  80   0 30 120  80 200  30 15 15	//Рукоять - Посох
+			transition			hilt_dual		   	120 120   0 30 120 120 200  30 15 15 	//Рукоять - Двуручный
+			transition			saberstyle			120 120   0 30 120 120 200  30 15 15	//Стиль боя - "Название"
+			
+			transition			color_title			340  10   0 30 340  10 220  30 15 15	//Титул Цвета
+			transition			color_set_text		340  40   0 30 340  40 120  30 15 15	//Текст "Цвет"
+			transition			colorbut			460  40   0 30 460  40 180  30 15 15 	//Выбор Цвета
+			transition			color_set_text2		340  80   0 30 340  80 120  30 15 15	//Текст "Цвет2"
+			transition			colorbut2			460  80   0 30 460  80 180  30 15 15 	//Выбор Цвета
+			
+			transition			border_menu			  0   0 640  0   0   0 640 160 15 15  	//Фон для текста
+			transition			back			      0 450   0 30   0  450 120 30 15 15	//Кнопка "Назад"
+			transition			next			    520 450   0 30 520  450 120 30 15 15	//Кнопка "Вперед"
+			transition			continue		    520 450   0 30 520  450 120 30 15 15	//Кнопка "Продолжить"
+
+			setitemrect			saber			   -300 -250 950 700						//Меч		
 		//Переменные
 			setcvar				"playersave" "(NULL)"
 			setcvar				"tiers_complete" "(NULL)"
@@ -60,6 +45,20 @@
 			uiScript  			"getsabercvars"
 			uiScript  			"updatefightingstylechoices"
 			uiScript  			"resetsabercvardefaults"
+		//Скрыть элементы
+			hide				typebut_dual
+			hide				typebut_staff
+			hide				hilt_dual
+			hide				hilt_staff
+			hide				saber2
+			hide				hilt_single_text2
+			hide				color_set_text2
+			hide				colorbut2
+		//Показать элементы	
+			show				typebut_single
+			show				hilt_single
+			show				saberstyle_text
+			show				saberstyle
 		}	
 	onESC 
 		{ 
@@ -68,55 +67,29 @@
 			uiScript		 	"updatesabercvars"
 			uiScript			closesabermenu		
 		}
-//----------------------------------------------------------------------------------------
-//											ФОН МЕНЮ
-//----------------------------------------------------------------------------------------
-	itemDef 
+//_______________________________________________________________________________________________
+//
+//								ЭЛЕМЕНТЫ МЕНЮ
+//_______________________________________________________________________________________________
+//*********
+// Фон меню
+//*********
+itemDef 
 		{
 			name				groundmenu
-			group				groundmenu
 			style				WINDOW_STYLE_SHADER
 			rect				-10 -5 650 485
-			background			"menu/ground/MenuGround"
+			background			"groundmenu"
 			forecolor			1 1 1 1
 			visible				1
 			decoration
 		}
-//----------------------------------------------------------------------------------------
-//   							ЗАТЕМНЕНЕНИЕ ФОНА
-//----------------------------------------------------------------------------------------
-	itemDef 
-		{
-			name				black_ground
-			rect				0 0 640 480
-			style 				WINDOW_STYLE_FILLED
-			backcolor			0 0 0 0.5
-			forecolor			0 0 0 0.5
-			visible				1
-			decoration
-		}
-//----------------------------------------------------------------------------------------
-// 									ВЫДЕЛЕНИЕ 
-//----------------------------------------------------------------------------------------
-	itemDef 
-		{
-			name				sidebutton_glow
-			group				none
-			style				WINDOW_STYLE_SHADER
-			rect				0 0 0 0
-			background			"menu/menu_blendbox"
-			forecolor			1 0 0 0.5
-			visible				0
-			decoration
-		}
-//----------------------------------------------------------------------------------------
-// 						МЕНЮ ВЫБОР ТИП МЕЧА
-//----------------------------------------------------------------------------------------
-//Бардюр под меню с левой сторны
+//*********
+// Фон для текста
+//*********
 	 itemDef 
 		{
 			name				border_menu
-			group				none
 			style				WINDOW_STYLE_FILLED
 			rect				-2  -2 342.5 280.5
 			backcolor			0 0 .6 .5
@@ -128,319 +101,344 @@
 			decoration
 			decoration
 		}
-//Коробка под текст "Тип меча"		
+//*********
+// BLUR
+//*********
 	itemDef 
 		{
-			name				box_typebut
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			forecolor			0 0 0 0.5
 			visible				1
 			decoration
 		}
-//Текст :"Тип меча"
-	itemDef 
-		{
-			name				typebut
-			group				none
-			text				@MENUS_SABER_TYPE
-			style				WINDOW_STYLE_EMPTY
-			rect				-2  15 342  44
-			textalign			ITEM_ALIGN_LEFT	
-			textstyle			3
-			font				5
-			textscale			0.7
-			forecolor			.95 .64 .37 1
-			visible				1
-			decoration
-		}
-//----------------------------------------------------------------------------------------
-//									МОДЕЛЬ МЕЧА
-//----------------------------------------------------------------------------------------
-//FIRST SABER
+//_______________________________________________________________________________________________
+//
+//								ВЫБОР ТИП МЕЧА В МЕНЮ
+//_______________________________________________________________________________________________
+			//##############################
+			//#		  МОДЕЛЬ МЕЧА 1		   #
+			//##############################
 		itemDef
 		{
 			name				saber
-			group				models
 			type 				ITEM_TYPE_MODEL
-			rect				-200 -125 900 700
 			asset_model			"models/weapons2/saber_1/saber_1.glm"
 			isSaber				1
-			model_angle			30
-			model_rotation		20
+			model_rotation		45
 			model_g2maxs		30 0 25
 			model_fovx			50
 			model_fovy			50
 			visible				1
 			decoration
 		}
-//SECOND SABER
+			//##############################
+			//#		  МОДЕЛЬ МЕЧА 2		   #
+			//##############################
 		itemDef
 		{
 			name				saber2
-			group				models
 			type 				ITEM_TYPE_MODEL
-			rect				-200 -200 900 700
 			asset_model			"models/weapons2/saber_1/saber_1.glm"
 			isSaber2			1
-			model_angle			30
-			model_rotation		20
+			model_rotation		45
 			model_g2maxs		30 0 25
 			model_fovx			50
 			model_fovy			50
 			visible				1
 			decoration
 
-			cvarTest			ui_saber_type
-			hideCvar			{ "single" "staff" }
-
 			decoration
 		}
-//----------------------------------------------------------------------------------------
-// 						ОДНОРУЧНЫЙ МЕЧ
-//----------------------------------------------------------------------------------------
+//*********
+// Титул создание меча
+//*********
 	itemDef 
 		{
-			name				box_typebut_single
-			group				none
+			name				create_title_saber
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
+			background			"BoxMenu"
+			text				@MENUS_LIGHTSABER_CREATION
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			textalignx			10
+			font				3
+			textscale			1.1
+			forecolor			1 1 1 1
+			visible				1 
+			decoration 
+		}
+//*********
+//Текст :"Тип меча"
+//*********
+	itemDef 
+		{
+			name				typebut
+			text				@MENUS_SABER_TYPE
+			style				WINDOW_STYLE_SHADER
+			textalign			ITEM_ALIGN_LEFT	
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			background			"BoxMenu"	
 			visible				1
+			
 			decoration
 		}
-	itemDef 
-		{
-			name				box_single_style
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			rect				-2 235 340  40
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
-			decoration
-		}
+
+			//##############################
+			//#		  ОДНОРУЧНЫЙ МЕЧ	   #
+			//##############################
+			
 	itemDef 
 		{
 			name				typebut_single
-			group				none
 			text				@MENUS_SINGLESABER
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textalignx			10
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
 			visible				1
 			
-			mouseEnter 
+		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  59 342  44
+				setitemrect		sidebutton_glow		0 40 320 30
 			}
-			mouseExit 
+		mouseExit 
 			{ 
 				hide			sidebutton_glow
 			}
-			action 
+		action 
 			{
-				show			box_single_style
-				hide			colorbut2
-				hide			box_color2
-				
-				play			"sound/interface/choose_saber.wav"
-				
-				setcvar			ui_saber_type	"single"
-				exec            "playermodel player_2"
-				uiScript  		"saber_type"
+			play				"sound/interface/choose_saber.wav"
+				//Переменные
 				setcvar			ui_saber		"single_1"
-				setcvar			ui_saber2		""
+				setcvar			ui_saber2		"single_1"
+				//Перемещение
+				transition 		saber 			-300 -250 950 700 -300 -300 950 700 15 15
+				transition		saber2			-300 -250 950 700 -300 -150 950 700 15 15 
+				//Смена
+				hide			typebut_single
+				show			typebut_dual
+				hide			typebut_staff
+				
+				show			hilt_single_text2
+				show			hilt_single
+				show			hilt_dual
+				hide			hilt_staff
+				hide			saberstyle_text
+				hide			saberstyle
+				show			color_set_text2
+				show			colorbut2
+				
+				//Скрипт
 				uiScript  		"saber_hilt"
 				uiScript  		"saber_color"
 				uiScript  		"saber2_hilt"
 				uiScript  		"saber2_color"
-				
-				transition		border_menu			-2   -2 342.5 280.5 -2  -2 342.5 280.5	0 0		
-				transition		saber				-200 -200 900 700 -200 -200 900 700 18 18
-				
 				uiScript  		"updatefightingstylechoices"
+				exec            "playermodel player_2"
 			}
 		}
 
-//----------------------------------------------------------------------------------------
-// 							ДВУХРУЧНЫЙ МЕЧ
-//----------------------------------------------------------------------------------------
-	itemDef 
-		{
-			name				box_typebut_dual
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
-			visible				1
-			decoration
-		}
+			//##############################
+			//#		  ДВУХРУЧНЫЙ МЕЧ	   #
+			//##############################
+			
+
 	itemDef 
 		{
 			name				typebut_dual
-			group				none
 			text				@MENUS_DUALSABERS
-			descText			@MENUS_DUALSABERS_DESC
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
-			rect				32 152 160 16
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
+			rect				120 40 200 30
+			textstyle			3
+			font				3
+			textalignx			10
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
+			visible				0
 
-			visible				1
-
-			mouseEnter 
+		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  103 342  44
+				setitemrect		sidebutton_glow		0 40 320 30
 			}
-			mouseExit 
+		mouseExit 
 			{ 
 				hide			sidebutton_glow
 			}
-			action 
+		action 
 			{
-				show			box_single_style
-				show			colorbut2
-				show			box_color2
-				
-				play			"sound/interface/choose_saber.wav"
-				setcvar			ui_saber_type	"dual"
+			play				"sound/interface/choose_saber.wav"
+				//Перемещение
+				setitemrect		saber			-80 -150 800 600
+				//Смена
+				hide			typebut_single
+				hide			typebut_dual
+				hide			saber2
+				hide			hilt_single_text2
 
-				uiScript  		"saber_type"
+				hide			hilt_single
+				hide			hilt_dual
+				show			hilt_staff
 				
-				setcvar			ui_saber		"single_1"
-				setcvar			ui_saber2		"single_1"
+				show			typebut_staff
+				show			colorbut2
 				
+				hide			color_set_text2
+				hide			colorbut2
+				//Переменные
+				setcvar			ui_saber		"staff_1"
+				setcvar			ui_saber2		""
+				//Скрипты
 				uiScript  		"saber_hilt"
 				uiScript  		"saber_color"
 				uiScript  		"saber2_hilt"
 				uiScript  		"saber2_color"
-				
-				transition		border_menu			-2   -2 342.5 280.5 -2  -2 342.5 280.5 0 0
-				transition 		saber 				-200 -200 900 700 -200 -125 900 700 18 18
-				transition		saber2				-200 -200 900 700 -200 -225 900 700 18 18 
-				
 				uiScript  		"updatefightingstylechoices"
 			}
 		}
-//----------------------------------------------------------------------------------------
-// 									ПОСОХ МЕЧ
-//----------------------------------------------------------------------------------------
-//Строка под текст	
-	itemDef 
-		{
-			name				box_typebut_staff
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
-			visible				1
-			decoration
-		}
+		
+			//##############################
+			//#		  ПОСОХОВЫЙ МЕЧ		   #
+			//##############################
+			
+
 //ТЕКСТ: "ДВУХКЛИНОВЫЙ МЕЧ"
 	itemDef 
 		{
 			name				typebut_staff
-			group				none
 			text				@MENUS_SABERSTAFF
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
-			rect				32 172 160 16
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
-			visible				1
+			rect				120 40 200 30
+			textstyle			3
+			font				3
+			textalignx			10
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
+			visible				0
 
-			mouseEnter 
+		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  147 342  44
+				setitemrect		sidebutton_glow		0 40 320 30
 			}
-			mouseExit 
+		mouseExit 
 			{ 
 				hide			sidebutton_glow
 			}
-			action 
+		action 
 			{
-				hide			box_single_style
-				hide			box_color2
+			play				"sound/interface/choose_saber.wav"
+				//Смена
+				show			typebut_single
+				hide			typebut_dual
+				hide			typebut_staff
+				
+				show			hilt_single
+				hide			hilt_dual
+				hide			hilt_staff
+				show			saberstyle_text
+				show			saberstyle
+				
+				hide			color_set_text2
 				hide			colorbut2
 				
-				play			"sound/interface/choose_saber.wav"
-				setcvar			ui_saber_type	"staff"
-
-				uiScript  		"saber_type"
-				
-				setcvar			ui_saber		"dual_1"
+				//Перемещение	
+				setitemrect		saber			-300 -250 950 700
+				//Переменные
+				setcvar			ui_saber		"single_1"
 				setcvar			ui_saber2		""
-				
+				//Скрипты
 				uiScript  		"saber_hilt"
 				uiScript  		"saber_color"
 				uiScript  		"saber2_hilt"
 				uiScript  		"saber2_color"
-				
-				transition		border_menu			-2 -2 342.5 280.5 -2 -2 342.5 236.5 0 0				
-				transition		saber				-100 -200 900 700 -100 -200 900 700 18 18
-				uiScript  		"updatefightingstylechoices"
 			}
-		}
-//----------------------------------------------------------------------------------------
-//							   HILTS SINGLE
-//----------------------------------------------------------------------------------------
-//Коробка под текст: Нефисы	
+		}			
+//
+//_______________________________________________________________________________________________
+//							ВЫБОР РУКОЯТИ МЕЧА
+//_______________________________________________________________________________________________
+//		
+//FIXME: read these from sabers.cfg + *.sab
+//
+
+			//###################################
+			//		РУКОЯТЬ ОДНОРУЧНЫЙ МЕЧ	    #
+			//###################################
+			
+//****************
+// Текст: Рукоять
+//****************
 	itemDef 
 		{
-			name				box_hilttype
-			group				none
+			name				hilt_single_text
+			text				@MENUS_HILT_NEW
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			
+			textalign			ITEM_ALIGN_LEFT
+			rect				0 80 120 30
 			visible				1
 			decoration
 		}	
-//FIXME: read these from sabers.cfg + *.sab?
-//Один меч
+//****************
+// Текст: Рукоять (2)
+//****************		
 	itemDef 
 		{
-			name				hiltbut
-			group				none
-			text				@MENUS_HILT1
-			descText			@MENUS_HILT1_DESC
-			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
-			textstyle			4
-			font				5
-			textscale			0.7
+			name				hilt_single_text2
+			text				@MENUS_HILT_NEW2
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
 			forecolor			.95 .64 .37 1
+			textalignx			10
 			textalign			ITEM_ALIGN_LEFT
-
-			
-			cvarTest			ui_saber_type
-			hideCvar			{ "staff" }
+			rect				0 120 120 30
+			visible				1
+			decoration
+		}
+//****************
+// Лист Рукоятей
+//****************
+	itemDef 
+		{
+			name				hilt_single
+			text				" "
+			type				ITEM_TYPE_MULTI
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
+			textalign			ITEM_ALIGN_LEFT
 
 			cvar				"ui_saber"
 
@@ -461,7 +459,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  191 342  44
+				setitemrect		sidebutton_glow			0 80 320 30
 			}
 		mouseExit 
 			{ 
@@ -473,69 +471,26 @@
 				uiScript  		"saber_hilt"
 			}
 		}	
-//----------------------------------------------------------------------------------------
-//								СТИЛЬ МЕЧА
-//----------------------------------------------------------------------------------------
-		itemDef 
-		{
-			name				saberstyle
-			group				stylebuttons
-			text				@MENUS_SABERSTYLE
-			descText			@MENUS_FIGHTINGSTYLE
-			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
-			textalign			ITEM_ALIGN_LEFT
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.95 .64 .37 1
-			
-			cvarTest			ui_saber_type
-			showCvar			{ "single" }
-		
-			cvar				"ui_newfightingstyle"
-			cvarStrList
-			{
-				@MENUS_COMBATSTYLEFAST     "0"
-				@MENUS_COMBATSTYLEMEDIUM   "1"
-				@MENUS_COMBATSTYLEHEAVY    "2"
-			}
-			visible				1
-		mouseEnter 
-			{ 
-				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  235 342  44
-			}
-		mouseExit 
-			{ 
-				hide			sidebutton_glow
-			} 
-		}
-//----------------------------------------------------------------------------------------
-//							   HILTS DUAL
-//----------------------------------------------------------------------------------------
-//ЭМФИС для второго меча
+			//###################################
+			//#		РУКОЯТЬ ДВОЙНОЙ МЕЧ	    	#
+			//###################################
 	itemDef 
 		{
-			name				hiltbut2
-			group				none
-			text				@MENUS_HILT2
-			descText			@MENUS_HILT2_DESC
+			name				hilt_dual
+			text				" "
 			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.95 .64 .37 1
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
 			textalign			ITEM_ALIGN_LEFT
-
-			cvarTest			ui_saber_type
-			showCvar			{ "dual" }		
+	
 			cvar				"ui_saber2"
 			
-//FIXME: read these from sabers.cfg + *.sab?
-			cvarStrList
+		cvarStrList
 			{
 				@MENUS_SINGLE_HILT1 	"single_1"
 				@MENUS_SINGLE_HILT2 	"single_2"
@@ -552,7 +507,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  235 342  44
+				setitemrect		sidebutton_glow		0 120 320 30
 			}
 		mouseExit 
 			{ 
@@ -560,33 +515,28 @@
 			}  	  
 		action 
 			{
-				show			saberstyle
 				play			"sound/interface/choose_hilt.wav"
 				uiScript  		"saber2_hilt"
 			}
 		}
-//----------------------------------------------------------------------------------------
-//							   HILTS STAFf
-//----------------------------------------------------------------------------------------
-// HILT BUTTON 1 - STAVES
-		itemDef 
+			//###################################
+			//#		РУКОЯТЬ ДВОЙНОЙ МЕЧ	    	#
+			//###################################
+	itemDef 
 		{
-			name				hiltbut_staves
-			group				none
-			text				@MENUS_HILT1
-			descText			@MENUS_HILT1_DESC
+			name				hilt_staff
+			text				" "
 			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			textalign			ITEM_ALIGN_LEFT
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.95 .64 .37 1
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
 			
-			cvarTest			ui_saber_type
-			hideCvar			{ "single"; "dual" }
-
 			cvar				"ui_saber"
+			
 			//FIXME: read these from sabers.cfg + *.sab?
 			cvarStrList
 			{
@@ -602,7 +552,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		-2  191 342  44
+				setitemrect		sidebutton_glow			0 120 320 30
 			}
 		mouseExit 
 			{ 
@@ -613,88 +563,119 @@
 				play			"sound/interface/choose_hilt.wav"
 				uiScript  		"saber_hilt"
 			}
-		}
-//----------------------------------------------------------------------------------------
-//								ТИТУЛ ЦВЕТ МЕЧА
-//----------------------------------------------------------------------------------------
-//Бардюр под меню с левой сторны
-	 itemDef 
+		}		
+			//###################################
+			//#			 СТИЛЬ МЕЧА 	  	 	#
+			//###################################
+//****************
+// Текст: Стиль меча
+//****************		
+	itemDef 
 		{
-			name				border_color
-			group				none
-			style				WINDOW_STYLE_FILLED
-			rect				340 -2 298 17
-			backcolor			0 0 .6 .5
-			forecolor			0 0 1 1
-			border				1
-			bordercolor			1 1 1 0.5
-			bordersize			2
+			name				saberstyle_text
+			text				@MENUS_SABERSTYLE
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			textalign			ITEM_ALIGN_LEFT
+			rect				0 120 120 30
 			visible				1
 			decoration
-			decoration
+		}	
+//****************
+// Стиль меча: Выбор
+//****************
+	itemDef 
+		{
+			name				saberstyle
+			text				" "
+			type				ITEM_TYPE_MULTI
+			style				WINDOW_STYLE_SHADER
+			textalign			ITEM_ALIGN_LEFT
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
+			rect				120 120 200 30
+	
+			cvar				"ui_newfightingstyle"
+		cvarStrList
+			{
+				@MENUS_COMBATSTYLEFAST     "0"
+				@MENUS_COMBATSTYLEMEDIUM   "1"
+				@MENUS_COMBATSTYLEHEAVY    "2"
+			}
+			visible				1
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			0 120 320 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			} 
 		}
-//Титул Цвета меча	
+//
+//_______________________________________________________________________________________________
+//
+//							ПЕРВЫЙ ЦВЕТ МЕЧА
+//_______________________________________________________________________________________________
+//****************
+// Титул: Цвет кристала
+//****************		
 	itemDef 
 		{
 			name				color_title
-			group				none
 			text				@MENUS_BLADE_COLOR
 			style				WINDOW_STYLE_SHADER
-			background			"menu/menu_blendbox"
+			background			"BoxMenu"
 			textalign			ITEM_ALIGN_LEFT
-			rect				320 0 370 20
 			textstyle			3
-			textalignx			135
-			textaligny			-5
 			font				3
-			textscale			0.9
-			forecolor			.95 .64 .37 1
-			visible			1
-			decoration
-		}
-//Коробка под эконку "цвет меча1"		
-	itemDef 
-		{
-			name				box_color1
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordercolor			0 0.5 1 0.4
+			textalignx			10
+			textscale			1.1
+			forecolor			1 1 1 1
 			visible				1
 			decoration
 		}
-//Коробка под эконку "цвет меча2"		
+//****************
+// Текст: Цвет
+//****************		
 	itemDef 
 		{
-			name				box_color2
-			group				none
+			name				color_set_text
+			text				@MENUS_COLOR1
 			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 0.8
-			border				4
-			bordersize			2
-			bordercolor			0 0.5 1 0.4
-			visible				0
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
 			decoration
-		}			
-//----------------------------------------------------------------------------------------
-//							ПЕРВЫЙ ЦВЕТ МЕЧА
-//----------------------------------------------------------------------------------------
-// COLOR 1 BUTTON
+		}
+//****************
+// Цвет Меча (1)
+//****************
 	itemDef 
 		{
 			name				colorbut
-			group				none
-			text				@MENUS_COLOR1
+			text				" "
 			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
-			rect				350 28 160 20
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.549 .854 1 1
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
 			textalign			ITEM_ALIGN_LEFT
 			visible				1
 			
@@ -711,7 +692,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		300  14 342  44
+				setitemrect		sidebutton_glow		460 40 180 30
 			}
 		mouseExit 
 			{ 
@@ -723,28 +704,44 @@
 				uiScript  		"saber_color"
 			}
 		}
-// COLOR 2 BUTTON
+//****************
+// Текст: Цвет
+//****************		
+	itemDef 
+		{
+			name				Color_set_text2
+			text				@MENUS_COLOR1
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			decoration
+		}
+//****************
+// Цвет Меча (2)
+//****************
 		itemDef 
 		{
 			name				colorbut2
-			group				none
-			text				@MENUS_COLOR2
+			text				" "
 			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
-			rect				350 73 160 20
-			textstyle			4
-			font				5
-			textscale			0.7
-			forecolor			.549 .854 1 1
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			0.5 1 0.1 1
 			visible				0
-	 
-			cvarTest			ui_saber_type
-			hideCvar			{ "single"; "staff" }
 
 			cvar				"ui_saber2_color"
-			cvarStrList
+		cvarStrList
 			{
-				"Red 		"red"
+				"Red" 		"red"
 				"Orange" 	"orange"
 				"Yellow" 	"yellow"
 				"Green" 	"green"
@@ -754,7 +751,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		300  58 342  44
+				setitemrect		sidebutton_glow		460 60 180 30
 			}
 		mouseExit 
 			{ 
@@ -765,40 +762,37 @@
 				play			"sound/interface/choose_blade.wav"
 				uiScript  		"saber2_color"
 			}
-		}
-//----------------------------------------------------------------------------------------
-//								ПЕРЕМЕЩЕНИЕ В МЕНЮ
-//----------------------------------------------------------------------------------------
-	itemDef 
-		{
-			name				box_back
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 1
-			border				4
-			bordercolor			0 0.5 1 0.4
-			visible				1
-			decoration
-		}
-//Назад	
+		}	
+//
+//_______________________________________________________________________________________________
+//
+//							КНОПКИ В МЕНЮ
+//_______________________________________________________________________________________________
+//****************
+// Кнопка "Назад"
+//****************	
 	itemDef 
 		{
 			name				back
-			group				exit
 			text				@MENUS_BACK_CAPS
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1
 			forecolor			.95 .64 .37 1
 			visible				1
+			textalignx 			35
+			
+			cvarTest			saber_menu
+			showCvar			{ "0" }
+			
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-			    setitemrect		sidebutton_glow		-30 450 220 30
+			    setitemrect		sidebutton_glow		0  450 120 30
 			}
 		mouseExit 
 			{ 
@@ -811,28 +805,18 @@
 				open			characterMenu
 			}
 		}
-//Коробка для next
-	itemDef 
-		{
-			name				box_next
-			group				none
-			style				WINDOW_STYLE_SHADER
-			background			"menu/box_redux"
-			forecolor			1 1 1 1
-			border				4
-			bordercolor			0 0.5 1 0.4
-			visible				1
-			decoration
-		}
-//Далее
+//****************
+// Кнопка "Далее"
+//****************	
 	itemDef 
 		{
 			name				next
-			group				none
 			text				@MENUS_BEGIN_GAME
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			textalign			ITEM_ALIGN_LEFT
+			textalignx			12
 			textstyle			3
 			font				3
 			textscale			1
@@ -856,20 +840,23 @@
 				uiScript		startgame	
 			}	  	  
 		}
-//При втором прохождение
+//****************
+// Кнопка "Продолжить"
+//****************	
 	itemDef 
 		{
 			name				continue
-			group				none
 			text				@MENUS_CONTINUE
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			rect				210 450 120  32
 			textstyle			3
 			font				3
 			textscale			1
 			forecolor			.95 .64 .37 1
 			visible				0
+			textalignx			10
 
 			cvarTest			saber_menu
 			showCvar			{ "1" }
@@ -896,39 +883,16 @@
 				hide			sidebutton_glow
 			}	  	  
 		}
-//----------------------------------------------------------------------------------------
-//								ЭЛЕМЕНТЫ ВЫШЕ ДРУГИХ
-//----------------------------------------------------------------------------------------	
+//*********
+// Выделение элементов
+//*********
 	itemDef 
 		{
-			name				redux
-			group				redux
-			text				"REDUX"
-			rect				615 468 0 0
-			font				5
-			textscale			0.5
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-//ТИТУТЛ
-	itemDef 
-		{
-			name				create_title
-			group				title
+			name				sidebutton_glow
 			style				WINDOW_STYLE_SHADER
 			background			"menu/menu_blendbox"
-			text				@MENUS_LIGHTSABER_CREATION
-			textalign			ITEM_ALIGN_LEFT
-			textstyle			3
-			textalignx			115
-			textaligny			-5
-			font				3
-			textscale			0.9
-			forecolor			.95 .64 .37 1
-			visible				1 
-			decoration 
+			forecolor			1 1 1 1
+			decoration
 		}
 	}
 }

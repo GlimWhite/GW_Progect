@@ -51,7 +51,7 @@ LANG_RUSSIAN         "Выбор расы"
 REFERENCE           COLOR
 NOTES               "For character menu"
 LANG_ENGLISH        "COLOR"
-LANG_RUSSIAN         "ЦВЕТ"
+LANG_RUSSIAN         "Цвет"
 
 REFERENCE           APPEARANCE
 NOTES               "For character menu"
@@ -91,67 +91,37 @@ LANG_RUSSIAN         "Выбор ног"
 REFERENCE           LIGHTSABER_CREATION
 NOTES               "For saber menu"
 LANG_ENGLISH        "LIGHTSABER CREATION"
-LANG_RUSSIAN         "СОЗДАНИЕ СВЕТОМЕЧА"
+LANG_RUSSIAN         "СОЗДАНИЕ СВЕТОГОГО МЕЧА"
 
 REFERENCE           SABER_TYPE
 NOTES               "For saber menu"
 LANG_ENGLISH        "SABER TYPE"
-LANG_RUSSIAN         "ТИП МЕЧА"
-
-REFERENCE           SABER_TYPE_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Select your saber type."
-LANG_RUSSIAN         "Выбор типа меча персонажа"
+LANG_RUSSIAN         "Тип меча:"
 
 REFERENCE           SINGLESABER
 NOTES               "For saber menu"
 LANG_ENGLISH        "Standard Saber"
-LANG_RUSSIAN         "Стандартный меч"
-
-REFERENCE           SINGLESABER_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Use one one-handed saber, choice of 3 fighting styles."
-LANG_RUSSIAN         "Владение одним одноклинковым мечом, выбор из трех стилей фехтования"
+LANG_RUSSIAN         "Одиночный меч"
 
 REFERENCE           DUALSABERS
 NOTES               "For saber menu"
 LANG_ENGLISH        "Dual Sabers"
 LANG_RUSSIAN         "Парные мечи"
 
-REFERENCE           DUALSABERS_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Use 2 one-handed sabers, only one fighting style."
-LANG_RUSSIAN         "Владение двумя одноклинковыми мечами, только один стиль фехтования"
-
 REFERENCE           SABERSTAFF
 NOTES               "For saber menu"
 LANG_ENGLISH        "Two-Handed Saber"
-LANG_RUSSIAN         "Двухклинковый меч"
-
-REFERENCE           SABERSTAFF_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Use one two-handed saber, only one fighting style."
-LANG_RUSSIAN         "Владение двухклинковым мечом, только один стиль фехтования"
+LANG_RUSSIAN         "Двуручный меч"
 
 REFERENCE           SABER_HILTS
 NOTES               "For saber menu"
 LANG_ENGLISH        "SABER HILTS"
 LANG_RUSSIAN         "ЭФЕСЫ МЕЧА"
 
-REFERENCE           SABER_HILTS_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Choose your saber hilt(s)."
-LANG_RUSSIAN         "Выбор эфеса"
-
 REFERENCE           HILT1
 NOTES               "For saber menu"
 LANG_ENGLISH        "HILT"
 LANG_RUSSIAN         "ЭФЕС"
-
-REFERENCE           HILT1_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Select a hilt."
-LANG_RUSSIAN         "Выбрать эфес"
 
 REFERENCE           HILT2
 NOTES               "For saber menu"
@@ -166,37 +136,22 @@ LANG_RUSSIAN         "Выбрать второй эфес"
 REFERENCE           BLADE_COLOR
 NOTES               "For saber menu"
 LANG_ENGLISH        "BLADE COLOR"
-LANG_RUSSIAN         "ЦВЕТ КЛИНКА"
-
-REFERENCE           BLADE_COLOR_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Select the color for your lightsaber blade."
-LANG_RUSSIAN         "Выбор цвета клинка светомеча персонажа"
+LANG_RUSSIAN         "ЦВЕТ КРИСТАЛА"
 
 REFERENCE           COLOR1
 NOTES               "For saber menu"
 LANG_ENGLISH        "COLOR"
-LANG_RUSSIAN         "ЦВЕТ"
-
-REFERENCE           COLOR1_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Select a blade color."
-LANG_RUSSIAN         "Выбрать цвет клинка"
+LANG_RUSSIAN         "ЦВЕТ:"
 
 REFERENCE           COLOR2
 NOTES               "For saber menu"
 LANG_ENGLISH        "COLOR 2"
-LANG_RUSSIAN         "ЦВЕТ 2"
-
-REFERENCE           COLOR2_DESC
-NOTES               "For saber menu"
-LANG_ENGLISH        "Select a second blade color."
-LANG_RUSSIAN         "Выбрать цвет второго клинка"
+LANG_RUSSIAN         "ЦВЕТ 2:"
 
 REFERENCE           SABERSTYLE
 NOTES               "For saber menu"
 LANG_ENGLISH        "COMBAT STYLE :"
-LANG_RUSSIAN         "СТИЛЬ БОЯ:"
+LANG_RUSSIAN         "Стиль боя:"
 
 REFERENCE           COMBATSTYLEHEAVY
 NOTES               "Saber fighting style"
@@ -210,26 +165,6 @@ LANG_RUSSIAN         "Средний"
 REFERENCE           COMBATSTYLEFAST
 LANG_ENGLISH        "Fast"
 LANG_RUSSIAN         "Быстрый"
-
-REFERENCE           SABERSTYLE_DESC1
-NOTES               "For saber menu"
-LANG_ENGLISH        "You are currently allowed 1 saber style."
-LANG_RUSSIAN         "Сейчас доступен 1 стиль владения мечом"
-
-REFERENCE           SABERSTYLE_DESC2
-NOTES               "For saber menu"
-LANG_ENGLISH        "You are currently allowed 2 saber styles."
-LANG_RUSSIAN         "Сейчас доступно 2 стиля владения мечом"
-
-REFERENCE           SABERSTYLE_DESC3
-NOTES               "For saber menu"
-LANG_ENGLISH        "You are currently allowed 3 saber styles."
-LANG_RUSSIAN         "Сейчас доступно 3 стиля владения мечом"
-
-REFERENCE           SABERSTYLE_DESC4
-NOTES               "For saber menu"
-LANG_ENGLISH        "You are only allowed 1 saber style."
-LANG_RUSSIAN         "Песонажу позволен только 1 стиль владения мечом"
 
 REFERENCE           ACCEPT
 LANG_ENGLISH        "ACCEPT"
@@ -5511,33 +5446,17 @@ REFERENCE           BOW
 LANG_ENGLISH        "Bow:"
 LANG_RUSSIAN         "Поклон:"
 
-REFERENCE           BOW_DESC
-LANG_ENGLISH        "Show respect to your opponent."
-LANG_RUSSIAN         "Выражение почтения своему противнику"
-
 REFERENCE           MEDITATE
 LANG_ENGLISH        "Meditate:"
 LANG_RUSSIAN         "Медитация:"
-
-REFERENCE           MEDITATE_DESC
-LANG_ENGLISH        "Sit and wait patiently for your opponent to make the first move."
-LANG_RUSSIAN         "Сесть и терпеливо ждать первого шага противника"
 
 REFERENCE           FLOURISH
 LANG_ENGLISH        "Flourish:"
 LANG_RUSSIAN         "Хвастовство:"
 
-REFERENCE           FLOURISH_DESC
-LANG_ENGLISH        "Show off a little."
-LANG_RUSSIAN         "Немного пустить пыль в глаза"
-
 REFERENCE           GLOAT
 LANG_ENGLISH        "Gloat:"
 LANG_RUSSIAN         "Тайное злорадство:"
-
-REFERENCE           GLOAT_DESC
-LANG_ENGLISH        "Celebrate your victory over your opponent."
-LANG_RUSSIAN         "Отпраздновать победу над противником"
 
 REFERENCE           WRONG_WAY
 LANG_ENGLISH        "Wrong Way"
@@ -5574,10 +5493,6 @@ LANG_RUSSIAN         "ЗАКРЫТЬ"
 REFERENCE           TEAM_SWITCHING
 LANG_ENGLISH        "Team Switching:"
 LANG_RUSSIAN         "Обмен команд:"
-
-REFERENCE           TEAM_SWITCHING_DESC
-LANG_ENGLISH        "Toggle game mode where teams compete to finish map in least amount of time."
-LANG_RUSSIAN         "Переключение режима игры, в котором отряды соперничают за прохождение карты в минимальные сроки"
 
 REFERENCE           MATCHING_NAMES
 LANG_ENGLISH        "Matching names will be overwritten."
@@ -5660,17 +5575,9 @@ REFERENCE           TACTICS_TITLE
 LANG_ENGLISH        "Tactics"
 LANG_RUSSIAN         "Тактика"
 
-REFERENCE           MELEE_DESC
-LANG_ENGLISH        "Melee\nBare-knuckle brawling is a weapon of last resort for most species, but for Wookiees it does have some benefit."
-LANG_RUSSIAN         "Рукопашная\nДрака - последнее, к чему прибегает большинство рас галактики, но Вуки в подобных случаях обладают немалым преимуществом"
-
 REFERENCE           FOOTSTEPS
 LANG_ENGLISH        "Footsteps:"
 LANG_RUSSIAN         "Шаги:"
-
-REFERENCE           FOOTSTEPS_DESC
-LANG_ENGLISH        "Set the assets used for footsteps."
-LANG_RUSSIAN         "Настройка средств отображения шагов"
 
 REFERENCE           SOUNDS
 LANG_ENGLISH        "Sounds"
@@ -5819,6 +5726,14 @@ LANG_RUSSIAN         "ВЫЙТИ ИЗ ИГРЫ"
 
 REFERENCE           CAMERA_HEIGHT
 LANG_ENGLISH        "Camera height"
-LANG_RUSSIAN         "Высота камеры: N (Настройки в AutoExec.cfg)"
+LANG_RUSSIAN         "Высота камеры:  N (Настройка в AutoExec.cfg)"
+
+REFERENCE           HILT_NEW
+LANG_ENGLISH        "Hilt"
+LANG_RUSSIAN         "Рукоять:"
+
+REFERENCE           HILT_NEW2
+LANG_ENGLISH        "Hilt2"
+LANG_RUSSIAN         "Рукоять 2:"
 
 ENDMARKER

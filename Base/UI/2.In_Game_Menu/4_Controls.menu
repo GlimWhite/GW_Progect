@@ -1577,6 +1577,7 @@ itemDef
 				hide			movecontrols
 				hide 			weaponcontrols
 				hide			forcecontrols
+				hide			backbutton2
 				
 				show			backbutton
 				show			joycontrols
@@ -1889,7 +1890,7 @@ itemDef
 		mouseenter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		180 305 300 20
+				setitemrect		sidebutton_glow		180 305 330 20
 			}
 		mouseexit 
 			{ 
@@ -1931,22 +1932,22 @@ itemDef
 		{
 			name				other4
 			group				joycontrols
-			type				ITEM_TYPE_BIND
 			text				@MENUS_CAMERA_HEIGHT
 			cvar				"vstr Plus"
 			rect				200 345 200 20
 			textalign			ITEM_ALIGN_RIGHT
-			textalignx			120
+			textalignx			287
 			font				4
 			textstyle			5
 			textscale			1.05
 			forecolor			.95 .64 .37 1
+			decoration
 			
 		action 					{ play sound/interface/button1 }
 		mouseenter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		180 345 300 20
+				setitemrect		sidebutton_glow		180 345 320 20
 			}
 		mouseexit 
 			{ 

@@ -22,31 +22,32 @@
 			play				"music/death_music"
 			setcvar				ui_missionfailed	"0"
 			
+			transition			missionselect		170	 80 280 0   170  80 280 30  25 25
 			transition			loadquick			170 120 280 0 	170 120 280 30 	25 25
 			transition			loadpoint			170 160 280 0 	170 160 280 30 	25 25
 			transition			loadsave			170 200 280 0 	170 200 280 30 	25 25
-			transition			leavemain			170	240 280 0   170 240 280 30  25 25			
+			transition			leavemain			170	240 280 0   170 240 280 30  25 25	
+
+			transition			text_failed			180 450   0 0	180 270 260 30	30 30 		
+			transition			failed				180  50   0 0	180  40 260 30	30 30 
+			
+			transition			black_ground		320 240 1 1 -320 -240 1280 960 45 45				
 		
 			setitemcolor		loadquick			forecolor		1 1 1 0
 			setitemcolor		loadpoint			forecolor		1 1 1 0
 			setitemcolor		loadsave			forecolor		1 1 1 0		
-			setitemcolor		text				forecolor		1 1 1 0
-			setitemcolor		failed				forecolor		1 1 1 0
+			setitemcolor		text_failed			forecolor		1 0.2 0.2 0
+			setitemcolor		failed				forecolor		1 0.2 0.2 0
 			setitemcolor		leavemain			forecolor		1 1 1 0
-			
-			transition			text				180 550 400 30	180 455 260 30	30 30 
-			transition			top_text			180 550 400 30	180 450 260 30	30 30
-			
-			transition			failed				180 -200 400 30	180  -2 260 30	30 30 
-			transition			top_failed			180 -200 400 30	180  -2 260 30	30 30
-					
+			setitemcolor		missionselect		forecolor		1 1 1 0
+				
 			fadein				loadquick
 			fadein				loadpoint
 			fadein				loadsave
 			fadein				leavemain
-			fadein				text
+			fadein				text_failed
 			fadein				failed
-
+			fadein				missionselect
 		}
 	Onclose
 		{		
@@ -54,7 +55,7 @@
 	onEsc
 		{
 			play				"sound/interface/esc.wav"
-			close				all //missionfailed_menu
+			close				all
 			//open				deadloadMenu
 		}
 //_______________________________________________________________________________________________
@@ -62,28 +63,15 @@
 //										ОСНОВНОЕ МЕНЮ
 //_______________________________________________________________________________________________
 //*********************
-// Выделение текста
-//*********************	
-	itemDef 
-		{
-			name				sidebutton_glow
-			style				WINDOW_STYLE_SHADER
-			background			"menu/menu_blendbox"
-			forecolor			1 1 1 0.5
-			visible				1
-			decoration
-		}
-//*********************
 // Затемнения фона
 //*********************	
 	itemDef 
 		{
 			name				black_ground
-			rect				0 0 640 480
-			style 				WINDOW_STYLE_FILLED
-			backcolor			0 0 0 0.5
-			forecolor			0 0 0 0.5
-			visible				0
+			style 				WINDOW_STYLE_SHADER
+			background			"iris_mono"
+			forecolor			0 0 0 0.5 
+			visible				1
 			decoration
 		}
 //**********************************
@@ -92,16 +80,13 @@
 	itemDef 
 		{
 			name				failed
-			group				title
-			style				WINDOW_STYLE_SHADER
-			background			"menu/menu_blendbox"
 			text				@SP_INGAME_MISSIONFAILED
-			font				5
-			textscale			0.7
+			font				3
+			textscale			1.1
 			textalign			ITEM_ALIGN_CENTER		
-			textalignx			130
+			textalignx			140
 			textaligny			5
-			forecolor			1 1 1 1
+			forecolor			1 0.2 0.2 0.5
 			visible				1 
 			decoration 
 		}
@@ -110,20 +95,29 @@
 //*********************************
 	itemDef 
 		{
-			name				text
-			group				none
-			style 				WINDOW_STYLE_SHADER
-			background			"menu/menu_blendbox"
-			cvar				ui_missionfailed_text 
-			font				5
-			textscale			0.5
+			name				text_failed
+			cvar				ui_missionfailed_text
+			font				3
+			textscale			1
 			textalign			ITEM_ALIGN_CENTER		
 			textalignx			130
 			textaligny			5
-			forecolor			1 0 0 1
+			forecolor			1 0.2 0.2 0.5
 			visible				1 
 			decoration 
 		}
+//*********************
+// Выделение текста
+//*********************	
+	itemDef 
+		{
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendbox"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}	
 //_______________________________________________________________________________________________
 //
 //										КНОПКИ В МЕНЮ
@@ -140,11 +134,11 @@
 			text				@MENUS_INSTANT_LOAD_CAPS
 			textalign			ITEM_ALIGN_LEFT	
 			font				5
-			textscale			0.5			
+			textscale			0.5		
 			textalignx			70
-			textaligny			8
+			textaligny			4
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -178,11 +172,11 @@
 			text				@MENUS_LOAD_AUTOSAVE
 			textalign			ITEM_ALIGN_LEFT
 			font				5
-			textscale			0.5
+			textscale			0.5	
 			textalignx			15
-			textaligny			8
+			textaligny			4
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -216,11 +210,11 @@
 			text				@MENUS_LOAD_SAVE_GAME
 			textalign			ITEM_ALIGN_LEFT
 			font				5
-			textscale			0.5
+			textscale			0.5	
 			textalignx			50
-			textaligny			8
+			textaligny			4
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -255,11 +249,11 @@
 			text				@MENUS_LEAVE_MAIN
 			textalign			ITEM_ALIGN_LEFT
 			font				5
-			textscale			0.5
+			textscale			0.5	
 			textalignx			80
-			textaligny			8
+			textaligny			4
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -297,7 +291,7 @@
 			textalignx			85
 			textaligny			8
 
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -341,7 +335,7 @@
 			textalignx			85
 			textaligny			8
 
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 
@@ -385,7 +379,7 @@
 			textalignx			85
 			textaligny			8
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			

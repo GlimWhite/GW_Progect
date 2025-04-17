@@ -1,0 +1,206 @@
+//------------------------------------------------------------------------------------------------
+// 											VIDEO WARNING
+//				С РАБАТЫВАЕТ ЕСЛИ НЕ ПРИМЕНИТЬ ИЗМЕНЕНИЯ В ЗНАК НЕ ПОДВЕРЖДЕНИЕ ИЗМЕНЕНИЙ
+//------------------------------------------------------------------------------------------------
+{
+	menuDef 
+	{
+		name					"VideoWarningMenu"
+		visible					0
+		fullScreen				1						// MENU_TRUE
+		focusColor				1 1 1 1					// Focus color for text and items
+		outOfBoundsClick								// this closes the window if it gets a click out of the rectangle popup		
+	OnOpen
+		{
+			Show				videowarning
+		}
+	onESC 
+		{ 
+			play				"sound/interface/esc.wav" 		
+			close				all
+			hide				videowarning
+			open				ReduxMainMenu
+		}
+	onClose
+		{
+			hide				videowarning
+		}
+//_______________________________________________________________________________________
+//
+//									ЭЛЕМЕНТЫ В МЕНЮ                              
+//_______________________________________________________________________________________
+//**********************
+// Фон меню
+//**********************	
+	itemDef 
+		{
+			name				groundmenu
+			group				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//********************
+// Затемнения фона
+//********************
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			visible				1
+			decoration
+		}
+//********************
+// Выделение текста
+//********************	
+	itemDef 
+		{
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"side_vertex"
+			forecolor			0.1 0.1 0.1 1
+			decoration
+		}
+//_______________________________________________________________________________________
+//
+//									Основное меню                              
+//_______________________________________________________________________________________
+//**********************
+// Фон меню
+//**********************	
+	itemDef 
+		{
+			name				groundmenu
+			group				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//*******************************
+// Фон для текста предупреждения
+//*******************************
+	itemDef 
+		{
+			name				text
+			group				videowarning
+			style				WINDOW_STYLE_FILLED	
+			background			"BoxMenu"
+			rect				120 120 420 250
+			border				1
+			bordersize			1
+			bordercolor			1 1 1 1
+			decoration
+	
+		}
+//*********************
+// Текст "Информация"
+//*********************
+	itemDef 
+		{
+			name				options
+			group				videowarning
+			text				@MENUS_YOU_HAVE_MADE_CHANGES
+			text2				@MENUS_APPLY_THESE_CHANGES_OR
+			textalignx			10
+			textaligny			10
+			text2alignx			-50
+			text2aligny			30
+			rect				320 175 290 20
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			.95 .64 .37 1
+			font 				5
+			textstyle			5
+			textscale 			0.60
+
+			decoration
+		}
+//**************
+// Кнопка "Да"
+//**************
+	itemDef 
+		{
+			name				default_yes
+			group				videowarning
+			text				@MENUS_YES
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				185 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font 				5
+			textstyle			5
+			textscale 			0.6
+			textalignx			20
+			textaligny			4
+			forecolor			.95 .64 .37 1
+			
+			background			"menu/box_redux"
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			185 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
+		action 
+			{ 
+				play			"sound/interface/button1.wav" ; 
+
+				uiScript		updatevideosetup ;
+				close			all
+			}	  	  
+		}
+//**************
+// Кнопка "Нет"
+//**************
+	itemDef 
+		{
+			name				default_no
+			group				videowarning
+			text				@MENUS_NO
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				415 300 60 30
+			textalign			ITEM_ALIGN_LEFT
+			font				5
+			textstyle			5
+			textscale 			0.6
+			textalignx			17
+			textaligny			4
+			forecolor			.95 .64 .37 1
+
+			background			"menu/box_redux"	
+		mouseEnter
+			{
+				show				sidebutton_glow
+				setitemrect			sidebutton_glow			415 300 60 30
+			}
+		mouseExit	
+			{
+				hide				sidebutton_glow
+			}			
+		action 
+			{ 
+				play			"sound/interface/esc.wav" 		
+				close			"videowarningMenu" ;
+				setcvar			"ui_r_modified" 0 ;
+				rundeferred ;
+			}	
+		}
+	}	
+}
+
+
+
+
+
+
