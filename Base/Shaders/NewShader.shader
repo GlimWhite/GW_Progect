@@ -13,7 +13,7 @@ textures/sky
 	skyParms	textures/skies/yavin 512 -
 }
 
-/*
+
 textures/doormetal
 {
 	q3map_material			SolidMetal
@@ -71,7 +71,7 @@ textures/floor_academy
         map $lightmap
     }
     {
-        map textures/yavin/floor
+        map textures/yavin/floor2
 		blendFunc GL_DST_COLOR GL_ZERO
 		tcMod scale 2 2
 		rgbGen vertex
@@ -109,7 +109,7 @@ textures/flooracademy3
 		rgbGen vertex
     }
 }
-/*
+
 textures/flooracademy3
 {
 	q3map_material			SolidMetal
@@ -157,7 +157,7 @@ textures/stair_academy2
 		tcMod	0.25 0.25
     }
 }
-*/
+
 textures/skip
 {
 	q3map_material			SolidMetal
@@ -169,4 +169,54 @@ textures/skip
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		tcMod scale 2 2
     }
+}
+
+textures/yavin/center
+{
+	q3map_material			SolidMetal
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+    }
+    {
+        map textures/yavin/button_lg
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen vertex
+		tcMod	scale	0.16 0.16
+    }
+}
+
+textures/yavin/wall
+{
+	//q3map_material			SolidMetal
+	//q3map_shadeangle		150
+	//q3map_alphashadow
+	{
+        map $lightmap
+    }
+    {
+        map textures/yavin/wall5
+		blendFunc GL_DST_COLOR GL_ZERO
+		rgbGen vertex
+		tcMod	scale	0.05 0.05
+    }
+}
+
+textures/yavin/strius
+{
+	//q3map_material			SolidMetal
+	//q3map_shadeangle		150
+	//q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/wall3
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+		tcMod	scale	0.1 0.1
+    }
+
 }

@@ -19,9 +19,24 @@
 
 	onOpen
 		{ 
+		
+			transition			border_menu			  		  0   0 640  0   0   0 640 160 15 15 	//Фон для текста
+			transition			fighting_style_text 	 	  0  40   0 30   0  40 160  30 15 15	//Текст "Текущий стиль"
+			transition			fighting_style_button_1  	160  40   0 30 160  40 100  30 15 15	//Выбор: кнопка стиля
+			transition			fighting_style_text2	 	320  40   0 30 320  40 160  30 15 15	//Текст "Новый стиль"
+			transition			fighting_style_button_2  	480  40   0 30 480  40 100  30 15 15	//Выбор: кнопка стиля
+						
+			setitemrect			saber			   			-300 -250 950 700					//Меч		
+		/*
+			
+			transition			back			      0 450   0 30   0  450 120 30 15 15	//Кнопка "Назад"
+			transition			next			    520 450   0 30 520  450 120 30 15 15	//Кнопка "Вперед"
+			transition			continue		    520 450   0 30 520  450 120 30 15 15	//Кнопка "Продолжить"
+
+			*/
+		//Скрипты
 			uiScript  			"getsabercvars"
 			uiScript  			"updatefightingstylechoices"
-			setfocus			new_fightingstyle_button
 			uiScript  			"saber_hilt"
 			uiScript  			"saber_color"
 		}							
@@ -31,62 +46,102 @@
 			//uiScript		 	"updatesabercvars"
 			close				all
 		}
-//----------------------------------------------------------------------------------------------
-//	MENU BACKGROUND
-//----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________________
+//
+//								ЭЛЕМЕНТЫ МЕНЮ
+//_______________________________________________________________________________________________
+//*********
+// Фон меню
+//*********
 	itemDef 
 		{
-			name				background
-			group				none
+			name				groundmenu
 			style				WINDOW_STYLE_SHADER
-			rect				0 0 640 480
-			background			"menu/ground/sabermenu_back"
+			rect				-10 -5 650 485
+			background			"groundmenu"
 			forecolor			1 1 1 1
 			visible				1
 			decoration
 		}
-
-	itemDef 
+//*********
+// Фон для текста
+//*********
+	 itemDef 
 		{
-			name				button_glow
-			group				mods
-			style				WINDOW_STYLE_SHADER
-			rect				455 444 130 24 
-			background			"menu/menu_buttonback"
-			forecolor			0.2 0.2 0.2 0.5
-			visible				0
+			name				border_menu
+			style				WINDOW_STYLE_FILLED
+			rect				-2  -2 342.5 280.5
+			backcolor			0 0 .6 .5
+			forecolor			0 0 1 1
+			border				1
+			bordercolor			1 1 1 0.5
+			bordersize			2
+			visible				1
+			decoration
 			decoration
 		}
+//*********
+// BLUR
+//*********
 	itemDef 
 		{
-			name				title_glow
-			group				none
-			style				WINDOW_STYLE_SHADER
-			rect				0 -2 640 25
-			background			"menu/menu_buttonback"
-			forecolor			0.2 0.2 0.2 0.5
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			forecolor			0 0 0 0.5
 			visible				1
 			decoration
 		}
-//----------------------------------------------------------------------------------------------
-//	SABER COMBAT STYLES
-//----------------------------------------------------------------------------------------------
-// Current fighting style
+//*********
+// Выделение элементов
+//*********
 	itemDef 
 		{
-			name				fightingstylebutton1
-			group				none
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendbox"
+			forecolor			1 0 0 0.5
+			decoration
+		}
+//_______________________________________________________________________________________________
+//
+//								ВЫБОР СТИЛЬ МЕЧА В МЕНЮ
+//_______________________________________________________________________________________________	
+//****************
+// Текст: Текущий стиль
+//****************
+	itemDef 
+		{
+			name				fighting_style_text
 			text				@MENUS_CURRENT_STYLE
 			descText			@MENUS_ADDFIGHTINGSTYLE
-			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
-			rect				10 30 300 30
-			font				5
-			textscale			0.5
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			
 			textalign			ITEM_ALIGN_LEFT
-			textstyle			1
-			textalignx			20
-			textaligny			2
+			visible				1
+			decoration
+		}	
+//****************
+// Стиль меча
+//****************
+	itemDef 
+		{
+			name				fighting_style_button_1
+			text				" "
+			textalign			ITEM_ALIGN_LEFT
+			type				ITEM_TYPE_MULTI
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
 			forecolor			.95 .64 .37 1
 					
 			cvar				"ui_currentfightingstyle"
@@ -98,25 +153,44 @@
 			}
 			visible				1			 
 		}
+//****************
+// Текст: Новый стиль
+//****************
 	itemDef 
 		{
-			name				new_fightingstyle_button
-			group				none
+			name				fighting_style_text2
 			text				@MENUS_NEW_STYLE
 			descText			@MENUS_ADDFIGHTINGSTYLE
-			type				ITEM_TYPE_MULTI
-			style				WINDOW_STYLE_EMPTY
-			rect				330 30 300 30
-			font				5
-			textscale			0.5
 			textalign			ITEM_ALIGN_LEFT
-			textalignx			20
-			textaligny			2
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			10
+			
+			visible				1
+		}
+//****************
+// Стиль меча
+//****************		
+	itemDef 
+		{
+			name				fighting_style_button_2
+			text				" "
+			type				ITEM_TYPE_MULTI
+			textalign			ITEM_ALIGN_LEFT
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			textstyle			3
+			font				3
+			textscale			1.1
 			forecolor			.95 .64 .37 1
 			visible				1
-						
+			
 			cvar				"ui_newfightingstyle"
-			cvarStrList
+		cvarStrList
 				{
 					@MENUS_COMBATSTYLEFAST     "0"
 					@MENUS_COMBATSTYLEHEAVY    "2"
@@ -135,13 +209,14 @@
 				play			"sound/interface/button1.wav" 
 			}
 		}
+			
 	itemDef 
 		{
 			name				new_fightingstyle_desc
-			group				none
 			type				ITEM_TYPE_TEXTSCROLL
 			text				@SP_INGAME_FAST_STYLE
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			rect				20 100 600 200
 			font				5
 			textscale			0.5
@@ -156,20 +231,22 @@
 			visible				1			 
 			autowrapped
 		}
+	
 	itemDef 
 		{
 			name				new_fightingstyle_desc
-			group				none
 			type				ITEM_TYPE_TEXTSCROLL
 			text				@SP_INGAME_STRONG_STYLE
-			style				WINDOW_STYLE_EMPTY
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			rect				20 100 580 200
 			font				5
 			textscale			0.5
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			1 1 1 1			
+			
 			cvartest			"ui_newfightingstyle"
-			showcvar
+		showcvar
 			{
 				"2"
 			}
@@ -197,7 +274,8 @@
 			model_fovy			75
 			visible				1
 			decoration
-		}
+		}	
+	/*
 //----------------------------------------------------------------------------------------------
 //	Галаграмма экрана
 //----------------------------------------------------------------------------------------------
@@ -205,7 +283,6 @@
 	itemDef 
 		{
 			name				briefing_background
-			group				none
 			style				WINDOW_STYLE_FILLED
 			background				"BoxMenu"
 			rect				-2 -40 644 530
@@ -241,7 +318,6 @@
 	itemDef 
 		{
 			name				continue
-			group				none
 			text				@MENUS_CONTINUE
 			descText			@MENUS_NEW_MISSION_DESC
 			type				ITEM_TYPE_BUTTON
@@ -280,20 +356,6 @@
 				setitemrect		continue		250 444 160 25
 			}	 			
 		}
-//Text
-	itemDef 
-		{
-			name				redux
-			group				redux
-			text				"REDUX"
-			rect				615 468 0 0
-			font				5
-			textscale			0.5
-			textalign			ITEM_ALIGN_CENTER
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-
+		*/
 	}
 }

@@ -17,7 +17,8 @@
 			hide						group_sound
 			hide						group_graphics
 			hide						ApplyChanges 
-			hide						group_vidrestart 
+			hide						group_vidrestart
+			hide						sidebutton_glow			
 			
 			show						defaults
 			show						group_screen

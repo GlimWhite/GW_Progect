@@ -22,13 +22,13 @@
 			play				"music/death_music"
 			setcvar				ui_missionfailed	"0"
 			
-			transition			missionselect		170	 80 280 0   170  80 280 30  25 25
-			transition			loadquick			170 120 280 0 	170 120 280 30 	25 25
-			transition			loadpoint			170 160 280 0 	170 160 280 30 	25 25
-			transition			loadsave			170 200 280 0 	170 200 280 30 	25 25
-			transition			leavemain			170	240 280 0   170 240 280 30  25 25	
+			transition			missionselect		170	100 280 0   170 100 280 30  25 25
+			transition			loadquick			170 140 280 0 	170 140 280 30 	25 25
+			transition			loadpoint			170 180 280 0 	170 180 280 30 	25 25
+			transition			loadsave			170 220 280 0 	170 220 280 30 	25 25
+			transition			leavemain			170	260 280 0   170 260 280 30  25 25	
 
-			transition			text_failed			180 450   0 0	180 270 260 30	30 30 		
+			transition			text_failed			180 300   0 0	180 300 260 30	30 30 		
 			transition			failed				180  50   0 0	180  40 260 30	30 30 
 			
 			transition			black_ground		320 240 1 1 -320 -240 1280 960 45 45				
@@ -49,15 +49,12 @@
 			fadein				failed
 			fadein				missionselect
 		}
-	Onclose
-		{		
-		}
 	onEsc
 		{
 			play				"sound/interface/esc.wav"
-			close				all
-			//open				deadloadMenu
+			open				deadloadMenu
 		}
+	Onclose { }
 //_______________________________________________________________________________________________
 //
 //										ОСНОВНОЕ МЕНЮ
@@ -105,18 +102,6 @@
 			forecolor			1 0.2 0.2 0.5
 			visible				1 
 			decoration 
-		}
-//*********************
-// Выделение текста
-//*********************	
-	itemDef 
-		{
-			name				sidebutton_glow
-			style				WINDOW_STYLE_SHADER
-			background			"menu/menu_blendbox"
-			forecolor			1 1 1 1
-			visible				1
-			decoration
 		}	
 //_______________________________________________________________________________________________
 //
@@ -152,7 +137,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			180 120 270 30
+				setitemrect		sidebutton_glow			170 140 280 30
 			}
 		mouseExit 
 			{ 
@@ -190,7 +175,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			180 160 270 30
+				setitemrect		sidebutton_glow			170 180 280 30
 			}
 		mouseExit 
 			{ 
@@ -225,12 +210,12 @@
 				close			all
 				setcvar			cl_paused				"1"
 				setcvar			ui_missionfailed		"1"
-				open			deadloadMenu
+				open			DeadLoadMenu
 			}
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			180 200 270 30
+				setitemrect		sidebutton_glow			170 220 280 30
 			}
 		mouseExit 
 			{ 
@@ -266,7 +251,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			180 240 270 30
+				setitemrect		sidebutton_glow			170 260 280 30
 			}
 		mouseExit 
 			{ 
@@ -308,12 +293,12 @@
 				setcvar			cl_paused		"1"
 				uiScript		decrementforcepowerlevel
 				close			all
-				open			ingameMissionSelect1					
+				open			MissionSelect1					
 			}
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			170 80 280 30
+				setitemrect		sidebutton_glow			170 100 280 30
 			}
 		mouseExit 
 			{ 
@@ -352,12 +337,12 @@
 				setcvar			cl_paused		"1"
 				uiScript		decrementforcepowerlevel
 				close			all
-				open			ingameMissionSelect2
+				open			MissionSelect2
 			}
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow		170 80 280 30
+				setitemrect		sidebutton_glow		170 100 280 30
 			}
 		mouseExit 
 			{ 
@@ -397,17 +382,29 @@
 				setcvar			cl_paused		"1"
 				uiScript		decrementforcepowerlevel
 				close			all
-				open			ingameMissionSelect3				
+				open			MissionSelect3				
 			}
 		mouseEnter 
 			{ 
 				show			sidebutton_glow 
-				setitemrect		sidebutton_glow			170 80 280 30
+				setitemrect		sidebutton_glow			170 100 280 30
 			}
 		mouseExit 
 			{ 
 				hide			sidebutton_glow 
 			}	  	  
+		}	
+//*********************
+// Выделение текста
+//*********************	
+	itemDef 
+		{
+			name				sidebutton_glow
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendbox"
+			forecolor			0.5 0.5 0.5 0.1
+			visible				1
+			decoration
 		}		
 	}
 }

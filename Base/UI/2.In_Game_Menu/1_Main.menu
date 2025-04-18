@@ -90,7 +90,7 @@
 			{ 
 				play			"sound/interface/button1.wav"  
 				close			all  
-				open			missionfailed_menu
+				open			saberstyleMenu
 			}
 		}
 		
