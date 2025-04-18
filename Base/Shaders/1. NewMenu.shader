@@ -564,6 +564,22 @@ side_vertex
     }
 }
 
+box_blue
+{
+	nopicmip
+	nomipmaps
+    {
+        clampmap menu/box_blue
+        blendFunc GL_DST_COLOR GL_ONE
+		rgbGen vertex
+    }
+	{
+        map menu/static_base
+        blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
+        tcMod scroll -0.35 -0.35
+    }
+}
+
 menu/menu_blendbox
 {
 	nopicmip

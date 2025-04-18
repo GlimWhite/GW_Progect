@@ -12,7 +12,7 @@
 		visible					1					// Visible on open
 		focusColor				1 1 1 1					// Focus color for text and items
 		descX					320
-		descY					426
+		descY					232
 		descScale				1
 		descColor				1 .682 0 .8
 		descAlignment				ITEM_ALIGN_CENTER
@@ -20,20 +20,15 @@
 	onOpen
 		{ 
 		
-			transition			border_menu			  		  0   0 640  0   0   0 640 160 15 15 	//Фон для текста
-			transition			fighting_style_text 	 	  0  40   0 30   0  40 160  30 15 15	//Текст "Текущий стиль"
-			transition			fighting_style_button_1  	160  40   0 30 160  40 100  30 15 15	//Выбор: кнопка стиля
-			transition			fighting_style_text2	 	320  40   0 30 320  40 160  30 15 15	//Текст "Новый стиль"
-			transition			fighting_style_button_2  	480  40   0 30 480  40 100  30 15 15	//Выбор: кнопка стиля
-						
-			setitemrect			saber			   			-300 -250 950 700					//Меч		
-		/*
+			transition			border_menu			  		320 240 0  0  -5  -5 646 260 15 15 	//Фон для текста
 			
-			transition			back			      0 450   0 30   0  450 120 30 15 15	//Кнопка "Назад"
-			transition			next			    520 450   0 30 520  450 120 30 15 15	//Кнопка "Вперед"
-			transition			continue		    520 450   0 30 520  450 120 30 15 15	//Кнопка "Продолжить"
-
-			*/
+			transition			title 	 	 				120   5 0 30 120   5 435  30 15 15	//Текст "Текущий стиль"
+			transition			fighting_style_text 	 	 40  40 0 30  20  40 160  30 15 15	//Текст "Текущий стиль"
+			transition			fighting_style_button_1  	180  40 0 30 180  40 100  30 15 15	//Выбор: кнопка стиля
+			transition			fighting_style_text2	 	360  40 0 30 360  40 160  30 15 15	//Текст "Новый стиль"
+			transition			fighting_style_button_2  	520  40 0 30 520  40 100  30 15 15	//Выбор: кнопка стиля
+						
+			setitemrect			saber			   			-300 -125 950 700					//Меч		
 		//Скрипты
 			uiScript  			"getsabercvars"
 			uiScript  			"updatefightingstylechoices"
@@ -57,7 +52,7 @@
 		{
 			name				groundmenu
 			style				WINDOW_STYLE_SHADER
-			rect				-10 -5 650 485
+			rect				0 0 640 480
 			background			"groundmenu"
 			forecolor			1 1 1 1
 			visible				1
@@ -104,6 +99,24 @@
 			forecolor			1 0 0 0.5
 			decoration
 		}
+//*********
+// Титул меню
+//*********		
+	itemDef 
+		{
+			name				title
+			text				@MENUS_CHOOSE_SABER_STYLE
+			style				WINDOW_STYLE_SHADER
+			background			"box_blue"
+			font				3
+			textstyle				3
+			textscale			1.1
+			textalign			ITEM_ALIGN_LEFT	
+			textalignx			20
+			forecolor			1 1 1 1
+			visible				1 
+			decoration 
+		}
 //_______________________________________________________________________________________________
 //
 //								ВЫБОР СТИЛЬ МЕЧА В МЕНЮ
@@ -115,7 +128,6 @@
 		{
 			name				fighting_style_text
 			text				@MENUS_CURRENT_STYLE
-			descText			@MENUS_ADDFIGHTINGSTYLE
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
 			textstyle			3
@@ -148,10 +160,20 @@
 		cvarStrList
 			{
 				@MENUS_COMBATSTYLEFAST     "0"
-				@MENUS_COMBATSTYLEMEDIUM   "1"
-				@MENUS_COMBATSTYLEHEAVY    "2"
+				@MENUS_COMBATSTYLEHEAVY    "1"
+				@MENUS_COMBATSTYLEMEDIUM   "2"
 			}
-			visible				1			 
+		mouseEnter 
+			{ 
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			20 40 260 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow
+			}	
+			visible				1		
+			decoration
 		}
 //****************
 // Текст: Новый стиль
@@ -160,7 +182,6 @@
 		{
 			name				fighting_style_text2
 			text				@MENUS_NEW_STYLE
-			descText			@MENUS_ADDFIGHTINGSTYLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
@@ -169,8 +190,8 @@
 			textscale			1.1
 			forecolor			.95 .64 .37 1
 			textalignx			10
-			
 			visible				1
+			dicoration
 		}
 //****************
 // Стиль меча
@@ -178,8 +199,9 @@
 	itemDef 
 		{
 			name				fighting_style_button_2
-			text				" "
+			text				@MENUS_CHOOSE
 			type				ITEM_TYPE_MULTI
+			descText			@MENUS_ADDFIGHTINGSTYLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
@@ -197,29 +219,32 @@
 				}
 		mouseEnter 
 			{ 
-				show			button_glow
-				setitemrect		button_glow		330 20 300 40
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow			360 40 260 30
 			}
 		mouseExit 
 			{ 
-				hide			button_glow
+				hide			sidebutton_glow
 			}	  	  
 		action 
 			{
 				play			"sound/interface/button1.wav" 
 			}
 		}
-			
+//****************
+// Описание стиля быстрый
+//****************				
 	itemDef 
 		{
 			name				new_fightingstyle_desc
 			type				ITEM_TYPE_TEXTSCROLL
 			text				@SP_INGAME_FAST_STYLE
 			style				WINDOW_STYLE_SHADER
-			background			"BoxMenu"
-			rect				20 100 600 200
-			font				5
-			textscale			0.5
+			background			"box_blue"
+			rect				20 80 600 150
+			font				3
+			textstyle			3
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			1 1 1 1			
 			cvartest			"ui_newfightingstyle"
@@ -231,17 +256,20 @@
 			visible				1			 
 			autowrapped
 		}
-	
+//****************
+// Описания стиля быстрый
+//****************		
 	itemDef 
 		{
 			name				new_fightingstyle_desc
 			type				ITEM_TYPE_TEXTSCROLL
 			text				@SP_INGAME_STRONG_STYLE
 			style				WINDOW_STYLE_SHADER
-			background			"BoxMenu"
-			rect				20 100 580 200
-			font				5
-			textscale			0.5
+			background			"box_blue"
+			rect				20 80 600 150
+			font				3
+			textstyle			3
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			forecolor			1 1 1 1			
 			
@@ -255,9 +283,11 @@
 			visible				1			 
 			autowrapped
 		}
-//----------------------------------------------------------------------------------------------
-//SABER MODELS
-//----------------------------------------------------------------------------------------------
+		
+		//###########################
+		//#		SABER MODELS		#
+		//###########################
+		
 	itemDef
 		{
 			name				saber
@@ -275,46 +305,11 @@
 			visible				1
 			decoration
 		}	
-	/*
-//----------------------------------------------------------------------------------------------
-//	Галаграмма экрана
-//----------------------------------------------------------------------------------------------
-//Граница: Информации о стиле
-	itemDef 
-		{
-			name				briefing_background
-			style				WINDOW_STYLE_FILLED
-			background				"BoxMenu"
-			rect				-2 -40 644 530
-			backcolor			.03 .12 0.8 0.4
-			forecolor			1 1 1 1
-			visible				1
-			decoration
-		}
-//----------------------------------------------------------------------------------------------
-//   SABER MENU specific stuff
-//----------------------------------------------------------------------------------------------
-// Screen title
-		itemDef 
-		{
-			name				title
-			group				title
-			style				WINDOW_STYLE_EMPTY
-			text				@MENUS_CHOOSE_SABER_STYLE
-			rect				20 4 620 25
-			font				5
-			textscale			0.5
-			textalign			ITEM_ALIGN_CENTER		
-			textalignx			320
-			textaligny			-1	
-			forecolor			.549 .854 1 1
-			
-			visible				1 
-			decoration 
-		}
-//----------------------------------------------------------------------------------------------
-//	Эллементы выше других
-//----------------------------------------------------------------------------------------------
+		
+		//###########################
+		//#	   Кнопка ПРОДОЛЖИТЬ	#
+		//###########################
+		
 	itemDef 
 		{
 			name				continue
@@ -322,15 +317,16 @@
 			descText			@MENUS_NEW_MISSION_DESC
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			rect				250 444 160 25 
-			font				5
-			textscale			0.5
+			rect				250 444 160 30 
+			font				3
+			textstyle			3
+			textscale			1.1
 			forecolor			.95 .64 .37 1
 			textalign			ITEM_ALIGN_LEFT
 			visible				1
 			
-			textalignx			30
-			textaligny			6		
+			textalignx			20		
+			textaligny			0
 			background			"BoxMenuVertex"
 
 		action 
@@ -346,16 +342,16 @@
 			}
 		mouseEnter 
 			{ 				
-				show			button_glow
-				setitemrect		button_glow		250 444 160 24 
-				setitemrect		continue		252 446 156 22
+				show			sidebutton_glow
+				setitemrect		sidebutton_glow		250 444 160 24 
+				setitemrect		continue			252 446 156 24
 			}
 		mouseExit 
 			{ 
-				hide			button_glow
-				setitemrect		continue		250 444 160 25
+				hide			sidebutton_glow
+				setitemrect		continue			250 444 160 30
 			}	 			
 		}
-		*/
+
 	}
 }

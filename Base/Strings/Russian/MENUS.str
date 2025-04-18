@@ -5736,4 +5736,8 @@ REFERENCE           HILT_NEW2
 LANG_ENGLISH        "Hilt2"
 LANG_RUSSIAN         "Рукоять 2:"
 
+REFERENCE           CHOOSE
+LANG_ENGLISH        "Choose"
+LANG_RUSSIAN         "Выберите"
+
 ENDMARKER
