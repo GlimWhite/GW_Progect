@@ -212,64 +212,64 @@ LANG_ENGLISH        "GO TO ACADEMY"
 LANG_RUSSIAN         "б юйюделхч"
 
 REFERENCE           T1_SOUR_TITLE
-LANG_ENGLISH        "MERCENARY ACTIVITY - TATOOINE"
-LANG_RUSSIAN         "деърекэмнярэ мюелмхйнб - рюрсхм"
+LANG_ENGLISH        "MERCENARY ACTIVITY"
+LANG_RUSSIAN         "деърекэмнярэ мюелмхйнб"
 
 REFERENCE           T1_SURPRISE_TITLE
-LANG_ENGLISH        "DROID RECOVERY - TATOOINE"
-LANG_RUSSIAN         "онхяйх дпнхдю - рюрсхм"
+LANG_ENGLISH        "DROID RECOVERY"
+LANG_RUSSIAN         "онхяйх дпнхдю"
 
 REFERENCE           T1_RAIL_TITLE
-LANG_ENGLISH        "CULT INVESTIGATION - CORELLIA"
-LANG_RUSSIAN         "пюяякеднбюмхе яейрш - йнпеккхъ"
+LANG_ENGLISH        "CULT INVESTIGATION"
+LANG_RUSSIAN         "пюяякеднбюмхе яейрш"
 
 REFERENCE           T1_DANGER_TITLE
-LANG_ENGLISH        "MERCHANT RESCUE - BLENJEEL"
-LANG_RUSSIAN         "яоюяемхе рнпцнбжю - акемдфхк"
+LANG_ENGLISH        "MERCHANT RESCUE"
+LANG_RUSSIAN         "яоюяемхе рнпцнбжю"
 
 REFERENCE           T1_FATAL_TITLE
-LANG_ENGLISH        "EMERGENCY ASSISTANCE - BAKURA"
-LANG_RUSSIAN         "япнвмюъ онлныэ - аюйспю"
+LANG_ENGLISH        "EMERGENCY ASSISTANCE"
+LANG_RUSSIAN         "япнвмюъ онлныэ"
 
 REFERENCE           T2_RANCOR_TITLE
-LANG_ENGLISH        "RESCUE MISSION - NAR KREETA"
-LANG_RUSSIAN         "яоюяюрекэмюъ щйяоедхжхъ - мюп йпхрю"
+LANG_ENGLISH        "RESCUE MISSION"
+LANG_RUSSIAN         "яоюяюрекэмюъ щйяоедхжхъ"
 
 REFERENCE           T2_TRIP_TITLE
-LANG_ENGLISH        "MEET CONTACT - ZONJU V"
-LANG_RUSSIAN         "бярпевю я хярнвмхйнл - гнмдфс V"
+LANG_ENGLISH        "MEET CONTACT"
+LANG_RUSSIAN         "бярпевю я хярнвмхйнл"
 
 REFERENCE           T2_WEDGE_TITLE
-LANG_ENGLISH        "COVERT OPERATION - KRIL'DOR"
-LANG_RUSSIAN         "рюимюъ ноепюжхъ - йпхк'днп"
+LANG_ENGLISH        "COVERT OPERATION"
+LANG_RUSSIAN         "рюимюъ ноепюжхъ"
 
 REFERENCE           T2_ROGUE_TITLE
-LANG_ENGLISH        "CAPTURE CRIME LORD - CORUSCANT"
-LANG_RUSSIAN         "гюубюр аюмднйпюрю - йнпсяжюмр"
+LANG_ENGLISH        "CAPTURE CRIME LORD"
+LANG_RUSSIAN         "гюубюр аюмднйпюрю"
 
 REFERENCE           T2_DPRED_TITLE
-LANG_ENGLISH        "CULT INVESTIGATION - DOSUUN"
-LANG_RUSSIAN         "пюяякеднбюмхе яейрш - дняссм"
+LANG_ENGLISH        "CULT INVESTIGATION"
+LANG_RUSSIAN         "пюяякеднбюмхе яейрш"
 
 REFERENCE           T3_RIFT_TITLE
-LANG_ENGLISH        "CULT SIGHTING - CHANDRILA"
-LANG_RUSSIAN         "бшякефхбюмхе яейрш - вюмдпхкю"
+LANG_ENGLISH        "CULT SIGHTING"
+LANG_RUSSIAN         "бшякефхбюмхе"
 
 REFERENCE           T3_STAMPEDE_TITLE
-LANG_ENGLISH        "CULT INVESTIGATION - TANAAB"
-LANG_RUSSIAN         "пюяякеднбюмхе яейрш - рюмююа"
+LANG_ENGLISH        "CULT INVESTIGATION"
+LANG_RUSSIAN         "пюяякеднбюмхе яейрш"
 
 REFERENCE           T3_HEVIL_TITLE
-LANG_ENGLISH        "DISMANTLE DEVICE - YALARA"
-LANG_RUSSIAN         "делнмрюф сярпниярбю - ъкюпю"
+LANG_ENGLISH        "DISMANTLE DEVICE"
+LANG_RUSSIAN         "делнмрюф сярпниярбю"
 
 REFERENCE           T3_BYSS_TITLE
-LANG_ENGLISH        "FORCE THEFT INVESTIGATION - BYSS"
-LANG_RUSSIAN         "пюяякеднбюмхе ухыемхъ яхкш - ахяя"
+LANG_ENGLISH        "FORCE THEFT INVESTIGATION"
+LANG_RUSSIAN         "пюяякеднбюмхе ухыемхъ яхкш"
 
 REFERENCE           T3_BOUNTY_TITLE
-LANG_ENGLISH        "WEAPON DESTRUCTION - ORD MANTELL"
-LANG_RUSSIAN         "смхврнфемхе нпсфхъ - нпд люмрекк"
+LANG_ENGLISH        "WEAPON DESTRUCTION"
+LANG_RUSSIAN         "смхврнфемхе нпсфхъ"
 
 REFERENCE           ABOUT
 LANG_ENGLISH        "About"

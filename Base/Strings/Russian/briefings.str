@@ -40,7 +40,7 @@ LANG_RUSSIAN         "Мы получили анонимную информацию о том, что в последнее вр
 
 REFERENCE           T2_WEDGE
 LANG_ENGLISH        "New Republic Intelligence has recently discovered the existence of an Imperial tibanna gas platform on the planet Kril'dor.  If the Republic can take control of the platform, it would deal a severe blow to the Imperial Remnant.  General Wedge Antilles of Rogue Squadron has come up with a bold plan in which he and a single ground troop could capture the entire facility.  General Antilles believes that only a Jedi could accomplish the ground portion of the mission."
-LANG_RUSSIAN         "Мы получили анонимную информацию о том, что недавно на черном рынке появилось большое количество дроидов-убийц.  Эти товары уже несколько лет находятся под запретом, и ни одна государственная компания их не производит.  Ланник Ракто, мелкий криминальный авторитет с Корусканта, подозревается в производстве этих новых дроидов.  Захватите Рака, чтобы мы могли определить, где находится его фабрика.."
+LANG_RUSSIAN         "Разведка Новой Республики недавно обнаружила существование имперской газовой платформы тибанна на планете Крил'дор. Если Республика сможет взять платформу под свой контроль, это нанесет серьезный удар по остаткам Империи. Генерал Ведж Антиллес из Разбойного эскадрона придумал смелый план, согласно которому он и один наземный отряд могли бы захватить весь объект целиком. Генерал Антиллес считает, что только джедай может выполнить наземную часть миссии."
 
 REFERENCE           T3_BYSS
 LANG_ENGLISH        "Since Rosh never completed his mission at Byss, we still need to determine if Tavion managed to siphon Force energy from the remains of the planet.  The Emperor spent a lot of time there, so it would be a huge source of power.  If it has been taken, we'll have an idea of just how powerful Tavion is."
@@ -64,7 +64,7 @@ LANG_RUSSIAN         "Появилась информация о большом запасе старого оружия, спря
 
 REFERENCE           NONE
 LANG_ENGLISH        "No briefing is available for this mission."
-LANG_RUSSIAN         "По поводу этой миссии задания не проводится."
+LANG_RUSSIAN         " "
 
 REFERENCE           YAVIN2
 LANG_ENGLISH        "Report to the training grounds with Rosh to begin Force power training with Kyle Katarn."

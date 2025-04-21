@@ -1,2 +1,407 @@
-Z_Free(5515a54): Zone has been cleard already!
-Z_Free(5515ab4): Zone has been cleard already!
+...detecting CPU, found Intel Pentium IV
+
+------- Input Initialization -------
+Skipping check for DirectInput
+Joystick is not active.
+------------------------------------
+----- Client Initialization -----
+----- Initializing Renderer ----
+-------------------------------
+----- Client Initialization Complete -----
+--- Common Initialization Complete ---
+Working directory: E:\Всякое\Акимов\Progect\Jedi_Academy_Redux
+^1PlayCinematic(): Failed to open "video/openinglogos.roq"
+Initializing OpenGL subsystem
+...initializing QGL
+succeeded
+...setting mode -1: 1280 720 W
+...registered window class
+...created window@0,0 (1286x749)
+Initializing OpenGL driver
+...getting DC: succeeded
+...GLW_ChoosePFD( 32, 24, 16 )
+...100 PFDs found
+...PFD 1 rejected, improper flags (8024 instead of 25)
+...PFD 3 rejected, improper flags (8024 instead of 25)
+...PFD 4 rejected, improper flags (8024 instead of 25)
+...PFD 6 rejected, improper flags (8024 instead of 25)
+...PFD 16 rejected, improper flags (8004 instead of 25)
+...PFD 17 rejected, improper flags (8205 instead of 25)
+...PFD 18 rejected, improper flags (8004 instead of 25)
+...PFD 19 rejected, improper flags (8205 instead of 25)
+...PFD 20 rejected, improper flags (8004 instead of 25)
+...PFD 21 rejected, improper flags (8205 instead of 25)
+...PFD 22 rejected, improper flags (8004 instead of 25)
+...PFD 23 rejected, improper flags (8205 instead of 25)
+...PFD 24 rejected, improper flags (8004 instead of 25)
+...PFD 25 rejected, improper flags (8205 instead of 25)
+...PFD 26 rejected, improper flags (8004 instead of 25)
+...PFD 27 rejected, improper flags (8205 instead of 25)
+...PFD 28 rejected, improper flags (8004 instead of 25)
+...PFD 29 rejected, improper flags (8205 instead of 25)
+...PFD 30 rejected, improper flags (8004 instead of 25)
+...PFD 31 rejected, improper flags (8205 instead of 25)
+...PFD 32 rejected, improper flags (8004 instead of 25)
+...PFD 33 rejected, improper flags (8205 instead of 25)
+...PFD 34 rejected, improper flags (8004 instead of 25)
+...PFD 35 rejected, improper flags (8205 instead of 25)
+...PFD 36 rejected, improper flags (8004 instead of 25)
+...PFD 37 rejected, improper flags (8205 instead of 25)
+...PFD 38 rejected, improper flags (8004 instead of 25)
+...PFD 39 rejected, improper flags (8205 instead of 25)
+...PFD 40 rejected, improper flags (8405 instead of 25)
+...PFD 41 rejected, improper flags (8004 instead of 25)
+...PFD 42 rejected, improper flags (8205 instead of 25)
+...PFD 43 rejected, improper flags (8004 instead of 25)
+...PFD 44 rejected, improper flags (8205 instead of 25)
+...PFD 45 rejected, improper flags (8004 instead of 25)
+...PFD 46 rejected, improper flags (8205 instead of 25)
+...PFD 47 rejected, improper flags (8004 instead of 25)
+...PFD 48 rejected, improper flags (8205 instead of 25)
+...PFD 49 rejected, improper flags (8004 instead of 25)
+...PFD 50 rejected, improper flags (8205 instead of 25)
+...PFD 51 rejected, improper flags (8004 instead of 25)
+...PFD 52 rejected, improper flags (8205 instead of 25)
+...PFD 53 rejected, improper flags (8405 instead of 25)
+...PFD 54 rejected, improper flags (8004 instead of 25)
+...PFD 55 rejected, improper flags (8205 instead of 25)
+...PFD 56 rejected, improper flags (8004 instead of 25)
+...PFD 57 rejected, improper flags (8405 instead of 25)
+...PFD 58 rejected, improper flags (8205 instead of 25)
+...PFD 59 rejected, improper flags (8004 instead of 25)
+...PFD 60 rejected, improper flags (8205 instead of 25)
+...PFD 61 rejected, improper flags (8004 instead of 25)
+...PFD 62 rejected, improper flags (8205 instead of 25)
+...PFD 63 rejected, improper flags (8004 instead of 25)
+...PFD 64 rejected, improper flags (8205 instead of 25)
+...PFD 65 rejected, improper flags (8004 instead of 25)
+...PFD 66 rejected, improper flags (807c instead of 25)
+...PFD 67 rejected, improper flags (807c instead of 25)
+...PFD 70 rejected, improper flags (807c instead of 25)
+...PFD 71 rejected, improper flags (807c instead of 25)
+...PFD 74 rejected, not RGBA
+...PFD 75 rejected, not RGBA
+...PFD 76 rejected, not RGBA
+...PFD 77 rejected, not RGBA
+...PFD 78 rejected, improper flags (78 instead of 25)
+...PFD 79 rejected, improper flags (78 instead of 25)
+...PFD 80 rejected, improper flags (78 instead of 25)
+...PFD 81 rejected, improper flags (78 instead of 25)
+...PFD 82 rejected, not RGBA
+...PFD 83 rejected, not RGBA
+...PFD 84 rejected, improper flags (78 instead of 25)
+...PFD 85 rejected, improper flags (78 instead of 25)
+...PFD 86 rejected, improper flags (78 instead of 25)
+...PFD 87 rejected, improper flags (78 instead of 25)
+...PFD 88 rejected, not RGBA
+...PFD 89 rejected, not RGBA
+...PFD 90 rejected, improper flags (78 instead of 25)
+...PFD 91 rejected, improper flags (78 instead of 25)
+...PFD 92 rejected, improper flags (78 instead of 25)
+...PFD 93 rejected, improper flags (78 instead of 25)
+...PFD 94 rejected, not RGBA
+...PFD 95 rejected, not RGBA
+...PFD 96 rejected, improper flags (78 instead of 25)
+...PFD 97 rejected, improper flags (78 instead of 25)
+...PFD 98 rejected, improper flags (78 instead of 25)
+...PFD 99 rejected, improper flags (78 instead of 25)
+...PFD 100 rejected, not RGBA
+...PFD 101 rejected, not RGBA
+...hardware acceleration found
+...PIXELFORMAT 5 selected
+...creating GL context: succeeded
+...making context current: succeeded
+Initializing OpenGL extensions
+...GL_EXT_texture_compression_s3tc available
+...ignoring texture compression
+...using GL_EXT_texture_env_add
+...GL_EXT_texture_filter_anisotropic available
+...using GL_EXT_texture_filter_anisotropic
+...Using GL_EXT_texture_edge_clamp
+...using WGL_EXT_swap_control
+...using GL_ARB_multitexture
+...using GL_EXT_compiled_vertex_array
+...GL_EXT_point_parameters not found
+...GL_NV_point_sprite not found
+...GL_NV_register_combiners not found
+...ignoring WGL_ARB_render_texture
+
+GL_VENDOR: Intel
+GL_RENDERER: Intel(R) UHD Graphics 630
+GL_VERSION: 4.6.0 - Build 31.0.101.2111
+GL_EXTENSIONS: GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_blend_color GL_EXT_abgr GL_EXT_texture3D GL_EXT_clip_volume_hint GL_EXT_compiled_vertex_array GL_SGIS_texture_edge_clamp GL_SGIS_generate_mipmap GL_EXT_draw_range_elements GL_SGIS_texture_lod GL_EXT_rescale_normal GL_EXT_packed_pixels GL_EXT_texture_edge_clamp GL_EXT_separate_specular_color GL_ARB_multitexture GL_ARB_map_buffer_alignment GL_ARB_conservative_depth GL_EXT_texture_env_combine GL_EXT_bgra GL_EXT_blend_func_separate GL_EXT_secondary_color GL_EXT_fog_coord GL_EXT_texture_env_add GL_ARB_texture_cube_map GL_ARB_transpose_matrix GL_ARB_internalformat_query GL_ARB_internalformat_query2 GL_ARB_texture_env_add GL_IBM_texture_mirrored_repeat GL_ARB_texture_mirrored_repeat GL_EXT_multi_draw_arrays GL_SUN_multi_draw_arrays GL_NV_blend_square GL_ARB_texture_compression GL_3DFX_texture_compression_FXT1 GL_EXT_texture_filter_anisotropic GL_ARB_texture_filter_anisotropic GL_ARB_texture_border_clamp GL_ARB_point_parameters GL_ARB_texture_env_combine GL_ARB_texture_env_dot3 GL_ARB_texture_env_crossbar GL_EXT_texture_compression_s3tc GL_ARB_shadow GL_ARB_window_pos GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_ARB_vertex_program GL_EXT_texture_rectangle GL_ARB_fragment_program GL_EXT_stencil_two_side GL_ATI_separate_stencil GL_ARB_vertex_buffer_object GL_EXT_texture_lod_bias GL_ARB_occlusion_query GL_ARB_fragment_shader GL_ARB_shader_objects GL_ARB_shading_language_100 GL_ARB_texture_non_power_of_two GL_ARB_vertex_shader GL_NV_texgen_reflection GL_ARB_point_sprite GL_ARB_fragment_program_shadow GL_EXT_blend_equation_separate GL_ARB_depth_texture GL_ARB_texture_rectangle GL_ARB_draw_buffers GL_ARB_color_buffer_float GL_ARB_half_float_pixel GL_ARB_texture_float GL_ARB_pixel_buffer_object GL_ARB_texture_barrier GL_EXT_framebuffer_object GL_ARB_draw_instanced GL_ARB_half_float_vertex GL_ARB_occlusion_query2 GL_EXT_draw_buffers2 GL_WIN_swap_hint GL_EXT_texture_sRGB GL_ARB_multisample GL_EXT_packed_float GL_EXT_texture_shared_exponent GL_ARB_texture_rg GL_ARB_texture_compression_rgtc GL_NV_conditional_render GL_ARB_texture_swizzle GL_EXT_texture_swizzle GL_ARB_texture_gather GL_ARB_sync GL_ARB_cl_event GL_ARB_framebuffer_sRGB GL_EXT_packed_depth_stencil GL_ARB_depth_buffer_float GL_EXT_transform_feedback GL_ARB_transform_feedback2 GL_ARB_draw_indirect GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_ARB_framebuffer_object GL_ARB_framebuffer_no_attachments GL_EXT_texture_array GL_EXT_texture_integer GL_ARB_map_buffer_range GL_ARB_texture_buffer_range GL_EXT_texture_snorm GL_ARB_blend_func_extended GL_INTEL_performance_query GL_EXT_memory_object GL_EXT_semaphore GL_EXT_memory_object_win32 GL_EXT_semaphore_win32 GL_ARB_copy_buffer GL_ARB_sampler_objects GL_NV_primitive_restart GL_ARB_seamless_cube_map GL_ARB_seamless_cubemap_per_texture GL_ARB_uniform_buffer_object GL_ARB_depth_clamp GL_ARB_vertex_array_bgra GL_ARB_texture_buffer_object GL_ARB_shader_bit_encoding GL_ARB_draw_buffers_blend GL_ARB_geometry_shader4 GL_EXT_geometry_shader4 GL_ARB_texture_query_lod GL_ARB_explicit_attrib_location GL_ARB_draw_elements_base_vertex GL_EXT_shader_integer_mix GL_ARB_instanced_arrays GL_ARB_base_instance GL_ARB_fragment_coord_conventions GL_EXT_gpu_program_parameters GL_ARB_texture_buffer_object_rgb32 GL_ARB_compatibility GL_ARB_texture_rgb10_a2ui GL_ARB_texture_multisample GL_ARB_vertex_type_2_10_10_10_rev GL_ARB_vertex_type_10f_11f_11f_rev GL_ARB_timer_query GL_EXT_timer_query GL_ARB_tessellation_shader GL_ARB_vertex_array_object GL_ARB_provoking_vertex GL_ARB_sample_shading GL_ARB_texture_cube_map_array GL_EXT_gpu_shader4 GL_ARB_gpu_shader5 GL_ARB_gpu_shader_fp64 GL_INTEL_fragment_shader_ordering GL_ARB_fragment_shader_interlock GL_ARB_clip_control GL_EXT_shader_framebuffer_fetch GL_ARB_shader_subroutine GL_ARB_transform_feedback3 GL_ARB_get_program_binary GL_ARB_separate_shader_objects GL_ARB_shader_group_vote GL_ARB_shader_precision GL_ARB_vertex_attrib_64bit GL_ARB_viewport_array GL_ARB_transform_feedback_instanced GL_ARB_compressed_texture_pixel_storage 
+GL_MAX_TEXTURE_SIZE: 16384
+GL_MAX_ACTIVE_TEXTURES_ARB: 8
+
+PIXELFORMAT: color(32-bits) Z(24-bit) stencil(8-bits)
+MODE: -1, 1280 x 720 windowed hz:60
+GAMMA: hardware w/ 0 overbright bits
+CPU: Intel Pentium IV
+rendering primitives: single glDrawElements
+texturemode: GL_LINEAR_MIPMAP_LINEAR
+picmip: 0
+texture bits: 0
+lightmap texture bits: 0
+multitexture: enabled
+compiled vertex arrays: enabled
+texenv add: enabled
+compressed textures: disabled
+compressed lightmaps: disabled
+texture compression method: None
+anisotropic filtering: enabled  (16.000000 of 16.000000)
+Dynamic Glow: disabled
+Forcing glFinish
+
+------- sound initialization -------
+Initializing DirectSound
+locked hardware.  ok
+Warning: stencil shadows and overdraw measurement are mutually exclusive
+^5Загрузка... auto_test
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+Loading shader text .....
+..... 3123 shader definitions loaded
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: test
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: Menus_ActivateByName: Unable to find menu 'ReduxMainMenu'
+----- CL_Shutdown -----
+Shutting down OpenGL subsystem
+...wglMakeCurrent( NULL, NULL ): success
+...deleting GL context: success
+...releasing DC: success
+...destroying window
+...shutting down QGL
+...unloading OpenGL DLL
+-----------------------

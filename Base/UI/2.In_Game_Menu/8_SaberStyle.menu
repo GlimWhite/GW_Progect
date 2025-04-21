@@ -38,7 +38,7 @@
 	onESC 
 		{ 
 			play				"sound/interface/esc.wav" 					
-			//uiScript		 	"updatesabercvars"
+			uiScript		 	"updatesabercvars"
 			close				all
 		}
 //_______________________________________________________________________________________________
@@ -72,7 +72,6 @@
 			bordercolor			1 1 1 0.5
 			bordersize			2
 			visible				1
-			decoration
 			decoration
 		}
 //*********
@@ -115,7 +114,7 @@
 			textalignx			20
 			forecolor			1 1 1 1
 			visible				1 
-			decoration 
+			
 		}
 //_______________________________________________________________________________________________
 //
@@ -157,6 +156,8 @@
 			forecolor			.95 .64 .37 1
 					
 			cvar				"ui_currentfightingstyle"
+			visible				1
+			decoration
 		cvarStrList
 			{
 				@MENUS_COMBATSTYLEFAST     "0"
@@ -171,9 +172,7 @@
 		mouseExit 
 			{ 
 				hide			sidebutton_glow
-			}	
-			visible				1		
-			decoration
+			}			
 		}
 //****************
 // Текст: Новый стиль
@@ -191,7 +190,7 @@
 			forecolor			.95 .64 .37 1
 			textalignx			10
 			visible				1
-			dicoration
+			decoration
 		}
 //****************
 // Стиль меча
@@ -210,6 +209,7 @@
 			textscale			1.1
 			forecolor			.95 .64 .37 1
 			visible				1
+			textalignx			10
 			
 			cvar				"ui_newfightingstyle"
 		cvarStrList
