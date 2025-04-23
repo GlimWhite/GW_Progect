@@ -7,6 +7,7 @@
 //###################################################//
 //#						Skye						#//
 //###################################################//
+/*
 textures/skies/yavin
 {
 	surfaceparm	sky
@@ -15,7 +16,7 @@ textures/skies/yavin
 	notc
 	skyParms	textures/yavin/sky/yavin 512 - 
 }
-
+*/
 textures/skies/cloudlayer_yavin
 {
 	surfaceparm	noimpact

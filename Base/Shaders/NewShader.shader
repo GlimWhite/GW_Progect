@@ -183,7 +183,7 @@ textures/yavin/center
         map textures/yavin/button_lg
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen vertex
-		tcMod	scale	0.16 0.16
+		//tcMod	scale	0.16 0.16
     }
 }
 
@@ -196,7 +196,7 @@ textures/yavin/wall
         map $lightmap
     }
     {
-        map textures/yavin/wall5
+       // map textures/yavin/wall5
 		blendFunc GL_DST_COLOR GL_ZERO
 		rgbGen vertex
 		tcMod	scale	0.05 0.05
@@ -213,10 +213,54 @@ textures/yavin/strius
 		blendFunc GL_SRC_ALPHA GL_ONE
     }
     {
-        map textures/yavin/wall3
+        map textures/yavin/strius
 		blendFunc GL_SRC_ALPHA GL_ONE
 		rgbGen vertex
-		tcMod	scale	0.1 0.1
+		//tcMod	scale	1 1
     }
 
+}
+
+textures/metal
+{
+	//q3map_material			SolidMetal
+	//q3map_shadeangle		150
+	//q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/metal
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+		//tcMod	scale	1 1
+    }
+}
+
+
+textures/
+{
+	//q3map_material			SolidMetal
+	//q3map_shadeangle		150
+	//q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/stone4
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+		//tcMod	scale	1 1
+    }
+}
+
+textures/skies/yavin
+{
+	surfaceparm	sky
+	surfaceparm	noimpact
+	surfaceparm	nomarks
+	notc
+	skyParms	textures/skies/dune 512 - 
 }

@@ -16,7 +16,7 @@ Initializing OpenGL subsystem
 succeeded
 ...setting mode -1: 1280 720 W
 ...registered window class
-...created window@0,0 (1286x749)
+...created window@157,85 (1286x749)
 Initializing OpenGL driver
 ...getting DC: succeeded
 ...GLW_ChoosePFD( 32, 24, 16 )
@@ -156,246 +156,34 @@ Forcing glFinish
 Initializing DirectSound
 locked hardware.  ok
 Warning: stencil shadows and overdraw measurement are mutually exclusive
-^5Загрузка... auto_test
+^5Загрузка... quick
 ------ Server Initialization ------
 Jedi Academy: Redux version 2.0
-Server: test
+Server: maps
 Loading shader text .....
-..... 3123 shader definitions loaded
+..... 3125 shader definitions loaded
 ------- Game Initialization -------
 gamename: base
 gamedate: Oct 24 2003
 -----------------------------------
 -----------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
+^1********************
+^6ERROR: Loaded chunk (PRTS) has different length than requested
+^1********************
+DROPPED
+]map maps
 ------ Server Initialization ------
 Jedi Academy: Redux version 2.0
-Server: test
+Server: maps
 ------- Game Initialization -------
 gamename: base
 gamedate: Oct 24 2003
 -----------------------------------
 -----------------------------------
-^5Готово.
 ^3WARNING: reused image menu/static_base with mixed mipmap parm
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'mainMenu'
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: test
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 702 faces, 0 meshes, 0 trisurfs, 0 flares
-^3WARNING: Menus_ActivateByName: Unable to find menu 'ReduxMainMenu'
+^3WARNING: Couldn't find image for shader textures/Trimblock
+...loaded 1787 faces, 0 meshes, 0 trisurfs, 0 flares
 ----- CL_Shutdown -----
 Shutting down OpenGL subsystem
 ...wglMakeCurrent( NULL, NULL ): success
