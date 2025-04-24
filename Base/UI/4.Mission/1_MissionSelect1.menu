@@ -709,16 +709,17 @@ itemDef
 
 				show			kyle
 				show			next_button
-				show			accept2text
 				
-				setfocus		next_button
 				setcvar 		tier_mapname 		"maptransition t1_surprise"
-			
+				
+				show			accept_text
 				setitemtext		accept_text 		@T1_SURPRISE_04KYK001	
 				
 				hide			briefing_text
-				hide 			accbuttons
-				hide			sidebutton_glow_red	
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button	
 			}
 		}
 
@@ -755,17 +756,18 @@ itemDef
 			playVoice			"sound/chars/luke/08luk001.mp3"
 
 				show			wedge
-				show			next_button
-				show			accept3text			
+				show			next_button		
 
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t1_fatal"
 				
+				show			accept_text
 				setitemtext		accept_text 			@T1_FATAL_08LUK001	
 				
 				hide			briefing_text
-				hide 			accbuttons
-				hide			sidebutton_glow_red					
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button				
 			}
 		}
 
@@ -802,18 +804,19 @@ itemDef
 			playVoice			"sound/chars/luke/06luk001.mp3"
 				
 				show			luke
-				show			next_button
-				show			accept4text			
+				show			next_button		
 
-				setfocus		next_button
+
 				setcvar 		tier_mapname 			"maptransition t1_danger"	
 				
+				show			accept_text
 				setitemtext		accept_text 			@T1_DANGER_06LUK001			
 				
 				hide			briefing_text
-
+				hide 			accbuttons				
 				hide			sidebutton_glow_red
-				hide 			accbuttons	
+				hide			planet
+				hide			mission_button
 			}
 		}
 
@@ -852,14 +855,16 @@ itemDef
 				show			prot
 				show			next_button
 				
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t1_rail"
-	
+				
+				show			accept_text
 				setitemtext		accept_text 			@T1_RAIL_05KYK001	
 
 				hide			briefing_text
-				hide			sidebutton_glow_red	
-				hide 			accbuttons
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
 			}
 		}
 //_______________________________________________________________________________________________

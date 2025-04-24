@@ -710,16 +710,17 @@ itemDef
 
 				show			prot
 				show			next_button
-				show			accept2text
 				
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t2_trip"
 			
+				show			accept_text			
 				setitemtext		accept_text 			@T2_TRIP_15PRO001	
 				
 				hide			briefing_text
-				hide 			accbuttons
-				hide			sidebutton_glow_red	
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
 			}
 		}
 
@@ -756,17 +757,18 @@ itemDef
 			playVoice			"sound/chars/wedge/13wea001.mp3"
 
 				show			wedge
-				show			next_button
-				show			accept3text			
+				show			next_button		
 
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t2_wedge"
 				
+				show			accept_text				
 				setitemtext		accept_text 			@T2_WEDGE_13WEA001	
 				
 				hide			briefing_text
-				hide 			accbuttons
-				hide			sidebutton_glow_red					
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button				
 			}
 		}
 
@@ -803,18 +805,18 @@ itemDef
 			playVoice			"sound/chars/kyle/14kyk001.mp3"
 				
 				show			kyle
-				show			next_button
-				show			accept4text			
+				show			next_button			
 
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t2_rogue"	
 				
+				show			accept_text				
 				setitemtext		accept_text 			@T2_ROGUE_14KYK001				
 				
 				hide			briefing_text
-
+				hide 			accbuttons				
 				hide			sidebutton_glow_red
-				hide 			accbuttons	
+				hide			planet
+				hide			mission_button
 			}
 		}
 
@@ -853,14 +855,16 @@ itemDef
 				show			prot
 				show			next_button
 				
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t2_dpred"
 	
+				show			accept_text
 				setitemtext		accept_text 			@T2_ROGUE_14KYK001	
 
 				hide			briefing_text
-				hide			sidebutton_glow_red	
-				hide 			accbuttons
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
 			}
 		}
 //_______________________________________________________________________________________________

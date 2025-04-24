@@ -49,7 +49,7 @@
 			group				none
 			style				WINDOW_STYLE_SHADER
 			rect				0 0 640 480
-			background			"textures/colors/black"
+			background			"GroundMenu"
 			forecolor			1 1 1 1
 			visible				1
 			decoration
@@ -188,7 +188,7 @@
 			text				@TIERVICTORY_T1_SURPRISE
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -210,7 +210,7 @@
 			text				@TIERVICTORY_T1_SOUR
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -232,7 +232,7 @@
 			text				@TIERVICTORY_T1_SURPRISE
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -255,7 +255,7 @@
 			text				@TIERVICTORY_T1_FATAL
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -278,7 +278,7 @@
 			text				@TIERVICTORY_T1_DANGER
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -301,7 +301,7 @@
 			text				@TIERVICTORY_T1_RAIL_01
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -327,7 +327,7 @@
 			text				@TIERVICTORY_T2_RANCOR
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -350,7 +350,7 @@
 			text				@TIERVICTORY_T2_TRIP
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -373,7 +373,7 @@
 			text				@TIERVICTORY_T2_WEDGE
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -396,7 +396,7 @@
 			text				@TIERVICTORY_T2_ROGUE
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -419,7 +419,7 @@
 			text				@TIERVICTORY_T2_DPRED
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -445,7 +445,7 @@
 			text				@TIERVICTORY_T3_RIFT
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -468,7 +468,7 @@
 			text				@TIERVICTORY_T3_STAMP
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -492,7 +492,7 @@
 			font				3
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -514,7 +514,7 @@
 			text				@TIERVICTORY_T3_BYSS
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -537,7 +537,7 @@
 			text				@TIERVICTORY_T3_BOUNTY
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			lineHeight			18
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
@@ -565,11 +565,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
@@ -632,11 +632,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			cvartest				"tier_storyinfo"
@@ -669,7 +669,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -691,11 +691,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
@@ -754,11 +754,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			cvartest			"tier_storyinfo"
@@ -790,7 +790,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -812,11 +812,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
@@ -877,11 +877,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			cvartest			"tier_storyinfo"
@@ -914,7 +914,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -936,12 +936,12 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			visible				1
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1029,14 +1029,14 @@
 			}
 		}
 
-		itemDef
+	itemDef
 		{
 			name				story5_continue
 			type				ITEM_TYPE_BUTTON
 			rect				470 460 200 24
 			text				@MENUS_RETURN_TO_ACADEMY
 			font				2
-			forecolor			1 1 1 1
+			forecolor			1 0 0 1
 			textscale			.7
 			textalign			ITEM_ALIGN_LEFT
 			textalignx			5
@@ -1072,7 +1072,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1094,11 +1094,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
@@ -1190,7 +1190,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1214,11 +1214,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1280,11 +1280,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1313,7 +1313,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1336,11 +1336,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1403,11 +1403,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1436,7 +1436,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1459,11 +1459,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1523,11 +1523,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1557,7 +1557,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1580,11 +1580,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1701,7 +1701,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1725,11 +1725,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1820,7 +1820,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1843,12 +1843,12 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
 			visible				1
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1908,11 +1908,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -1941,7 +1941,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -1964,11 +1964,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			cvartest			"tier_storyinfo"
@@ -2031,11 +2031,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -2064,7 +2064,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -2088,11 +2088,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
@@ -2154,11 +2154,11 @@
 			text				@MENUS_OKAY
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			55
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -2187,7 +2187,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -2211,11 +2211,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			cvartest			"tier_storyinfo"
@@ -2340,7 +2340,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -2363,11 +2363,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			37
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
@@ -2458,7 +2458,7 @@
 			rect				22 250 250 300
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			autowrapped
@@ -2475,7 +2475,7 @@
 			group				galagrama
 			style				WINDOW_STYLE_SHADER
 			rect				10 230 640 250
-			background			"menu/menu_top_mp"
+			background			"box_blue"
 			border				1
 			bordersize			1
 			bordercolor			.549 .854 1 0.5
@@ -2537,7 +2537,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_CENTER
 			textalignx			150
 			textaligny			-1
@@ -2555,7 +2555,7 @@
 			group				stats
 			style				WINDOW_STYLE_SHADER
 			rect				31 25 575 40
-			background			"menu/menu_top_mp"
+			background			"box_blue"
 			border				1
 			bordersize			1
 			bordercolor			.549 .854 1 1
@@ -2573,7 +2573,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_CENTER
 			textalignx			160
 			textaligny			-1
@@ -2591,7 +2591,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_CENTER
 			textalignx			160
 			textaligny			-1
@@ -2639,7 +2639,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_CENTER
 			textalignx			320
 			textaligny			-1
@@ -2652,7 +2652,7 @@
 			group				stats
 			style				WINDOW_STYLE_SHADER
 			rect				31 98 575 90
-			background			"menu/menu_top_mp"
+			background			"box_blue"
 			border				1
 			bordersize			1
 			bordercolor			.549 .854 1 1
@@ -2692,7 +2692,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
 			decoration
@@ -2709,7 +2709,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
 			decoration
@@ -2726,7 +2726,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
 			decoration
@@ -2743,7 +2743,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
 			decoration
@@ -2760,7 +2760,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
 			decoration
@@ -2778,7 +2778,7 @@
 			font				3
 			textstyle			3
 			forecolor			.95 .64 .37 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_CENTER
 			textalignx			320
 			textaligny			-1
@@ -2791,7 +2791,7 @@
 			group				stats
 			style				WINDOW_STYLE_SHADER
 			rect				31 220 575 140
-			background			"menu/menu_top_mp"
+			background			"box_blue"
 			border				1
 			bordersize			1
 			bordercolor			.549 .854 1 1
@@ -2831,7 +2831,7 @@
 			font				3
 			textstyle			3
 			forecolor			.549 .854 1 1
-			textscale			1
+			textscale			1.1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
 			decoration
@@ -2847,7 +2847,7 @@
 			cvar				"ui_stats_heal"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2864,7 +2864,7 @@
 			cvar				"ui_stats_mindtrick"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2881,7 +2881,7 @@
 			cvar				"ui_stats_protect"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			.549 .854 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2900,7 +2900,7 @@
 			cvar				"ui_stats_jump"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2917,7 +2917,7 @@
 			cvar				"ui_stats_pull"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2934,7 +2934,7 @@
 			cvar				"ui_stats_push"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2951,7 +2951,7 @@
 			cvar				"ui_stats_sense"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2971,7 +2971,7 @@
 			cvar				"ui_stats_speed"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -2988,7 +2988,7 @@
 			cvar				"ui_stats_defense"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
@@ -3005,7 +3005,7 @@
 			cvar				"ui_stats_offense"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
@@ -3022,7 +3022,7 @@
 			cvar				"ui_stats_throw"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 1 1 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			-1
@@ -3041,7 +3041,7 @@
 			cvar				"ui_stats_drain"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 0 0 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -3058,7 +3058,7 @@
 			cvar				"ui_stats_grip"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 0 0 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -3075,7 +3075,7 @@
 			cvar				"ui_stats_lightning"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 0 0 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
@@ -3092,12 +3092,13 @@
 			cvar				"ui_stats_rage"
 			font				3
 			textstyle			3
-			textscale			1
+			textscale			1.1
 			forecolor			1 0 0 1
 			textalign			ITEM_ALIGN_LEFT
 			textaligny			0
 			decoration
 		}
+		/*
 	itemDef
 		{
 			name				continue_stats
@@ -3108,11 +3109,11 @@
 			text				@MENUS_CONTINUE
 			textstyle			3
 			font				3
-			textscale			1			
+			textscale			1.1			
 			textalignx			50
 			textaligny			0
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 		mouseEnter 
@@ -3136,7 +3137,8 @@
 				show			victory_comp
 				show			background
 			}
-		}
+		}.
+		*/
 	}
 	
 }

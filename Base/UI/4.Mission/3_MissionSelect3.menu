@@ -710,7 +710,6 @@ itemDef
 				show			kyle
 				show			next_button
 				
-				setfocus		next_button
 				setcvar 		tier_mapname 		"maptransition t3_stamp"
 			
 				show			accept_text
@@ -759,9 +758,9 @@ itemDef
 				show			luke
 				show			next_button			
 
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t3_hevil"
 				
+				show			accept_text				
 				setitemtext		accept_text 			@T3_HEVIL_22LUK001	
 				
 				hide			briefing_text
@@ -807,9 +806,9 @@ itemDef
 				show			kyle
 				show			next_button	
 
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t3_byss"	
 				
+				show			accept_text	
 				setitemtext		accept_text 			@T3_BYSS_21KYK001			
 				
 				hide			briefing_text
@@ -855,9 +854,9 @@ itemDef
 				show			kyle
 				show			next_button
 				
-				setfocus		next_button
 				setcvar 		tier_mapname 			"maptransition t3_bounty"
-	
+				
+				show			accept_text	
 				setitemtext		accept_text 			@T3_BOUNTY_24KYK001	
 
 				hide			briefing_text
