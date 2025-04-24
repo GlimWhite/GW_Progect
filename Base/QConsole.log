@@ -172,3 +172,75 @@ gamedate: Oct 24 2003
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
 ^3WARNING: Couldn't find image for shader textures/Trimblock
 ...loaded 1787 faces, 0 meshes, 0 trisurfs, 0 flares
+^3WARNING: reused image gfx/2d/iris_mono with mixed glWrapClampMode parm
+]nps spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+]saber staff_6
+^5Запись игры "quick"...
+^5Готово.
+]playermodel player_3
+]noclip
+noclip ON
+]noclip
+noclip OFF
+]npc spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+]npc spawn jedi
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: maps
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader textures/Trimblock
+...loaded 1787 faces, 0 meshes, 0 trisurfs, 0 flares
+
+------- sound initialization -------
+Initializing DirectSound
+locked hardware.  ok
+^5Загрузка... quick
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: maps
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: Couldn't find image for shader textures/Trimblock
+...loaded 1787 faces, 0 meshes, 0 trisurfs, 0 flares
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: t3_rift
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+...loaded 10788 faces, 117 meshes, 0 trisurfs, 149 flares
+----- CL_Shutdown -----
+Shutting down OpenGL subsystem
+...wglMakeCurrent( NULL, NULL ): success
+...deleting GL context: success
+...releasing DC: success
+...destroying window
+...shutting down QGL
+...unloading OpenGL DLL
+-----------------------
