@@ -3,3 +3,4 @@ Base/JAConfig.cfg
 Base/QConsole.log
 Base/Saves/quick.sav
 GL.log
+*.dll

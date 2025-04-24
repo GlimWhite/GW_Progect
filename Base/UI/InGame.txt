@@ -10,7 +10,7 @@ LoadMenu	{ "UI/2.In_Game_Menu/4_Controls.menu" 		}
 LoadMenu	{ "UI/2.In_Game_Menu/5_Setup.menu"    		}
 LoadMenu	{ "UI/2.In_Game_Menu/6_Quit.menu"      		}
 LoadMenu	{ "UI/2.In_Game_Menu/7_Saber.menu"			}
-	loadMenu 	{ "UI/2.In_Game_Menu/8_SaberStyle.menu" }
+LoadMenu 	{ "UI/2.In_Game_Menu/8_SaberStyle.menu" 	}
 LoadMenu	{ "UI/2.In_Game_Menu/10_Missionfailed.menu" }
 LoadMenu	{ "UI/2.In_Game_Menu/11_LoadDead.menu"		}
 
@@ -29,8 +29,9 @@ LoadMenu 	{ "UI/Pad/Moves.menu" 						}
 LoadMenu	{ "UI/OtherMenu/LoadScreen.menu" 			}
 LoadMenu	{ "UI/OtherMenu/Error.menu" 				}
 	
-LoadMenu 	{ "UI/4.Mission/MissionSelect.menu" 		}
-LoadMenu 	{ "UI/4.Mission/MissionSelect2.menu"		}
+LoadMenu 	{ "UI/4.Mission/1_MissionSelect1.menu" 		}
+LoadMenu 	{ "UI/4.Mission/2_MissionSelect2.menu"		}
+LoadMenu 	{ "UI/4.Mission/3_MissionSelect3.menu"		}
 
 LoadMenu	{ "UI/OtherMenu/Warning.menu" 				}
 }

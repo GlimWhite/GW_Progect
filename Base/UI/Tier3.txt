@@ -1,5 +1,7 @@
-// menu defs
-// 
 {
-	loadMenu { "UI/Mission/4.MissionSelect3.menu"				}
+	LoadMenu 	
+	{ 
+		"UI/4.Mission/3_MissionSelect3.menu" 	
+	}
+	
 }

@@ -6,7 +6,7 @@
 {					   
 	menuDef 
 	{
-		name					"ingameMissionSelect2"
+		name					"ingameMissionSelect3"
 		fullScreen				1		
 		rect					0 0 640 480	
 		visible					1
@@ -52,8 +52,7 @@
 		}	
 	onESC 
 		{ 
-			Open				ReduxMainMenu
-			close				ingameMissionSelect2
+			close all
 		}
 //_______________________________________________________________________________________________
 //
@@ -281,23 +280,23 @@
 			decoration
 		}
 		
-			//####################################
-			//#	Спасательная операция - Нар'Крид #
-			//####################################	
+			//###################
+			//#	ЗАДАНИЕ НОМЕР 1 #
+			//###################	
 			
 	itemDef
 		{
 			name				miss1
 			group				mission_button
 			type				ITEM_TYPE_BUTTON
-			text				@MENUS_T2_RANCOR_TITLE
+			text				@MENUS_T3_RIFT_TITLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
 			font				3
 			textstyle			3
 			textscale			1.1
-			textalignx			14
+			textalignx			70
 			forecolor			.95 .64 .37 1
 			visible				1
 			
@@ -305,7 +304,7 @@
 			cvartest			"tiers_complete"
 		disablecvar		
 			{
-				"t2_rancor"
+				"t3_rift"
 			}
 			cvarSubString
 		mouseEnter 
@@ -321,8 +320,8 @@
 			{
 			play				"sound/weapons/force/protect.wav" 
 			
-				setitemtext		planet_name				@MENUS_NAR_KREETA
-				setitemtext		briefing_text 			@BRIEFINGS_T2_RANCOR
+				setitemtext		planet_name				@MENUS_CHANDRILA
+				setitemtext		briefing_text 			@BRIEFINGS_T3_RIFT
 				
 				hide			planet					//Скрыть группу
 				hide			accbuttons				//Скрыть группу
@@ -333,21 +332,21 @@
 				transition		planets_box			 	5 230 630   0   5 230 630 240 15 15
 				transition		decplanet			  	5 230 630   0   5 230 630 240 15 15
 			
-				show			narkreeta
+				show			chandrila
 				show			accbut1
 			}
 		}
 		
-			//####################################
-			//#	Встерча с источником - Зонджу V	 #
-			//####################################	
+			//###################
+			//#	ЗАДАНИЕ НОМЕР 2 #
+			//###################	
 			
 	itemDef
 		{
 			name				miss2
 			group				mission_button
 			type				ITEM_TYPE_BUTTON
-			text				@MENUS_T2_TRIP_TITLE
+			text				@MENUS_T3_STAMPEDE_TITLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
@@ -361,7 +360,7 @@
 			cvartest			"tiers_complete"
 		disablecvar		
 			{
-				"t2_trip"
+				"t3_stamp"
 			}
 			cvarSubString
 		mouseEnter 
@@ -377,8 +376,8 @@
 			{
 			play				"sound/weapons/force/protect.wav" 
 				
-				setitemtext		planet_name				@MENUS_ZONJU_V
-				setitemtext		briefing_text 			@BRIEFINGS_T2_TRIP	
+				setitemtext		planet_name				@MENUS_TANAAB
+				setitemtext		briefing_text 			@BRIEFINGS_T3_STAMP	
 				
 				hide			planet					//Скрыть группу
 				hide			accbuttons				//Скрыть группу
@@ -389,21 +388,21 @@
 				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
 				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
 			
-				show			zonju
+				show			tanaab
 				show			accbut2				
 			}
 		}
 		
-			//####################################
-			//#		Тайная опирация - Крил'Дор	 #
-			//####################################
+			//########################
+			//#	  ЗАДАНИЕ НОМЕР 3	 #
+			//########################
 			
 	itemDef
 		{
 			name				miss3
 			group				mission_button
 			type				ITEM_TYPE_BUTTON
-			text				@MENUS_T2_WEDGE_TITLE
+			text				@MENUS_T3_HEVIL_TITLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
@@ -411,13 +410,13 @@
 			textstyle			3
 			textscale			1.1
 			forecolor			.95 .64 .37 1
-			textalignx			65
+			textalignx			40
 			visible				1
 			
 			cvartest			"tiers_complete"
 		disablecvar		
 			{
-				"t2_wedge"
+				"t3_hevil"
 			}
 			cvarSubString
 		mouseEnter 
@@ -433,8 +432,8 @@
 			{
 			play				"sound/weapons/force/protect.wav" 
 
-				setitemtext		planet_name				@MENUS_KRIL_DOR
-				setitemtext		briefing_text 			@BRIEFINGS_T2_WEDGE
+				setitemtext		planet_name				@MENUS_YALARA
+				setitemtext		briefing_text 			@BRIEFINGS_T3_HEVIL
 				
 				hide			planet					//Скрыть группу
 				hide			accbuttons				//Скрыть группу
@@ -445,14 +444,14 @@
 				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
 				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
 			
-				show			krildor
+				show			yalara
 				show			accbut3					
 			}
 		}
 		
-			//####################################
-			//#	  Захват БАНДОКРАТА - Корусант	 #
-			//####################################
+			//########################
+			//#	  ЗАДАНИЕ НОМЕР 4	 #
+			//########################
 			
 	itemDef
 		{
@@ -460,7 +459,7 @@
 			group				mission_button
 			type				ITEM_TYPE_BUTTON
 			rect				0 140 200 20
-			text				@MENUS_T2_ROGUE_TITLE
+			text				@MENUS_T3_BYSS_TITLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
@@ -468,13 +467,13 @@
 			textstyle			3
 			textscale			1.1
 			forecolor			.95 .64 .37 1
-			textalignx			55
+			textalignx			10
 			visible				1
 			
 			cvartest			"tiers_complete"
 		disablecvar		
 			{
-				"t2_rogue"
+				"t3_byss"
 			}
 			cvarSubString
 		mouseEnter 
@@ -490,8 +489,8 @@
 			{
 			play				"sound/weapons/force/protect.wav" 
 
-				setitemtext		planet_name				@MENUS_CORUSCANT
-				setitemtext		briefing_text 			@BRIEFINGS_T2_ROGUE	
+				setitemtext		planet_name				@MENUS_BYSS
+				setitemtext		briefing_text 			@BRIEFINGS_T3_BYSS	
 
 				hide			planet					//Скрыть группу
 				hide			accbuttons				//Скрыть группу
@@ -502,14 +501,14 @@
 				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
 				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
 			
-				show			coruscant
+				show			byss
 				show			accbut4	
 			}
 		}
 		
-			//####################################
-			//#	  РАССЛЕДОВАНИЕ СЕКТЫ - Доссун	 #
-			//####################################
+			//########################
+			//#	   ЗАДАНИЕ НОМЕР 5	 #
+			//########################
 			
 	itemDef
 		{
@@ -517,7 +516,7 @@
 			group				mission_button
 			type				ITEM_TYPE_BUTTON
 			rect				0 170 200 20
-			text				@MENUS_T2_DPRED_TITLE
+			text				@MENUS_T3_BOUNTY_TITLE
 			textalign			ITEM_ALIGN_LEFT
 			style				WINDOW_STYLE_SHADER
 			background			"BoxMenu"
@@ -525,13 +524,13 @@
 			textstyle			3
 			textscale			1.1
 			forecolor			.95 .64 .37 1
-			textalignx			40
+			textalignx			45
 			visible				1
 			
 			cvartest			"tiers_complete"
 		disablecvar			
 			{
-				"t2_dpred"
+				"t3_bounty"
 			}
 			cvarSubString
 		mouseEnter 
@@ -547,8 +546,8 @@
 			{
 			play				"sound/weapons/force/protect.wav" 
 				
-				setitemtext		planet_name				@MENUS_DOSUUN				
-				setitemtext		briefing_text 			@BRIEFINGS_T2_DPRED	
+				setitemtext		planet_name				@MENUS_ORD_MANTELL				
+				setitemtext		briefing_text 			@BRIEFINGS_T3_BOUNTY
 				
 				
 				hide			planet					//Скрыть группу
@@ -560,7 +559,7 @@
 				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
 				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
 			
-				show			dosuun
+				show			ordmantell
 				show			accbut5		
 			}
 		}		
@@ -617,7 +616,7 @@ itemDef
 		{
 			name				accept_text
 			type				ITEM_TYPE_TEXTSCROLL
-			text				@T2_RANCOR_12PRO001
+			text				@T1_SOUR_07KYK001
 			rect				250 255 400 200
 			textstyle			3
 			font				3
@@ -658,15 +657,15 @@ itemDef
 			}
 		action
 			{	
-			playVoice			"sound/chars/protocol/12pro001.mp3"
+			playVoice			"sound/chars/luke/23luk001.mp3"
 
-				show			prot
+				show			luke
 				show			next_button	
 				
 				show			accept_text		
-				setitemtext		accept_text 		@T2_RANCOR_12PRO001		
+				setitemtext		accept_text 		@T3_RIFT_23LUK001		
 				
-				setcvar 		tier_mapname 		"maptransition t2_rancor"
+				setcvar 		tier_mapname 		"maptransition t3_rift"
 			
 				hide			briefing_text
 				hide 			accbuttons				
@@ -706,20 +705,22 @@ itemDef
 			}
 		action
 			{
-			playVoice			"sound/chars/protocol/15pro001.mp3"
+			playVoice			"sound/chars/kyle/25kyk001.mp3"
 
-				show			prot
+				show			kyle
 				show			next_button
-				show			accept2text
 				
 				setfocus		next_button
-				setcvar 		tier_mapname 		"maptransition t2_trip"
+				setcvar 		tier_mapname 		"maptransition t3_stamp"
 			
-				setitemtext		accept_text 		@T2_TRIP_15PRO001	
+				show			accept_text
+				setitemtext		accept_text 		@T3_STAMP_25KYK001	
 				
 				hide			briefing_text
-				hide 			accbuttons
-				hide			sidebutton_glow_red	
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
 			}
 		}
 
@@ -753,20 +754,21 @@ itemDef
 			}
 		action
 			{
-			playVoice			"sound/chars/wedge/13wea001.mp3"
+			playVoice			"sound/chars/luke/22luk001.mp3"
 
-				show			wedge
-				show			next_button
-				show			accept3text			
+				show			luke
+				show			next_button			
 
 				setfocus		next_button
-				setcvar 		tier_mapname 			"maptransition t2_wedge"
+				setcvar 		tier_mapname 			"maptransition t3_hevil"
 				
-				setitemtext		accept_text 			@T2_WEDGE_13WEA001	
+				setitemtext		accept_text 			@T3_HEVIL_22LUK001	
 				
 				hide			briefing_text
-				hide 			accbuttons
-				hide			sidebutton_glow_red					
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button			
 			}
 		}
 
@@ -800,21 +802,21 @@ itemDef
 			}
 		action
 			{
-			playVoice			"sound/chars/kyle/14kyk001.mp3"
+			playVoice			"sound/chars/kyle/21kyk001.mp3"
 				
 				show			kyle
-				show			next_button
-				show			accept4text			
+				show			next_button	
 
 				setfocus		next_button
-				setcvar 		tier_mapname 			"maptransition t2_rogue"	
+				setcvar 		tier_mapname 			"maptransition t3_byss"	
 				
-				setitemtext		accept_text 			@T2_ROGUE_14KYK001				
+				setitemtext		accept_text 			@T3_BYSS_21KYK001			
 				
 				hide			briefing_text
-
+				hide 			accbuttons				
 				hide			sidebutton_glow_red
-				hide 			accbuttons	
+				hide			planet
+				hide			mission_button
 			}
 		}
 
@@ -848,19 +850,21 @@ itemDef
 			}
 		action
 			{
-			playVoice			"sound/chars/protocol/16pro001.mp3"
+			playVoice			"sound/chars/kyle/24kyk001.mp3"
 				
-				show			prot
+				show			kyle
 				show			next_button
 				
 				setfocus		next_button
-				setcvar 		tier_mapname 			"maptransition t2_dpred"
+				setcvar 		tier_mapname 			"maptransition t3_bounty"
 	
-				setitemtext		accept_text 			@T2_ROGUE_14KYK001	
+				setitemtext		accept_text 			@T3_BOUNTY_24KYK001	
 
 				hide			briefing_text
-				hide			sidebutton_glow_red	
-				hide 			accbuttons
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
 			}
 		}
 //_______________________________________________________________________________________________
@@ -868,70 +872,69 @@ itemDef
 //		МОДЕЛИ ПЛАНЕТ В МЕНЮ
 //_______________________________________________________________________________________________
 //################
-//#	  КИЛ ДОР	 #
-//################	
-itemDef 
-		{
-			name				krildor
-			group				planet
-			style				WINDOW_STYLE_SHADER
-			rect				0 230 250 250
-			background			"menu/planets/krildor"
-			backcolor			1 1 1 1
-			visible				0
-			decoration
-		}
-//################
-//#	  НАР КРИТ	 #
+//#	   ЯЛАРА	 #
 //################		
 	itemDef 
 		{
-			name				narkreeta
+			name				yalara
 			group				planet
 			style				WINDOW_STYLE_SHADER
 			rect				0 230 250 250
-			background			"menu/planets/NarKreeta"
+			background			"menu/planets/yalara"
 			backcolor			1 1 1 1
 			decoration
 		}
 //################
-//#	  ДОСУН	 #
+//#	  ЧАНДРИЛ	 #
 //################		
 	itemDef 
 		{
-			name				dosuun
+			name				chandrila
 			group				planet
 			style				WINDOW_STYLE_SHADER
 			rect				0 230 250 250
-			background			"menu/planets/dosuun"
+			background			"menu/planets/chandrila"
 			backcolor			1 1 1 1
 			decoration
 		}
 //################
-//#	  ЗОНЖИН	 #
+//#	  ОРДМАН	 #
 //################		
 	itemDef 
 		{
-			name				zonju
+			name				ordmantell
 			group				planet
 			style				WINDOW_STYLE_SHADER
 			rect				0 230 250 250
-			background			"menu/planets/zonju"
+			background			"menu/planets/ordman"
 			backcolor			1 1 1 1
 			decoration
 		}
 //################
-//#	  КОРУСАНТ	 #
+//#	  ТАНААБ	 #
 //################		
 	itemDef 
 		{
-			name				coruscant
+			name				tanaab
 			group				planet
 			style				WINDOW_STYLE_SHADER
 			rect				0 230 250 250
-			background			"menu/planets/coruscant"
+			background			"menu/planets/tanaab"
 			backcolor			1 1 1 1
 			decoration
 		}	
+//################
+//#	  БИСС	 #
+//################			
+	itemDef 
+		{
+			name				byss
+			group				planet
+			style				WINDOW_STYLE_SHADER
+			rect				0 230 250 250
+			background			"menu/planets/byss"
+			backcolor			1 1 1 1
+			decoration
+		}
 	}
 }
