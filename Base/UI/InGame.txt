@@ -30,6 +30,7 @@ LoadMenu	{ "UI/OtherMenu/LoadScreen.menu" 			}
 LoadMenu	{ "UI/OtherMenu/Error.menu" 				}
 	
 LoadMenu 	{ "UI/4.Mission/0_MissionSelect.menu" 		}
+LoadMenu 	{ "UI/4.Mission/4_victorymassage.menu" 		}
 
 LoadMenu	{ "UI/OtherMenu/Warning.menu" 				}
 }
