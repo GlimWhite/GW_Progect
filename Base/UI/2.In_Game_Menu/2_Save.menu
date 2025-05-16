@@ -38,9 +38,12 @@
 		{ 
 			Play				"sound/interface/esc.wav" 					
 			Close				all
-			OnOpen				ingameMainMenu
+			Open				ingameMainMenu
 		}	
-	OnClose { OnOpen				ingameMainMenu }
+	OnClose 
+		{ 
+			Open				ingameMainMenu 
+		}
 //_______________________________________________________________________________________________
 //
 //	СТРУКТУРА МЕНЮ

@@ -1,5 +1,13 @@
 
-Base/JAConfig.cfg
-Base/QConsole.log
-Base/Saves/quick.sav
-GL.log
+*.cfg
+*.sav
+*.log
+*.dll
+
+*.cfg
+*.log
+*.sav
+*.sav
+/Base
+/Base
+/Base/Saves

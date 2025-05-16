@@ -3906,6 +3906,18 @@ rain
         rgbGen vertex
     }
 }
+iris_mono
+{
+	nopicmip
+	nomipmaps
+	cull	disable
+    {
+        map gfx/2d/iris_mono
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+        rgbGen exactVertex
+    }
+}
+
 sun2
 {
 	cull	twosided

@@ -9,10 +9,10 @@
 	menuDef 
 	{
 		name					"DeadLoadMenu"
-		fullScreen				0							// MENU_FALSE				
-		rect					0 0 640 480					// Size and position of the menu
-		visible					1							// Visible on open
-		focusColor				1 1 1 1						// Focus color for text and items
+		fullScreen				0							
+		rect					0 0 640 480					
+		visible					1							
+		focusColor				1 1 1 1						
 	onOpen 
 		{
 			play 				"sound/interface/transition"
@@ -24,9 +24,9 @@
 			setitemcolor		cheacpoint			forecolor					   1 1 1 0
 
 			transition			load				 -2 -100 160  30  -2  0 160   30 15 15
-			transition			back			    478 -100 161  30 478  0 161   30 15 15
 			transition			delete			    158 -100 160  30 158  0 160   30 15 15
-			transition			cheacpoint		    318 -100 160  30 318  0 160   30 15 15
+			transition			cheacpoint		    318 -100 200  30 318  0 200   30 15 15
+			transition			back			    518 -100 121  30 518  0 121   30 15 15
 			
 			transition			backload			156  640 322 250 156 228 322 250 15 15
 			transition			loadgamepic		    158 -230 320 200 158  30 320 200 15 15
@@ -47,24 +47,27 @@
 	Onclose
 		{
 			open				missionfailed_menu
-		}											
-//----------------------------------------------------------------------------------------
-// 									Blur
-//----------------------------------------------------------------------------------------
+		}			
+//_______________________________________________________________________________________________
+//
+//	СТРУКТУРА МЕНЮ
+//_______________________________________________________________________________________________		
+//*********
+// BLUR
+//*********
 	itemDef 
 		{
 			name				Blur
 			style				WINDOW_STYLE_SHADER
 			rect				0 0 640 480
 			background			"menu/ground/blur"
-			forecolor			1 1 0.9 0.45
+			forecolor			0 0 0 1
 			visible				1
 			decoration
 		}
-//----------------------------------------------------------------------------------------------
-//	                           СИНИЯ СТРОКА ДЛЯ МЕНЮ
-//----------------------------------------------------------------------------------------------
-//СКРИН ЗАГРУЗОЧНОГО ЭКРАНА	
+//********
+//СКРИН ЗАГРУЗОЧНОГО ЭКРАНА
+//********	
 	itemDef 
 		{
 			name				loadgamepic
@@ -75,6 +78,9 @@
 			visible				1 
 			decoration 
 		}
+//********
+//	Фон
+//********
 	itemDef 
 		{
 			name				backloadgamepic
@@ -85,38 +91,41 @@
 			bordercolor			1 1 1 1
 			visible				1
 			decoration
-		}		
-//ВЫДЕЛЕНИЕ
+		}	
+//********		
+// Выделение элементов
+//********
 	itemDef 
 		{
 			name				sidebutton_glow
 			style				WINDOW_STYLE_SHADER
-			rect				0 0 0 0
 			background			"menu/menu_blendbox"
 			forecolor			1 0 0 0.5
 			decoration
 		}
-//----------------------------------------------------------------------------------------------
-//								ОСНОВНОЕ МЕНЮ СЛЕВОЙ СТОРОНЫ
-//----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________________
+//
+//								ОСНОВНОЕ МЕНЮ 
+//_______________________________________________________________________________________________
+//******************
 //КНОПКА "ЗАГРУЗИТЬ"
+//******************
 	itemDef 
 		{
 			name				load
 			group				textmenu
 			text				@MENUS_LOAD_GAME
 			style				WINDOW_STYLE_SHADER
-			rect				-2 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			25
+			textalignx			18
 			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -133,27 +142,29 @@
 		action 
 			{ 
 				play			sound/interface/button1.wav ;
+				hide			glow ;
 				uiScript		loadgame
 			}
 		}
+//******************
 //КНОПКА "УДАЛИТЬ"
+//******************
 	itemDef 
 		{
 			name				delete
 			group				textmenu
 			text				@MENUS_DELETE_GAME
 			style				WINDOW_STYLE_SHADER
-			rect				158 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			30
+			textalignx			28
 			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -161,7 +172,7 @@
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		158 0 160 30
+				setitemrect		sidebutton_glow		160 0 158 30
 			} 
 		mouseExit 
 			{ 
@@ -170,10 +181,13 @@
 		action
 			{ 
 				play			sound/interface/button1.wav ;
+				hide			glow ;
 				uiScript		deletegame
 			}
 		}
+//******************
 //КОНТРОЛЬНАЯ ТОЧКА
+//******************
 	itemDef 
 		{
 			name				cheacpoint
@@ -181,25 +195,24 @@
 			text				@MENUS_RESUME_MISSION
 			text2				@MENUS_RESUME_MISSIONN
 			style				WINDOW_STYLE_SHADER
-			rect				318 0 160 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			5
+			textalignx			18
 			textaligny			0
-			text2alignx			104
+			text2alignx			118
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			visible				1
 		mouseEnter 
 			{ 
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		318 0 160 30
+				setitemrect		sidebutton_glow		320 0 198 30
 			} 
 		mouseExit 
 			{ 
@@ -208,10 +221,13 @@
 		action
 			{ 
 				play			"sound/interface/button1.wav" ; 
+				hide			glow ;
 				uiScript		loadAuto
 			}
 		}
+//******************
 //КНОПКА "НАЗАД"
+//******************
 	itemDef 
 		{
 			name				back
@@ -219,17 +235,16 @@
 			text				@MENUS_BACK_CAPS
 			type				ITEM_TYPE_BUTTON
 			style				WINDOW_STYLE_SHADER
-			rect				478 0 161 30
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			font				3
 			textscale			1			
-			textalignx			50
+			textalignx			40
 			textaligny			0
 			cvarTest			ui_SelectionOK
 			enableCvar			{ "1" }
 			
-			background			"menu/box_redux"
+			background			"BoxMenu"
 			forecolor			1 1 1 1
 			border				4
 			
@@ -237,11 +252,11 @@
 		mouseEnter 
 			{
 				show			sidebutton_glow
-				setitemrect		sidebutton_glow		478 0 161 30
+				setitemrect		sidebutton_glow		520 0 118 30
 			}
 		mouseExit 
 			{ 				
-				hide				sidebutton_glow
+				hide			sidebutton_glow
 			}	  	  
 		action 
 			{ 
@@ -250,9 +265,12 @@
 				open			missionfailed_menu
 			}
 		}
-//----------------------------------------------------------------------------------------------
-//   								LOAD GAME MENU specific stuff
-//----------------------------------------------------------------------------------------------
+//_______________________________________________________________________________________________
+//   								ЗАГРУЗОЧНОГО МЕНЮ
+//_______________________________________________________________________________________________
+//*********
+// Фон
+//*********
 	itemDef 
 		{
 			name				backload
@@ -265,7 +283,9 @@
 			decoration
 			visible				1
 		}
+//*********
 //СОХРАНЕНИЕ ИГР В ПРИВЕДЕННОМ СПИСКЕ
+//*********
 	itemDef 
 		{
 			name				loadgamelist
@@ -304,6 +324,22 @@
 			{
 				play			sound/interface/sub_select 
 			}
+		}
+//*********
+// Redux menu: 18/04/2025
+//*********
+	itemDef 
+		{
+			name				redux
+			group				redux
+			text				"REDUX"
+			rect				610 460 0 0
+			font				5
+			textscale			0.5
+			textalign			ITEM_ALIGN_CENTER
+			forecolor			1 0.1 0.1 1
+			visible				1
+			decoration
 		}
 	
 	}

@@ -216,8 +216,25 @@ mission_dec2
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
 		rgbGen identity
 	}
-
 }
+
+mission_dec3
+{
+	nopicmip
+	nomipmaps	
+	{	
+		clampmap menu/ground/mission_dec3
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		glow
+		rgbGen wave sin 0.03 0.3 1 0.2
+	}
+	{	
+		clampmap menu/ground/mission_dec3
+		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+		rgbGen identity
+	}
+}
+
 menu/ground/MenuScore
 {
 	nopicmip
@@ -561,6 +578,22 @@ side_vertex
 		tcMod scale	2 1
 		glow
 		rgbGen vertex
+    }
+}
+
+box_blue
+{
+	nopicmip
+	nomipmaps
+    {
+        clampmap menu/box_blue
+        blendFunc GL_DST_COLOR GL_ONE
+		rgbGen vertex
+    }
+	{
+        map menu/static_base
+        blendFunc GL_ONE GL_ONE_MINUS_SRC_COLOR
+        tcMod scroll -0.35 -0.35
     }
 }
 

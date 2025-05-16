@@ -108,7 +108,8 @@
 			group				mods_load
 			text				@MENUS_LOAD_MOD
 			type				ITEM_TYPE_BUTTON
-			style				WINDOW_STYLE_FILLED
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
 			textalign			ITEM_ALIGN_LEFT	
 			font				5
 			textscale			0.5			
@@ -158,12 +159,8 @@
 		action 
 			{ 
 				play				"sound/interface/esc.wav"
-				
-				transition			mods_list	 	200  15 430 435	680  15 430 435 15 15
-				transition			mods_load	 	 25	200 450 430 680	200 450 430 15 15
-				transition			Escape			613  15  15  15	680  15  15  15 15 15 
-
-				show				allmenu				
+				close				ModsMenu
+				open				ReduxMainMenu				
 			}
 		}
 //__________________________________________
@@ -195,8 +192,8 @@
 			name				create_title
 			group				title
 			style				WINDOW_STYLE_SHADER
-			background			"menu/menu_blendbox"
-			text				@MENUS_LIGHTSABER_CREATION
+			background			"BoxMenu"
+			text				@MENUS_MODS
 			textalign			ITEM_ALIGN_LEFT
 			textstyle			3
 			textalignx			115

@@ -17,7 +17,8 @@
 			hide						group_sound
 			hide						group_graphics
 			hide						ApplyChanges 
-			hide						group_vidrestart 
+			hide						group_vidrestart
+			hide						sidebutton_glow			
 			
 			show						defaults
 			show						group_screen
@@ -26,14 +27,14 @@
 			show 						redux
 			show						sidebutton_glow_red
 			
-			transition					border_setup	   	 80   57 480  0  80 57 480 412 15 15
-			transition					Videobutton			  0 -100 160 30   0  0 160  30 15 15
-			transition					Graphicsbutton		160 -100 160 30 160  0 160  30 15 15
-			transition					Soundbutton			320 -100 160 30 320  0 160  30 15 15
-			transition					Defaultsbutton		480 -100 160 30 480  0 160  30 15 15
-			transition					sidebutton_glow_red	  0 -100 160 30   0  0 160  30 15 15
+			transition					border_setup	   	 	 80   57 480  0  80 57 480 412 15 15
+			transition					Videobutton				  0 -100 160 30   0  0 160  30 15 15
+			transition					Graphicsbutton			160 -100 160 30 160  0 160  30 15 15
+			transition					Soundbutton				320 -100 160 30 320  0 160  30 15 15
+			transition					Defaultsbutton			480 -100 160 30 480  0 160  30 15 15
+			transition					sidebutton_glow_red	 	  0 -100 160 30   0  0 160  30 15 15
 			
-			setitemrect					escapebutton		530   58  30 28  	
+			setitemrect					escapebutton			530   58  30 28  	
 		}
 	onClose
 		{
@@ -142,12 +143,12 @@
 		action 
 			{ 
 				play				sound/interface/sub_select 
-				defer				VideoSetup			videowarningMenu 
-				uiScript			getvideosetup 	   	// Get video settings
+				defer				VideoSetup				videowarningMenu 
+				uiScript			getvideosetup 	   		// Get video settings
 					
-				transition				border_setup	   	80  57 480  0  80 57 480 412 15 15
-				setitemrect				escapebutton	    530 58 30 28
-				setitemrect				sidebutton_glow_red 0 0 160 30
+				transition			border_setup	   		80  57 480  0  80 57 480 412 15 15
+				setitemrect			escapebutton	    	530 58 30 28
+				setitemrect			sidebutton_glow_red 	0 0 160 30
 				show				group_screen
 				show				defaults
 				
@@ -192,9 +193,9 @@ itemDef
 				play				sound/interface/sub_select 
 				defer				VideoSetup	videowarningMenu 	
 				
-				transition			border_setup	   	-2 30 641 0 -2 30 641 448 15 15
-				setitemrect			escapebutton	   	600 58 30 28
-				setitemrect			sidebutton_glow_red	160 0 160 30
+				transition			border_setup	   		-2 30 641 0 -2 30 641 448 15 15
+				setitemrect			escapebutton	   		608 33 30 28
+				setitemrect			sidebutton_glow_red		160 0 160 30
 				show				group_graphics
 				show				defaults
 				

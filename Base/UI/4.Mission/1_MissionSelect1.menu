@@ -1,0 +1,927 @@
+//_______________________________________________________________________________________________
+//
+// 								Mission Select 2 Menu
+//						Select missions from the 2nd tier.
+//_______________________________________________________________________________________________
+{					   
+	menuDef 
+	{
+		name					"ingameMissionSelect1"
+		fullScreen				1		
+		rect					0 0 640 480	
+		visible					1
+		focusColor				1 1 1 1
+	
+		disablecolor			.5 .5 .5 1
+		
+		fadeClamp				1.0						// sets the fadeup alpha
+		fadeCycle				25						// how often fade happens in milliseconds
+		fadeAmount				0.05					// amount to adjust alpha per cycle	
+	onOpen 
+		{
+		stopVoice
+		
+			show				mission_button
+			show				missions
+			
+			hide				planet_name
+			hide				briefing_text
+			hide				accbuttons
+			hide				planet
+			hide				planets_box
+			
+			setitemcolor		miss1			forecolor	.95 .64 .37 0
+			setitemcolor		miss2			forecolor	.95 .64 .37 0
+			setitemcolor		miss3			forecolor	.95 .64 .37 0	
+			setitemcolor		miss4			forecolor	.95 .64 .37 0
+			setitemcolor		miss5			forecolor	.95 .64 .37 0
+			setitemcolor		missions		forecolor	.95 .64 .37 0
+			
+			transition			miss1			180  30 270  0  180  30 270  30 15 15
+			transition			miss2			180  65 270  0  180  65 270  30 15 15
+			transition			miss3			180 100 270  0  180 100 270  30 15 15
+			transition			miss4			180 135 270  0  180 135 270  30 15 15
+			transition			miss5			180 170 270  0  180 170 270  30 15 15
+			
+			fadein				miss1
+			fadein				miss2
+			fadein				miss3
+			fadein				miss4
+			fadein				miss5
+			fadein				missions
+		}	
+	onESC 
+		{ 
+		
+		}
+//_______________________________________________________________________________________________
+//
+//	СТРУКТУРА МЕНЮ
+//_______________________________________________________________________________________________
+//********************
+// Фон для меню
+//********************
+	itemDef 
+		{
+			name				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//********************
+// Затемнения фона
+//********************
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			forecolor			0 0 0 0.5
+			visible				1
+			decoration
+		}		
+//********************
+// Выделение элементов
+//********************
+	itemDef 
+		{
+			name				sidebutton_glow_red
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendboxr"
+			forecolor			1 1 1 1
+			decoration
+		}
+//_______________________________________________________________________________________________
+//
+//	ДОПОЛНИТЕЛЬНЫЕ ЭЛЕМЕНТЫ МЕНЮ
+//_______________________________________________________________________________________________
+//***********************
+//*	  Текст: "Задания"	*
+//***********************
+	itemDef
+		{
+			name				briefing_text
+			type				ITEM_TYPE_TEXTSCROLL
+			text				@BRIEFINGS_T1_SOUR
+			textstyle			3
+			font				3
+			forecolor			1 1 1 1
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			0
+			textaligny			-1
+			lineHeight			20
+			visible				0
+			autowrapped
+		}
+//_______________________________________________________________________________________________
+
+	//####################################
+	//#	   	 МОДЕЛЬ ЛЮКА СКАЙВОКЕРА	     #
+	//####################################		
+	itemDef
+		{
+			name				luke
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				0 220 250 250
+			model_g2anim		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/luke/model_menu.skin"
+			asset_model			"models/players/luke/model.glm"
+			
+			model_angle			180
+			model_g2mins		13 -20 	17
+			model_g2maxs		70 	20 	55
+			model_rotation		0
+			model_fovx			11
+			model_fovy			11
+			isCharacter			1
+			visible				0
+			decoration
+		}
+	//####################################
+	//#	   	  МОДЕЛЬ КАЙЛА КАТАРНА  	 #
+	//####################################		
+	itemDef
+		{
+			name				kyle
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				0 220 250 250
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/kyle/model_menu.skin"
+			asset_model			"models/players/kyle/model.glm"
+			
+			model_angle			180
+			model_g2mins		13 -20 	17
+			model_g2maxs		70 	20 	55
+			model_rotation		0
+			model_fovx			11
+			model_fovy			11
+			isCharacter			1
+			visible				0
+			decoration
+		}
+	//####################################
+	//#	    МОДЕЛЬ ПИЛОТА ПОВСТАНЦЕВ   	 #
+	//####################################		
+	itemDef
+		{
+			name				wedge
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				0 220 250 250
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/rebel_pilot/model_default.skin"
+			asset_model			"models/players/rebel_pilot/model.glm"
+			
+			model_angle			180
+			model_g2mins		13 -20 	17
+			model_g2maxs		70 	20 	55
+			model_rotation		0
+			model_fovx			11
+			model_fovy			11
+			isCharacter			1
+			visible				0
+			decoration
+		}
+	//####################################
+	//#	   МОДЕЛЬ ПРОТОКОЛЬНОГО ДРОЙДА   #
+	//####################################		
+	itemDef
+		{
+			name				prot
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				20 240 200 230
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/protocol/model_menu.skin"
+			asset_model			"models/players/protocol/model.glm"
+			
+			model_angle			180
+			model_g2mins		13 -20 	17
+			model_g2maxs		70 	20 	50
+			model_rotation		0
+			model_fovx			11
+			model_fovy			11
+			isCharacter			1
+			visible				0
+			decoration
+		}
+		
+//_______________________________________________________________________________________________
+//***********************
+//*	  Диталь к фону		*
+//***********************
+	itemDef 
+		{
+			name				decplanet
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"mission_dec3"
+			forecolor			0.2 0.1 0.8 1
+			visible				0
+			decoration
+		}
+//***********************
+//*	 	Фон для текста	*
+//***********************		
+	itemDef 
+		{
+			name				planets_box
+			group				none
+			style				WINDOW_STYLE_SHADER	
+			background			"box_blue"
+			forecolor			0.2 0.1 0.8 1
+			visible				0
+			decoration
+		}	
+//***********************
+//*	  Название планеты	*
+//***********************
+	itemDef
+		{
+			name				planet_name
+			type				ITEM_TYPE_TEXT
+			text				@MENUS_TATOOINE
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			visible				0
+			decoration
+		}		
+//_______________________________________________________________________________________________
+//
+//  							МЕНЮ ВЫБОР МЕНЮ
+//_______________________________________________________________________________________________
+//**************
+// Текст: "Миссия"
+//****************
+	itemDef
+		{
+			name				missions
+			group				mission_button
+			type				ITEM_TYPE_TEXT	
+			rect				280 0 270 30
+			text				@MENUS_MISSIONS
+			textalign			ITEM_ALIGN_LEFT
+			textstyle			3
+			font				3
+			textscale			1.2
+			forecolor			.95 .64 .37 1
+			visible				1
+			decoration
+		}
+		
+			//####################################
+			//#	Деятельность Наемников - ТАТУИН #
+			//####################################	
+			
+	itemDef
+		{
+			name				miss1
+			group				mission_button
+			type				ITEM_TYPE_BUTTON
+			text				@MENUS_T1_SOUR_TITLE
+			textalign			ITEM_ALIGN_LEFT
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			font				3
+			textstyle			3
+			textscale			1.1
+			textalignx			18
+			forecolor			.95 .64 .37 1
+			visible				1
+			
+			
+			cvartest			"tiers_complete"
+		disablecvar		
+			{
+				"t1_sour"
+			}
+			cvarSubString
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		180 30 270 30		
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			play				"sound/weapons/force/protect.wav" 
+			
+				setitemtext		planet_name				@MENUS_TATOOINE
+				setitemtext		briefing_text 			@BRIEFINGS_T1_SOUR
+				
+				hide			planet					//Скрыть группу
+				hide			accbuttons				//Скрыть группу
+				hide			sidebutton_glow_red
+
+				transition		planet_name				390 230 300 200 390 230 300 200 15 15
+				transition		briefing_text			250 255 380 180	250 255 380 180 15 15
+				transition		planets_box			 	5 230 630   0   5 230 630 240 15 15
+				transition		decplanet			  	5 230 630   0   5 230 630 240 15 15
+			
+				show			tatooine
+				show			accbut1
+			}
+		}
+		
+			//####################################
+			//#		   Поиск дрона - Татуин	 	 #
+			//####################################	
+			
+	itemDef
+		{
+			name				miss2
+			group				mission_button
+			type				ITEM_TYPE_BUTTON
+			text				@MENUS_T1_SURPRISE_TITLE
+			textalign			ITEM_ALIGN_LEFT
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			font				3
+			textstyle			3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			70
+			visible				1
+			
+			cvartest			"tiers_complete"
+		disablecvar		
+			{
+				"t1_surprise"
+			}
+			cvarSubString
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		180 65 270 30		
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			play				"sound/weapons/force/protect.wav" 
+				
+				setitemtext		planet_name				@MENUS_TATOOINE
+				setitemtext		briefing_text 			@BRIEFINGS_T1_SURPRISE	
+				
+				hide			planet					//Скрыть группу
+				hide			accbuttons				//Скрыть группу
+				hide			sidebutton_glow_red
+
+				transition		planet_name				390 230 300 200 390 230 300 200 15 15
+				transition		briefing_text			250 255 380 180	250 255 380 180 15 15
+				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
+				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
+			
+				show			tatooine
+				show			accbut2				
+			}
+		}
+		
+			//####################################
+			//#		Срочная помощь - Бакура		 #
+			//####################################
+			
+	itemDef
+		{
+			name				miss3
+			group				mission_button
+			type				ITEM_TYPE_BUTTON
+			text				@MENUS_T1_FATAL_TITLE
+			textalign			ITEM_ALIGN_LEFT
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			font				3
+			textstyle			3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			65
+			visible				1
+			
+			cvartest			"tiers_complete"
+		disablecvar		
+			{
+				"t1_fatal"
+			}
+			cvarSubString
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		180 100 270 30 		
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			play				"sound/weapons/force/protect.wav" 
+
+				setitemtext		planet_name				@MENUS_BAKURA
+				setitemtext		briefing_text 			@BRIEFINGS_T1_FATAL
+				
+				hide			planet					//Скрыть группу
+				hide			accbuttons				//Скрыть группу
+				hide			sidebutton_glow_red
+
+				transition		planet_name				390 230 300 200 390 230 300 200 15 15
+				transition		briefing_text			250 255 380 180	250 255 380 180 15 15
+				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
+				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
+			
+				show			bakura
+				show			accbut3					
+			}
+		}
+		
+			//####################################
+			//#	  Спасение торговцев -Ббенжел	 #
+			//####################################
+			
+	itemDef
+		{
+			name				miss4
+			group				mission_button
+			type				ITEM_TYPE_BUTTON
+			rect				0 140 200 20
+			text				@MENUS_T1_DANGER_TITLE
+			textalign			ITEM_ALIGN_LEFT
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			font				3
+			textstyle			3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			55
+			visible				1
+			
+			cvartest			"tiers_complete"
+		disablecvar		
+			{
+				"t1_danger"
+			}
+			cvarSubString
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		180 135 270 30		
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			play				"sound/weapons/force/protect.wav" 
+
+				setitemtext		planet_name				@MENUS_BLENJEEL
+				setitemtext		briefing_text 			@BRIEFINGS_T1_DANGER	
+
+				hide			planet					//Скрыть группу
+				hide			accbuttons				//Скрыть группу
+				hide			sidebutton_glow_red
+
+				transition		planet_name				390 230 300 200 390 230 300 200 15 15
+				transition		briefing_text			250 255 380 180	250 255 380 180 15 15
+				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
+				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
+			
+				show			corellia
+				show			accbut4	
+			}
+		}
+		
+			//####################################
+			//#	  Расследования секты - Карелия	 #
+			//####################################
+			
+	itemDef
+		{
+			name				miss5
+			group				mission_button
+			type				ITEM_TYPE_BUTTON
+			rect				0 170 200 20
+			text				@MENUS_T1_RAIL_TITLE
+			textalign			ITEM_ALIGN_LEFT
+			style				WINDOW_STYLE_SHADER
+			background			"BoxMenu"
+			font				3
+			textstyle			3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalignx			40
+			visible				1
+			
+			cvartest			"tiers_complete"
+		disablecvar			
+			{
+				"t1_rail"
+			}
+			cvarSubString
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		180 170 270 30		
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			play				"sound/weapons/force/protect.wav" 
+				
+				setitemtext		planet_name				@MENUS_CORELLIA				
+				setitemtext		briefing_text 			@BRIEFINGS_T1_RAIL
+				
+				
+				hide			planet					//Скрыть группу
+				hide			accbuttons				//Скрыть группу
+				hide			sidebutton_glow_red
+
+				transition		planet_name				390 230 300 200 390 230 300 200 15 15
+				transition		briefing_text			250 255 380 180	250 255 380 180 15 15
+				transition		planets_box				  5 230 630   0   5 230 630 240 15 15
+				transition		decplanet				  5 230 630   0   5 230 630 240 15 15
+			
+				show			bakura
+				show			accbut5		
+			}
+		}		
+//_______________________________________________________________________________________________
+//
+//	КНОПКИ МЕНЮ ПЕРЕМЕЩЕНИЕ		
+//_______________________________________________________________________________________________
+//*******************
+//*	Кнопка "Дальше"	*
+//*******************
+itemDef
+		{
+			name				next_button
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			text				@MENUS_NEXT
+			rect				350 435 160 30
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+						
+			visible				0
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		350 435 160 30	
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red		
+			}
+		action
+			{
+				play			"sound/interface/menuroam.wav"
+				close			all
+				open			ForceSelect
+			}
+		}
+//_______________________________________________________________________________________________
+//
+// 	ПРИНЯТИЯ МИССИЙ - КНОПКИ МЕНЮ
+//_______________________________________________________________________________________________
+
+			//####################################
+			//#	  	 Текст принятого задания	 #
+			//####################################
+			
+	itemDef
+		{
+			name				accept_text
+			type				ITEM_TYPE_TEXTSCROLL
+			text				@T1_SOUR_07KYK001
+			rect				250 255 400 200
+			textstyle			3
+			font				3
+			forecolor			1 1 1 1
+			textscale			1
+			lineHeight			20
+			visible				0
+			autowrapped
+		}
+
+			//####################################
+			//#	  	 Принятие миссии 1: Кнопка	 #
+			//####################################
+			
+	itemDef
+		{
+			name				accbut1
+			group				accbuttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_ACCEPT
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			47
+			background			"BoxMenu"
+
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red			350 435 160 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{	
+			playVoice			"sound/chars/kyle/07kyk001.mp3"
+
+				show			kyle
+				show			next_button	
+				
+				show			accept_text		
+				setitemtext		accept_text 		@T1_SOUR_07KYK001		
+				
+				setcvar 		tier_mapname 		"maptransition t1_sour"
+			
+				hide			briefing_text
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
+			}
+		}
+
+			//####################################
+			//#	  	 Принятие миссии 2: Кнопка	 #
+			//####################################
+	
+	itemDef
+		{
+			name				accbut2
+			group				accbuttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_ACCEPT
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			47
+			background			"BoxMenu"
+
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red			350 435 160 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playVoice			"sound/chars/kyle/04kyk001.mp3"
+
+				show			kyle
+				show			next_button
+				
+				setcvar 		tier_mapname 		"maptransition t1_surprise"
+				
+				show			accept_text
+				setitemtext		accept_text 		@T1_SURPRISE_04KYK001	
+				
+				hide			briefing_text
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button	
+			}
+		}
+
+			//####################################
+			//#	  	 Принятие миссии 3: Кнопка	 #
+			//####################################
+	
+	itemDef
+		{
+			name				accbut3
+			group				accbuttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_ACCEPT
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			47
+			background			"BoxMenu"
+
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red			350 435 160 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playVoice			"sound/chars/luke/08luk001.mp3"
+
+				show			wedge
+				show			next_button		
+
+				setcvar 		tier_mapname 			"maptransition t1_fatal"
+				
+				show			accept_text
+				setitemtext		accept_text 			@T1_FATAL_08LUK001	
+				
+				hide			briefing_text
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button				
+			}
+		}
+
+			//####################################
+			//#	  	 Принятие миссии 4: Кнопка	 #
+			//####################################
+	
+		itemDef
+		{
+			name				accbut4
+			group				accbuttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_ACCEPT
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			47
+			background			"BoxMenu"
+
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red			350 435 160 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playVoice			"sound/chars/luke/06luk001.mp3"
+				
+				show			luke
+				show			next_button		
+
+
+				setcvar 		tier_mapname 			"maptransition t1_danger"	
+				
+				show			accept_text
+				setitemtext		accept_text 			@T1_DANGER_06LUK001			
+				
+				hide			briefing_text
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
+			}
+		}
+
+			//####################################
+			//#	   Принятие миссии 5: Кнопка	 #
+			//####################################
+	
+	itemDef
+		{
+			name				accbut5
+			group				accbuttons
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_ACCEPT
+			textstyle			3
+			font				3
+			textscale			1
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			47
+			background			"BoxMenu"
+
+		mouseEnter 
+			{ 
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red			350 435 160 30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playVoice			"sound/chars/kyle/05kyk001.mp3"
+				
+				show			prot
+				show			next_button
+				
+				setcvar 		tier_mapname 			"maptransition t1_rail"
+				
+				show			accept_text
+				setitemtext		accept_text 			@T1_RAIL_05KYK001	
+
+				hide			briefing_text
+				hide 			accbuttons				
+				hide			sidebutton_glow_red
+				hide			planet
+				hide			mission_button
+			}
+		}
+//_______________________________________________________________________________________________
+//
+//		МОДЕЛИ ПЛАНЕТ В МЕНЮ
+//_______________________________________________________________________________________________
+//################
+//#	  ТАТУИН	 #
+//################		
+	itemDef 
+		{
+			name				tatooine
+			group				planet
+			style				WINDOW_STYLE_SHADER
+			rect				0 230 250 250
+			background			"menu/planets/tatooine"
+			backcolor			1 1 1 1
+			decoration
+		}
+//################
+//#	  БАКУРА	 #
+//################		
+	itemDef 
+		{
+			name				bakura
+			group				planet
+			style				WINDOW_STYLE_SHADER
+			rect				0 230 250 250
+			background			"menu/planets/bakura"
+			backcolor			1 1 1 1
+			decoration
+		}
+//################
+//#	  БЭНДЖЕЛ	 #
+//################		
+	itemDef 
+		{
+			name				blenjeel
+			group				planet
+			style				WINDOW_STYLE_SHADER
+			rect				0 230 250 250
+			background			"menu/planets/blenjeel"
+			backcolor			1 1 1 1
+			decoration
+		}
+//################
+//#	  КОРРЕЛИА	 #
+//################		
+	itemDef 
+		{
+			name				corellia
+			group				planet
+			style				WINDOW_STYLE_SHADER
+			rect				0 230 250 250
+			background			"menu/planets/core"
+			backcolor			1 1 1 1
+			decoration
+		}	
+	}
+}
