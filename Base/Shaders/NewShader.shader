@@ -30,37 +30,6 @@ textures/doormetal
     }
 }
 
-textures/wallacademy2
-{
-	q3map_material			SolidMetal
-	q3map_shadeangle		150
-	q3map_alphashadow
-	{
-        map $lightmap
-    }
-    {
-        map textures/yavin/wall5
-		blendFunc GL_DST_COLOR GL_ZERO
-		tcMod scale 2 2
-		rgbGen vertex
-    }
-}
-
-textures/wall_academy
-{
-	q3map_material			SolidMetal
-	q3map_shadeangle		150
-	q3map_alphashadow
-	{
-        map $lightmap
-    }
-    {
-        map textures/yavin/supports
-		blendFunc GL_DST_COLOR GL_ZERO
-		rgbGen vertex
-		tcMod	0.25 0.25
-    }
-}
 
 textures/floor_academy
 {
@@ -161,13 +130,9 @@ textures/stair_academy2
 textures/skip
 {
 	q3map_material			SolidMetal
-	{
-        map $lightmap
-    }
     {
         map textures/skip
 		blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
-		tcMod scale 2 2
     }
 }
 
@@ -264,3 +229,68 @@ textures/skies/yavin
 	notc
 	skyParms	textures/skies/dune 512 - 
 }
+
+textures/yavin/vines2
+{
+    {
+        map textures/yavin/vines2
+        alphaFunc GE128
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+        //rgbGen lightingDiffuse
+		tcMod	scale	1 1
+    }
+}
+
+textures/flooracademy
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/goldblock1
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+		//tcMod	scale	1 1
+    }
+}
+
+textures/wall_academy
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/wall5
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+		//tcMod	scale	1 1
+    }
+}
+
+
+textures/yavin/door
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/door_met01
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+		//tcMod	scale	1 1
+    }
+}
+
+

@@ -4,6 +4,4 @@
 		"UI/4.Mission/1_MissionSelect1.menu" 	
 	}
 	
-LoadMenu 	{ "UI/4.Mission/4_victorymassage.menu" 		}
-	
 }
