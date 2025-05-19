@@ -1,0 +1,285 @@
+...detecting CPU, found Intel Pentium IV
+
+------- Input Initialization -------
+Skipping check for DirectInput
+Joystick is not active.
+------------------------------------
+----- Client Initialization -----
+----- Initializing Renderer ----
+-------------------------------
+----- Client Initialization Complete -----
+--- Common Initialization Complete ---
+Working directory: D:\Проекты\Jedi Academy Redux
+^1PlayCinematic(): Failed to open "video/openinglogos.roq"
+Initializing OpenGL subsystem
+...initializing QGL
+succeeded
+...setting mode -1: 1280 720 W
+...registered window class
+...created window@0,0 (1286x749)
+Initializing OpenGL driver
+...getting DC: succeeded
+...GLW_ChoosePFD( 32, 24, 16 )
+...215 PFDs found
+...PFD 1 rejected, improper flags (8024 instead of 25)
+...PFD 4 rejected, improper flags (8024 instead of 25)
+...PFD 7 rejected, improper flags (8024 instead of 25)
+...PFD 10 rejected, improper flags (8024 instead of 25)
+...PFD 13 rejected, improper flags (8024 instead of 25)
+...PFD 16 rejected, improper flags (8024 instead of 25)
+...PFD 19 rejected, improper flags (8024 instead of 25)
+...PFD 22 rejected, improper flags (8024 instead of 25)
+...PFD 25 rejected, improper flags (8024 instead of 25)
+...PFD 28 rejected, improper flags (8024 instead of 25)
+...PFD 31 rejected, improper flags (8024 instead of 25)
+...PFD 34 rejected, improper flags (8024 instead of 25)
+...PFD 37 rejected, improper flags (8004 instead of 25)
+...PFD 38 rejected, improper flags (8005 instead of 25)
+...PFD 39 rejected, improper flags (8405 instead of 25)
+...PFD 40 rejected, improper flags (8004 instead of 25)
+...PFD 41 rejected, improper flags (8005 instead of 25)
+...PFD 42 rejected, improper flags (8405 instead of 25)
+...PFD 43 rejected, improper flags (8004 instead of 25)
+...PFD 44 rejected, improper flags (8005 instead of 25)
+...PFD 45 rejected, improper flags (8405 instead of 25)
+...PFD 46 rejected, improper flags (8004 instead of 25)
+...PFD 47 rejected, improper flags (8005 instead of 25)
+...PFD 48 rejected, improper flags (8405 instead of 25)
+...PFD 49 rejected, improper flags (8004 instead of 25)
+...PFD 50 rejected, improper flags (8005 instead of 25)
+...PFD 51 rejected, improper flags (8405 instead of 25)
+...PFD 52 rejected, improper flags (8004 instead of 25)
+...PFD 53 rejected, improper flags (8005 instead of 25)
+...PFD 54 rejected, improper flags (8405 instead of 25)
+...PFD 55 rejected, improper flags (8004 instead of 25)
+...PFD 56 rejected, improper flags (8005 instead of 25)
+...PFD 57 rejected, improper flags (8405 instead of 25)
+...PFD 58 rejected, improper flags (8004 instead of 25)
+...PFD 59 rejected, improper flags (8005 instead of 25)
+...PFD 60 rejected, improper flags (8405 instead of 25)
+...PFD 61 rejected, improper flags (8004 instead of 25)
+...PFD 62 rejected, improper flags (8005 instead of 25)
+...PFD 63 rejected, improper flags (8405 instead of 25)
+...PFD 64 rejected, improper flags (8004 instead of 25)
+...PFD 65 rejected, improper flags (8005 instead of 25)
+...PFD 66 rejected, improper flags (8405 instead of 25)
+...PFD 67 rejected, improper flags (8004 instead of 25)
+...PFD 68 rejected, improper flags (8005 instead of 25)
+...PFD 69 rejected, improper flags (8405 instead of 25)
+...PFD 70 rejected, improper flags (8004 instead of 25)
+...PFD 71 rejected, improper flags (8005 instead of 25)
+...PFD 72 rejected, improper flags (8405 instead of 25)
+...PFD 73 rejected, improper flags (8004 instead of 25)
+...PFD 74 rejected, improper flags (8005 instead of 25)
+...PFD 75 rejected, improper flags (8405 instead of 25)
+...PFD 76 rejected, improper flags (8004 instead of 25)
+...PFD 77 rejected, improper flags (8005 instead of 25)
+...PFD 78 rejected, improper flags (8405 instead of 25)
+...PFD 79 rejected, improper flags (8004 instead of 25)
+...PFD 80 rejected, improper flags (8005 instead of 25)
+...PFD 81 rejected, improper flags (8405 instead of 25)
+...PFD 82 rejected, improper flags (8004 instead of 25)
+...PFD 83 rejected, improper flags (8005 instead of 25)
+...PFD 84 rejected, improper flags (8405 instead of 25)
+...PFD 85 rejected, improper flags (8004 instead of 25)
+...PFD 86 rejected, improper flags (8005 instead of 25)
+...PFD 87 rejected, improper flags (8405 instead of 25)
+...PFD 88 rejected, improper flags (8004 instead of 25)
+...PFD 89 rejected, improper flags (8005 instead of 25)
+...PFD 90 rejected, improper flags (8405 instead of 25)
+...PFD 91 rejected, improper flags (8004 instead of 25)
+...PFD 92 rejected, improper flags (8005 instead of 25)
+...PFD 93 rejected, improper flags (8405 instead of 25)
+...PFD 94 rejected, improper flags (8004 instead of 25)
+...PFD 95 rejected, improper flags (8005 instead of 25)
+...PFD 96 rejected, improper flags (8405 instead of 25)
+...PFD 97 rejected, improper flags (8004 instead of 25)
+...PFD 98 rejected, improper flags (8005 instead of 25)
+...PFD 99 rejected, improper flags (8405 instead of 25)
+...PFD 100 rejected, improper flags (8004 instead of 25)
+...PFD 101 rejected, improper flags (8005 instead of 25)
+...PFD 102 rejected, improper flags (8405 instead of 25)
+...PFD 103 rejected, improper flags (8004 instead of 25)
+...PFD 104 rejected, improper flags (8005 instead of 25)
+...PFD 105 rejected, improper flags (8405 instead of 25)
+...PFD 106 rejected, improper flags (8004 instead of 25)
+...PFD 107 rejected, improper flags (8005 instead of 25)
+...PFD 108 rejected, improper flags (8405 instead of 25)
+...PFD 109 rejected, improper flags (8004 instead of 25)
+...PFD 110 rejected, improper flags (8005 instead of 25)
+...PFD 111 rejected, improper flags (8405 instead of 25)
+...PFD 112 rejected, improper flags (8004 instead of 25)
+...PFD 113 rejected, improper flags (8005 instead of 25)
+...PFD 114 rejected, improper flags (8405 instead of 25)
+...PFD 115 rejected, improper flags (8004 instead of 25)
+...PFD 116 rejected, improper flags (8005 instead of 25)
+...PFD 117 rejected, improper flags (8405 instead of 25)
+...PFD 118 rejected, improper flags (8004 instead of 25)
+...PFD 119 rejected, improper flags (8005 instead of 25)
+...PFD 120 rejected, improper flags (8405 instead of 25)
+...PFD 121 rejected, improper flags (8004 instead of 25)
+...PFD 122 rejected, improper flags (8005 instead of 25)
+...PFD 123 rejected, improper flags (8405 instead of 25)
+...PFD 124 rejected, improper flags (8004 instead of 25)
+...PFD 125 rejected, improper flags (8005 instead of 25)
+...PFD 126 rejected, improper flags (8405 instead of 25)
+...PFD 127 rejected, improper flags (8004 instead of 25)
+...PFD 128 rejected, improper flags (8005 instead of 25)
+...PFD 129 rejected, improper flags (8405 instead of 25)
+...PFD 130 rejected, improper flags (8004 instead of 25)
+...PFD 131 rejected, improper flags (8005 instead of 25)
+...PFD 132 rejected, improper flags (8405 instead of 25)
+...PFD 133 rejected, improper flags (8004 instead of 25)
+...PFD 134 rejected, improper flags (8005 instead of 25)
+...PFD 135 rejected, improper flags (8405 instead of 25)
+...PFD 136 rejected, improper flags (8004 instead of 25)
+...PFD 137 rejected, improper flags (8005 instead of 25)
+...PFD 138 rejected, improper flags (8405 instead of 25)
+...PFD 139 rejected, improper flags (8004 instead of 25)
+...PFD 140 rejected, improper flags (8005 instead of 25)
+...PFD 141 rejected, improper flags (8405 instead of 25)
+...PFD 142 rejected, improper flags (8004 instead of 25)
+...PFD 143 rejected, improper flags (8005 instead of 25)
+...PFD 144 rejected, improper flags (8405 instead of 25)
+...PFD 145 rejected, improper flags (8004 instead of 25)
+...PFD 146 rejected, improper flags (8005 instead of 25)
+...PFD 147 rejected, improper flags (8405 instead of 25)
+...PFD 148 rejected, improper flags (8004 instead of 25)
+...PFD 149 rejected, improper flags (8005 instead of 25)
+...PFD 150 rejected, improper flags (8405 instead of 25)
+...PFD 151 rejected, improper flags (8004 instead of 25)
+...PFD 152 rejected, improper flags (8005 instead of 25)
+...PFD 153 rejected, improper flags (8405 instead of 25)
+...PFD 154 rejected, improper flags (8004 instead of 25)
+...PFD 155 rejected, improper flags (8005 instead of 25)
+...PFD 156 rejected, improper flags (8405 instead of 25)
+...PFD 157 rejected, improper flags (8004 instead of 25)
+...PFD 158 rejected, improper flags (8005 instead of 25)
+...PFD 159 rejected, improper flags (8405 instead of 25)
+...PFD 160 rejected, improper flags (8004 instead of 25)
+...PFD 161 rejected, improper flags (8005 instead of 25)
+...PFD 162 rejected, improper flags (8405 instead of 25)
+...PFD 163 rejected, improper flags (8004 instead of 25)
+...PFD 164 rejected, improper flags (8005 instead of 25)
+...PFD 165 rejected, improper flags (8405 instead of 25)
+...PFD 166 rejected, improper flags (8004 instead of 25)
+...PFD 167 rejected, improper flags (8005 instead of 25)
+...PFD 168 rejected, improper flags (8405 instead of 25)
+...PFD 169 rejected, improper flags (8004 instead of 25)
+...PFD 170 rejected, improper flags (8005 instead of 25)
+...PFD 171 rejected, improper flags (8405 instead of 25)
+...PFD 172 rejected, improper flags (8004 instead of 25)
+...PFD 173 rejected, improper flags (8005 instead of 25)
+...PFD 174 rejected, improper flags (8405 instead of 25)
+...PFD 175 rejected, improper flags (8004 instead of 25)
+...PFD 176 rejected, improper flags (8005 instead of 25)
+...PFD 177 rejected, improper flags (8405 instead of 25)
+...PFD 178 rejected, improper flags (8004 instead of 25)
+...PFD 179 rejected, improper flags (8005 instead of 25)
+...PFD 180 rejected, improper flags (8405 instead of 25)
+...PFD 181 rejected, improper flags (807c instead of 25)
+...PFD 182 rejected, improper flags (807c instead of 25)
+...PFD 185 rejected, improper flags (807c instead of 25)
+...PFD 186 rejected, improper flags (807c instead of 25)
+...PFD 189 rejected, not RGBA
+...PFD 190 rejected, not RGBA
+...PFD 191 rejected, not RGBA
+...PFD 192 rejected, not RGBA
+...PFD 193 rejected, improper flags (78 instead of 25)
+...PFD 194 rejected, improper flags (78 instead of 25)
+...PFD 195 rejected, improper flags (78 instead of 25)
+...PFD 196 rejected, improper flags (78 instead of 25)
+...PFD 197 rejected, not RGBA
+...PFD 198 rejected, not RGBA
+...PFD 199 rejected, improper flags (78 instead of 25)
+...PFD 200 rejected, improper flags (78 instead of 25)
+...PFD 201 rejected, improper flags (78 instead of 25)
+...PFD 202 rejected, improper flags (78 instead of 25)
+...PFD 203 rejected, not RGBA
+...PFD 204 rejected, not RGBA
+...PFD 205 rejected, improper flags (78 instead of 25)
+...PFD 206 rejected, improper flags (78 instead of 25)
+...PFD 207 rejected, improper flags (78 instead of 25)
+...PFD 208 rejected, improper flags (78 instead of 25)
+...PFD 209 rejected, not RGBA
+...PFD 210 rejected, not RGBA
+...PFD 211 rejected, improper flags (78 instead of 25)
+...PFD 212 rejected, improper flags (78 instead of 25)
+...PFD 213 rejected, improper flags (78 instead of 25)
+...PFD 214 rejected, improper flags (78 instead of 25)
+...PFD 215 rejected, not RGBA
+...PFD 216 rejected, not RGBA
+...hardware acceleration found
+...PIXELFORMAT 14 selected
+...creating GL context: succeeded
+...making context current: succeeded
+Initializing OpenGL extensions
+...GL_S3_s3tc available
+...GL_EXT_texture_compression_s3tc available
+...no tc preference specified
+.....using GL_EXT_texture_compression_s3tc
+...using GL_EXT_texture_env_add
+...GL_EXT_texture_filter_anisotropic available
+...using GL_EXT_texture_filter_anisotropic
+...Using GL_EXT_texture_edge_clamp
+...using WGL_EXT_swap_control
+...using GL_ARB_multitexture
+...using GL_EXT_compiled_vertex_array
+...using GL_EXT_point_parameters
+...GL_NV_point_sprite not found
+...GL_NV_register_combiners not found
+
+GL_VENDOR: ATI Technologies Inc.
+GL_RENDERER: AMD Radeon (TM) Graphics
+GL_VERSION: 4.6.0 Compatibility Profile Context 23.10.24.02.230811
+GL_EXTENSIONS: GL_EXT_abgr GL_EXT_blend_color GL_EXT_blend_minmax GL_EXT_blend_subtract GL_EXT_copy_texture GL_EXT_texture GL_EXT_texture_object GL_EXT_vertex_array GL_EXT_compiled_vertex_array GL_EXT_subtexture GL_EXT_texture3D GL_EXT_bgra GL_EXT_draw_range_elements GL_EXT_packed_pixels GL_EXT_point_parameters GL_EXT_rescale_normal GL_EXT_separate_specular_color GL_EXT_texture_edge_clamp GL_SGIS_generate_mipmap GL_SGIS_texture_edge_clamp GL_SGIS_texture_lod GL_ARB_multitexture GL_IBM_texture_mirrored_repeat GL_ARB_multisample GL_ARB_texture_cube_map GL_ARB_texture_env_add GL_ARB_transpose_matrix GL_EXT_blend_func_separate GL_EXT_fog_coord GL_EXT_multi_draw_arrays GL_EXT_secondary_color GL_EXT_texture_cube_map GL_EXT_texture_env_add GL_EXT_texture_filter_anisotropic GL_EXT_texture_lod GL_EXT_texture_lod_bias GL_NV_blend_square GL_NV_texgen_reflection GL_SUN_multi_draw_arrays WGL_EXT_swap_control GL_ARB_point_parameters GL_ARB_texture_border_clamp GL_ARB_texture_compression GL_ARB_texture_env_crossbar GL_EXT_texture_compression_s3tc GL_EXT_texture_env_combine GL_EXT_texture_env_dot3 GL_ARB_shadow GL_ARB_shadow_ambient GL_ARB_texture_env_combine GL_ARB_texture_env_dot3 GL_ARB_texture_mirrored_repeat GL_NV_half_float GL_ARB_depth_texture GL_ARB_fragment_program GL_ARB_vertex_program GL_ARB_window_pos GL_ATI_draw_buffers GL_ATI_texture_env_combine3 GL_ATI_texture_float GL_EXT_shadow_funcs GL_EXT_stencil_wrap GL_EXT_texture_rectangle GL_NV_primitive_restart GL_S3_s3tc GL_ARB_fragment_program_shadow GL_ARB_fragment_shader GL_ARB_occlusion_query GL_ARB_point_sprite GL_ARB_shader_objects GL_ARB_shading_language_100 GL_ARB_texture_non_power_of_two GL_ARB_vertex_buffer_object GL_ARB_vertex_shader GL_EXT_blend_equation_separate GL_EXT_depth_bounds_test GL_ARB_color_buffer_float GL_ARB_draw_buffers GL_ARB_half_float_pixel GL_ARB_pixel_buffer_object GL_ARB_texture_float GL_ARB_texture_rectangle GL_EXT_framebuffer_object GL_EXT_pixel_buffer_object GL_EXT_texture_mirror_clamp GL_NV_float_buffer GL_EXT_framebuffer_blit GL_EXT_framebuffer_multisample GL_EXT_packed_depth_stencil GL_EXT_texture_format_BGRA8888 GL_ATI_separate_stencil GL_ATI_shader_texture_lod GL_ATI_texture_mirror_once GL_EXT_bindable_uniform GL_EXT_draw_buffers2 GL_EXT_draw_instanced GL_EXT_framebuffer_sRGB GL_EXT_geometry_shader4 GL_EXT_gpu_program_parameters GL_EXT_gpu_shader4 GL_EXT_packed_float GL_EXT_texture_array GL_EXT_texture_buffer_object GL_EXT_texture_compression_latc GL_EXT_texture_compression_rgtc GL_EXT_texture_integer GL_EXT_transform_feedback GL_NV_depth_buffer_float GL_OES_EGL_image GL_EXT_provoking_vertex GL_EXT_texture_sRGB GL_EXT_texture_shared_exponent GL_EXT_vertex_array_bgra GL_NV_conditional_render GL_ARB_depth_buffer_float GL_ARB_draw_instanced GL_ARB_framebuffer_object GL_ARB_framebuffer_sRGB GL_ARB_geometry_shader4 GL_ARB_half_float_vertex GL_ARB_instanced_arrays GL_ARB_map_buffer_range GL_ARB_texture_buffer_object GL_ARB_texture_compression_rgtc GL_ARB_texture_rg GL_ARB_transform_feedback GL_ARB_vertex_array_object GL_EXT_direct_state_access GL_EXT_texture_snorm GL_AMD_conservative_depth GL_AMD_seamless_cubemap_per_texture GL_AMD_texture_cube_map_array GL_ARB_compatibility GL_ARB_copy_buffer GL_ARB_depth_clamp GL_ARB_draw_buffers_blend GL_ARB_draw_elements_base_vertex GL_ARB_fragment_coord_conventions GL_ARB_provoking_vertex GL_ARB_sample_shading GL_ARB_seamless_cube_map GL_ARB_shader_texture_lod GL_ARB_sync GL_ARB_texture_buffer_object_rgb32 GL_ARB_texture_cube_map_array GL_ARB_texture_gather GL_ARB_texture_multisample GL_ARB_texture_multisample_no_array GL_ARB_texture_query_lod GL_ARB_uniform_buffer_object GL_ARB_vertex_array_bgra GL_ATI_meminfo GL_EXT_texture_storage GL_NV_copy_image GL_NV_texture_barrier GL_AMD_blend_minmax_factor GL_AMD_depth_clamp_separate GL_AMD_sample_positions GL_ARB_ES2_compatibility GL_ARB_base_instance GL_ARB_blend_func_extended
+GL_MAX_TEXTURE_SIZE: 16384
+GL_MAX_ACTIVE_TEXTURES_ARB: 8
+
+PIXELFORMAT: color(32-bits) Z(24-bit) stencil(8-bits)
+MODE: -1, 1280 x 720 windowed hz:60
+GAMMA: hardware w/ 0 overbright bits
+CPU: Intel Pentium IV
+rendering primitives: single glDrawElements
+texturemode: GL_LINEAR_MIPMAP_NEAREST
+picmip: 0
+texture bits: 0
+lightmap texture bits: 0
+multitexture: enabled
+compiled vertex arrays: enabled
+texenv add: enabled
+compressed textures: enabled
+compressed lightmaps: disabled
+texture compression method: GL_EXT_texture_compression_s3tc
+anisotropic filtering: enabled  (16.000000 of 16.000000)
+Dynamic Glow: enabled
+Forcing glFinish
+
+------- sound initialization -------
+Initializing DirectSound
+locked hardware.  ok
+^5Загрузка... auto_maps
+------ Server Initialization ------
+Jedi Academy: Redux version 2.0
+Server: maps
+Loading shader text .....
+..... 3127 shader definitions loaded
+------- Game Initialization -------
+gamename: base
+gamedate: Oct 24 2003
+-----------------------------------
+-----------------------------------
+^5Готово.
+^3WARNING: reused image menu/static_base with mixed mipmap parm
+^3WARNING: reused image menu/static_base with mixed allowPicmip parm
+^3WARNING: R_FindImageFile could not find 'textures/yavin/vines2' in shader 'textures/yavin/vines2'
+^3Shader textures/yavin/vines2 has a stage with no image
+...loaded 3564 faces, 0 meshes, 0 trisurfs, 0 flares
+----- CL_Shutdown -----
+Shutting down OpenGL subsystem
+...wglMakeCurrent( NULL, NULL ): success
+...deleting GL context: success
+...releasing DC: failed
+...shutting down QGL
+...unloading OpenGL DLL
+-----------------------

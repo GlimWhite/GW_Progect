@@ -749,12 +749,12 @@ jedi_zf2
 
 JediMaster
 {
-	playerModel	jedi
-	customSkin	master
-	saber		JediMaster
-	saberColor	green
-	weapon		WP_SABER
-	saberStyle	7
+	playerModel		jedi
+	customSkin		master
+	saber			staff_3
+	saberColor		green
+	weapon			WP_SABER
+	saberStyle		7
 	FP_HEAL			3
 	FP_LEVITATION	3
 	FP_SPEED		3
