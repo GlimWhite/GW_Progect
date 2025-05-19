@@ -305,7 +305,7 @@ textures/yavin/door
     {
         map textures/yavin/door_met01
 		blendFunc GL_SRC_ALPHA GL_ONE
-		rgbGen vertex
+		//rgbGen vertex
 		//tcMod	scale	1 1
     }
 }
@@ -326,3 +326,20 @@ textures/models/map_objects/imperial/bunk
 }
 
 
+textures/light
+{
+	qer_editorimage	textures/common/gradient
+	qer_trans	1
+	surfaceparm	noimpact
+	surfaceparm	nomarks
+	surfaceparm	nonsolid
+	surfaceparm	nonopaque
+	surfaceparm	trans
+	q3map_nolightmap
+    {
+        clampmap textures/common/gradient2
+        blendFunc GL_ONE GL_ONE
+        //rgbGen const ( 0.2 0.15 0.15 )
+		//rgbGen vertex
+    }
+}

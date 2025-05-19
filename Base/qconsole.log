@@ -113,8 +113,7 @@ Initializing OpenGL driver
 ...making context current: succeeded
 Initializing OpenGL extensions
 ...GL_EXT_texture_compression_s3tc available
-...no tc preference specified
-.....using GL_EXT_texture_compression_s3tc
+...ignoring texture compression
 ...using GL_EXT_texture_env_add
 ...GL_EXT_texture_filter_anisotropic available
 ...using GL_EXT_texture_filter_anisotropic
@@ -139,16 +138,16 @@ MODE: -1, 1280 x 720 windowed hz:60
 GAMMA: hardware w/ 0 overbright bits
 CPU: Intel Pentium IV
 rendering primitives: single glDrawElements
-texturemode: GL_LINEAR_MIPMAP_NEAREST
+texturemode: GL_LINEAR_MIPMAP_LINEAR
 picmip: 0
-texture bits: 0
+texture bits: 32
 lightmap texture bits: 0
 multitexture: enabled
 compiled vertex arrays: enabled
 texenv add: enabled
-compressed textures: enabled
+compressed textures: disabled
 compressed lightmaps: disabled
-texture compression method: GL_EXT_texture_compression_s3tc
+texture compression method: None
 anisotropic filtering: enabled  (16.000000 of 16.000000)
 Dynamic Glow: disabled
 Forcing glFinish
@@ -161,7 +160,7 @@ locked hardware.  ok
 Jedi Academy: Redux version 2.0
 Server: maps
 Loading shader text .....
-..... 3127 shader definitions loaded
+..... 3130 shader definitions loaded
 ------- Game Initialization -------
 gamename: base
 gamedate: Oct 24 2003
@@ -170,105 +169,8 @@ gamedate: Oct 24 2003
 ^5Готово.
 ^3WARNING: reused image menu/static_base with mixed mipmap parm
 ^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-^3WARNING: Couldn't find image for shader textures/models/map_objects/imperial/bunk.grid
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-^5Запись игры "quick"...
-^5Готово.
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: maps
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-glGetError() = 0x501
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-]helposobi 1
-]give all
-]setforceall 5
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: maps
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-glGetError() = 0x501
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: maps
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-glGetError() = 0x501
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-^5Запись игры "quick"...
-^5Готово.
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: maps
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-glGetError() = 0x501
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: maps
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-glGetError() = 0x501
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-^5Загрузка... quick
------- Server Initialization ------
-Jedi Academy: Redux version 2.0
-Server: maps
-------- Game Initialization -------
-gamename: base
-gamedate: Oct 24 2003
------------------------------------
------------------------------------
-^5Готово.
-glGetError() = 0x501
-^3WARNING: reused image menu/static_base with mixed mipmap parm
-^3WARNING: reused image menu/static_base with mixed allowPicmip parm
-...loaded 4066 faces, 0 meshes, 0 trisurfs, 0 flares
-]setforceall 5
-]noclip
-noclip ON
-]noclip
-noclip OFF
------ CL_Shutdown -----
+...loaded 4730 faces, 0 meshes, 0 trisurfs, 0 flares
+----- CL_Shutdown ----- CL_Shutdown -----
 Shutting down OpenGL subsystem
 ...wglMakeCurrent( NULL, NULL ): success
 ...deleting GL context: success
