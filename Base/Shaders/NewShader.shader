@@ -227,7 +227,7 @@ textures/skies/yavin
 	surfaceparm	noimpact
 	surfaceparm	nomarks
 	notc
-	skyParms	textures/skies/dune 512 - 
+	skyParms	textures/skies/yavin 512 - 
 }
 
 textures/yavin/vines2
@@ -293,4 +293,53 @@ textures/yavin/door
     }
 }
 
+textures/yavin/door
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+		blendFunc GL_SRC_ALPHA GL_ONE
+    }
+    {
+        map textures/yavin/door_met01
+		blendFunc GL_SRC_ALPHA GL_ONE
+		//rgbGen vertex
+		//tcMod	scale	1 1
+    }
+}
 
+
+textures/models/map_objects/imperial/bunk
+{
+	q3map_nolightmap
+    {
+        map models/map_objects/imperial/bunk
+    }
+    {
+        map models/map_objects/imperial/bunk_glow
+        blendFunc GL_ONE GL_ONE
+        glow
+        rgbGen identity
+    }
+}
+
+
+textures/light
+{
+	qer_editorimage	textures/common/gradient
+	qer_trans	1
+	surfaceparm	noimpact
+	surfaceparm	nomarks
+	surfaceparm	nonsolid
+	surfaceparm	nonopaque
+	surfaceparm	trans
+	q3map_nolightmap
+    {
+        clampmap textures/common/gradient2
+        blendFunc GL_ONE GL_ONE
+        //rgbGen const ( 0.2 0.15 0.15 )
+		//rgbGen vertex
+    }
+}

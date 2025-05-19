@@ -1,0 +1,1847 @@
+//_______________________________________________________________________________________________
+//
+// 						SUBTITLES FOR TIER VICTORY MESSAGES
+//_______________________________________________________________________________________________
+{					   
+	menuDef 
+	{
+		name					"victorymassagemenu"
+		fullScreen				1		
+		rect					0 0 640 480	
+		visible					1
+		focusColor				1 1 1 1
+	
+		disablecolor			.5 .5 .5 1
+		
+		fadeClamp				1.0						// sets the fadeup alpha
+		fadeCycle				25						// how often fade happens in milliseconds
+		fadeAmount				0.05					// amount to adjust alpha per cycle	
+	onOpen 
+		{
+		uiScript				loadmissionselectmenu 	tier_storyinfo
+		//	show				victory_text
+		show					victory_comp
+		//show					models2
+		
+				transition		planets_box			 	5 230 630   0   5 230 630 240 15 15
+				transition		decplanet			  	5 230 630   0   5 230 630 240 15 15
+				
+				hide			story_text
+		}	
+		
+	onESC 
+		{ 
+		
+		}
+//_______________________________________________________________________________________________
+//
+//	СТРУКТУРА МЕНЮ
+//_______________________________________________________________________________________________
+//********************
+// Фон для меню
+//********************
+	itemDef 
+		{
+			name				groundmenu
+			style				WINDOW_STYLE_SHADER
+			rect				0 0 640 480
+			background			"GroundMenu"
+			forecolor			1 1 1 1
+			visible				1
+			decoration
+		}
+//********************
+// Затемнения фона
+//********************
+	itemDef 
+		{
+			name				black_ground
+			rect				0 0 640 480
+			style 				WINDOW_STYLE_FILLED
+			backcolor			0 0 0 0.5
+			forecolor			0 0 0 0.5
+			visible				1
+			decoration
+		}		
+//********************
+// Выделение элементов
+//********************
+	itemDef 
+		{
+			name				sidebutton_glow_red
+			group				none
+			style				WINDOW_STYLE_SHADER
+			background			"menu/menu_blendboxr"
+			forecolor			1 1 1 1
+			decoration
+		}
+//_______________________________________________________________________________________________
+//
+//		МОДЕЛИ ПЕРСОНАЖЕЙ В МЕНЮ
+//_______________________________________________________________________________________________
+
+			//###################
+			//#	 ЛЮК СКАЙВОКЕР	#
+			//###################
+			
+	itemDef
+		{
+			name				luke
+			group				models2
+			type 				ITEM_TYPE_MODEL
+			rect				200 -27 280 260
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/luke/model_menu.skin"
+			asset_model			"models/players/luke/model.glm"
+			model_angle			180
+			model_g2mins		10 -18 16
+			model_g2maxs		60 20 55
+			model_rotation		0
+			model_fovx			10
+			model_fovy			10
+			isCharacter			1
+			
+			visible				1
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"luke"
+				"t1_surprise"
+				"t1_sour"
+				"t3_hevil"
+				"t1_test"
+				"t1_rail"
+			}
+		
+		}
+
+			//###################
+			//#	  КАЙЛ КАТАРН	#
+			//###################
+		
+	itemDef
+		{
+			name				kyle
+			group				models2
+			type 				ITEM_TYPE_MODEL
+			rect				200 -27 280 260
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/kyle/model_menu.skin"
+			asset_model			"models/players/kyle/model.glm"
+			model_angle			180
+			model_g2mins		10 -18 16
+			model_g2maxs		60 20 55
+			model_rotation		0
+			model_fovx			10
+			model_fovy			10
+			isCharacter			1
+			
+			visible				1
+			decoration
+			
+		cvartest			"storyhead"
+		showcvar
+			{
+				"t1_fatal"
+				"t1_danger"
+				"t2_rogue"
+				"t2_dpred"
+				"t2_rancor"
+				"t2_trip"
+				"t3_rift"
+				"t3_byss"
+				"t3_stamp"
+				"t3_bounty"
+				"kyle"
+			}
+		}
+		
+			//###################
+			//#	  	 ДРОИД		#
+			//###################
+			
+	itemDef
+		{
+			name				prot
+			group				models2
+			type 				ITEM_TYPE_MODEL
+			rect				220 53 220 180
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/protocol/model_menu.skin"
+			asset_model			"models/players/protocol/model.glm"
+			model_angle			180
+
+			model_g2mins		15 -20 16
+			model_g2maxs		60 20 50
+			model_rotation		0
+			model_fovx			10
+			model_fovy			10
+			isCharacter			1
+			visible				1
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"prot"
+			}
+		}
+			//###################
+			//#	   ПОВСТАНЕЦ	#
+			//###################
+			
+	itemDef
+		{
+			name				wedge
+			group				models
+			type 				ITEM_TYPE_MODEL
+			rect				200 -27 280 260
+			model_g2anim 		"BOTH_STAND1_TALK2"
+			model_g2skin		"models/players/rebel_pilot/model_default.skin"
+			asset_model			"models/players/rebel_pilot/model.glm"
+			model_angle			180
+			model_g2mins		10 -18 16
+			model_g2maxs		60 20 55
+			model_rotation		0
+			model_fovx			10
+			model_fovy			10
+			isCharacter			1
+			
+			visible				1
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t2_wedge"
+				"wedge"
+			}
+		}
+//***********************
+//*	 	Фон для текста	*
+//***********************		
+	itemDef 
+		{
+			name				planets_box
+			group				none
+			style				WINDOW_STYLE_SHADER	
+			background			"box_blue"
+			forecolor			0.2 0.1 0.8 1
+			border				1
+			bordersize			2
+			bordercolor			1 .2 .2 0.5
+			visible				0
+			decoration
+		}	
+//----------------------------------------------------------------------------------------------
+//	1ST TIER
+//----------------------------------------------------------------------------------------------
+	itemDef
+		{
+			name				vic_text_t1_test
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T1_SURPRISE
+			font				3
+			textstyle			3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			lineHeight			18
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t1_test"
+			}
+		}
+
+	itemDef
+		{
+			name				vic_text_t1_sour
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T1_SOUR
+			font				3
+			textstyle			3
+			textscale			1.1
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			lineHeight			18
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t1_sour"
+			}
+		}
+	itemDef
+		{
+			name				vic_text_t1_surprise
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T1_SURPRISE
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t1_surprise"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t1_fatal
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T1_FATAL
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t1_fatal"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t1_danger
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T1_DANGER
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t1_danger"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t1_rail
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T1_RAIL_01
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+			showcvar
+			{
+				"t1_rail"
+			}
+		}
+
+//----------------------------------------------------------------------------------------------
+//	2ND TIER	
+//----------------------------------------------------------------------------------------------
+		itemDef
+		{
+			name				vic_text_t2_rancor
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T2_RANCOR
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t2_rancor"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t2_trip
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T2_TRIP
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t2_trip"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t2_wedge
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T2_WEDGE
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t2_wedge"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t2_rogue
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T2_ROGUE
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t2_rogue"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t2_dpred
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T2_DPRED
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t2_dpred"
+			}
+		}
+
+//----------------------------------------------------------------------------------------------
+//	3RD TIER
+//----------------------------------------------------------------------------------------------
+		itemDef
+		{
+			name				vic_text_t2_rift
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T3_RIFT
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			autowrapped
+			decoration
+			visible				1
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t3_rift"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t3_stampede
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T3_STAMP
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t3_stamp"
+			}
+		}
+		
+	itemDef
+		{
+			name				vic_text_t3_hevil
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T3_HEVIL
+			font				3
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t3_hevil"
+			}
+		}
+	itemDef
+		{
+			name				vic_text_t3_byss
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T3_BYSS
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t3_byss"
+			}
+		}
+
+		itemDef
+		{
+			name				vic_text_t3_bounty
+			group				victory_text
+			type				ITEM_TYPE_TEXT
+			rect				20 240 620 300
+			text				@TIERVICTORY_T3_BOUNTY
+			font				3
+			textstyle			3
+			textscale			1.1
+			lineHeight			18
+			forecolor			.95 .64 .37 1
+			textalign			ITEM_ALIGN_LEFT
+			visible				1
+			autowrapped
+			decoration
+			
+			cvartest			"storyhead"
+		showcvar
+			{
+				"t3_bounty"
+			}
+		}
+		
+//_______________________________________________________________________________________________
+//
+//						completed 1st tier level on Tier 1
+//								2nd visit to tier
+//_______________________________________________________________________________________________
+//_______________________________________________________________________________________________
+//
+//	КНОПКИ ДЛЯ ПЕРВОГО ЭТАПА ИГРЫ
+//_______________________________________________________________________________________________
+	itemDef
+		{
+			name				story_okay
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				445 380 173 30
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			55
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			cvartest			"tier_storyinfo"
+		showcvar
+			{
+				"1" "2" "4"
+			}
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		445	380	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+				close			all
+				open			ingameMissionSelect1
+			}
+		}
+		
+	itemDef
+		{
+			name				story_okay
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				445 380 173 30
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			55
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"3"
+			}
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		445	380	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				uiScript		startmap 	t1_inter
+			}
+		}
+		
+	itemDef
+		{
+			name				story_okay
+			type				ITEM_TYPE_BUTTON
+			rect				470 460 200 24
+			text				@MENUS_RETURN_TO_ACADEMY
+			font				2
+			forecolor			1 0 0 1
+			textscale			.7
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			5
+			textaligny			-1
+			visible				0
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"5"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				open			ingameForceStatus
+				exec			"playermodel player_1"
+			}
+		}
+//_______________________________________________________________________________________________
+//
+//		ИСТОРИЯ ПРОЙДЕННЫХ УРОВНЕЙ: КНОПКА
+//_______________________________________________________________________________________________		
+//##########################
+//#  Текст истории миссии  #
+//##########################
+	itemDef
+		{
+			name				story_text
+			type				ITEM_TYPE_TEXTSCROLL
+			text				"@"
+			rect				20 240 620 300
+			textstyle			3
+			font				3
+			forecolor			1 1 1 1
+			textscale			1
+			lineHeight			20
+			visible				1
+			autowrapped
+		}
+	itemDef
+		{
+			name				victory1
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+		cvartest				"tier_storyinfo"
+		showcvar
+			{
+				"1"
+			}
+
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{	
+			playvoice			"sound/chars/storyinfo/2.mp3"
+				
+				hide			victory_comp			//Скруть группу
+				hide			victory_text			//Скруть группу
+				hide 			sidebutton_glow_red
+				
+				show			story_text
+				setitemtext		story_text				@TIER1_1
+				show			story_okay
+				show			kyle
+			}
+		}
+	itemDef
+		{
+			name				victory2
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+		cvartest				"tier_storyinfo"
+		showcvar
+			{
+				"2"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red		445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{	
+			playvoice			"sound/chars/storyinfo/2.mp3"
+				
+				hide			victory_comp			//Скруть группу
+				hide			victory_text			//Скруть группу
+				hide 			sidebutton_glow_red
+				
+				show			story_text
+				setitemtext		story_text				@TIER1_2
+				show			story_okay
+				show			kyle
+			}
+		}
+		
+	itemDef
+		{
+			name				victory3
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"3"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playvoice			"sound/chars/storyinfo/3.mp3"
+				hide			victory_comp			//Скруть группу
+				hide			victory_text			//Скруть группу
+				hide 			sidebutton_glow_red
+				
+				show			story_text
+				setitemtext		story_text				@TIER1_3
+				show			story_okay
+				show			luke
+			}
+		}
+
+	itemDef
+		{
+			name				victory4
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+		showcvar
+			{
+				"4"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playvoice			"sound/chars/storyinfo/4.mp3"
+				hide			victory_comp			//Скруть группу
+				hide			victory_text			//Скруть группу
+				hide 			sidebutton_glow_red
+				
+				show			story_text
+				setitemtext		story_text				@TIER1_4
+				show			story_okay
+				show			luke
+			}
+		}
+
+	itemDef
+		{
+			name				victory5
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			visible				1
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			cvartest			"tier_storyinfo"
+		showcvar
+			{
+				"5"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+			playvoice			"sound/chars/storyinfo/5.mp3"
+				hide			victory_comp			//Скруть группу
+				hide			victory_text			//Скруть группу
+				hide 			sidebutton_glow_red
+				
+				show			story_text
+				setitemtext		story_text				@TIER1_5
+				show			story_okay
+				show			kyle
+			}
+		}
+
+
+//----------------------------------------------------------------------------------------------
+//completed 5th tier level on Tier 1
+//6th visit to tier
+//----------------------------------------------------------------------------------------------
+	itemDef
+		{
+			name				victory6
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"6" "7" "8" "9"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory6
+				hide			victory_text
+				hide			models
+				show			story_end
+				setitemtext	story_text			@TIER1_6
+				playvoice		"sound/chars/storyinfo/6.mp3"
+				show			kyle
+				hide			sidebutton_glow_red
+			}
+		}
+
+	itemDef
+		{
+			name				story_end
+			type				ITEM_TYPE_BUTTON
+			rect				470 460 200 24
+			text				@MENUS_RETURN_TO_ACADEMY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_RIGHT
+			textalignx			200
+			textaligny			-1
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+				close			all
+				open			ingameForceStatus
+				exec			"playermodel player_1"
+			}
+		}
+//---------------------------------------------------------
+//
+//TIER TWO - APPRENTICE TIER
+//
+//---------------------------------------------------------
+	itemDef
+		{
+			name				victory8
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"8"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory8
+				hide			victory_text
+				hide			models
+				show			story_okay
+				setitemtext	story_text			@TIER2_8
+				playvoice		"sound/chars/storyinfo/8.mp3"
+				show			prot
+				hide			sidebutton_glow_red
+			}
+		}
+
+//-------------------------------------
+//
+//completed 2nd tier level on Tier 2
+//3rd visit to tier
+//-------------------------------------
+	itemDef
+		{
+			name				victory9
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"9"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory9
+				hide			victory_text
+				hide			models
+				
+				show			story_okay
+				setitemtext	story_text			@TIER2_9
+				
+				playvoice		"sound/chars/storyinfo/9.mp3"
+				show			kyle
+				hige			sidebutton_glow_red
+			}
+		}
+
+//-------------------------------------
+//
+//completed 3rd tier level on Tier 2
+//4th visit to tier
+//-------------------------------------
+	itemDef
+		{
+			name				victory10
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"10"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory10
+				hide			victory_text
+				hide			models
+				show			story10
+				setitemtext	story_text			@TIER2_10
+				playvoice		"sound/chars/storyinfo/10.mp3"
+				show			luke
+				hide			sidebutton_glow_red
+			}
+		}
+
+	itemDef
+		{
+			name				story10
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				445 380 173 30
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			55
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				0
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	380	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close		all
+				open		ingameMissionSelect2
+			}
+		}
+//-------------------------------------
+//
+//completed 4th tier level on Tier 2
+//5th visit to tier
+//-------------------------------------
+	itemDef
+		{
+			name				victory11
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			cvartest			"tier_storyinfo"
+			visible				1
+			showcvar
+			{
+				"11"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory11
+				hide			victory_text
+				hide			models
+				show			story_okay
+				setitemtext	story_text			@TIER2_11
+				playvoice		"sound/chars/storyinfo/11.mp3"
+				show			kyle
+				show			story_end
+				hide sidebutton_glow_red
+			}
+		}
+
+		itemDef
+		{
+			name				story_end
+			group				continue
+			type				ITEM_TYPE_BUTTON
+			rect				470 460 200 24
+			text				@MENUS_RETURN_TO_ACADEMY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			5
+			textaligny			-1
+			visible				0
+			mouseEnter 
+			{ 
+			}
+			mouseExit 
+			{ 
+			}
+			action
+			{
+				close			all
+				open			ingameForceStatus
+			}
+		}
+//-------------------------------------
+//
+//completed 5th tier level on Tier 2
+//6th visit to tier
+//-------------------------------------
+
+		itemDef
+		{
+			name				victory12
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				1
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"12"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+		action
+			{
+				hide			victory12
+				hide			victory_text
+				hide			models
+				show			story_end
+				setitemtext	story_text			@TIER2_12
+				playvoice		"sound/chars/storyinfo/12.mp3"
+				show			kyle
+				hide			sidebutton_glow_red
+			}
+		}
+
+
+		itemDef
+		{
+			name				story_end
+			type				ITEM_TYPE_BUTTON
+			rect				470 460 200 24
+			text				@MENUS_RETURN_TO_ACADEMY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_RIGHT
+			textalignx			200
+			textaligny			-1
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				open			ingameForceStatus
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//-------------------------------------
+//
+//TIER THREE - JEDI KNIGHT TIER
+//
+//-------------------------------------
+	itemDef
+		{
+			name				victory14
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			visible				1
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			showcvar
+			{
+				"14"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory14
+				hide			victory_text
+				hide			models
+				show			story14
+				setitemtext	story_text			@TIER3_14
+				playvoice		"sound/chars/storyinfo/14.mp3"
+				show			kyle
+				hide			sidebutton_glow_red
+			}
+		}
+
+		itemDef
+		{
+			name				story14
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				445 380 173 30
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			55
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	380	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close		all
+				open		ingameMissionSelect3
+			}
+		}
+//-------------------------------------
+//
+//completed 2nd tier level on Tier 3
+//3rd visit to tier
+//-------------------------------------
+		itemDef
+		{
+			name				victory15
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			cvartest			"tier_storyinfo"
+			
+			visible				1
+			showcvar
+			{
+				"15"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory15
+				hide			victory_text
+				hide			models
+				show			story15
+				setitemtext	story_text			@TIER3_15
+				playvoice		"sound/chars/storyinfo/15.mp3"
+				show			kyle
+				hide sidebutton_glow_red
+			}
+		}
+
+
+		itemDef
+		{
+			name				story15
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				445 380 173 30
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			55
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	380	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				open			ingameMissionSelect3
+			}
+		}
+//-------------------------------------
+//
+//completed 3rd tier level on Tier 3
+//4th visit to tier
+//-------------------------------------
+
+	itemDef
+		{
+			name				victory16
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"16"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory16
+				hide			victory_text
+				hide			models
+				show			story16
+				setitemtext	story_text			@TIER3_16
+				playvoice		"sound/chars/storyinfo/16.mp3"
+				show			kyle
+				hide 			sidebutton_glow_red
+			}
+		}
+
+		itemDef
+		{
+			name				story16
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				445 380 173 30
+			text				@MENUS_OKAY
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			55
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	380	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				open			ingameMissionSelect3
+			}
+		}
+//-------------------------------------
+//
+//completed 4th tier level on Tier 3
+//5th visit to tier
+//-------------------------------------
+
+		itemDef
+		{
+			name				victory17
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			cvartest			"tier_storyinfo"
+			
+			visible				1
+			showcvar
+			{
+				"17"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory17
+				hide			victory_text
+				hide			models
+				show			story17
+				setitemtext	story_text			@TIER3_17
+				playvoice		"sound/chars/storyinfo/17.mp3"
+				show			kyle
+				show			story_end
+				hide			sidebutton_glow_red
+			}
+		}
+
+		itemDef
+		{
+			name				story17
+			type				ITEM_TYPE_BUTTON
+			rect				390 440 100 24
+			text				@MENUS_NEXT_MISSION
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_RIGHT
+			textalignx			100
+			textaligny			-1
+			visible			0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close		all
+				open		ingameMissionSelect3
+			}
+		}
+
+		itemDef
+		{
+			name				story_end
+			type				ITEM_TYPE_BUTTON
+			rect				20 240 620 300
+			text				@MENUS_RETURN_TO_ACADEMY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_LEFT
+			textalignx			5
+			textaligny			-1
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				open			ingameForceStatus
+                exec            "playermodel player_3"
+			}
+			
+		}
+//-------------------------------------
+//
+//completed 5th tier level on Tier 3
+//6th visit to tier
+//-------------------------------------
+	itemDef
+		{
+			name				victory18
+			group				victory_comp
+			type				ITEM_TYPE_BUTTON
+			style				WINDOW_STYLE_SHADER
+			rect				350 435 160 30
+			text				@MENUS_CONTINUE
+			textstyle			3
+			font				3
+			textscale			1.1			
+			textalignx			35
+			
+			background			"BoxMenu"
+			forecolor			1 1 1 1
+			visible				1
+			
+			cvartest			"tier_storyinfo"
+			showcvar
+			{
+				"18"
+			}
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				hide			victory18
+				hide			victory_text
+				hide			models
+				show			story18_continue
+				setitemtext	story_text			@TIER3_18
+				playvoice		"sound/chars/storyinfo/18.mp3"
+				show			kyle
+			}
+		}
+
+	itemDef
+		{
+			name				story18_continue
+			type				ITEM_TYPE_BUTTON
+			rect				470 460 200 24
+			text				@MENUS_RETURN_TO_ACADEMY
+			font				2
+			forecolor			1 1 1 1
+			textscale			.7
+			textalign			ITEM_ALIGN_RIGHT
+			textalignx			200
+			textaligny			-1
+			visible				0
+		mouseEnter 
+			{
+				show			sidebutton_glow_red
+				setitemrect		sidebutton_glow_red	445	420	173	30
+			}
+		mouseExit 
+			{ 
+				hide			sidebutton_glow_red
+			}
+			action
+			{
+				close			all
+				open			ingameForceStatus
+				exec            "playermodel player_3"
+			}
+		}
+	}
+}

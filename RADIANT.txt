@@ -1,0 +1,11 @@
+func_plat (Лифт)
+
+Worldspawn
+{
+_noshasersun 0
+_minlight 35
+_mingridlight 80
+_minvertexlight 55
+_color 1 1 1
+_lightmapscale 2
+}
