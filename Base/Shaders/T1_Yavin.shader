@@ -121,7 +121,7 @@ textures/common/dark_dust
     {
         clampmap textures/common/gradient
         blendFunc GL_ONE GL_ONE
-        rgbGen const ( 0.5 0.5 0.5 )
+        rgbGen const ( 0.5 0.5 0 )
     }
 }
 //###################################################//

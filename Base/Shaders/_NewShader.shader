@@ -7,7 +7,7 @@ textures/skies/yavin
 	skyParms	textures/skies/yavin 512 - 
 }
 
-textures/yavin/vines2
+textures/yavin/tree_leaves
 {
     {
         map textures/yavin/vines2
@@ -18,7 +18,7 @@ textures/yavin/vines2
     }
 }
 
-textures/floor_cademy
+textures/floor_academy
 {
 	q3map_material			rock
 	q3map_shadeangle		150
@@ -42,7 +42,7 @@ textures/wall_academy
         map $lightmap
     }
     {
-        map textures/yavin/wall5
+        map textures/yavin/supports
 		blendFunc GL_SRC_ALPHA GL_ONE
 		rgbGen vertex
     }
@@ -63,7 +63,7 @@ textures/strius_academy
     }
 }
 
-textures/yavin/block_academy
+textures/block_academy
 {
 	q3map_material			rock
 	q3map_shadeangle		150
@@ -78,7 +78,7 @@ textures/yavin/block_academy
     }
 }
 
-textures/yavin/trim_academy
+textures/trim_academy
 {
 	q3map_material			rock
 	q3map_shadeangle		150
@@ -93,7 +93,7 @@ textures/yavin/trim_academy
     }
 }
 
-textures/yavin/center_academy
+textures/center_academy
 {
 	q3map_material			rock
 	q3map_shadeangle		150
@@ -108,7 +108,7 @@ textures/yavin/center_academy
     }
 }
 
-textures/yavin/metal_academy
+textures/metal_academy
 {
 	q3map_material			metal
 	q3map_shadeangle		150
@@ -166,5 +166,22 @@ textures/light
         clampmap textures/common/gradient2
         blendFunc GL_ONE GL_ONE
         rgbGen const ( 0.2 0.15 0.15 )
+    }
+}
+
+
+textures/skip
+{
+	qer_editorimage	textures/common/gradient
+	qer_trans	1
+	surfaceparm	noimpact
+	surfaceparm	nomarks
+	surfaceparm	nonsolid
+	surfaceparm	nonopaque
+	surfaceparm	trans
+	q3map_nolightmap
+    {
+        clampmap textures/skip
+        blendFunc GL_ONE_MINUS_SRC_ALPHA GL_ONE
     }
 }
