@@ -14,7 +14,6 @@ textures/yavin/tree_leaves
         alphaFunc GE128
         blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
         //rgbGen lightingDiffuse
-		tcMod	scale	1 1
     }
 }
 
@@ -123,6 +122,20 @@ textures/metal_academy
     }
 }
 
+
+textures/lives
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	deformvertexes	wave	90 sin 20.1 1 1 0
+    {
+        map textures/yavin/tree_leaves
+        alphaFunc GE128
+        blendFunc GL_SRC_ALPHA GL_ONE_MINUS_SRC_ALPHA
+    }
+}
+
 textures/yavin/door
 {
 	q3map_material			rock
@@ -133,6 +146,70 @@ textures/yavin/door
     }
     {
         map textures/yavin/door_met01
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+    }
+}
+
+
+textures/crate01
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+    }
+    {
+        map textures/yavin/decals/crate01
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+    }
+}
+
+
+textures/crate02
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+    }
+    {
+        map textures/yavin/decals/crate02
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+    }
+}
+
+
+textures/crate03
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+    }
+    {
+        map textures/yavin/decals/crate03
+		blendFunc GL_SRC_ALPHA GL_ONE
+		rgbGen vertex
+    }
+}
+
+
+textures/crate03tb
+{
+	q3map_material			rock
+	q3map_shadeangle		150
+	q3map_alphashadow
+	{
+        map $lightmap
+    }
+    {
+        map textures/yavin/decals/crate03tb
 		blendFunc GL_SRC_ALPHA GL_ONE
 		rgbGen vertex
     }
@@ -151,6 +228,15 @@ textures/models/map_objects/imperial/bunk
         rgbGen identity
     }
 }
+
+textures/models/map_objects/nar_shaddar/book
+{
+	q3map_nolightmap
+    {
+        map models/map_objects/nar_shaddar/book
+    }
+}
+
 
 textures/light
 {
