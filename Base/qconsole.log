@@ -177,3 +177,12 @@ gamedate: Oct 24 2003
 
 ^1********************
 DROPPED
+----- CL_Shutdown -----
+Shutting down OpenGL subsystem
+...wglMakeCurrent( NULL, NULL ): success
+...deleting GL context: success
+...releasing DC: success
+...destroying window
+...shutting down QGL
+...unloading OpenGL DLL
+-----------------------
