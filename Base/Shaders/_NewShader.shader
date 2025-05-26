@@ -237,6 +237,14 @@ textures/models/map_objects/nar_shaddar/book
     }
 }
 
+textures/models/map_objects/nar_shaddar/table.grid
+{
+	q3map_nolightmap
+    {
+        map textures/yavin/table
+    }
+}
+
 
 textures/light
 {
